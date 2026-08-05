@@ -17,6 +17,7 @@ const PER_IP_LIMIT = 6;
 const WINDOW_SECONDS = 60;
 const MAX_MESSAGE_LEN = 300;
 const MAX_TOKENS = 150;
+const UPSTREAM_TIMEOUT_MS = 30000;
 
 const SYSTEM_PROMPT =
   "You are a small, fast AI language model running as a live demo for a " +
@@ -30,20 +31,42 @@ export async function onRequestPost({ request, env }) {
   try {
     body = await request.json();
   } catch {
-    return json({ error: "Send JSON: { \"message\": \"...\" }" }, 400);
+    return fail("bad_request", "Send JSON: { \"message\": \"...\" }", 400);
   }
 
   const message = typeof body.message === "string" ? body.message.trim() : "";
-  if (!message) return json({ error: "Missing 'message'." }, 400);
+  if (!message) return fail("empty_message", "Type a question first.", 400);
   if (message.length > MAX_MESSAGE_LEN) {
-    return json({ error: `Keep it under ${MAX_MESSAGE_LEN} characters.` }, 400);
+    return fail(
+      "message_too_long",
+      `That's ${message.length} characters — keep it under ${MAX_MESSAGE_LEN}.`,
+      400
+    );
+  }
+
+  if (!env.GRAPHLING_GATEWAY_KEY) {
+    console.log("MISCONFIG: GRAPHLING_GATEWAY_KEY binding missing");
+    return fail(
+      "not_configured",
+      "The demo isn't configured right now. (The site owner needs to check the gateway key.)",
+      503
+    );
   }
 
   const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-  const limited = await checkRateLimit(env.RATE_LIMIT_KV, ip);
+  let limited;
+  try {
+    limited = await checkRateLimit(env.RATE_LIMIT_KV, ip);
+  } catch (e) {
+    // Never let a KV hiccup take the demo down — fail open, the gateway's own
+    // per-key limits are the hard ceiling anyway.
+    console.log("KV rate-limit check failed, failing open:", e && e.message);
+    limited = { ok: true, remaining: PER_IP_LIMIT };
+  }
   if (!limited.ok) {
-    return json(
-      { error: "This demo is limited to 6 questions per minute per visitor — give it a few seconds." },
+    return fail(
+      "rate_limited_visitor",
+      `You've hit this demo's limit of ${PER_IP_LIMIT} questions per minute. Try again in ${limited.retryAfter}s.`,
       429,
       { "Retry-After": String(limited.retryAfter) }
     );
@@ -67,32 +90,67 @@ export async function onRequestPost({ request, env }) {
         ],
         max_tokens: MAX_TOKENS,
       }),
+      signal: AbortSignal.timeout(UPSTREAM_TIMEOUT_MS),
     });
   } catch (e) {
-    console.log("upstream fetch threw:", e && e.message);
-    return json({ error: "The demo model is unreachable right now. Try again shortly." }, 502);
+    const timedOut = e && (e.name === "TimeoutError" || e.name === "AbortError");
+    console.log("upstream fetch threw:", e && (e.name + ": " + e.message));
+    return timedOut
+      ? fail("model_timeout", "The model took too long to answer. Try a shorter question.", 504)
+      : fail("gateway_unreachable", "Can't reach the demo model right now. Try again shortly.", 502);
   }
 
   if (!upstream.ok) {
-    // Log server-side for diagnosis; never leak upstream detail to the client.
+    // Log full detail server-side for diagnosis; the client gets a clear,
+    // actionable message plus a stable `code` — never upstream internals.
     const detail = await upstream.text().catch(() => "");
     console.log("upstream not ok:", upstream.status, detail.slice(0, 300));
 
-    // The model is busy (per-key concurrency or token/minute ceiling at the
-    // gateway) — that's a "come back in a moment", not a bad question.
+    // Busy: per-key concurrency / tokens-per-minute at LiteLLM, or nginx
+    // limit_req at the gateway. Self-healing — tell them to wait.
     if (upstream.status === 429 || upstream.status === 503) {
-      return json(
-        { error: "The demo model is busy right now — give it a few seconds and try again." },
+      return fail(
+        "model_busy",
+        "The model is busy right now (too many questions at once). Give it a few seconds.",
         429,
         { "Retry-After": "15" }
       );
     }
-    return json({ error: "The demo model had trouble with that one. Try a different question." }, 502);
+    // 403 = the gateway is refusing this proxy outright (e.g. its egress IP
+    // got autobanned). Not the visitor's fault and not self-healing quickly:
+    // say so plainly so it's obvious something needs fixing, not retrying.
+    if (upstream.status === 403) {
+      return fail(
+        "gateway_blocked",
+        "The demo gateway is refusing requests from this site. This needs the site owner to look at it — it won't fix itself by retrying.",
+        502
+      );
+    }
+    if (upstream.status === 401) {
+      return fail(
+        "gateway_auth_failed",
+        "The demo's gateway credentials were rejected. (The site owner needs to rotate the key.)",
+        502
+      );
+    }
+    return fail(
+      "model_error",
+      `The model returned an error (${upstream.status}). Try a different question.`,
+      502
+    );
   }
 
-  const data = await upstream.json();
+  let data;
+  try {
+    data = await upstream.json();
+  } catch {
+    return fail("bad_upstream_response", "Got an unreadable response from the model. Try again.", 502);
+  }
   const reply = data?.choices?.[0]?.message?.content ?? null;
-  if (!reply) return json({ error: "No reply came back — try again." }, 502);
+  if (!reply) {
+    console.log("upstream 200 but no content:", JSON.stringify(data).slice(0, 300));
+    return fail("empty_reply", "The model returned an empty answer. Try rephrasing.", 502);
+  }
 
   return json(
     { reply, model: "small" },
@@ -123,4 +181,19 @@ function json(obj, status, extraHeaders) {
     status,
     headers: { "Content-Type": "application/json", ...(extraHeaders || {}) },
   });
+}
+
+// Every error carries a stable machine-readable `code` alongside the human
+// message, so the widget (and anyone debugging) can tell "you asked too fast"
+// apart from "the gateway is broken" without parsing prose.
+//
+//   bad_request | empty_message | message_too_long   — caller's input
+//   rate_limited_visitor                             — this visitor's 6/min
+//   model_busy                                       — gateway at capacity
+//   model_timeout | gateway_unreachable              — transport
+//   gateway_blocked | gateway_auth_failed            — needs an operator
+//   not_configured                                   — missing binding
+//   model_error | empty_reply | bad_upstream_response
+function fail(code, error, status, extraHeaders) {
+  return json({ error, code }, status, extraHeaders);
 }

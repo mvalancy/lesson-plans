@@ -84,10 +84,19 @@
       .then(function (res) {
         var remaining = parseInt(res.headers.get('X-RateLimit-Remaining'), 10);
         setMeter(remaining);
-        return res.json().then(function (data) {
-          if (!res.ok) {
-            var err = new Error(data.error || 'Something went wrong.');
+        // Not every failure is JSON: an edge error or a gateway HTML page can
+        // land here, and blindly calling res.json() turns that into a useless
+        // "Unexpected token '<'" for the visitor. Read text, then try to parse.
+        return res.text().then(function (raw) {
+          var data = null;
+          try { data = JSON.parse(raw); } catch (e) { /* not JSON */ }
+
+          if (!res.ok || !data) {
+            var err = new Error(
+              (data && data.error) || describeStatus(res.status)
+            );
             err.status = res.status;
+            err.code = (data && data.code) || 'http_' + res.status;
             err.retryAfter = res.headers.get('Retry-After');
             throw err;
           }
@@ -104,7 +113,21 @@
       })
       .catch(function (err) {
         thinking.remove();
-        turn.appendChild(addBubble('a err', err.message));
+        var msg = err.message || 'Something went wrong.';
+        // No network/response at all (offline, DNS, connection dropped).
+        if (typeof err.status === 'undefined') {
+          msg = 'Could not reach the demo — check your connection and try again.';
+          err.code = 'network_error';
+        }
+        var bubble = addBubble('a err', msg);
+        if (err.code) {
+          var tag = document.createElement('span');
+          tag.className = 'err-code';
+          tag.textContent = err.code;
+          bubble.appendChild(tag);
+        }
+        turn.appendChild(bubble);
+        console.warn('[ask-widget]', err.code, err.status || '', msg);
         if (err.status === 429) {
           var wait = parseInt(err.retryAfter, 10) || 20;
           startCooldown(wait);
@@ -114,6 +137,17 @@
         log.scrollTop = log.scrollHeight;
         setBusy(false);
       });
+  }
+
+  // Fallback wording when the server couldn't give us a JSON error of its own.
+  function describeStatus(status) {
+    if (status === 429) return 'Too many questions at once — give it a few seconds.';
+    if (status === 502 || status === 503) return 'The demo model is unavailable right now. Try again shortly.';
+    if (status === 504) return 'The model took too long to answer. Try a shorter question.';
+    if (status >= 500) return 'The demo hit a server error (' + status + '). Try again shortly.';
+    if (status === 413) return 'That question is too long.';
+    if (status >= 400) return 'That request was rejected (' + status + ').';
+    return 'Unexpected response from the demo (' + status + ').';
   }
 
   function setBusy(busy) {
