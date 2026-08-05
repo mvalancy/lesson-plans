@@ -6,7 +6,7 @@
 <title>Mini-Lesson: Did the AI Just Lie to Me? · CSCI 40</title>
 <meta name="description" content="A 15-minute mini-lesson: what an LLM actually is, why it makes things up, and three moves to catch it before it reaches your work.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/css/style.css?v=202608042302">
+<link rel="stylesheet" href="/css/style.css?v=202608042323">
 </head>
 <body class="deck">
 <div class="notice-bar"><strong>Note:</strong> I am not currently teaching this course. This site was built as part of my interview process for the CSCI 40 position at Monterey Peninsula College.</div>
@@ -129,7 +129,8 @@
             <span class="sys-part">tools</span>
           </div>
           <ul class="big-points">
-            <li>An LLM does <em>one thing</em>: predict the next word.</li>
+            <li>Underneath, an LLM is <em>always</em> doing one thing:
+            predicting the next word.</li>
           </ul>
           <div class="token-demo" id="token-demo" aria-hidden="true">
             <div class="td-line"><span class="td-text"></span><span class="td-caret"></span></div>
@@ -152,9 +153,16 @@
             world, an LLM writes its words. The database never invents a
             memory. The LLM? Another story.</li>
             <li>It's the world's best improv partner: never breaks character,
-            almost never volunteers "I don't know."</li>
+            and rarely volunteers "I don't know."</li>
             <li>It isn't lying — lying requires knowing the truth. It's
             <strong>completing a pattern</strong>.</li>
+            <li><strong>What about "thinking" models?</strong> o1,
+            DeepSeek-R1, Claude's extended thinking — they write a long
+            scratchpad before answering. That's still next-word prediction,
+            just a lot more of it, trained to be useful. More deliberation
+            lowers the error rate; it doesn't change what the machine is.
+            They still make things up — sometimes with a very convincing
+            chain of reasoning attached.</li>
             <li>When an assistant cites sources, that's search added on top:
             it runs a web search, gets real pages, and summarizes. The pages
             are real; the summary is still improv.</li>
@@ -365,8 +373,8 @@
   </div>
 </footer>
 
-<script src="/js/hero-graph.js?v=202608042302" defer></script>
-<script src="/js/lesson-reveal.js?v=202608042302" defer></script>
-<script src="/js/ask-widget.js?v=202608042302" defer></script>
+<script src="/js/hero-graph.js?v=202608042323" defer></script>
+<script src="/js/lesson-reveal.js?v=202608042323" defer></script>
+<script src="/js/ask-widget.js?v=202608042323" defer></script>
 </body>
 </html>
