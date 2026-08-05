@@ -146,6 +146,50 @@ main { padding: 2.5rem 0 4rem; }
 .lesson-card { position: relative; }
 .lesson-card p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
 
+/* ---------- focus / dimmed states ---------- */
+
+.badge {
+  display: inline-block;
+  float: right;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 99px;
+  padding: 0.15rem 0.6rem;
+  margin: 0.1rem 0 0.4rem 0.75rem;
+}
+.badge.badge-quiet {
+  color: var(--accent);
+  background: var(--accent-wash);
+}
+
+.card-focus {
+  border-color: var(--accent);
+  background: linear-gradient(180deg, var(--accent-wash), var(--card) 55%);
+  box-shadow: 0 2px 12px rgba(125, 35, 53, 0.1);
+}
+
+.dimmed {
+  opacity: 0.5;
+  filter: grayscale(0.7);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+.dimmed:hover { opacity: 0.85; filter: grayscale(0.2); }
+
+.schedule tr.focus-row td {
+  background: var(--accent-wash);
+  border-bottom-color: var(--accent);
+}
+.schedule tr.focus-row td:first-child { color: var(--accent); font-weight: 600; }
+
+.hub-link {
+  border-left: 1px solid var(--line);
+  padding-left: 1.4rem;
+}
+
 /* ---------- schedule table ---------- */
 
 .schedule {
