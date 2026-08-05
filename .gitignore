@@ -1,0 +1,12 @@
+# Private context (course PDFs, interview notes, drafts) — never commit
+ignored/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Node (if tooling is ever added; the site itself has no build step)
+node_modules/
