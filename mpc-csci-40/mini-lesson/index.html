@@ -285,6 +285,27 @@
     </div>
   </section>
 
+  <section class="slide slide-light" id="try-it">
+    <div class="wrap reveal">
+      <h2>Try it yourself</h2>
+      <p>Not part of the 15 minutes — for after, or for Q&amp;A. This box
+      talks directly to a real, genuinely small (1.5-billion-parameter) AI
+      model running on my own hardware. Ask it something obscure and watch
+      move #1 in action: <em>open the source</em> — because it has none.</p>
+      <div class="ask-widget">
+        <span class="ask-tag"><span class="live-dot" aria-hidden="true"></span>Live · talking to a real small model</span>
+        <div class="ask-log" aria-live="polite"></div>
+        <form class="ask-form">
+          <label class="sr-only" for="ask-input">Ask the small model a question</label>
+          <input id="ask-input" type="text" maxlength="300" autocomplete="off"
+                 placeholder="Ask it something obscure…">
+          <button type="submit">Ask</button>
+        </form>
+        <p class="ask-status" role="status"></p>
+      </div>
+    </div>
+  </section>
+
   <section class="slide" id="extras">
     <div class="wrap reveal">
       <h2>Other candidate topics</h2>
@@ -321,5 +342,6 @@
 
 <script src="/js/hero-graph.js" defer></script>
 <script src="/js/lesson-reveal.js" defer></script>
+<script src="/js/ask-widget.js" defer></script>
 </body>
 </html>

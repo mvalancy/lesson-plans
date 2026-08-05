@@ -1,0 +1,7 @@
+name = "lesson-plans"
+pages_build_output_dir = "."
+compatibility_date = "2025-01-01"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "707d0ff51e664d70a0f95e4f26979dae"

@@ -10,3 +10,11 @@ Thumbs.db
 
 # Node (if tooling is ever added; the site itself has no build step)
 node_modules/
+
+# Cloudflare Pages Functions local secrets (never commit real values)
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+
+# Wrangler local dev cache/state (account metadata, local KV emulation)
+.wrangler/

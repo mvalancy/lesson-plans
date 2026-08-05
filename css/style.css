@@ -17,6 +17,16 @@
 
 * { box-sizing: border-box; }
 
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -408,7 +418,7 @@ body.deck .badge { color: #fff; }
   font-size: 1.5rem;
   line-height: 1.4;
   margin: 1.1rem 0;
-  padding-left: 1.2rem;
+  padding-left: 1.8rem;
   position: relative;
 }
 .big-points li::before {
@@ -554,8 +564,14 @@ body.deck .badge { color: #fff; }
   padding: 1.3rem 1.5rem;
   margin: 1.6rem 0;
   box-shadow: 0 3px 16px rgba(34, 37, 43, 0.06);
+  /* fixed, not min — reserved up front for the longest of the two demo
+     sequences (text line + candidate row + verdict line) so the box never
+     reflows the slide around it as content types in and cycles. */
+  height: 14rem;
+  overflow: hidden;
 }
 .token-demo .td-line { font-size: 1.02rem; color: var(--ink); min-height: 3.2em; }
+.token-demo .td-verdict { min-height: 1.5rem; }
 .td-caret {
   display: inline-block;
   width: 2px;
@@ -591,6 +607,85 @@ body.deck .badge { color: #fff; }
 .td-verdict.ok { color: #2e7d32; }
 .td-verdict.bad { color: #b3261e; }
 @keyframes caret-blink { 50% { opacity: 0; } }
+
+/* small-model "try it yourself" widget */
+.ask-widget {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.6rem 1.4rem;
+  margin: 1.5rem 0;
+}
+.ask-widget .ask-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--accent-dark);
+  margin-bottom: 0.9rem;
+}
+.ask-widget .ask-tag .live-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #2e9e4f;
+  box-shadow: 0 0 0 rgba(46, 158, 79, 0.5);
+  animation: live-pulse 2s infinite;
+}
+@keyframes live-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(46, 158, 79, 0.45); }
+  70% { box-shadow: 0 0 0 6px rgba(46, 158, 79, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(46, 158, 79, 0); }
+}
+.ask-log {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  max-height: 20rem;
+  overflow-y: auto;
+  margin-bottom: 0.9rem;
+}
+.ask-log:empty { display: none; }
+.ask-turn { font-size: 0.95rem; line-height: 1.5; }
+.ask-turn .q { color: var(--ink-soft); }
+.ask-turn .q::before { content: "Q  "; font-weight: 700; color: var(--accent-dark); }
+.ask-turn .a { color: var(--ink); margin-top: 0.25rem; }
+.ask-turn .a::before { content: "AI "; font-weight: 700; color: var(--ink-soft); }
+.ask-turn .a.err { color: #ff7b72; }
+.ask-form { display: flex; gap: 0.6rem; }
+.ask-form input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+}
+.ask-form input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ask-form button {
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  padding: 0 1.2rem;
+  cursor: pointer;
+}
+.ask-form button:disabled { opacity: 0.5; cursor: not-allowed; }
+.ask-status {
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  min-height: 1.2em;
+}
 
 /* demo countdown timer */
 .demo-timer {
