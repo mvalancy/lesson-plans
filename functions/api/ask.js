@@ -14,6 +14,10 @@
 // without a code change here.
 
 const PER_IP_LIMIT = 6;
+// Shared-NAT ceiling: a classroom on one campus IP should comfortably fit,
+// so this is many multiples of the per-browser allowance. It exists to stop
+// scripted client-id rotation, not to ration a real room of people.
+const PER_IP_BURST_LIMIT = 60;
 const WINDOW_SECONDS = 60;
 const MAX_MESSAGE_LEN = 300;
 const MAX_TOKENS = 150;
@@ -60,10 +64,29 @@ export async function onRequestPost({ request, env }) {
     );
   }
 
+  // Rate-limit per browser, not purely per IP: a classroom (or any office)
+  // sits behind one NAT, so an IP-only bucket would give thirty students six
+  // questions a minute between them. The client sends a random id it keeps in
+  // localStorage; it's trivially rotatable, which is fine — this is fairness
+  // between ordinary visitors, not an anti-abuse boundary. Abuse is bounded by
+  // the wider per-IP ceiling below and by the gateway's own per-key limits.
   const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  const rawClientId = typeof body.clientId === "string" ? body.clientId : "";
+  const clientId = /^[a-z0-9]{8,40}$/i.test(rawClientId) ? rawClientId : null;
+
   let limited;
   try {
-    limited = await checkRateLimit(env.RATE_LIMIT_KV, ip);
+    limited = clientId
+      ? await checkRateLimit(env.RATE_LIMIT_KV, "c:" + clientId)
+      : await checkRateLimit(env.RATE_LIMIT_KV, "ip:" + ip);
+
+    // Coarse per-IP backstop so one NAT can't be used to farm unlimited
+    // quota by rotating client ids. Deliberately generous: it should only
+    // bite on scripted abuse, never on a real room full of people.
+    if (limited.ok && clientId) {
+      const ipCap = await checkRateLimit(env.RATE_LIMIT_KV, "ip:" + ip, PER_IP_BURST_LIMIT);
+      if (!ipCap.ok) limited = ipCap;
+    }
   } catch (e) {
     // Never let a KV hiccup take the demo down — fail open, the gateway's own
     // per-key limits are the hard ceiling anyway.
@@ -175,20 +198,20 @@ export async function onRequestPost({ request, env }) {
   );
 }
 
-async function checkRateLimit(kv, ip) {
+async function checkRateLimit(kv, subject, limit = PER_IP_LIMIT) {
   const bucket = Math.floor(Date.now() / 1000 / WINDOW_SECONDS);
-  const key = `rl:${ip}:${bucket}`;
+  const key = `rl:${subject}:${bucket}`;
   const current = parseInt((await kv.get(key)) || "0", 10);
   // Fixed windows: the whole allowance comes back at the bucket boundary.
   // The client needs this to recharge its meter without polling.
   const resetIn = WINDOW_SECONDS - (Math.floor(Date.now() / 1000) % WINDOW_SECONDS);
 
-  if (current >= PER_IP_LIMIT) {
+  if (current >= limit) {
     return { ok: false, retryAfter: resetIn, resetIn, remaining: 0 };
   }
 
   await kv.put(key, String(current + 1), { expirationTtl: WINDOW_SECONDS * 2 });
-  return { ok: true, remaining: PER_IP_LIMIT - (current + 1), resetIn };
+  return { ok: true, remaining: limit - (current + 1), resetIn };
 }
 
 function json(obj, status, extraHeaders) {

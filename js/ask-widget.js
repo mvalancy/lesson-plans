@@ -20,6 +20,23 @@
   var MAX_TURNS = 6;
   var LIMIT = meterSegments.length || 6;
 
+  // A stable per-browser id so everyone in a room behind one NAT gets their
+  // own allowance instead of sharing the building's. Not a security token —
+  // it only decides which rate-limit bucket you land in.
+  var clientId = (function () {
+    try {
+      var id = localStorage.getItem('askDemoClientId');
+      if (!id || !/^[a-z0-9]{8,40}$/i.test(id)) {
+        id = (Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2)).slice(0, 24);
+        localStorage.setItem('askDemoClientId', id);
+      }
+      return id;
+    } catch (e) {
+      // Private mode / storage blocked — fall back to per-IP limiting.
+      return null;
+    }
+  })();
+
   // The meter mirrors the server's fixed 60s window: segments drain as you
   // ask and the whole allowance returns at the window boundary. The server
   // sends X-RateLimit-Reset so we can recharge on time without polling.
@@ -59,13 +76,18 @@
     if (typeof remaining !== 'number' || isNaN(remaining)) return;
     paintMeter(remaining);
 
-    // Schedule the refill for when this window actually rolls over.
+    // Schedule the refill for when this window actually rolls over, and
+    // breathe the spent segments meanwhile so it reads as "coming back".
     if (rechargeTimer) clearTimeout(rechargeTimer);
     if (typeof resetIn === 'number' && !isNaN(resetIn) && remaining < LIMIT) {
+      if (meter) meter.classList.add('recharging');
       rechargeTimer = setTimeout(function () {
         rechargeTimer = null;
+        if (meter) meter.classList.remove('recharging');
         paintMeter(LIMIT);
       }, Math.max(0, resetIn) * 1000 + 250);
+    } else if (meter) {
+      meter.classList.remove('recharging');
     }
   }
 
@@ -121,7 +143,9 @@
     fetch('/api/ask', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: question })
+      body: JSON.stringify(
+        clientId ? { message: question, clientId: clientId } : { message: question }
+      )
     })
       .then(function (res) {
         var remaining = parseInt(res.headers.get('X-RateLimit-Remaining'), 10);
