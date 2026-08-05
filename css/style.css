@@ -834,6 +834,13 @@ body.deck .badge { color: #fff; }
   min-height: 1.1em;
 }
 
+.ask-disclaimer {
+  margin: 0.7rem 0 0;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
 /* demo countdown timer */
 .demo-timer {
   position: fixed;
