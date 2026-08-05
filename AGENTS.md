@@ -42,6 +42,13 @@ Monterey Peninsula College (MPC), living under `mpc-csci-40/`. External guides
   proper PR, not a live edit here.
 - **Don't imply official MPC affiliation.** No MPC logos or branding. The
   footer disclaimer ("independent instructor site") stays on course pages.
+- **Every `mpc-csci-40/` page opens with the `.notice-bar`** (first element
+  in `<body>`, before the header): plain text stating the course has not
+  been taught yet and this site was built for the hiring interview. This is
+  not optional polish — it prevents the site from being mistaken for an
+  active, currently-offered class. New pages under `mpc-csci-40/` must
+  include it; the hub (`index.html`) does not need it, since it isn't
+  specific to this course.
 
 ## Layout
 
