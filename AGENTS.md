@@ -41,6 +41,13 @@ Monterey Peninsula College (MPC), living under `mpc-csci-40/`. External guides
   `ignoreip`, so the ban can't recur — but the shared-egress property still
   means gateway-side per-IP controls treat all visitors as one client.
   Per-visitor fairness has to come from this Function's KV limiter.
+- **Bump the `?v=` on `/js/*` and `/css/*` references when you change them.**
+  Pages serves these with a 4-hour `max-age`, so the custom domain will hand
+  visitors stale assets long after a deploy — the deployment URL and
+  `*.pages.dev` will look correct while `lessons.mattvalancy.com` does not.
+  A `_headers` file asking for a shorter TTL is present but does *not*
+  currently take effect, so the version query is the mechanism that actually
+  works. If a change "isn't deploying", check this before anything else.
 - **The KV rate limiter is best-effort, not a hard ceiling.** `get`-then-`put`
   is not atomic, so a concurrent burst can slip past the 6/min check (15
   simultaneous requests all passed in testing). That's acceptable *only*
