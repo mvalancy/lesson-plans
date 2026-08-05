@@ -74,11 +74,33 @@ Monterey Peninsula College (MPC), living under `mpc-csci-40/`. External guides
 
 ## Layout
 
-- `index.html` — hub landing page (courses & guides grid, about).
-- `mpc-csci-40/` — the CSCI 40 course: `index.html` (overview + schedule),
-  `lessons/01…08-*.html`, `mini-lesson/`, `resources.html`.
-- Future courses get their own top-level directory alongside `mpc-csci-40/`.
-- `css/style.css` — the single shared stylesheet for hub and all courses.
+Every directory has a `README.md` explaining it. **Read the one for the
+directory you're about to touch** — they hold the detail this file summarises.
+
+| Path | What it is | Docs |
+|---|---|---|
+| `index.html` | Hub landing page (courses & guides grid, about) | [README](README.md) |
+| `mpc-csci-40/` | The CSCI 40 course | [README](mpc-csci-40/README.md) |
+| `mpc-csci-40/lessons/` | Eight module lesson plans | [README](mpc-csci-40/lessons/README.md) |
+| `mpc-csci-40/mini-lesson/` | The 15-minute teaching demo | [README](mpc-csci-40/mini-lesson/README.md) |
+| `css/` | The one shared stylesheet; design tokens; two themes | [README](css/README.md) |
+| `js/` | Three progressive-enhancement scripts | [README](js/README.md) |
+| `functions/` | Pages Function behind the live model widget | [README](functions/README.md) |
+
+Future courses get their own top-level directory alongside `mpc-csci-40/`.
+
+## Incident log
+
+Short record of failures that shaped the current design, so they aren't
+rediscovered the hard way. Detail lives in `functions/README.md` and in the
+Graphlings case study (`docs/guides/web-app-ai-gateway-integration.md`).
+
+| What happened | Root cause | What changed |
+|---|---|---|
+| Widget showed `Unexpected token '<'` to visitors; demo dead ~24h | A load test tripped the gateway's `gateway-abuse` fail2ban jail, which bans on `CF-Connecting-IP`. Worker subrequests all share one Cloudflare egress IP, so every visitor looked like one abusive client. nginx then served an HTML 403 and the widget called `res.json()` on it. | Cloudflare ranges added to the jail's `ignoreip` (fixed durably in `valpatel-linux-tools`); client reads text then parses; errors carry a `code` |
+| Demo silently capped at ~12 requests/min | `tpm_limit` of 3000 on the LiteLLM key was far below its 60 rpm, so tokens ran out first | Raised to 30000; `max_parallel_requests` 2 → 4 |
+| Meter appeared to drain 3 bars per question | Rate limit was per-IP, and two people (or a classroom NAT) shared one bucket | Per-browser `clientId` bucket, with a generous per-IP ceiling behind it |
+| A deployed JS fix didn't reach the site | Pages serves assets with 4h `max-age`; the custom domain kept the old file while the deployment URL looked correct | `?v=` version query on asset references (the `_headers` file alone did not work) |
 
 ## Conventions
 

@@ -1,98 +1,109 @@
 # lessons.mattvalancy.com
 
 Central hub for course, study, and lesson material by
-[Matthew Valancy](https://valpatel.com). The first course is
-**CSCI 40: Introduction to AI Tools** (Monterey Peninsula College, Fall 2026);
-the hub also links to the [Mr-Cal robot sensor calibration guide](https://cal.valpatel.com/).
+[Matthew Valancy](https://valpatel.com).
 
-Live site: **https://lessons.mattvalancy.com**
+Live site: **<https://lessons.mattvalancy.com>**
 
-This is an independent instructor site — not an official MPC publication.
+The first course is **CSCI 40: Introduction to AI Tools** (Monterey Peninsula
+College). The hub also links out to the
+[Mr-Cal robot sensor calibration guide](https://cal.valpatel.com/).
 
-## Structure
+> **The CSCI 40 course has not been taught.** This site was built as part of
+> the interview process for the position. Every page under `mpc-csci-40/`
+> says so at the top. It is an independent instructor site, not an official
+> MPC publication.
 
+## Layout
+
+```mermaid
+flowchart TD
+    ROOT["index.html<br/>hub: courses and guides"]
+    ROOT --> C40["mpc-csci-40/<br/>the course"]
+    ROOT -.->|"external link"| CAL["cal.valpatel.com<br/>Mr-Cal guide"]
+
+    C40 --> OV["index.html<br/>overview + schedule"]
+    C40 --> LES["lessons/<br/>8 module pages"]
+    C40 --> MINI["mini-lesson/<br/>15-min teaching demo"]
+    C40 --> RES["resources.html"]
+
+    subgraph shared["Shared assets"]
+        CSS["css/style.css<br/>one stylesheet, two themes"]
+        JS["js/<br/>3 progressive-enhancement scripts"]
+    end
+
+    subgraph server["Server-side (the only dynamic part)"]
+        FN["functions/api/ask.js<br/>Pages Function"]
+    end
+
+    MINI --> FN
+    FN --> GW["gateway.graphlings.net<br/>LiteLLM"]
 ```
-index.html            Hub landing page (all courses & guides)
-mpc-csci-40/               CSCI 40: Introduction to AI Tools
-  index.html          Course overview + schedule
-  lessons/            One page per module (8 modules, 10 sessions)
-  mini-lesson/        Featured standalone 15-minute mini-lesson
-  resources.html      Tools, readings, and open course materials
-css/style.css         Single shared stylesheet (no framework)
-```
 
-Plain static HTML/CSS with a small vanilla-JS canvas animation (`js/hero-graph.js`)
-decorating the hero sections — the site is fully functional without it. No build
-step for the site itself. Future courses get their own top-level directory
-alongside `mpc-csci-40/`.
+| Path | What it is | Docs |
+|---|---|---|
+| `index.html` | Hub landing page | — |
+| `mpc-csci-40/` | The CSCI 40 course | [README](mpc-csci-40/README.md) |
+| `mpc-csci-40/lessons/` | Eight module lesson plans | [README](mpc-csci-40/lessons/README.md) |
+| `mpc-csci-40/mini-lesson/` | The 15-minute teaching demo | [README](mpc-csci-40/mini-lesson/README.md) |
+| `css/` | The single stylesheet and its design tokens | [README](css/README.md) |
+| `js/` | Client-side behaviour | [README](js/README.md) |
+| `functions/` | Cloudflare Pages Functions (the live AI demo) | [README](functions/README.md) |
+| `AGENTS.md` | Rules and hard-won gotchas for anyone editing this repo | [AGENTS.md](AGENTS.md) |
 
-One dynamic piece: `functions/api/ask.js` is a Cloudflare Pages Function
-powering the "try it yourself" small-model widget on the mini-lesson page
-(`js/ask-widget.js`). See **Small-model widget** below.
+Future courses get their own top-level directory alongside `mpc-csci-40/`.
+
+## How it's built
+
+Plain static HTML and CSS with no framework, no bundler, and no build step.
+The only JavaScript is three small dependency-free files, all progressive
+enhancement — every page stays readable with JS disabled.
+
+The one dynamic piece is `functions/api/ask.js`, a Cloudflare Pages Function
+powering the mini-lesson's live "try it yourself" model widget. It exists so
+the LLM gateway key stays server-side rather than shipping to the browser from
+a public repo.
 
 ## Local preview
 
-Pages use root-relative links, so serve the repo root rather than opening files directly:
+Pages use root-relative links, so serve the repo root — don't open files
+directly.
 
 ```sh
 python3 -m http.server 8000
 # → http://localhost:8000
 ```
 
-That serves static files only. To also exercise `/api/ask` locally (Pages
-Functions + KV), use Wrangler instead — see below.
+That serves **static files only**. To exercise `/api/ask` too, you need
+Wrangler (Pages Functions + KV):
 
-## Deployment (Cloudflare Pages)
+```sh
+cp .dev.vars.example .dev.vars   # add a real gateway key
+npx wrangler pages dev . --port 8788 --kv RATE_LIMIT_KV
+```
 
-Deployed directly from this repo (project `lesson-plans`):
+`.dev.vars` is gitignored. Never commit real key values.
+
+## Deployment
+
+Cloudflare Pages, project `lesson-plans`, deployed straight from this repo:
 
 - **Build command:** none
 - **Build output directory:** `/` (repo root)
-- **Custom domain:** `lessons.mattvalancy.com` (added under Pages → Custom domains,
-  which creates the CNAME automatically when the zone is on Cloudflare)
-- Bindings (KV namespace, secrets) are declared in `wrangler.toml` /
-  Pages project settings — see below. Cloudflare picks these up automatically
-  on git-connected deploys.
+- **Custom domain:** `lessons.mattvalancy.com`
 
 Every push to `main` publishes automatically.
 
-## Small-model widget (`/api/ask`)
-
-The mini-lesson page includes a live "try it yourself" box that talks to a
-real small (1.5B-parameter) model on the Graphlings LLM gateway
-(`gateway.graphlings.net`), for demonstrating hallucination hands-on. It's
-explicitly *not* part of the scored 15-minute teaching demo — it's for
-after, or for Q&A.
-
-**Architecture:**
-- `functions/api/ask.js` is a Cloudflare Pages Function (same origin as the
-  site, so no CORS). It holds the gateway key server-side only — the client
-  never sees it.
-- The model is requested as a stable alias (`"small"`), resolved server-side
-  from the `GRAPHLING_MODEL_SMALL` env var. Graphlings' own gateway config
-  already names models by tier (`graphling-small`/`-medium`/…), so this
-  alias stays correct even if the underlying model backing that tier changes
-  — no code change here required.
-- **Two rate-limit layers**, deliberately different scopes:
-  - *Per-visitor*: 6 requests/minute per IP, tracked in the `RATE_LIMIT_KV`
-    Workers KV namespace (fixed 60s window). Many simultaneous real visitors
-    each get their own quota.
-  - *Global backstop*: the LiteLLM key itself has `rpm_limit: 60`, a ceiling
-    that only bites under a coordinated flood (e.g. many rotating IPs),
-    regardless of per-IP limits.
-  - The key is also model-scoped (`graphling-small` only) and capped
-    (`max_parallel_requests: 2`, `max_budget`) at the gateway.
-
-**Required Cloudflare Pages secrets** (Settings → Environment variables, or
-`wrangler pages secret put <NAME> --project-name lesson-plans`):
+**Required secrets** (Pages → Settings → Environment variables, or
+`npx wrangler pages secret put <NAME> --project-name lesson-plans`):
 
 | Name | Value |
 |---|---|
-| `GRAPHLING_GATEWAY_KEY` | A LiteLLM virtual key scoped to the small model, rate-limited. Generate via the gateway's `/key/generate` (see `CLAUDE.md`/ops notes on the `vps-gateway` host — not in this repo). |
-| `GRAPHLING_MODEL_SMALL` | The LiteLLM model name for the small tier, currently `graphling-small`. |
+| `GRAPHLING_GATEWAY_KEY` | LiteLLM virtual key, scoped to the small model tier and rate-limited |
+| `GRAPHLING_MODEL_SMALL` | Model tier name, currently `graphling-small` |
 
-**Required binding** (declared in `wrangler.toml`, picked up automatically
-on git-connected deploys):
+**Required binding**, declared in `wrangler.toml` and picked up automatically
+on git-connected deploys:
 
 ```toml
 [[kv_namespaces]]
@@ -100,14 +111,23 @@ binding = "RATE_LIMIT_KV"
 id = "<workers kv namespace id>"
 ```
 
-**Local dev** (needs Wrangler, not the plain Python server):
+> **Changing JS or CSS? Bump the `?v=` query on its `<script>` / `<link>`
+> tags.** Pages serves those assets with a 4-hour `max-age`, so the custom
+> domain will keep handing out the old file long after a deploy — while the
+> deployment URL looks correct. This has bitten us; see
+> [`AGENTS.md`](AGENTS.md).
 
-```sh
-cp .dev.vars.example .dev.vars   # fill in a real key
-npx wrangler pages dev . --port 8788 --kv RATE_LIMIT_KV
-```
+## The live AI demo
 
-`.dev.vars` is gitignored — never commit real key values.
+The mini-lesson page ends with a terminal wired to a real 1.5-billion-parameter
+model running on private hardware, reached through the Graphlings AI gateway.
+Ask it something obscure and it will confabulate on cue — which is the lesson.
+
+The full architecture, the two-layer rate limiting, the error taxonomy, and the
+outage that shaped them are written up in
+[`functions/README.md`](functions/README.md). This deployment is also the
+worked example behind the Graphlings case study on consuming that gateway from
+a web app.
 
 ## License
 
