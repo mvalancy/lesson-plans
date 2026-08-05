@@ -75,7 +75,12 @@ export async function onRequestPost({ request, env }) {
       "rate_limited_visitor",
       `You've hit this demo's limit of ${PER_IP_LIMIT} questions per minute. Try again in ${limited.retryAfter}s.`,
       429,
-      { "Retry-After": String(limited.retryAfter) }
+      {
+        "Retry-After": String(limited.retryAfter),
+        "X-RateLimit-Limit": String(PER_IP_LIMIT),
+        "X-RateLimit-Remaining": "0",
+        "X-RateLimit-Reset": String(limited.resetIn),
+      }
     );
   }
 
@@ -165,6 +170,7 @@ export async function onRequestPost({ request, env }) {
     {
       "X-RateLimit-Limit": String(PER_IP_LIMIT),
       "X-RateLimit-Remaining": String(limited.remaining),
+      "X-RateLimit-Reset": String(limited.resetIn),
     }
   );
 }
@@ -173,14 +179,16 @@ async function checkRateLimit(kv, ip) {
   const bucket = Math.floor(Date.now() / 1000 / WINDOW_SECONDS);
   const key = `rl:${ip}:${bucket}`;
   const current = parseInt((await kv.get(key)) || "0", 10);
+  // Fixed windows: the whole allowance comes back at the bucket boundary.
+  // The client needs this to recharge its meter without polling.
+  const resetIn = WINDOW_SECONDS - (Math.floor(Date.now() / 1000) % WINDOW_SECONDS);
 
   if (current >= PER_IP_LIMIT) {
-    const secondsIntoWindow = Math.floor(Date.now() / 1000) % WINDOW_SECONDS;
-    return { ok: false, retryAfter: WINDOW_SECONDS - secondsIntoWindow };
+    return { ok: false, retryAfter: resetIn, resetIn, remaining: 0 };
   }
 
   await kv.put(key, String(current + 1), { expirationTtl: WINDOW_SECONDS * 2 });
-  return { ok: true, remaining: PER_IP_LIMIT - (current + 1) };
+  return { ok: true, remaining: PER_IP_LIMIT - (current + 1), resetIn };
 }
 
 function json(obj, status, extraHeaders) {

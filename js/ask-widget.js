@@ -14,17 +14,59 @@
   var log = root.querySelector('.ask-log');
   var empty = root.querySelector('.ask-empty');
   var status = root.querySelector('.ask-status');
+  var meter = root.querySelector('.ask-meter');
   var meterSegments = root.querySelectorAll('.ask-meter i');
   var sparks = root.querySelectorAll('.spark');
   var MAX_TURNS = 6;
   var LIMIT = meterSegments.length || 6;
 
-  function setMeter(remaining) {
-    if (typeof remaining !== 'number' || isNaN(remaining)) return;
+  // The meter mirrors the server's fixed 60s window: segments drain as you
+  // ask and the whole allowance returns at the window boundary. The server
+  // sends X-RateLimit-Reset so we can recharge on time without polling.
+  var meterLit = LIMIT;
+  var rechargeTimer = null;
+
+  function paintMeter(remaining) {
+    remaining = Math.max(0, Math.min(LIMIT, remaining));
+    var gained = remaining > meterLit;
     var used = LIMIT - remaining;
+
     meterSegments.forEach(function (seg, i) {
-      seg.classList.toggle('used', i < used);
+      var wasUsed = seg.classList.contains('used');
+      var nowUsed = i < used;
+      if (wasUsed === nowUsed) return;
+
+      seg.classList.toggle('used', nowUsed);
+      // Glow on change: spent segments flash out, regained ones light up in
+      // a left-to-right sweep so a recharge reads as a refill, not a jump.
+      var cls = nowUsed ? 'pulse-off' : 'pulse-on';
+      var delay = gained ? i * 70 : 0;
+      setTimeout(function () {
+        seg.classList.remove('pulse-on', 'pulse-off');
+        void seg.offsetWidth; // restart the animation
+        seg.classList.add(cls);
+        setTimeout(function () { seg.classList.remove(cls); }, 700);
+      }, delay);
     });
+
+    meterLit = remaining;
+    if (meter) {
+      meter.setAttribute('title', remaining + ' of ' + LIMIT + ' questions left this minute');
+    }
+  }
+
+  function setMeter(remaining, resetIn) {
+    if (typeof remaining !== 'number' || isNaN(remaining)) return;
+    paintMeter(remaining);
+
+    // Schedule the refill for when this window actually rolls over.
+    if (rechargeTimer) clearTimeout(rechargeTimer);
+    if (typeof resetIn === 'number' && !isNaN(resetIn) && remaining < LIMIT) {
+      rechargeTimer = setTimeout(function () {
+        rechargeTimer = null;
+        paintMeter(LIMIT);
+      }, Math.max(0, resetIn) * 1000 + 250);
+    }
   }
 
   function addBubble(cls, text) {
@@ -83,7 +125,8 @@
     })
       .then(function (res) {
         var remaining = parseInt(res.headers.get('X-RateLimit-Remaining'), 10);
-        setMeter(remaining);
+        var resetIn = parseInt(res.headers.get('X-RateLimit-Reset'), 10);
+        setMeter(remaining, resetIn);
         // Not every failure is JSON: an edge error or a gateway HTML page can
         // land here, and blindly calling res.json() turns that into a useless
         // "Unexpected token '<'" for the visitor. Read text, then try to parse.
@@ -175,9 +218,11 @@
       if (seconds <= 0) {
         status.textContent = '';
         setBusy(false);
+        // The window has rolled over — show the allowance coming back.
+        paintMeter(LIMIT);
         return;
       }
-      status.textContent = 'Rate limit hit — try again in ' + seconds + 's.';
+      status.textContent = 'Out of questions — recharging in ' + seconds + 's.';
       seconds--;
       setTimeout(tick, 1000);
     };
