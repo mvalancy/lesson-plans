@@ -8,8 +8,10 @@
   var ctx = canvas.getContext('2d');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  var ACCENT = [125, 35, 53];   // site maroon
-  var INK = [86, 91, 102];      // soft gray
+  var dark = !!(canvas.closest && canvas.closest('.deck'));
+  var ACCENT = dark ? [225, 110, 135] : [125, 35, 53]; // rose on dark, maroon on light
+  var INK = dark ? [150, 160, 175] : [86, 91, 102];
+  var GAIN = dark ? 1.7 : 1;    // stronger alphas on dark backgrounds
   var LINK_DIST = 130;          // px — edge appears under this distance
 
   var W = 0, H = 0, nodes = [], pulses = [];
@@ -91,7 +93,7 @@
         var dx = b.x - a.x, dy = b.y - a.y;
         var d2 = dx * dx + dy * dy;
         if (d2 > LINK_DIST * LINK_DIST) continue;
-        var alpha = (1 - Math.sqrt(d2) / LINK_DIST) * 0.16;
+        var alpha = (1 - Math.sqrt(d2) / LINK_DIST) * 0.16 * GAIN;
         ctx.strokeStyle = rgba(a.accent || b.accent ? ACCENT : INK, alpha);
         ctx.lineWidth = 1;
         ctx.beginPath();
@@ -107,11 +109,11 @@
       var px = pl.a.x + (pl.b.x - pl.a.x) * pl.t;
       var py = pl.a.y + (pl.b.y - pl.a.y) * pl.t;
       var fade = Math.sin(Math.PI * pl.t); // ease in/out of existence
-      ctx.fillStyle = rgba(ACCENT, 0.55 * fade);
+      ctx.fillStyle = rgba(ACCENT, Math.min(1, 0.55 * GAIN) * fade);
       ctx.beginPath();
       ctx.arc(px, py, 2.2, 0, Math.PI * 2);
       ctx.fill();
-      ctx.fillStyle = rgba(ACCENT, 0.12 * fade);
+      ctx.fillStyle = rgba(ACCENT, 0.12 * GAIN * fade);
       ctx.beginPath();
       ctx.arc(px, py, 6, 0, Math.PI * 2);
       ctx.fill();
@@ -122,12 +124,12 @@
       var n = nodes[k];
       var tw = 0.75 + 0.25 * Math.sin(t * 1.3 + n.tw);
       if (n.accent) {
-        ctx.fillStyle = rgba(ACCENT, 0.45 * tw);
+        ctx.fillStyle = rgba(ACCENT, Math.min(1, 0.45 * GAIN) * tw);
         ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 0.6, 0, Math.PI * 2); ctx.fill();
-        ctx.strokeStyle = rgba(ACCENT, 0.18 * tw);
+        ctx.strokeStyle = rgba(ACCENT, 0.18 * GAIN * tw);
         ctx.beginPath(); ctx.arc(n.x, n.y, n.r + 3.2, 0, Math.PI * 2); ctx.stroke();
       } else {
-        ctx.fillStyle = rgba(INK, 0.35 * tw);
+        ctx.fillStyle = rgba(INK, Math.min(1, 0.35 * GAIN) * tw);
         ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2); ctx.fill();
       }
     }
