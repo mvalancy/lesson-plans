@@ -21,8 +21,10 @@ Monterey Peninsula College (MPC), living under `mpc-csci-40/`. External guides
 - **This repo is public.** Everything outside `ignored/` should read as a
   polished, professional site. No TODO dumps, secrets, or personal data.
 - **No build step.** Plain HTML + one CSS file + dependency-free vanilla JS
-  (`js/hero-graph.js`, decorative only — pages must work without JS).
-  Don't introduce frameworks, bundlers, or npm without being asked.
+  (`js/hero-graph.js` hero animation; `js/lesson-reveal.js` scroll-reveal,
+  scrollspy chips, and the 15-minute demo timer on the mini-lesson page).
+  All JS is progressive enhancement — pages must remain fully readable
+  without it. Don't introduce frameworks, bundlers, or npm without being asked.
 - **Don't imply official MPC affiliation.** No MPC logos or branding. The
   footer disclaimer ("independent instructor site") stays on course pages.
 

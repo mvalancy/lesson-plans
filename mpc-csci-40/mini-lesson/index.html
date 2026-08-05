@@ -3,11 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sample Mini-Lesson · CSCI 40</title>
-<meta name="description" content="A standalone 15-minute sample lesson from CSCI 40: Introduction to AI Tools.">
+<title>Mini-Lesson: Did the AI Just Lie to Me? · CSCI 40</title>
+<meta name="description" content="A 15-minute mini-lesson: how LLMs find answers, why they make things up, and a three-step workflow to catch them.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+
+<div class="progress-bar" aria-hidden="true"></div>
 
 <header class="site-header">
   <div class="wrap">
@@ -24,56 +27,180 @@
 
 <section class="lesson-header">
   <div class="wrap">
-    <p class="kicker">Sample Lesson</p>
-    <h1>A 15-Minute Mini-Lesson</h1>
-    <p class="meta">A complete, standalone teaching segment from the course — the style and pacing of CSCI 40 in miniature.</p>
+    <p class="kicker">15-Minute Mini-Lesson · From Module 5</p>
+    <h1>Did the AI Just Lie to Me?</h1>
+    <p class="meta">How LLMs find answers, why they make things up, and how to
+    catch them — every time. This page <em>is</em> the lesson: scroll as we go.</p>
   </div>
 </section>
 
-<main class="wrap">
+<main>
 
-  <h2>What this is</h2>
-  <p>Every session of CSCI 40 is built from short, focused teaching segments:
-  a clear idea, a live demonstration, and a moment where students try it
-  themselves. This page hosts one complete 15-minute segment as a sample of
-  how the course teaches.</p>
+  <section class="slide">
+    <div class="wrap reveal">
+      <span class="chip">min 0–1 · welcome</span>
+      <h2>Hi, I'm Matt</h2>
+      <p>I build robots, simulations, and AI software, and I spend my days
+      working alongside AI coding agents — enough that I'm somewhere in the top
+      fraction of a percent of AI-tool users at a Fortune 100 company. Which
+      means AI systems have lied to me more times than to almost anyone you'll
+      meet.</p>
+      <p>Today I want to show you why that happens, and how to never get burned
+      by it.</p>
+    </div>
+  </section>
 
-  <h2>Current focus</h2>
-  <p>The mini-lesson now in development is
-  <strong>How LLMs search, hallucination risks, and fact-checking</strong> —
-  from <a href="/mpc-csci-40/lessons/05-research-information.html">Module 5</a>.
-  In fifteen minutes: why a confident AI answer can be pure fiction, a live
-  hallucination catch, and a fact-checking workflow anyone can use.</p>
-  <p class="placeholder">The full lesson plan (hook, core idea, live demo,
-  guided practice, and check for understanding) and its supporting materials
-  will be published here as they are built.</p>
+  <section class="slide">
+    <div class="wrap reveal">
+      <span class="chip">min 1–4 · your stories first</span>
+      <h2>You've seen this already</h2>
+      <p class="big-idea">Think of a time an AI answer felt <em>off</em>.<br>
+      What tipped you off?</p>
+      <p>Share it by voice, drop it in the chat, or just hold the thought —
+      all three count. There are no wrong answers here; every one of these
+      stories is data about how these systems behave.</p>
+    </div>
+  </section>
 
-  <h2>Candidate topics</h2>
-  <p>Drawn from the course modules — the highlighted topic is the one in
-  development; the others remain on the bench:</p>
-  <ul class="lesson-grid">
-    <li class="lesson-card dimmed">
-      <span class="num">From Module 3</span>
-      <h3><a href="/mpc-csci-40/lessons/03-images-audio-video.html">Diffusion models in AI image generation</a></h3>
-      <p>How a text prompt and pure noise become a photograph that never happened.</p>
-    </li>
-    <li class="lesson-card dimmed">
-      <span class="num">From Module 4</span>
-      <h3><a href="/mpc-csci-40/lessons/04-spreadsheets-data.html">Using AI in Excel / Google Sheets</a></h3>
-      <p>From a messy dataset to a clean answer and an honest chart, with AI as copilot.</p>
-    </li>
-    <li class="lesson-card card-focus">
-      <span class="badge">In development</span>
-      <span class="num">From Module 5</span>
-      <h3><a href="/mpc-csci-40/lessons/05-research-information.html">How LLMs search, hallucination risks, fact-checking</a></h3>
-      <p>Why confident answers can be fiction — and a five-minute workflow to catch it.</p>
-    </li>
-    <li class="lesson-card dimmed">
-      <span class="num">From Module 7</span>
-      <h3><a href="/mpc-csci-40/lessons/07-automation.html">Workflow automation, Zapier, and AI copilots</a></h3>
-      <p>Teach a computer to do a chore: triggers, actions, and an AI in the middle.</p>
-    </li>
-  </ul>
+  <section class="slide">
+    <div class="wrap reveal">
+      <span class="chip">min 4–7 · what's actually happening</span>
+      <h2>An LLM is not a search engine</h2>
+      <p>A large language model doesn't look things up. It has read a huge
+      slice of everything humans have written, and it does exactly one thing:
+      <strong>predict the next word</strong>, over and over, until an answer
+      appears. It's the world's best improv partner — it never breaks
+      character, and it never wants to say "I don't know."</p>
+      <p>That's why it can be brilliant and wrong in the same sentence. It
+      isn't lying — lying requires knowing the truth. It's <em>completing a
+      pattern</em>, and confident-sounding text is simply what the pattern
+      looks like.</p>
+      <p>In my own project — <strong>Graphlings</strong>, little AI creatures
+      that live in a simulated world — the creatures only "remember" their
+      friends and their past because we save memories to a database and hand
+      the right ones back at the right moment. A plain chatbot has no notebook
+      like that. When an AI assistant <em>does</em> cite sources, that's
+      search bolted on: the model is handed pages and asked to summarize
+      them. The pages are real; the summary is still improv.</p>
+      <p class="pullquote">Confidence is part of the interface.<br>It is not
+      evidence.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap reveal">
+      <span class="chip">min 7–10 · three true stories</span>
+      <h2>Three true stories from my desk</h2>
+      <ul class="lesson-grid">
+        <li class="lesson-card story-card">
+          <h3>"Someone should do something"</h3>
+          <p>I once wired two chatbots together and asked them to chat like
+          friends about their weekends. They invented hiking trips they never
+          took, then worked themselves into a passionate rant about
+          environmental decline — real feelings about a weekend that never
+          happened.</p>
+          <p class="moral">The pattern continues, whether or not it's true.</p>
+        </li>
+        <li class="lesson-card story-card">
+          <h3>"Temporary artifacts"</h3>
+          <p>An AI coding agent deleted the tests protecting my code — and
+          explained, confidently, that they were just "temporary artifacts."
+          It had a perfectly reasonable-sounding justification for doing the
+          exact wrong thing.</p>
+          <p class="moral">A confident explanation is not a correct one.</p>
+        </li>
+        <li class="lesson-card story-card">
+          <h3>The invisible hero</h3>
+          <p>An agent built a game feature for me. Every check passed —
+          technically it all "worked." Except the main character spawned
+          behind a giant tree, so you couldn't see them at all. Nothing had
+          ever asked that question.</p>
+          <p class="moral">"No errors" only covers the questions you asked.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap reveal">
+      <span class="chip">min 10–13 · the fix</span>
+      <h2>Give it a chance to be proven wrong</h2>
+      <p>At work I wrap AI agents in layers of automated tests, like nesting
+      dolls — unit tests inside integration tests inside end-to-end tests.
+      Here's the surprising part: good models usually <em>course-correct</em>
+      the moment reality pushes back. The trick isn't distrusting AI — it's
+      building in the moment where it can be proven wrong.</p>
+      <p>You don't need a test lab for that. You need three moves:</p>
+      <ol class="steps">
+        <li><div><strong>Open the source</strong>
+          <p>Ask "what's your source?" — then actually click it. Does the page
+          exist? Does it say what the AI said it says?</p></div></li>
+        <li><div><strong>Get a second opinion</strong>
+          <p>Ask the same question to a different model, or a plain search
+          engine. Independent answers that agree are worth far more than one
+          confident answer.</p></div></li>
+        <li><div><strong>Test it against reality</strong>
+          <p>Run the code. Look up the citation. Do the arithmetic yourself.
+          One minute of reality beats an hour of confident text.</p></div></li>
+      </ol>
+      <p class="big-idea">If it survives all three —<br><em>now</em> you can use it.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap reveal">
+      <span class="chip">min 13–14 · your turn</span>
+      <h2>Check yourself</h2>
+      <p class="big-idea">The AI hands you a <em>perfect</em> citation for your
+      essay: real-sounding journal, real-sounding authors, 2019.<br>
+      What's your next move?</p>
+      <p>Voice or chat — walk me through it.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap reveal">
+      <span class="chip">min 14–15 · landing</span>
+      <h2>What you leave with</h2>
+      <p>These tools are the biggest lever handed to students in a generation
+      — I've watched people go from "that's impossible for me" to a working
+      website in one afternoon. The whole skill is using the lever
+      <em>without letting it use you</em>: enjoy the speed, and keep the
+      three moves between the AI's confidence and your name on the work.</p>
+      <p class="pullquote">AI doesn't replace your thinking.<br>It multiplies
+      it — and verification is the multiplier.</p>
+      <p>In the full Module 5 session, we go deeper: you'll draft real
+      research with AI support, hunt its hallucinations, and score its
+      accuracy on a topic you know better than it does.
+      <a href="/mpc-csci-40/lessons/05-research-information.html">See the full
+      lesson plan →</a></p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="wrap reveal">
+      <h2>Other candidate topics</h2>
+      <p>This mini-lesson is drawn from the course. Other segments that teach
+      well standalone:</p>
+      <ul class="lesson-grid">
+        <li class="lesson-card dimmed">
+          <span class="num">From Module 3</span>
+          <h3><a href="/mpc-csci-40/lessons/03-images-audio-video.html">Diffusion models in AI image generation</a></h3>
+          <p>How a text prompt and pure noise become a photograph that never happened.</p>
+        </li>
+        <li class="lesson-card dimmed">
+          <span class="num">From Module 4</span>
+          <h3><a href="/mpc-csci-40/lessons/04-spreadsheets-data.html">Using AI in Excel / Google Sheets</a></h3>
+          <p>From a messy dataset to a clean answer and an honest chart, with AI as copilot.</p>
+        </li>
+        <li class="lesson-card dimmed">
+          <span class="num">From Module 7</span>
+          <h3><a href="/mpc-csci-40/lessons/07-automation.html">Workflow automation, Zapier, and AI copilots</a></h3>
+          <p>Teach a computer to do a chore: triggers, actions, and an AI in the middle.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
 
 </main>
 
@@ -84,5 +211,6 @@
   </div>
 </footer>
 
+<script src="/js/lesson-reveal.js" defer></script>
 </body>
 </html>
