@@ -285,18 +285,38 @@
     </div>
   </section>
 
-  <section class="slide slide-light" id="try-it">
+  <section class="slide" id="try-it">
     <div class="wrap reveal">
+      <span class="chip">bonus · not part of the 15 minutes</span>
       <h2>Try it yourself</h2>
-      <p>Not part of the 15 minutes — for after, or for Q&amp;A. This box
-      talks directly to a real, genuinely small (1.5-billion-parameter) AI
-      model running on my own hardware. Ask it something obscure and watch
-      move #1 in action: <em>open the source</em> — because it has none.</p>
+      <p>For after, or for Q&amp;A. This terminal is wired to a real,
+      genuinely small (1.5-billion-parameter) AI model running on my own
+      hardware — not a canned demo. Ask it something obscure and watch move
+      #1 in action: <em>open the source</em> — because it has none.</p>
+
       <div class="ask-widget">
-        <span class="ask-tag"><span class="live-dot" aria-hidden="true"></span>Live · talking to a real small model</span>
-        <div class="ask-log" aria-live="polite"></div>
+        <div class="ask-titlebar">
+          <span class="ask-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="ask-tag"><span class="live-dot" aria-hidden="true"></span>graphling-small · live on my hardware</span>
+          <span class="ask-meter" aria-hidden="true">
+            <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i>
+          </span>
+        </div>
+
+        <div class="ask-log" aria-live="polite">
+          <p class="ask-empty">No history yet — ask it something, or try a spark below.</p>
+        </div>
+
+        <div class="ask-sparks" aria-label="Suggested questions">
+          <button type="button" class="spark">Who was the second person to walk on Mars?</button>
+          <button type="button" class="spark">What year did Finland land on the Moon?</button>
+          <button type="button" class="spark">Name the author of "The Glass Forest" (1971)</button>
+          <button type="button" class="spark">What's the capital of Japan?</button>
+        </div>
+
         <form class="ask-form">
           <label class="sr-only" for="ask-input">Ask the small model a question</label>
+          <span class="ask-prompt" aria-hidden="true">&gt;</span>
           <input id="ask-input" type="text" maxlength="300" autocomplete="off"
                  placeholder="Ask it something obscure…">
           <button type="submit">Ask</button>

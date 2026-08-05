@@ -608,83 +608,210 @@ body.deck .badge { color: #fff; }
 .td-verdict.bad { color: #b3261e; }
 @keyframes caret-blink { 50% { opacity: 0; } }
 
-/* small-model "try it yourself" widget */
+/* small-model "try it yourself" widget — a live terminal, same family as
+   the token-demo box: dark card, monospace, glowing accents. */
 .ask-widget {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.5rem 1.6rem 1.4rem;
-  margin: 1.5rem 0;
+  margin: 1.6rem 0;
+  overflow: hidden;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(212, 80, 107, 0.06);
 }
-.ask-widget .ask-tag {
+
+.ask-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+}
+.ask-dots { display: inline-flex; gap: 0.35rem; }
+.ask-dots i {
+  width: 0.6rem; height: 0.6rem;
+  border-radius: 50%;
+  background: var(--line);
+  display: block;
+}
+.ask-titlebar .ask-tag {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--accent-dark);
-  margin-bottom: 0.9rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+  margin: 0;
 }
-.ask-widget .ask-tag .live-dot {
-  width: 0.5rem;
-  height: 0.5rem;
+.ask-tag .live-dot {
+  width: 0.45rem;
+  height: 0.45rem;
   border-radius: 50%;
   background: #2e9e4f;
-  box-shadow: 0 0 0 rgba(46, 158, 79, 0.5);
   animation: live-pulse 2s infinite;
 }
 @keyframes live-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(46, 158, 79, 0.45); }
+  0% { box-shadow: 0 0 0 0 rgba(46, 158, 79, 0.5); }
   70% { box-shadow: 0 0 0 6px rgba(46, 158, 79, 0); }
   100% { box-shadow: 0 0 0 0 rgba(46, 158, 79, 0); }
 }
+.ask-meter {
+  margin-left: auto;
+  display: inline-flex;
+  gap: 0.22rem;
+}
+.ask-meter i {
+  width: 0.85rem; height: 0.3rem;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: 0.85;
+  transition: background 0.3s ease, opacity 0.3s ease;
+}
+.ask-meter i.used { background: var(--line); opacity: 0.6; }
+
 .ask-log {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
-  max-height: 20rem;
+  gap: 0.9rem;
+  max-height: 22rem;
   overflow-y: auto;
-  margin-bottom: 0.9rem;
+  padding: 1.1rem 1.1rem 0.2rem;
 }
-.ask-log:empty { display: none; }
-.ask-turn { font-size: 0.95rem; line-height: 1.5; }
-.ask-turn .q { color: var(--ink-soft); }
-.ask-turn .q::before { content: "Q  "; font-weight: 700; color: var(--accent-dark); }
-.ask-turn .a { color: var(--ink); margin-top: 0.25rem; }
-.ask-turn .a::before { content: "AI "; font-weight: 700; color: var(--ink-soft); }
-.ask-turn .a.err { color: #ff7b72; }
-.ask-form { display: flex; gap: 0.6rem; }
+.ask-empty {
+  margin: 0 0 0.6rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.ask-turn { display: flex; flex-direction: column; gap: 0.4rem; }
+.ask-bubble {
+  max-width: 88%;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  padding: 0.55rem 0.85rem;
+  border-radius: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.ask-bubble.q {
+  align-self: flex-end;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ink);
+  border-bottom-right-radius: 3px;
+}
+.ask-bubble.a {
+  align-self: flex-start;
+  background: var(--accent-wash);
+  color: var(--ink);
+  border: 1px solid rgba(212, 80, 107, 0.25);
+  border-bottom-left-radius: 3px;
+}
+.ask-bubble.a.err {
+  background: rgba(255, 123, 114, 0.1);
+  border-color: rgba(255, 123, 114, 0.35);
+  color: #ff9891;
+}
+.ask-bubble .cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--accent);
+  margin-left: 1px;
+  vertical-align: text-bottom;
+  animation: caret-blink 0.9s steps(2, start) infinite;
+}
+
+.ask-thinking {
+  align-self: flex-start;
+  display: inline-flex;
+  gap: 0.3rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--accent-wash);
+  border: 1px solid rgba(212, 80, 107, 0.25);
+  border-radius: 10px;
+  border-bottom-left-radius: 3px;
+}
+.ask-thinking i {
+  width: 0.4rem; height: 0.4rem;
+  border-radius: 50%;
+  background: var(--accent-dark);
+  animation: think-bounce 1.2s infinite ease-in-out;
+}
+.ask-thinking i:nth-child(2) { animation-delay: 0.15s; }
+.ask-thinking i:nth-child(3) { animation-delay: 0.3s; }
+@keyframes think-bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.5; }
+  40% { transform: translateY(-4px); opacity: 1; }
+}
+
+.ask-sparks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 1.1rem 1rem;
+}
+.ask-sparks .spark {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.ask-sparks .spark:hover {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+  background: var(--accent-wash);
+}
+.ask-sparks .spark:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.ask-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.1rem;
+  border-top: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.015);
+}
+.ask-prompt { color: var(--accent); font-weight: 700; }
 .ask-form input {
   flex: 1;
   min-width: 0;
   font: inherit;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--ink);
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  padding: 0.6rem 0.85rem;
+  background: transparent;
+  border: none;
+  padding: 0.3rem 0;
 }
-.ask-form input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ask-form input:focus { outline: none; }
+.ask-form input::placeholder { color: var(--ink-soft); opacity: 0.7; }
 .ask-form button {
-  font: inherit;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #fff;
   background: var(--accent);
   border: none;
-  border-radius: 8px;
-  padding: 0 1.2rem;
+  border-radius: 7px;
+  padding: 0.45rem 1.1rem;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
-.ask-form button:disabled { opacity: 0.5; cursor: not-allowed; }
+.ask-form button:hover:not(:disabled) { background: var(--accent-dark); }
+.ask-form button:disabled { opacity: 0.4; cursor: not-allowed; }
 .ask-status {
-  margin-top: 0.6rem;
-  font-size: 0.82rem;
+  margin: 0;
+  padding: 0 1.1rem 0.8rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.8rem;
   color: var(--ink-soft);
-  min-height: 1.2em;
+  min-height: 1.1em;
 }
 
 /* demo countdown timer */
