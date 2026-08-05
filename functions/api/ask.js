@@ -68,11 +68,25 @@ export async function onRequestPost({ request, env }) {
         max_tokens: MAX_TOKENS,
       }),
     });
-  } catch {
+  } catch (e) {
+    console.log("upstream fetch threw:", e && e.message);
     return json({ error: "The demo model is unreachable right now. Try again shortly." }, 502);
   }
 
   if (!upstream.ok) {
+    // Log server-side for diagnosis; never leak upstream detail to the client.
+    const detail = await upstream.text().catch(() => "");
+    console.log("upstream not ok:", upstream.status, detail.slice(0, 300));
+
+    // The model is busy (per-key concurrency or token/minute ceiling at the
+    // gateway) — that's a "come back in a moment", not a bad question.
+    if (upstream.status === 429 || upstream.status === 503) {
+      return json(
+        { error: "The demo model is busy right now — give it a few seconds and try again." },
+        429,
+        { "Retry-After": "15" }
+      );
+    }
     return json({ error: "The demo model had trouble with that one. Try a different question." }, 502);
   }
 
