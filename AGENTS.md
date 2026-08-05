@@ -4,11 +4,11 @@ Guidance for AI agents (and humans) working in this repo.
 
 ## What this is
 
-**lessons-ai.mattvalancy.com** — a public, static hub for course/study/lesson
+**lessons.mattvalancy.com** — a public, static hub for course/study/lesson
 material by Matthew Valancy, served by Cloudflare Pages directly from this
-repo (`mvalancy/lessons-csci-40-ai`). The hub landing page links each course
+repo (`mvalancy/lesson-plans`). The hub landing page links each course
 or guide; the first course is **CSCI 40: Introduction to AI Tools** at
-Monterey Peninsula College (MPC), living under `csci40/`. External guides
+Monterey Peninsula College (MPC), living under `mpc-csci-40/`. External guides
 (e.g. Mr-Cal at cal.valpatel.com) are linked, not mirrored.
 
 ## Hard rules
@@ -20,7 +20,8 @@ Monterey Peninsula College (MPC), living under `csci40/`. External guides
   outcomes, schedule) are fine to use.
 - **This repo is public.** Everything outside `ignored/` should read as a
   polished, professional site. No TODO dumps, secrets, or personal data.
-- **No build step.** Plain HTML + one CSS file, deployed from the repo root.
+- **No build step.** Plain HTML + one CSS file + dependency-free vanilla JS
+  (`js/hero-graph.js`, decorative only — pages must work without JS).
   Don't introduce frameworks, bundlers, or npm without being asked.
 - **Don't imply official MPC affiliation.** No MPC logos or branding. The
   footer disclaimer ("independent instructor site") stays on course pages.
@@ -28,14 +29,14 @@ Monterey Peninsula College (MPC), living under `csci40/`. External guides
 ## Layout
 
 - `index.html` — hub landing page (courses & guides grid, about).
-- `csci40/` — the CSCI 40 course: `index.html` (overview + schedule),
+- `mpc-csci-40/` — the CSCI 40 course: `index.html` (overview + schedule),
   `lessons/01…08-*.html`, `mini-lesson/`, `resources.html`.
-- Future courses get their own top-level directory alongside `csci40/`.
+- Future courses get their own top-level directory alongside `mpc-csci-40/`.
 - `css/style.css` — the single shared stylesheet for hub and all courses.
 
 ## Conventions
 
-- Root-relative URLs everywhere (`/css/style.css`, `/csci40/lessons/…`)
+- Root-relative URLs everywhere (`/css/style.css`, `/mpc-csci-40/lessons/…`)
   — preview with `python3 -m http.server`, not `file://`.
 - Design tokens (colors, spacing) are CSS custom properties at the top of
   `css/style.css`. Accent color is a deep maroon.
