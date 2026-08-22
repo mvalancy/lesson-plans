@@ -46,25 +46,39 @@ chain word by word and watch small errors compound.
 habit of checking AI output before trusting it.
 Sources: [Digital Technologies Hub](https://www.digitaltechnologieshub.edu.au/teach-and-assess/classroom-resources/lesson-ideas/exploring-predictive-text/), [Merced College OER](https://socialsci.libretexts.org/Courses/Merced_College/Demystifying_AI:_A_Practical_Introduction_for_Instructors/01:_An_Introduction_to_AI/1.01:_What_is_a_language_model/1.1.01:_How_language_models_generate_text_by_predicting_the_next_word)
 
-### 3. 🌟 What AI is made of: Hugging Face, then a model on your laptop `[show→solo]` · 30–35 min
+### 3. 🌟 The AI tool wall: Hugging Face, then a model on your laptop `[show→solo]` · 30–35 min
 
-The ownership pillar's opening move. AI is not just someone else's server: here are the
-parts (models, datasets, demos), and here is one running on hardware in this room.
+The ownership pillar's opening move, pitched for people who want to *use* AI, not build
+it. Frame Hugging Face like the tool aisle at the hardware store: this one's a hammer,
+that one's a screwdriver — thousands of free AI tools, each made for one job, each with
+a label on the box, most with a try-it button. No code, no engineering — just learning
+to recognize a tool, read its label, and try it.
 
 **Run it:**
-1. Guided tour of Hugging Face: one model card, one dataset, one Space demo — framed as
-   "the parts bin every AI product is assembled from" (10 min).
-2. Scavenger hunt, tightly scoped: find a model that does X, read one model card, try
-   one Space (15 min).
-3. The reveal: LM Studio on the instructor's laptop, wifi off, chatting with a small
-   open model. Compare its answer to a frontier cloud model's — what does
-   8B-on-a-laptop get right and wrong? (10 min)
+1. Walk the aisle together: try three "tools" that each do one obvious job — turn
+   speech into text, remove a photo background, describe a picture out loud. For each,
+   glance at the label on the box (the model card, read in plain terms: what it does,
+   what it's good at, what to watch out for) (10 min).
+2. Scavenger hunt: "find a tool that does X" — translate a menu photo, clean up a
+   voice memo, summarize a page. Try it in the browser, then tell your neighbor what
+   job it's for (15 min).
+3. The reveal: one of these tools running on the instructor's laptop with the wifi
+   off. Same idea as the demos — except this one lives in *your* toolbox, not on
+   someone else's server (10 min).
 
-**Floor:** click one Space demo and see it work.
-**Stretch:** install LM Studio or Ollama on your own machine; compare model sizes and
-quantizations.
-**They walk away with:** the customer-to-owner shift: capable AI already runs on
-hardware they own.
+**Floor:** press the try-it button on one demo and watch it work.
+**Stretch — the deep-dive track (during open lab, with help):** this is a hands-on lab
+session, so the instructor circulates and takes individuals as deep as they want to go:
+install LM Studio or Ollama together and read the label's fine print — model sizes,
+quantization, what fits on your hardware; open a model card's technical sections and
+training-data notes; watch a network actually learn in
+[TensorFlow Playground](https://playground.tensorflow.org/) or
+[GAN Lab](https://poloclub.github.io/ganlab/) from the games shelf. The aisle tour is
+the lesson everyone gets; the deep end stays open all course, with a guide standing in
+it.
+**They walk away with:** the tool-vs-product distinction (ChatGPT is a brand-name
+product wrapped around tools like these), and the ability to find and try a free tool
+for a job — the customer-to-owner shift, without a line of code.
 Sources: [huggingface.co](https://huggingface.co/), [lmstudio.ai](https://lmstudio.ai/), [ollama.com](https://ollama.com/)
 
 ### 4. Teachable Machine: train it, then break it `[show]` · 10–15 min
