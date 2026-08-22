@@ -154,7 +154,8 @@ Graphlings case study (`docs/guides/web-app-ai-gateway-integration.md`).
 - Outcomes: (1) use AI tools for writing, research, data analysis, and creative
   expression; (2) evaluate AI outputs for accuracy, bias, and ethics; (3) own
   what you build with them; (4) decide when not to use them at all.
-- Recommended text: *Elements of AI* (free, elementsofai.com).
+- Recommended text: *Elements of AI* (free, elementsofai.com). Not affiliated;
+  every recommendation of it should say so.
 
 ## The three commitments
 
