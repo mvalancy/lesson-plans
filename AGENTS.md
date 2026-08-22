@@ -75,11 +75,12 @@ register.
   ("Module 5", never "Oct 22"). The footer disclaimer — *independent and not
   affiliated with any school or institution* — stays on course pages.
 - **Every `intro-ai-tools/` page opens with the `.site-note`** (first element
-  in `<body>`, before the header): a quiet strip stating the course is free,
-  self-paced, learnable and teachable by anyone, and unaffiliated. It is the
-  honest framing that keeps the site from reading as somebody's enrolled
-  class. New pages under `intro-ai-tools/` must include it; the hub
-  (`index.html`) does not, since it isn't specific to this course.
+  in `<body>`, before the header). Exact text: "**Free and open** for anyone
+  to learn or teach · code on GitHub" (GitHub linked to the repo). Keep it
+  short; it is the honest framing that keeps the site from reading as
+  somebody's enrolled class. New pages under `intro-ai-tools/` must include
+  it; the hub (`index.html`) does not, since it isn't specific to this
+  course.
 - **Old URLs must keep working.** The course used to live at `/mpc-csci-40/`.
   `_redirects` maps every old path to its new twin with a 301. If the
   directory is ever renamed again, add the next hop there rather than
