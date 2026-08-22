@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1350px; }
+  body {
+    background:linear-gradient(160deg, #fdfdfb 0%, #f4f8f9 55%, #eaf2f4 100%); color:#0f3a52; overflow:hidden; position:relative;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    padding:96px 90px 84px;
+    display:flex; flex-direction:column;
+  }
+  .grid { position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(15,58,82,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15,58,82,.05) 1px, transparent 1px);
+    background-size:90px 90px; }
+  .bloom { position:absolute; inset:0;
+    background:radial-gradient(640px 640px at 80% 75%, rgba(242,177,63,.16), transparent 70%); }
+  .vignette { position:absolute; inset:0;
+    background:radial-gradient(1400px 1600px at 50% 40%, transparent 60%, rgba(15,58,82,.04)); }
+  .watermark { position:absolute; right:-30px; bottom:60px; z-index:0;
+    font-family:"SF Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+    font-size:520px; font-weight:700; line-height:1; color:transparent;
+    -webkit-text-stroke:2px rgba(15,58,82,.08); letter-spacing:-0.05em; }
+  .net { position:absolute; right:-30px; bottom:110px; width:780px; height:780px; z-index:1; }
+  .content { position:relative; z-index:2; display:flex; flex-direction:column; height:100%; }
+  .toprow { display:flex; align-items:center; gap:22px;
+    font-family:ui-monospace, "SF Mono", Consolas, monospace;
+    font-size:21px; letter-spacing:.28em; color:#3d6579; text-transform:uppercase; }
+  .dot { width:16px; height:16px; background:#a44908; box-shadow:0 0 18px rgba(164,73,8,.45); }
+  .toprule { flex:1; height:1px; background:linear-gradient(90deg, rgba(164,73,8,.6), transparent); }
+  .headline { margin-top:110px; font-weight:900; font-size:132px; line-height:.98;
+    letter-spacing:-0.015em; text-wrap:balance; }
+  .headline .accent { color:#a44908; text-shadow:0 0 42px rgba(164,73,8,.12); }
+  .sub { margin-top:52px; font-size:31px; line-height:1.5; color:#3d6579; max-width:760px; }
+  .sub b { color:#0f3a52; font-weight:600; }
+  .tags { margin-top:auto; display:flex; flex-wrap:wrap; gap:16px; padding-bottom:46px; max-width:820px; }
+  .tag { font-family:ui-monospace, "SF Mono", Consolas, monospace; font-size:20px;
+    letter-spacing:.14em; text-transform:uppercase; color:#0f3a52;
+    border:1px solid rgba(164,73,8,.55); padding:13px 20px;
+    background:rgba(164,73,8,.07); }
+  .footer { border-top:1px solid rgba(15,58,82,.14); padding-top:30px;
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:ui-monospace, "SF Mono", Consolas, monospace;
+    font-size:19px; letter-spacing:.16em; text-transform:uppercase; color:#3d6579; }
+  .footer .site { color:#a44908; letter-spacing:.1em; }
+</style></head><body>
+  <div class="grid"></div><div class="bloom"></div><div class="vignette"></div>
+  <div class="watermark">03</div>
+  <div class="net"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 780" width="780" height="780"><path d="M70,732 Q131,686 181,624" stroke="rgba(15,58,82,0.141)" stroke-width="1.6" fill="none"/><path d="M70,732 Q156,670 229,604" stroke="rgba(15,58,82,0.116)" stroke-width="1.6" fill="none"/><path d="M70,732 Q132,601 207,479" stroke="rgba(15,58,82,0.073)" stroke-width="1.6" fill="none"/><path d="M202,338 Q201,290 214,236" stroke="rgba(15,58,82,0.167)" stroke-width="1.6" fill="none"/><path d="M202,338 Q150,339 83,322" stroke="rgba(15,58,82,0.159)" stroke-width="1.6" fill="none"/><path d="M202,338 Q204,406 207,479" stroke="rgba(15,58,82,0.148)" stroke-width="1.6" fill="none"/><path d="M684,711 Q711,723 739,710" stroke="rgba(15,58,82,0.192)" stroke-width="1.6" fill="none"/><path d="M684,711 Q636,564 614,442" stroke="rgba(15,58,82,0.077)" stroke-width="1.6" fill="none"/><path d="M684,711 Q522,693 356,667" stroke="rgba(15,58,82,0.051)" stroke-width="1.6" fill="none"/><path d="M229,604 Q204,616 181,624" stroke="rgba(15,58,82,0.193)" stroke-width="1.6" fill="none"/><path d="M229,604 Q219,530 207,479" stroke="rgba(15,58,82,0.155)" stroke-width="1.6" fill="none"/><path d="M229,604 Q283,627 356,667" stroke="rgba(15,58,82,0.147)" stroke-width="1.6" fill="none"/><path d="M207,479 Q269,477 347,465" stroke="rgba(15,58,82,0.148)" stroke-width="1.6" fill="none"/><path d="M181,624 Q204,546 207,479" stroke="rgba(15,58,82,0.144)" stroke-width="1.6" fill="none"/><path d="M439,459 Q405,451 347,465" stroke="rgba(15,58,82,0.173)" stroke-width="1.6" fill="none"/><path d="M439,459 Q401,497 353,519" stroke="rgba(15,58,82,0.166)" stroke-width="1.6" fill="none"/><path d="M439,459 Q399,439 345,407" stroke="rgba(15,58,82,0.165)" stroke-width="1.6" fill="none"/><path d="M616,240 Q642,275 645,320" stroke="rgba(15,58,82,0.176)" stroke-width="1.6" fill="none"/><path d="M616,240 Q668,298 730,377" stroke="rgba(15,58,82,0.129)" stroke-width="1.6" fill="none"/><path d="M616,240 Q601,331 614,442" stroke="rgba(15,58,82,0.117)" stroke-width="1.6" fill="none"/><path d="M739,710 Q670,579 614,442" stroke="rgba(15,58,82,0.068)" stroke-width="1.6" fill="none"/><path d="M739,710 Q727,537 730,377" stroke="rgba(15,58,82,0.05)" stroke-width="1.6" fill="none"/><path d="M52,47 Q32,62 35,73" stroke="rgba(15,58,82,0.204)" stroke-width="1.6" fill="none"/><path d="M52,47 Q70,83 109,124" stroke="rgba(15,58,82,0.171)" stroke-width="1.6" fill="none"/><path d="M52,47 Q126,75 212,97" stroke="rgba(15,58,82,0.134)" stroke-width="1.6" fill="none"/><path d="M79,233 Q82,276 83,322" stroke="rgba(15,58,82,0.175)" stroke-width="1.6" fill="none"/><path d="M79,233 Q97,172 109,124" stroke="rgba(15,58,82,0.162)" stroke-width="1.6" fill="none"/><path d="M79,233 Q128,201 179,169" stroke="rgba(15,58,82,0.159)" stroke-width="1.6" fill="none"/><path d="M35,73 Q65,108 109,124" stroke="rgba(15,58,82,0.174)" stroke-width="1.6" fill="none"/><path d="M35,73 Q49,142 79,233" stroke="rgba(15,58,82,0.134)" stroke-width="1.6" fill="none"/><path d="M185,178 Q190,184 179,169" stroke="rgba(15,58,82,0.214)" stroke-width="1.6" fill="none"/><path d="M185,178 Q188,220 214,236" stroke="rgba(15,58,82,0.187)" stroke-width="1.6" fill="none"/><path d="M185,178 Q197,148 212,97" stroke="rgba(15,58,82,0.176)" stroke-width="1.6" fill="none"/><path d="M645,320 Q693,349 730,377" stroke="rgba(15,58,82,0.168)" stroke-width="1.6" fill="none"/><path d="M645,320 Q632,387 614,442" stroke="rgba(15,58,82,0.156)" stroke-width="1.6" fill="none"/><path d="M353,519 Q358,506 347,465" stroke="rgba(15,58,82,0.192)" stroke-width="1.6" fill="none"/><path d="M353,519 Q361,456 345,407" stroke="rgba(15,58,82,0.162)" stroke-width="1.6" fill="none"/><path d="M179,169 Q187,190 214,236" stroke="rgba(15,58,82,0.181)" stroke-width="1.6" fill="none"/><path d="M179,169 Q199,144 212,97" stroke="rgba(15,58,82,0.179)" stroke-width="1.6" fill="none"/><path d="M109,124 Q151,155 179,169" stroke="rgba(15,58,82,0.177)" stroke-width="1.6" fill="none"/><path d="M109,124 Q155,152 185,178" stroke="rgba(15,58,82,0.172)" stroke-width="1.6" fill="none"/><path d="M356,667 Q347,590 353,519" stroke="rgba(15,58,82,0.144)" stroke-width="1.6" fill="none"/><path d="M356,667 Q276,647 181,624" stroke="rgba(15,58,82,0.127)" stroke-width="1.6" fill="none"/><path d="M83,322 Q146,283 214,236" stroke="rgba(15,58,82,0.14)" stroke-width="1.6" fill="none"/><path d="M730,377 Q677,415 614,442" stroke="rgba(15,58,82,0.152)" stroke-width="1.6" fill="none"/><path d="M347,465 Q349,440 345,407" stroke="rgba(15,58,82,0.19)" stroke-width="1.6" fill="none"/><path d="M212,97 Q174,121 109,124" stroke="rgba(15,58,82,0.165)" stroke-width="1.6" fill="none"/><path d="M314,201 Q275,228 214,236" stroke="rgba(15,58,82,0.166)" stroke-width="1.6" fill="none"/><path d="M314,201 Q247,197 185,178" stroke="rgba(15,58,82,0.153)" stroke-width="1.6" fill="none"/><path d="M314,201 Q252,181 179,169" stroke="rgba(15,58,82,0.149)" stroke-width="1.6" fill="none"/><path d="M614,442 Q529,455 439,459" stroke="rgba(15,58,82,0.13)" stroke-width="1.6" fill="none"/><circle cx="70" cy="732" r="21" fill="#a44908" opacity="0.10"/><circle cx="70" cy="732" r="11" fill="#a44908" opacity="0.22"/><circle cx="70" cy="732" r="6.0" fill="#a44908"/><circle cx="202" cy="338" r="3.0" fill="#0f3a52" opacity="0.39"/><circle cx="684" cy="711" r="2.9" fill="#0f3a52" opacity="0.57"/><circle cx="229" cy="604" r="5.4" fill="#0f3a52" opacity="0.81"/><circle cx="207" cy="479" r="4.5" fill="#0f3a52" opacity="0.75"/><circle cx="181" cy="624" r="6.3" fill="#0f3a52" opacity="0.41"/><circle cx="439" cy="459" r="6.1" fill="#0f3a52" opacity="0.51"/><circle cx="616" cy="240" r="13" fill="#a44908" opacity="0.10"/><circle cx="616" cy="240" r="7" fill="#a44908" opacity="0.22"/><circle cx="616" cy="240" r="3.9" fill="#a44908"/><circle cx="739" cy="710" r="12" fill="#a44908" opacity="0.10"/><circle cx="739" cy="710" r="7" fill="#a44908" opacity="0.22"/><circle cx="739" cy="710" r="3.5" fill="#a44908"/><circle cx="52" cy="47" r="14" fill="#a44908" opacity="0.10"/><circle cx="52" cy="47" r="8" fill="#a44908" opacity="0.22"/><circle cx="52" cy="47" r="4.3" fill="#a44908"/><circle cx="79" cy="233" r="24" fill="#a44908" opacity="0.10"/><circle cx="79" cy="233" r="13" fill="#a44908" opacity="0.22"/><circle cx="79" cy="233" r="6.9" fill="#a44908"/><circle cx="35" cy="73" r="3.6" fill="#0f3a52" opacity="0.61"/><circle cx="185" cy="178" r="4.8" fill="#0f3a52" opacity="0.55"/><circle cx="645" cy="320" r="23" fill="#a44908" opacity="0.10"/><circle cx="645" cy="320" r="13" fill="#a44908" opacity="0.22"/><circle cx="645" cy="320" r="6.9" fill="#a44908"/><circle cx="353" cy="519" r="3.3" fill="#0f3a52" opacity="0.69"/><circle cx="179" cy="169" r="16" fill="#a44908" opacity="0.10"/><circle cx="179" cy="169" r="9" fill="#a44908" opacity="0.22"/><circle cx="179" cy="169" r="4.7" fill="#a44908"/><circle cx="109" cy="124" r="6.0" fill="#0f3a52" opacity="0.58"/><circle cx="356" cy="667" r="4.0" fill="#0f3a52" opacity="0.66"/><circle cx="83" cy="322" r="5.7" fill="#0f3a52" opacity="0.44"/><circle cx="214" cy="236" r="16" fill="#a44908" opacity="0.10"/><circle cx="214" cy="236" r="9" fill="#a44908" opacity="0.22"/><circle cx="214" cy="236" r="4.8" fill="#a44908"/><circle cx="730" cy="377" r="3.2" fill="#0f3a52" opacity="0.41"/><circle cx="347" cy="465" r="4.9" fill="#0f3a52" opacity="0.80"/><circle cx="212" cy="97" r="6.3" fill="#0f3a52" opacity="0.63"/><circle cx="345" cy="407" r="3.6" fill="#0f3a52" opacity="0.61"/><circle cx="314" cy="201" r="2.8" fill="#0f3a52" opacity="0.54"/><circle cx="614" cy="442" r="3.1" fill="#0f3a52" opacity="0.74"/></svg></div>
+  <div class="content">
+    <div class="toprow"><div class="dot"></div><span>Intro to AI Tools &middot; A Hands-On Evening Course</span><div class="toprule"></div></div>
+    <div class="headline">Spot<br>the fake.<br><span class="accent">Every time.</span></div>
+    <div class="sub">Deepfakes. Invented citations. Confident nonsense. Build the verification habit that protects you everywhere — from the group chat to the job offer.</div>
+    <div class="tags"><span class="tag">Detect deepfakes</span><span class="tag">Check the numbers</span><span class="tag">Verify the source</span><span class="tag">Decide for yourself</span></div>
+    <div class="footer"><span>All levels &middot; No coding needed</span><span class="site">Ten evenings &middot; Hands-on</span></div>
+  </div>
+</body></html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1350px; }
+  body {
+    background:linear-gradient(160deg, #fdfdfb 0%, #f4f8f9 55%, #eaf2f4 100%); color:#0f3a52; overflow:hidden; position:relative;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    padding:96px 90px 84px;
+    display:flex; flex-direction:column;
+  }
+  .grid { position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(15,58,82,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15,58,82,.05) 1px, transparent 1px);
+    background-size:90px 90px; }
+  .bloom { position:absolute; inset:0;
+    background:radial-gradient(640px 640px at 20% 20%, rgba(242,177,63,.16), transparent 70%); }
+  .vignette { position:absolute; inset:0;
+    background:radial-gradient(1400px 1600px at 50% 40%, transparent 60%, rgba(15,58,82,.04)); }
+  .watermark { position:absolute; right:-30px; bottom:60px; z-index:0;
+    font-family:"SF Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+    font-size:520px; font-weight:700; line-height:1; color:transparent;
+    -webkit-text-stroke:2px rgba(15,58,82,.08); letter-spacing:-0.05em; }
+  .net { position:absolute; right:-30px; bottom:110px; width:780px; height:780px; z-index:1; }
+  .content { position:relative; z-index:2; display:flex; flex-direction:column; height:100%; }
+  .toprow { display:flex; align-items:center; gap:22px;
+    font-family:ui-monospace, "SF Mono", Consolas, monospace;
+    font-size:21px; letter-spacing:.28em; color:#3d6579; text-transform:uppercase; }
+  .dot { width:16px; height:16px; background:#a44908; box-shadow:0 0 18px rgba(164,73,8,.45); }
+  .toprule { flex:1; height:1px; background:linear-gradient(90deg, rgba(164,73,8,.6), transparent); }
+  .headline { margin-top:110px; font-weight:900; font-size:120px; line-height:.98;
+    letter-spacing:-0.015em; text-wrap:balance; }
+  .headline .accent { color:#a44908; text-shadow:0 0 42px rgba(164,73,8,.12); }
+  .sub { margin-top:52px; font-size:31px; line-height:1.5; color:#3d6579; max-width:760px; }
+  .sub b { color:#0f3a52; font-weight:600; }
+  .tags { margin-top:auto; display:flex; flex-wrap:wrap; gap:16px; padding-bottom:46px; max-width:820px; }
+  .tag { font-family:ui-monospace, "SF Mono", Consolas, monospace; font-size:20px;
+    letter-spacing:.14em; text-transform:uppercase; color:#0f3a52;
+    border:1px solid rgba(164,73,8,.55); padding:13px 20px;
+    background:rgba(164,73,8,.07); }
+  .footer { border-top:1px solid rgba(15,58,82,.14); padding-top:30px;
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:ui-monospace, "SF Mono", Consolas, monospace;
+    font-size:19px; letter-spacing:.16em; text-transform:uppercase; color:#3d6579; }
+  .footer .site { color:#a44908; letter-spacing:.1em; }
+</style></head><body>
+  <div class="grid"></div><div class="bloom"></div><div class="vignette"></div>
+  <div class="watermark">04</div>
+  <div class="net"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 780" width="780" height="780"><path d="M504,625 Q528,545 542,469" stroke="rgba(15,58,82,0.138)" stroke-width="1.6" fill="none"/><path d="M504,625 Q599,628 672,649" stroke="rgba(15,58,82,0.133)" stroke-width="1.6" fill="none"/><path d="M504,625 Q529,560 576,468" stroke="rgba(15,58,82,0.131)" stroke-width="1.6" fill="none"/><path d="M248,514 Q214,587 196,639" stroke="rgba(15,58,82,0.151)" stroke-width="1.6" fill="none"/><path d="M248,514 Q210,423 197,337" stroke="rgba(15,58,82,0.125)" stroke-width="1.6" fill="none"/><path d="M248,514 Q230,597 221,706" stroke="rgba(15,58,82,0.121)" stroke-width="1.6" fill="none"/><path d="M450,215 Q420,199 397,173" stroke="rgba(15,58,82,0.185)" stroke-width="1.6" fill="none"/><path d="M450,215 Q440,165 422,135" stroke="rgba(15,58,82,0.176)" stroke-width="1.6" fill="none"/><path d="M450,215 Q475,232 522,263" stroke="rgba(15,58,82,0.176)" stroke-width="1.6" fill="none"/><path d="M397,173 Q399,167 422,135" stroke="rgba(15,58,82,0.197)" stroke-width="1.6" fill="none"/><path d="M397,173 Q447,118 496,87" stroke="rgba(15,58,82,0.153)" stroke-width="1.6" fill="none"/><path d="M725,690 Q703,681 672,649" stroke="rgba(15,58,82,0.186)" stroke-width="1.6" fill="none"/><path d="M725,690 Q626,653 504,625" stroke="rgba(15,58,82,0.102)" stroke-width="1.6" fill="none"/><path d="M725,690 Q649,589 576,468" stroke="rgba(15,58,82,0.083)" stroke-width="1.6" fill="none"/><path d="M672,649 Q610,545 576,468" stroke="rgba(15,58,82,0.115)" stroke-width="1.6" fill="none"/><path d="M607,212 Q630,180 635,168" stroke="rgba(15,58,82,0.193)" stroke-width="1.6" fill="none"/><path d="M607,212 Q555,236 522,263" stroke="rgba(15,58,82,0.169)" stroke-width="1.6" fill="none"/><path d="M607,212 Q572,254 519,276" stroke="rgba(15,58,82,0.164)" stroke-width="1.6" fill="none"/><path d="M635,168 Q654,156 698,133" stroke="rgba(15,58,82,0.183)" stroke-width="1.6" fill="none"/><path d="M635,168 Q680,144 740,96" stroke="rgba(15,58,82,0.154)" stroke-width="1.6" fill="none"/><path d="M422,135 Q472,101 496,87" stroke="rgba(15,58,82,0.175)" stroke-width="1.6" fill="none"/><path d="M64,356 Q73,350 58,366" stroke="rgba(15,58,82,0.214)" stroke-width="1.6" fill="none"/><path d="M64,356 Q144,351 197,337" stroke="rgba(15,58,82,0.151)" stroke-width="1.6" fill="none"/><path d="M64,356 Q105,232 122,122" stroke="rgba(15,58,82,0.096)" stroke-width="1.6" fill="none"/><path d="M496,87 Q474,164 450,215" stroke="rgba(15,58,82,0.15)" stroke-width="1.6" fill="none"/><path d="M122,122 Q185,89 235,73" stroke="rgba(15,58,82,0.157)" stroke-width="1.6" fill="none"/><path d="M122,122 Q146,242 197,337" stroke="rgba(15,58,82,0.103)" stroke-width="1.6" fill="none"/><path d="M197,337 Q121,339 58,366" stroke="rgba(15,58,82,0.147)" stroke-width="1.6" fill="none"/><path d="M519,276 Q531,271 522,263" stroke="rgba(15,58,82,0.213)" stroke-width="1.6" fill="none"/><path d="M519,276 Q514,298 500,306" stroke="rgba(15,58,82,0.202)" stroke-width="1.6" fill="none"/><path d="M519,276 Q507,326 518,358" stroke="rgba(15,58,82,0.178)" stroke-width="1.6" fill="none"/><path d="M542,469 Q566,467 576,468" stroke="rgba(15,58,82,0.203)" stroke-width="1.6" fill="none"/><path d="M542,469 Q528,416 518,358" stroke="rgba(15,58,82,0.162)" stroke-width="1.6" fill="none"/><path d="M576,468 Q554,399 518,358" stroke="rgba(15,58,82,0.156)" stroke-width="1.6" fill="none"/><path d="M576,468 Q622,413 678,337" stroke="rgba(15,58,82,0.135)" stroke-width="1.6" fill="none"/><path d="M698,133 Q723,121 740,96" stroke="rgba(15,58,82,0.191)" stroke-width="1.6" fill="none"/><path d="M698,133 Q655,160 607,212" stroke="rgba(15,58,82,0.158)" stroke-width="1.6" fill="none"/><path d="M518,358 Q512,338 500,306" stroke="rgba(15,58,82,0.192)" stroke-width="1.6" fill="none"/><path d="M518,358 Q533,314 522,263" stroke="rgba(15,58,82,0.171)" stroke-width="1.6" fill="none"/><path d="M500,306 Q517,277 522,263" stroke="rgba(15,58,82,0.195)" stroke-width="1.6" fill="none"/><path d="M235,73 Q312,122 397,173" stroke="rgba(15,58,82,0.122)" stroke-width="1.6" fill="none"/><path d="M235,73 Q317,117 422,135" stroke="rgba(15,58,82,0.119)" stroke-width="1.6" fill="none"/><path d="M221,706 Q195,668 196,639" stroke="rgba(15,58,82,0.183)" stroke-width="1.6" fill="none"/><path d="M221,706 Q358,656 504,625" stroke="rgba(15,58,82,0.069)" stroke-width="1.6" fill="none"/><path d="M740,96 Q665,155 607,212" stroke="rgba(15,58,82,0.13)" stroke-width="1.6" fill="none"/><path d="M58,366 Q162,442 248,514" stroke="rgba(15,58,82,0.096)" stroke-width="1.6" fill="none"/><path d="M196,639 Q195,492 197,337" stroke="rgba(15,58,82,0.065)" stroke-width="1.6" fill="none"/><path d="M678,337 Q648,268 607,212" stroke="rgba(15,58,82,0.147)" stroke-width="1.6" fill="none"/><path d="M678,337 Q610,351 518,358" stroke="rgba(15,58,82,0.137)" stroke-width="1.6" fill="none"/><circle cx="504" cy="625" r="3.8" fill="#0f3a52" opacity="0.39"/><circle cx="248" cy="514" r="20" fill="#a44908" opacity="0.10"/><circle cx="248" cy="514" r="11" fill="#a44908" opacity="0.22"/><circle cx="248" cy="514" r="6.0" fill="#a44908"/><circle cx="450" cy="215" r="4.3" fill="#0f3a52" opacity="0.55"/><circle cx="397" cy="173" r="13" fill="#a44908" opacity="0.10"/><circle cx="397" cy="173" r="7" fill="#a44908" opacity="0.22"/><circle cx="397" cy="173" r="3.9" fill="#a44908"/><circle cx="725" cy="690" r="24" fill="#a44908" opacity="0.10"/><circle cx="725" cy="690" r="14" fill="#a44908" opacity="0.22"/><circle cx="725" cy="690" r="7.1" fill="#a44908"/><circle cx="672" cy="649" r="24" fill="#a44908" opacity="0.10"/><circle cx="672" cy="649" r="13" fill="#a44908" opacity="0.22"/><circle cx="672" cy="649" r="7.0" fill="#a44908"/><circle cx="607" cy="212" r="6.3" fill="#0f3a52" opacity="0.59"/><circle cx="635" cy="168" r="21" fill="#a44908" opacity="0.10"/><circle cx="635" cy="168" r="12" fill="#a44908" opacity="0.22"/><circle cx="635" cy="168" r="6.1" fill="#a44908"/><circle cx="422" cy="135" r="15" fill="#a44908" opacity="0.10"/><circle cx="422" cy="135" r="8" fill="#a44908" opacity="0.22"/><circle cx="422" cy="135" r="4.3" fill="#a44908"/><circle cx="64" cy="356" r="21" fill="#a44908" opacity="0.10"/><circle cx="64" cy="356" r="12" fill="#a44908" opacity="0.22"/><circle cx="64" cy="356" r="6.2" fill="#a44908"/><circle cx="496" cy="87" r="6.3" fill="#0f3a52" opacity="0.48"/><circle cx="122" cy="122" r="4.2" fill="#0f3a52" opacity="0.54"/><circle cx="197" cy="337" r="6.3" fill="#0f3a52" opacity="0.74"/><circle cx="519" cy="276" r="5.8" fill="#0f3a52" opacity="0.58"/><circle cx="542" cy="469" r="3.1" fill="#0f3a52" opacity="0.73"/><circle cx="576" cy="468" r="5.8" fill="#0f3a52" opacity="0.57"/><circle cx="698" cy="133" r="5.9" fill="#0f3a52" opacity="0.45"/><circle cx="518" cy="358" r="5.8" fill="#0f3a52" opacity="0.59"/><circle cx="500" cy="306" r="6.3" fill="#0f3a52" opacity="0.79"/><circle cx="522" cy="263" r="4.6" fill="#0f3a52" opacity="0.67"/><circle cx="235" cy="73" r="4.5" fill="#0f3a52" opacity="0.64"/><circle cx="221" cy="706" r="16" fill="#a44908" opacity="0.10"/><circle cx="221" cy="706" r="9" fill="#a44908" opacity="0.22"/><circle cx="221" cy="706" r="4.7" fill="#a44908"/><circle cx="740" cy="96" r="3.2" fill="#0f3a52" opacity="0.84"/><circle cx="58" cy="366" r="3.9" fill="#0f3a52" opacity="0.68"/><circle cx="196" cy="639" r="2.9" fill="#0f3a52" opacity="0.47"/><circle cx="678" cy="337" r="4.5" fill="#0f3a52" opacity="0.41"/></svg></div>
+  <div class="content">
+    <div class="toprow"><div class="dot"></div><span>Intro to AI Tools &middot; A Hands-On Evening Course</span><div class="toprule"></div></div>
+    <div class="headline">Ship<br>something<br><span class="accent">real.</span></div>
+    <div class="sub">Leave with a live website you own — built with AI, published by you, shown to the room. The internet has room for <b>your</b> thing.</div>
+    <div class="tags"><span class="tag">GitHub</span><span class="tag">Cloudflare Pages</span><span class="tag">Your own URL</span><span class="tag">Capstone showcase</span></div>
+    <div class="footer"><span>All levels &middot; No coding needed</span><span class="site">Ten evenings &middot; Hands-on</span></div>
+  </div>
+</body></html>

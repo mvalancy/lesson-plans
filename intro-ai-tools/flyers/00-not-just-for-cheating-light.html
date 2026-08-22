@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1350px; }
+  body {
+    background:linear-gradient(160deg, #fdfdfb 0%, #f4f8f9 55%, #eaf2f4 100%); color:#0f3a52; overflow:hidden; position:relative;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    padding:96px 90px 84px;
+    display:flex; flex-direction:column;
+  }
+  .grid { position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(15,58,82,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15,58,82,.05) 1px, transparent 1px);
+    background-size:90px 90px; }
+  .bloom { position:absolute; inset:0;
+    background:radial-gradient(640px 640px at 50% 15%, rgba(242,177,63,.16), transparent 70%); }
+  .vignette { position:absolute; inset:0;
+    background:radial-gradient(1400px 1600px at 50% 40%, transparent 60%, rgba(15,58,82,.04)); }
+  .watermark { position:absolute; right:-30px; bottom:60px; z-index:0;
+    font-family:"SF Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+    font-size:520px; font-weight:700; line-height:1; color:transparent;
+    -webkit-text-stroke:2px rgba(15,58,82,.08); letter-spacing:-0.05em; }
+  .net { position:absolute; right:-30px; bottom:110px; width:780px; height:780px; z-index:1; }
+  .content { position:relative; z-index:2; display:flex; flex-direction:column; height:100%; }
+  .toprow { display:flex; align-items:center; gap:22px;
+    font-family:ui-monospace, "SF Mono", Consolas, monospace;
+    font-size:21px; letter-spacing:.28em; color:#3d6579; text-transform:uppercase; }
+  .dot { width:16px; height:16px; background:#a44908; box-shadow:0 0 18px rgba(164,73,8,.45); }
+  .toprule { flex:1; height:1px; background:linear-gradient(90deg, rgba(164,73,8,.6), transparent); }
+  .headline { margin-top:110px; font-weight:900; font-size:118px; line-height:.98;
+    letter-spacing:-0.015em; text-wrap:balance; }
+  .headline .accent { color:#a44908; text-shadow:0 0 42px rgba(164,73,8,.12); }
+  .sub { margin-top:52px; font-size:31px; line-height:1.5; color:#3d6579; max-width:760px; }
+  .sub b { color:#0f3a52; font-weight:600; }
+  .tags { margin-top:auto; display:flex; flex-wrap:wrap; gap:16px; padding-bottom:46px; max-width:820px; }
+  .tag { font-family:ui-monospace, "SF Mono", Consolas, monospace; font-size:20px;
+    letter-spacing:.14em; text-transform:uppercase; color:#0f3a52;
+    border:1px solid rgba(164,73,8,.55); padding:13px 20px;
+    background:rgba(164,73,8,.07); }
+  .footer { border-top:1px solid rgba(15,58,82,.14); padding-top:30px;
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:ui-monospace, "SF Mono", Consolas, monospace;
+    font-size:19px; letter-spacing:.16em; text-transform:uppercase; color:#3d6579; }
+  .footer .site { color:#a44908; letter-spacing:.1em; }
+</style></head><body>
+  <div class="grid"></div><div class="bloom"></div><div class="vignette"></div>
+  <div class="watermark">AI</div>
+  <div class="net"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 780" width="780" height="780"><path d="M324,634 Q358,663 398,670" stroke="rgba(15,58,82,0.178)" stroke-width="1.6" fill="none"/><path d="M324,634 Q254,629 174,621" stroke="rgba(15,58,82,0.143)" stroke-width="1.6" fill="none"/><path d="M324,634 Q328,561 319,480" stroke="rgba(15,58,82,0.141)" stroke-width="1.6" fill="none"/><path d="M315,250 Q362,246 383,218" stroke="rgba(15,58,82,0.182)" stroke-width="1.6" fill="none"/><path d="M315,250 Q257,250 225,233" stroke="rgba(15,58,82,0.173)" stroke-width="1.6" fill="none"/><path d="M315,250 Q287,190 266,120" stroke="rgba(15,58,82,0.149)" stroke-width="1.6" fill="none"/><path d="M488,331 Q519,311 535,291" stroke="rgba(15,58,82,0.188)" stroke-width="1.6" fill="none"/><path d="M488,331 Q532,301 582,276" stroke="rgba(15,58,82,0.164)" stroke-width="1.6" fill="none"/><path d="M488,331 Q533,333 595,354" stroke="rgba(15,58,82,0.164)" stroke-width="1.6" fill="none"/><path d="M498,660 Q522,698 519,723" stroke="rgba(15,58,82,0.186)" stroke-width="1.6" fill="none"/><path d="M498,660 Q525,613 539,573" stroke="rgba(15,58,82,0.171)" stroke-width="1.6" fill="none"/><path d="M498,660 Q435,677 398,670" stroke="rgba(15,58,82,0.168)" stroke-width="1.6" fill="none"/><path d="M249,52 Q255,83 266,120" stroke="rgba(15,58,82,0.184)" stroke-width="1.6" fill="none"/><path d="M249,52 Q269,68 310,87" stroke="rgba(15,58,82,0.184)" stroke-width="1.6" fill="none"/><path d="M249,52 Q182,89 114,120" stroke="rgba(15,58,82,0.143)" stroke-width="1.6" fill="none"/><path d="M319,480 Q372,470 414,480" stroke="rgba(15,58,82,0.171)" stroke-width="1.6" fill="none"/><path d="M319,480 Q251,546 174,621" stroke="rgba(15,58,82,0.116)" stroke-width="1.6" fill="none"/><path d="M519,723 Q451,698 398,670" stroke="rgba(15,58,82,0.152)" stroke-width="1.6" fill="none"/><path d="M519,723 Q543,648 568,585" stroke="rgba(15,58,82,0.145)" stroke-width="1.6" fill="none"/><path d="M414,480 Q463,532 539,573" stroke="rgba(15,58,82,0.14)" stroke-width="1.6" fill="none"/><path d="M414,480 Q444,410 488,331" stroke="rgba(15,58,82,0.135)" stroke-width="1.6" fill="none"/><path d="M595,354 Q580,301 582,276" stroke="rgba(15,58,82,0.18)" stroke-width="1.6" fill="none"/><path d="M595,354 Q608,399 595,439" stroke="rgba(15,58,82,0.176)" stroke-width="1.6" fill="none"/><path d="M595,354 Q555,335 535,291" stroke="rgba(15,58,82,0.176)" stroke-width="1.6" fill="none"/><path d="M225,233 Q258,164 266,120" stroke="rgba(15,58,82,0.158)" stroke-width="1.6" fill="none"/><path d="M225,233 Q299,227 383,218" stroke="rgba(15,58,82,0.139)" stroke-width="1.6" fill="none"/><path d="M630,123 Q593,189 582,276" stroke="rgba(15,58,82,0.138)" stroke-width="1.6" fill="none"/><path d="M630,123 Q596,208 535,291" stroke="rgba(15,58,82,0.121)" stroke-width="1.6" fill="none"/><path d="M630,123 Q619,245 595,354" stroke="rgba(15,58,82,0.1)" stroke-width="1.6" fill="none"/><path d="M535,291 Q558,286 582,276" stroke="rgba(15,58,82,0.195)" stroke-width="1.6" fill="none"/><path d="M649,476 Q631,464 595,439" stroke="rgba(15,58,82,0.186)" stroke-width="1.6" fill="none"/><path d="M649,476 Q631,498 592,515" stroke="rgba(15,58,82,0.185)" stroke-width="1.6" fill="none"/><path d="M649,476 Q624,420 595,354" stroke="rgba(15,58,82,0.151)" stroke-width="1.6" fill="none"/><path d="M592,515 Q586,562 568,585" stroke="rgba(15,58,82,0.182)" stroke-width="1.6" fill="none"/><path d="M592,515 Q593,484 595,439" stroke="rgba(15,58,82,0.181)" stroke-width="1.6" fill="none"/><path d="M38,349 Q54,256 67,152" stroke="rgba(15,58,82,0.118)" stroke-width="1.6" fill="none"/><path d="M38,349 Q131,284 225,233" stroke="rgba(15,58,82,0.107)" stroke-width="1.6" fill="none"/><path d="M38,349 Q72,235 114,120" stroke="rgba(15,58,82,0.096)" stroke-width="1.6" fill="none"/><path d="M310,87 Q294,104 266,120" stroke="rgba(15,58,82,0.192)" stroke-width="1.6" fill="none"/><path d="M310,87 Q337,162 383,218" stroke="rgba(15,58,82,0.143)" stroke-width="1.6" fill="none"/><path d="M383,218 Q315,160 266,120" stroke="rgba(15,58,82,0.142)" stroke-width="1.6" fill="none"/><path d="M174,621 Q278,634 398,670" stroke="rgba(15,58,82,0.103)" stroke-width="1.6" fill="none"/><path d="M568,585 Q559,569 539,573" stroke="rgba(15,58,82,0.204)" stroke-width="1.6" fill="none"/><path d="M568,585 Q534,632 498,660" stroke="rgba(15,58,82,0.168)" stroke-width="1.6" fill="none"/><path d="M114,120 Q96,147 67,152" stroke="rgba(15,58,82,0.191)" stroke-width="1.6" fill="none"/><path d="M114,120 Q176,113 266,120" stroke="rgba(15,58,82,0.142)" stroke-width="1.6" fill="none"/><path d="M67,152 Q134,195 225,233" stroke="rgba(15,58,82,0.129)" stroke-width="1.6" fill="none"/><path d="M539,573 Q560,551 592,515" stroke="rgba(15,58,82,0.179)" stroke-width="1.6" fill="none"/><circle cx="324" cy="634" r="3.3" fill="#0f3a52" opacity="0.38"/><circle cx="315" cy="250" r="5.0" fill="#0f3a52" opacity="0.66"/><circle cx="488" cy="331" r="3.1" fill="#0f3a52" opacity="0.76"/><circle cx="498" cy="660" r="6.2" fill="#0f3a52" opacity="0.71"/><circle cx="249" cy="52" r="5.7" fill="#0f3a52" opacity="0.42"/><circle cx="319" cy="480" r="3.5" fill="#0f3a52" opacity="0.50"/><circle cx="519" cy="723" r="6.4" fill="#0f3a52" opacity="0.58"/><circle cx="414" cy="480" r="6.4" fill="#0f3a52" opacity="0.57"/><circle cx="595" cy="354" r="4.9" fill="#0f3a52" opacity="0.78"/><circle cx="225" cy="233" r="6.0" fill="#0f3a52" opacity="0.45"/><circle cx="398" cy="670" r="3.2" fill="#0f3a52" opacity="0.51"/><circle cx="630" cy="123" r="16" fill="#a44908" opacity="0.10"/><circle cx="630" cy="123" r="9" fill="#a44908" opacity="0.22"/><circle cx="630" cy="123" r="4.8" fill="#a44908"/><circle cx="535" cy="291" r="3.9" fill="#0f3a52" opacity="0.51"/><circle cx="649" cy="476" r="25" fill="#a44908" opacity="0.10"/><circle cx="649" cy="476" r="14" fill="#a44908" opacity="0.22"/><circle cx="649" cy="476" r="7.2" fill="#a44908"/><circle cx="592" cy="515" r="5.2" fill="#0f3a52" opacity="0.67"/><circle cx="38" cy="349" r="22" fill="#a44908" opacity="0.10"/><circle cx="38" cy="349" r="12" fill="#a44908" opacity="0.22"/><circle cx="38" cy="349" r="6.4" fill="#a44908"/><circle cx="310" cy="87" r="6.2" fill="#0f3a52" opacity="0.61"/><circle cx="383" cy="218" r="4.8" fill="#0f3a52" opacity="0.45"/><circle cx="595" cy="439" r="4.0" fill="#0f3a52" opacity="0.74"/><circle cx="266" cy="120" r="5.7" fill="#0f3a52" opacity="0.50"/><circle cx="174" cy="621" r="5.6" fill="#0f3a52" opacity="0.49"/><circle cx="568" cy="585" r="5.4" fill="#0f3a52" opacity="0.44"/><circle cx="114" cy="120" r="5.3" fill="#0f3a52" opacity="0.44"/><circle cx="67" cy="152" r="5.5" fill="#0f3a52" opacity="0.69"/><circle cx="539" cy="573" r="5.5" fill="#0f3a52" opacity="0.39"/><circle cx="582" cy="276" r="4.0" fill="#0f3a52" opacity="0.50"/></svg></div>
+  <div class="content">
+    <div class="toprow"><div class="dot"></div><span>Intro to AI Tools &middot; A Hands-On Evening Course</span><div class="toprule"></div></div>
+    <div class="headline">AI is not just<br><span class="accent">for cheating.</span></div>
+    <div class="sub">Use it to budget your month, design the fundraiser flyer, caption the family videos, launch the side business — and catch it when it lies. Learn what it&rsquo;s <b>actually</b> for.</div>
+    <div class="tags"><span class="tag">Budget your month</span><span class="tag">Design the flyer</span><span class="tag">Launch the side hustle</span><span class="tag">Catch it lying</span></div>
+    <div class="footer"><span>All levels &middot; No coding needed</span><span class="site">Ten evenings &middot; Hands-on</span></div>
+  </div>
+</body></html>

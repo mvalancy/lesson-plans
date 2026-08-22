@@ -1,0 +1,49 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1800px; height:700px; }
+  body { background:#0e1013; color:#e9e7e2; overflow:hidden; position:relative;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    display:flex; align-items:center; padding:0 110px; }
+  .grid { position:absolute; inset:0; background-image:
+      linear-gradient(rgba(233,231,226,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(233,231,226,.045) 1px, transparent 1px);
+    background-size:88px 88px; }
+  .bloom { position:absolute; inset:0;
+    background:radial-gradient(760px 560px at 78% 30%, rgba(0,129,156,.30), transparent 70%); }
+  .vignette { position:absolute; inset:0;
+    background:radial-gradient(1900px 900px at 50% 45%, transparent 55%, rgba(0,0,0,.55)); }
+  .watermark { position:absolute; right:-20px; bottom:-90px; z-index:0;
+    font-family:ui-monospace, "SF Mono", Consolas, monospace;
+    font-size:420px; font-weight:700; line-height:1; color:transparent;
+    -webkit-text-stroke:2px rgba(233,231,226,.10); letter-spacing:-0.05em; }
+  .net { position:absolute; right:10px; top:0; width:880px; height:700px; z-index:1; }
+  .content { position:relative; z-index:2; }
+  .kicker { display:flex; align-items:center; gap:18px; margin-bottom:30px;
+    font-family:ui-monospace, "SF Mono", Consolas, monospace;
+    font-size:20px; letter-spacing:.3em; color:#a6adb8; text-transform:uppercase; }
+  .dot { width:14px; height:14px; background:#f2b13f; box-shadow:0 0 16px rgba(242,177,63,.8); }
+  h1 { font-weight:900; font-size:126px; line-height:1.0; letter-spacing:-0.015em; }
+  h1 .accent { color:#f2b13f; text-shadow:0 0 40px rgba(242,177,63,.35); }
+  .sub { margin-top:26px; font-size:29px; line-height:1.45; color:#a6adb8; max-width:960px; }
+  .tags { margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; max-width:1000px; }
+  .tag { font-family:ui-monospace, "SF Mono", Consolas, monospace; font-size:18px;
+    letter-spacing:.12em; text-transform:uppercase; color:#e9e7e2;
+    border:1px solid rgba(242,177,63,.55); padding:11px 18px;
+    background:rgba(242,177,63,.07); }
+</style></head><body>
+  <div class="grid"></div><div class="bloom"></div><div class="vignette"></div>
+  <div class="watermark">AI</div>
+  <div class="net"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 700" width="880" height="700"><path d="M677,359 Q642,404 580,467" stroke="rgba(233,231,226,0.112)" stroke-width="1.6" fill="none"/><path d="M677,359 Q700,302 748,225" stroke="rgba(233,231,226,0.11)" stroke-width="1.6" fill="none"/><path d="M677,359 Q760,385 835,407" stroke="rgba(233,231,226,0.105)" stroke-width="1.6" fill="none"/><path d="M748,225 Q660,214 549,214" stroke="rgba(233,231,226,0.094)" stroke-width="1.6" fill="none"/><path d="M748,225 Q783,325 835,407" stroke="rgba(233,231,226,0.093)" stroke-width="1.6" fill="none"/><path d="M282,393 Q252,392 209,378" stroke="rgba(233,231,226,0.135)" stroke-width="1.6" fill="none"/><path d="M282,393 Q240,367 217,322" stroke="rgba(233,231,226,0.128)" stroke-width="1.6" fill="none"/><path d="M282,393 Q337,362 374,337" stroke="rgba(233,231,226,0.124)" stroke-width="1.6" fill="none"/><path d="M217,322 Q220,345 209,378" stroke="rgba(233,231,226,0.141)" stroke-width="1.6" fill="none"/><path d="M217,322 Q172,337 118,341" stroke="rgba(233,231,226,0.127)" stroke-width="1.6" fill="none"/><path d="M105,43 Q141,77 190,103" stroke="rgba(233,231,226,0.126)" stroke-width="1.6" fill="none"/><path d="M105,43 Q142,93 175,164" stroke="rgba(233,231,226,0.114)" stroke-width="1.6" fill="none"/><path d="M105,43 Q90,106 58,190" stroke="rgba(233,231,226,0.109)" stroke-width="1.6" fill="none"/><path d="M542,190 Q553,205 549,214" stroke="rgba(233,231,226,0.152)" stroke-width="1.6" fill="none"/><path d="M542,190 Q538,148 555,108" stroke="rgba(233,231,226,0.133)" stroke-width="1.6" fill="none"/><path d="M542,190 Q437,195 346,214" stroke="rgba(233,231,226,0.094)" stroke-width="1.6" fill="none"/><path d="M47,191 Q43,196 58,190" stroke="rgba(233,231,226,0.156)" stroke-width="1.6" fill="none"/><path d="M47,191 Q97,180 175,164" stroke="rgba(233,231,226,0.117)" stroke-width="1.6" fill="none"/><path d="M47,191 Q67,126 105,43" stroke="rgba(233,231,226,0.107)" stroke-width="1.6" fill="none"/><path d="M580,467 Q556,476 555,503" stroke="rgba(233,231,226,0.145)" stroke-width="1.6" fill="none"/><path d="M580,467 Q511,536 435,582" stroke="rgba(233,231,226,0.099)" stroke-width="1.6" fill="none"/><path d="M118,341 Q162,346 209,378" stroke="rgba(233,231,226,0.128)" stroke-width="1.6" fill="none"/><path d="M118,341 Q95,263 58,190" stroke="rgba(233,231,226,0.106)" stroke-width="1.6" fill="none"/><path d="M435,582 Q487,552 555,503" stroke="rgba(233,231,226,0.112)" stroke-width="1.6" fill="none"/><path d="M435,582 Q352,599 267,592" stroke="rgba(233,231,226,0.105)" stroke-width="1.6" fill="none"/><path d="M175,164 Q190,126 190,103" stroke="rgba(233,231,226,0.139)" stroke-width="1.6" fill="none"/><path d="M175,164 Q104,185 58,190" stroke="rgba(233,231,226,0.12)" stroke-width="1.6" fill="none"/><path d="M555,108 Q550,149 549,214" stroke="rgba(233,231,226,0.125)" stroke-width="1.6" fill="none"/><path d="M555,108 Q650,163 748,225" stroke="rgba(233,231,226,0.085)" stroke-width="1.6" fill="none"/><path d="M95,630 Q92,605 65,595" stroke="rgba(233,231,226,0.145)" stroke-width="1.6" fill="none"/><path d="M95,630 Q122,587 123,527" stroke="rgba(233,231,226,0.125)" stroke-width="1.6" fill="none"/><path d="M95,630 Q183,604 267,592" stroke="rgba(233,231,226,0.102)" stroke-width="1.6" fill="none"/><path d="M835,407 Q702,449 580,467" stroke="rgba(233,231,226,0.073)" stroke-width="1.6" fill="none"/><path d="M555,503 Q626,438 677,359" stroke="rgba(233,231,226,0.098)" stroke-width="1.6" fill="none"/><path d="M374,337 Q348,269 346,214" stroke="rgba(233,231,226,0.118)" stroke-width="1.6" fill="none"/><path d="M374,337 Q298,332 217,322" stroke="rgba(233,231,226,0.108)" stroke-width="1.6" fill="none"/><path d="M123,527 Q98,567 65,595" stroke="rgba(233,231,226,0.13)" stroke-width="1.6" fill="none"/><path d="M123,527 Q201,567 267,592" stroke="rgba(233,231,226,0.108)" stroke-width="1.6" fill="none"/><path d="M190,103 Q135,135 58,190" stroke="rgba(233,231,226,0.108)" stroke-width="1.6" fill="none"/><path d="M549,214 Q605,286 677,359" stroke="rgba(233,231,226,0.096)" stroke-width="1.6" fill="none"/><path d="M65,595 Q173,581 267,592" stroke="rgba(233,231,226,0.093)" stroke-width="1.6" fill="none"/><path d="M346,214 Q290,255 217,322" stroke="rgba(233,231,226,0.104)" stroke-width="1.6" fill="none"/><path d="M346,214 Q254,183 175,164" stroke="rgba(233,231,226,0.101)" stroke-width="1.6" fill="none"/><circle cx="677" cy="359" r="2.9" fill="#e9e7e2" opacity="0.42"/><circle cx="748" cy="225" r="4.7" fill="#e9e7e2" opacity="0.41"/><circle cx="282" cy="393" r="5.0" fill="#e9e7e2" opacity="0.54"/><circle cx="217" cy="322" r="6.4" fill="#e9e7e2" opacity="0.50"/><circle cx="105" cy="43" r="5.3" fill="#e9e7e2" opacity="0.61"/><circle cx="542" cy="190" r="5.2" fill="#e9e7e2" opacity="0.62"/><circle cx="47" cy="191" r="16" fill="#f2b13f" opacity="0.10"/><circle cx="47" cy="191" r="9" fill="#f2b13f" opacity="0.22"/><circle cx="47" cy="191" r="4.8" fill="#f2b13f"/><circle cx="580" cy="467" r="17" fill="#f2b13f" opacity="0.10"/><circle cx="580" cy="467" r="10" fill="#f2b13f" opacity="0.22"/><circle cx="580" cy="467" r="5.0" fill="#f2b13f"/><circle cx="118" cy="341" r="5.9" fill="#e9e7e2" opacity="0.56"/><circle cx="435" cy="582" r="4.2" fill="#e9e7e2" opacity="0.53"/><circle cx="175" cy="164" r="4.7" fill="#e9e7e2" opacity="0.37"/><circle cx="555" cy="108" r="20" fill="#f2b13f" opacity="0.10"/><circle cx="555" cy="108" r="11" fill="#f2b13f" opacity="0.22"/><circle cx="555" cy="108" r="5.9" fill="#f2b13f"/><circle cx="95" cy="630" r="5.3" fill="#e9e7e2" opacity="0.70"/><circle cx="835" cy="407" r="4.1" fill="#e9e7e2" opacity="0.67"/><circle cx="555" cy="503" r="5.8" fill="#e9e7e2" opacity="0.58"/><circle cx="374" cy="337" r="4.0" fill="#e9e7e2" opacity="0.60"/><circle cx="209" cy="378" r="3.1" fill="#e9e7e2" opacity="0.69"/><circle cx="123" cy="527" r="17" fill="#f2b13f" opacity="0.10"/><circle cx="123" cy="527" r="10" fill="#f2b13f" opacity="0.22"/><circle cx="123" cy="527" r="5.1" fill="#f2b13f"/><circle cx="267" cy="592" r="2.9" fill="#e9e7e2" opacity="0.52"/><circle cx="190" cy="103" r="2.9" fill="#e9e7e2" opacity="0.62"/><circle cx="549" cy="214" r="18" fill="#f2b13f" opacity="0.10"/><circle cx="549" cy="214" r="10" fill="#f2b13f" opacity="0.22"/><circle cx="549" cy="214" r="5.4" fill="#f2b13f"/><circle cx="65" cy="595" r="6.1" fill="#e9e7e2" opacity="0.72"/><circle cx="346" cy="214" r="19" fill="#f2b13f" opacity="0.10"/><circle cx="346" cy="214" r="10" fill="#f2b13f" opacity="0.22"/><circle cx="346" cy="214" r="5.5" fill="#f2b13f"/><circle cx="58" cy="190" r="5.0" fill="#e9e7e2" opacity="0.62"/></svg></div>
+  <div class="content">
+    <div class="kicker"><div class="dot"></div><span>Evening Community Course</span></div>
+    <h1>Intro to <span class="accent">AI Tools</span></h1>
+    <div class="sub">Hands-on and friendly &mdash; open to everyone, no tech background needed.</div>
+    <div class="tags">
+      <span class="tag">Students</span>
+      <span class="tag">Working professionals</span>
+      <span class="tag">Small-business owners</span>
+      <span class="tag">Curious neighbors</span>
+    </div>
+  </div>
+</body></html>
