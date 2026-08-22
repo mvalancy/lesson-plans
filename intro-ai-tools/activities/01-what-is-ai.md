@@ -46,25 +46,7 @@ chain word by word and watch small errors compound.
 habit of checking AI output before trusting it.
 Sources: [Digital Technologies Hub](https://www.digitaltechnologieshub.edu.au/teach-and-assess/classroom-resources/lesson-ideas/exploring-predictive-text/), [Merced College OER](https://socialsci.libretexts.org/Courses/Merced_College/Demystifying_AI:_A_Practical_Introduction_for_Instructors/01:_An_Introduction_to_AI/1.01:_What_is_a_language_model/1.1.01:_How_language_models_generate_text_by_predicting_the_next_word)
 
-### 3. Teachable Machine: train it, then break it `[assist→solo]` · 25–30 min
-
-Students train a real image classifier with their own webcam — then deliberately ruin it
-with bad training data. Garbage-in-garbage-out, earned rather than told.
-
-**Run it:**
-1. Instructor demos a two-class "thumbs up / thumbs down" model (5 min).
-2. Pairs train their own two-class model on anything in reach (10 min).
-3. Sabotage round: retrain with skewed or sloppy examples, then test — watch it fail
-   confidently. Debrief: what did the model actually learn? (10 min)
-
-**Floor:** scripted two-category build, partner drives.
-**Stretch:** three or more classes; stress-test edge cases (lighting, angle, background).
-**They walk away with:** "models learn what you feed them" as personal experience — the
-skill of spotting biased training data, and the foundation for every bias conversation in
-Module 6.
-Source: [teachablemachine.withgoogle.com](https://teachablemachine.withgoogle.com/), [Day of AI](https://dayofai.org/units/how-do-machines-learn)
-
-### 4. 🌟 What AI is made of: Hugging Face, then a model on your laptop `[show→solo]` · 30–35 min
+### 3. 🌟 What AI is made of: Hugging Face, then a model on your laptop `[show→solo]` · 30–35 min
 
 The ownership pillar's opening move. AI is not just someone else's server: here are the
 parts (models, datasets, demos), and here is one running on hardware in this room.
@@ -84,6 +66,25 @@ quantizations.
 **They walk away with:** the customer-to-owner shift: capable AI already runs on
 hardware they own.
 Sources: [huggingface.co](https://huggingface.co/), [lmstudio.ai](https://lmstudio.ai/), [ollama.com](https://ollama.com/)
+
+### 4. Teachable Machine: train it, then break it `[show]` · 10–15 min
+
+A quick, punchy demo: train a real image classifier live, then deliberately ruin it with
+bad training data. Garbage-in-garbage-out, seen rather than told — kept short so it
+doesn't crowd the lab.
+
+**Run it:**
+1. Train a two-class "thumbs up / thumbs down" model on the projector, with the class
+   suggesting examples (5 min).
+2. Sabotage round: retrain with skewed, sloppy examples a volunteer supplies — watch it
+   fail confidently. Debrief: what did the model actually learn? (5–8 min)
+
+**Floor:** watch and shout suggestions.
+**Stretch (open lab or homework):** pairs build their own multi-class model and
+stress-test edge cases — the full 25-minute version if the room wants it.
+**They walk away with:** "models learn what you feed them" — the seed for every bias
+conversation in Module 6.
+Source: [teachablemachine.withgoogle.com](https://teachablemachine.withgoogle.com/), [Day of AI](https://dayofai.org/units/how-do-machines-learn)
 
 ### 5. Warming up: low-stakes first prompts `[assist→solo]` · 15 min
 
