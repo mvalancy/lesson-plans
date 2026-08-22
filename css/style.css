@@ -3,17 +3,53 @@
    dark deck theme is a token flip rather than a second set of rules. */
 
 :root {
-  --ink: #22252b;
+  --ink: #1c1f26;
   --ink-soft: #565b66;
-  --paper: #fdfcfa;
+  --ink-soft-rgb: 86, 91, 102;   /* same, as rgba() channels — the graph canvas reads it */
+  --ink-faint: #8b909b;
+  --paper: #fbfaf7;
+  --paper-2: #f4f1ec;       /* alternating section band */
   --card: #ffffff;
-  --line: #e6e2dc;
-  --accent: #7d2335;        /* deep maroon */
+  --line: #e7e2da;
+  --line-strong: #d5cec3;
+  --accent: #7d2335;        /* deep maroon — the brand */
   --accent-dark: #5e1a28;
-  --accent-wash: #f7eef0;
+  --accent-bright: #9c2b41;
+  --accent-wash: #f9eff1;
   --accent-rgb: 125, 35, 53;
-  --max: 60rem;
-  --radius: 10px;
+
+  /* Secondary "signal" hue, carried over from the flyer artwork: the colour
+     of an *active* node. Decorative and marker-only — never body text. */
+  --signal: #b06a10;
+  --signal-rgb: 176, 106, 16;
+
+  --max: 66rem;             /* page container */
+  --max-prose: 44rem;       /* comfortable measure for running text */
+
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* Layered, low-contrast elevation — the e-learning-card look: a tight
+     contact shadow plus a wide soft one, never a single blurry drop. */
+  --shadow-1: 0 1px 2px rgba(28, 31, 38, 0.05),
+              0 4px 14px rgba(28, 31, 38, 0.045);
+  --shadow-2: 0 2px 4px rgba(28, 31, 38, 0.06),
+              0 12px 30px rgba(28, 31, 38, 0.09);
+  --shadow-accent: 0 2px 6px rgba(var(--accent-rgb), 0.10),
+                   0 16px 38px rgba(var(--accent-rgb), 0.16);
+
+  /* Spacing scale (a 4px-rooted ramp). Section rhythm comes from --s7/--s8. */
+  --s1: 0.25rem;  --s2: 0.5rem;   --s3: 0.75rem;  --s4: 1rem;
+  --s5: 1.5rem;   --s6: 2rem;     --s7: 3rem;     --s8: 4.5rem;
+
+  /* Type scale — fluid, with real weight contrast at the top end. */
+  --fs-display: clamp(2.35rem, 1.55rem + 3.2vw, 3.9rem);
+  --fs-h1: clamp(1.95rem, 1.55rem + 1.6vw, 2.7rem);
+  --fs-h2: clamp(1.45rem, 1.28rem + 0.75vw, 1.9rem);
+  --fs-h3: 1.12rem;
+  --fs-lede: clamp(1.08rem, 1.0rem + 0.35vw, 1.28rem);
 
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
@@ -24,7 +60,16 @@
      rather than bounces. Motion should read as confident, not playful. */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 
+  /* Node-network motif tucked into card corners. One declaration per theme;
+     inline data URI, so it costs no request. */
+  --card-graph: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 160 160%22><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M119,57 Q93,51 84,41%22 opacity=%220.42%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M119,57 Q102,82 88,95%22 opacity=%220.33%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M46,122 Q30,131 37,121%22 opacity=%220.67%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M46,122 Q49,126 26,117%22 opacity=%220.57%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M29,77 Q38,97 33,97%22 opacity=%220.57%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M29,77 Q23,66 38,57%22 opacity=%220.56%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M88,95 Q72,117 81,124%22 opacity=%220.49%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M88,95 Q85,99 80,126%22 opacity=%220.47%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M33,97 Q28,115 26,117%22 opacity=%220.57%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M80,126 Q82,114 81,124%22 opacity=%220.73%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M18,140 Q34,116 26,117%22 opacity=%220.54%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M18,140 Q37,144 37,121%22 opacity=%220.52%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M37,121 Q38,131 26,117%22 opacity=%220.65%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M38,57 Q40,33 40,25%22 opacity=%220.48%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M84,41 Q61,40 40,25%22 opacity=%220.34%22/><circle fill=%22%23565b66%22 cx=%22119%22 cy=%2257%22 r=%223.5%22 opacity=%220.77%22/><circle fill=%22%23565b66%22 cx=%2246%22 cy=%22122%22 r=%222.1%22 opacity=%220.32%22/><circle fill=%22%23565b66%22 cx=%2229%22 cy=%2277%22 r=%222.7%22 opacity=%220.36%22/><circle fill=%22%23565b66%22 cx=%2288%22 cy=%2295%22 r=%224.0%22 opacity=%220.64%22/><circle fill=%22%23565b66%22 cx=%2233%22 cy=%2297%22 r=%222.1%22 opacity=%220.65%22/><circle fill=%22%23565b66%22 cx=%2280%22 cy=%22126%22 r=%222.2%22 opacity=%220.35%22/><circle fill=%22%23565b66%22 cx=%2218%22 cy=%22140%22 r=%223.7%22 opacity=%220.76%22/><circle fill=%22%23565b66%22 cx=%2237%22 cy=%22121%22 r=%223.5%22 opacity=%220.33%22/><circle fill=%22%23565b66%22 cx=%2281%22 cy=%22124%22 r=%223.0%22 opacity=%220.68%22/><circle fill=%22%23b06a10%22 cx=%2238%22 cy=%2257%22 r=%229%22 opacity=%22.12%22/><circle fill=%22%23b06a10%22 cx=%2238%22 cy=%2257%22 r=%225%22 opacity=%22.26%22/><circle fill=%22%23b06a10%22 cx=%2238%22 cy=%2257%22 r=%222.6%22/><circle fill=%22%23565b66%22 cx=%2226%22 cy=%22117%22 r=%222.2%22 opacity=%220.36%22/><circle fill=%22%23565b66%22 cx=%2284%22 cy=%2241%22 r=%222.8%22 opacity=%220.74%22/><circle fill=%22%23565b66%22 cx=%2240%22 cy=%2225%22 r=%222.3%22 opacity=%220.69%22/></svg>");
+
   font-size: 17px;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
 }
 
 * { box-sizing: border-box; }
@@ -51,42 +96,173 @@ body {
 
 h1, h2, h3 {
   font-family: var(--serif);
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 700;
+  line-height: 1.18;
   color: var(--ink);
   margin: 0 0 0.5em;
+  text-wrap: balance;
 }
-h1 { font-size: 2.1rem; letter-spacing: -0.015em; }
-h2 { font-size: 1.45rem; margin-top: 2.2em; letter-spacing: -0.01em; }
-h3 { font-size: 1.1rem; margin-top: 1.6em; }
+h1 { font-size: var(--fs-h1); letter-spacing: -0.02em; }
+h2 { font-size: var(--fs-h2); margin-top: 0; letter-spacing: -0.015em; }
+h3 { font-size: var(--fs-h3); margin-top: 1.6em; font-weight: 700; }
 
-/* A short accent rule above each section heading — the quiet structural
-   marker that carries the whole page's rhythm. */
+/* Section headings are the page's structural beat. Each opens a new block of
+   air above it, and carries a two-node graph edge as its marker — the same
+   motif as the hero animation, reduced to its smallest possible form. */
+main > section,
+main > .section {
+  margin-top: var(--s8);
+}
+main > section:first-of-type,
+main > .section:first-of-type { margin-top: var(--s7); }
+
+main > section > h2,
+main > .section > h2,
+main > h2 {
+  position: relative;
+  padding-top: var(--s5);
+}
 main > section > h2::before,
+main > .section > h2::before,
 main > h2::before {
   content: "";
-  display: block;
-  width: 2.25rem;
-  height: 2px;
-  margin-bottom: 0.9rem;
-  background: var(--accent);
-  opacity: 0.85;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3.25rem;
+  height: 7px;
+  /* an edge between two nodes: a hairline with a dot at each end */
+  background:
+    radial-gradient(circle 3.5px at 3.5px 3.5px, var(--accent) 98%, transparent) left center / 7px 7px no-repeat,
+    radial-gradient(circle 3px at 3px 3.5px, var(--signal) 98%, transparent) right center / 6px 7px no-repeat,
+    linear-gradient(90deg, var(--accent), var(--signal)) center center / 100% 1.5px no-repeat;
+  opacity: 0.9;
 }
 
 p { margin: 0.4em 0 1em; }
+
+/* Running text keeps a readable measure even though the container is wide
+   enough for a card grid. */
+main > section > p,
+main > .section > p,
+main > section > ul:not([class]),
+main > section > ol:not([class]) { max-width: var(--max-prose); }
+
 a {
   color: var(--accent);
   text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
   transition: color 0.2s var(--ease);
 }
 a:hover { color: var(--accent-dark); }
 
+:where(a, button, input, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
 .wrap {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding: 0 1.5rem;
 }
+.wrap-narrow { max-width: 52rem; }
+
+/* ---------- buttons ---------- */
+/* One button family. The primary is the only saturated block of colour on a
+   page, so "the next thing to do" is never ambiguous. */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--sans);
+  font-size: 0.97rem;
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  padding: 0.78rem 1.5rem;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease),
+              background 0.2s var(--ease), border-color 0.2s var(--ease),
+              color 0.2s var(--ease);
+}
+.btn .arrow, .btn .arrow-back { transition: transform 0.3s var(--ease); }
+.btn:hover .arrow { transform: translateX(3px); }
+.btn:hover .arrow-back { transform: translateX(-3px); }
+
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(150deg, var(--accent-bright), var(--accent) 60%);
+  box-shadow: 0 1px 2px rgba(var(--accent-rgb), 0.30),
+              0 8px 22px rgba(var(--accent-rgb), 0.24);
+}
+.btn-primary:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(var(--accent-rgb), 0.32),
+              0 14px 32px rgba(var(--accent-rgb), 0.30);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-ghost {
+  color: var(--ink);
+  background: var(--card);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-1);
+}
+.btn-ghost:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+}
+
+.btn-quiet {
+  color: var(--ink-soft);
+  background: transparent;
+  border-color: var(--line);
+  padding: 0.6rem 1.1rem;
+  font-size: 0.9rem;
+}
+.btn-quiet:hover { color: var(--accent); border-color: var(--accent); }
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: var(--s6);
+}
+
+/* ---------- the constellation motif ---------- */
+/* Static, seeded node-graph SVGs inlined into headers, bands, and the footer.
+   Colour comes entirely from the theme: edges and plain nodes inherit
+   `currentColor`, active nodes take --signal. */
+
+.constellation {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--ink-soft);
+  pointer-events: none;
+  z-index: 0;
+}
+.constellation .cn-e { stroke: currentColor; stroke-width: 1.4; fill: none; }
+.constellation .cn-n { fill: currentColor; }
+.constellation .cn-a,
+.constellation .cn-h { fill: var(--signal); }
+
+/* Three intensities, so the same artwork can sit behind a headline or shout
+   from a CTA band. */
+.constellation { opacity: 0.5; }
+.constellation-quiet { opacity: 0.3; }
+.constellation-loud { opacity: 0.75; }
 
 .footnote {
   font-size: 0.88rem;
@@ -104,7 +280,7 @@ a:hover { color: var(--accent-dark); }
   color: var(--ink-soft);
   font-size: 0.83rem;
   text-align: center;
-  padding: 0.55rem 1.25rem;
+  padding: 0.6rem 1.25rem;
   border-bottom: 1px solid var(--line);
   letter-spacing: 0.01em;
 }
@@ -113,48 +289,78 @@ a:hover { color: var(--accent-dark); }
 /* ---------- header / nav ---------- */
 
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 60;
   border-bottom: 1px solid var(--line);
-  background: var(--card);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: saturate(1.6) blur(12px);
+  -webkit-backdrop-filter: saturate(1.6) blur(12px);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .site-header { background: var(--card); }
 }
 .site-header .wrap {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
 }
 .brand {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1.06rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--ink);
   text-decoration: none;
 }
 .brand .accent { color: var(--accent); }
 
-/* Small accent tile standing in for a wordmark. It breathes very slowly —
-   enough to register as alive, not enough to distract from reading. */
+/* The wordmark is a two-node graph edge: the brand motif at its smallest.
+   It breathes very slowly — enough to register as alive, not enough to
+   distract from reading. */
 .brand-mark {
+  position: relative;
   display: inline-block;
-  width: 0.55rem;
+  width: 1.15rem;
   height: 0.55rem;
-  margin-right: 0.55rem;
-  border-radius: 2px;
-  background: var(--accent);
-  vertical-align: baseline;
+  margin-right: 0.6rem;
+  background: linear-gradient(90deg, var(--accent), var(--signal)) center / 100% 1.5px no-repeat;
+  vertical-align: middle;
   animation: mark-breathe 5s ease-in-out infinite;
 }
+.brand-mark::before,
+.brand-mark::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.brand-mark::before { left: 0; background: var(--accent); }
+.brand-mark::after { right: 0; background: var(--signal); }
 @keyframes mark-breathe {
-  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(var(--accent-rgb), 0); }
-  50%      { opacity: 0.72; box-shadow: 0 0 8px 1px rgba(var(--accent-rgb), 0.25); }
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 0 rgba(var(--accent-rgb), 0)); }
+  50%      { opacity: 0.75; filter: drop-shadow(0 0 5px rgba(var(--accent-rgb), 0.45)); }
 }
 
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
 .site-nav a {
   position: relative;
   margin-left: 1.4rem;
   font-size: 0.92rem;
+  font-weight: 500;
   color: var(--ink-soft);
   text-decoration: none;
   transition: color 0.2s var(--ease);
@@ -180,99 +386,158 @@ a:hover { color: var(--accent-dark); }
 .hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, var(--accent-wash), var(--paper));
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse 900px 520px at 12% -25%, rgba(var(--accent-rgb), 0.16) 0%, transparent 68%),
+    radial-gradient(ellipse 700px 400px at 88% 6%, rgba(var(--signal-rgb), 0.11) 0%, transparent 66%),
+    linear-gradient(180deg, var(--accent-wash), var(--paper) 78%);
   border-bottom: 1px solid var(--line);
-  padding: 4.25rem 0 3.25rem;
+  padding: clamp(3.25rem, 2rem + 5vw, 5.5rem) 0 clamp(2.75rem, 1.75rem + 4vw, 4.5rem);
 }
-/* Two layers of near-invisible structure behind the hero: a technical grid
-   and a soft accent bloom. Both sit under the canvas animation. */
+/* A near-invisible technical grid, fading out downwards. It sits under both
+   the static constellation and the live canvas — three graph layers deep. */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(var(--accent-rgb), 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(var(--accent-rgb), 0.035) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(ellipse 80% 70% at 30% 0%, #000 0%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 30% 0%, #000 0%, transparent 75%);
+    linear-gradient(rgba(var(--accent-rgb), 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--accent-rgb), 0.045) 1px, transparent 1px);
+  background-size: 76px 76px;
+  mask-image: radial-gradient(ellipse 90% 80% at 30% 0%, #000 0%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 30% 0%, #000 0%, transparent 78%);
   pointer-events: none;
+  z-index: 0;
 }
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 720px 380px at 15% -20%,
-    rgba(var(--accent-rgb), 0.10) 0%, transparent 70%);
-  pointer-events: none;
+.hero .wrap { position: relative; z-index: 2; }
+.hero .constellation {
+  opacity: 0.62;
+  mask-image: radial-gradient(ellipse 62% 85% at 14% 46%,
+    transparent 0%, transparent 26%, #000 72%);
+  -webkit-mask-image: radial-gradient(ellipse 62% 85% at 14% 46%,
+    transparent 0%, transparent 26%, #000 72%);
 }
-.hero .wrap { position: relative; z-index: 1; }
 .hero-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 1;
+  mask-image: radial-gradient(ellipse 60% 80% at 14% 46%,
+    rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 28%, #000 74%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 80% at 14% 46%,
+    rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 28%, #000 74%);
 }
-.hero .kicker {
+
+/* Kicker: a mono eyebrow with a live node in front of it. */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-family: var(--mono);
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.15em;
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--accent);
-  margin-bottom: 0.9rem;
+  margin: 0 0 1.1rem;
 }
-.hero h1 { max-width: 34ch; }
+.kicker::before {
+  content: "";
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 0 3px rgba(var(--signal-rgb), 0.18);
+  flex: none;
+}
+
+.hero h1 {
+  font-size: var(--fs-display);
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  max-width: 18ch;
+  margin-bottom: 0.45em;
+}
 .hero .lede {
-  font-size: 1.12rem;
+  font-size: var(--fs-lede);
+  line-height: 1.6;
   color: var(--ink-soft);
-  max-width: 58ch;
+  max-width: 54ch;
 }
+
+/* Course facts as a row of graph nodes rather than a mono sentence: each
+   fact is a node on the same spine. */
 .hero .meta {
-  margin-top: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+  margin-top: var(--s6);
+  padding: 0;
+  list-style: none;
   font-family: var(--mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.06em;
+  font-size: 0.73rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--ink-soft);
 }
-.hero .meta span { white-space: nowrap; }
-.hero .meta span + span::before { content: "·"; margin: 0 0.6em; color: var(--accent); opacity: 0.6; }
+.hero .meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 0.34rem 0.85rem;
+}
+.hero .meta span::before {
+  content: "";
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.65;
+}
 
 /* Hero entrance: each line arrives a beat after the one above it. Runs on
    load, so it never depends on JavaScript. */
-.hero .kicker, .hero h1, .hero .lede, .hero .meta,
+.hero .kicker, .hero h1, .hero .lede, .hero .meta, .hero .btn-row,
 .lesson-header .kicker, .lesson-header h1, .lesson-header .meta {
   animation: rise-in 0.7s var(--ease) both;
 }
 .hero h1, .lesson-header h1 { animation-delay: 0.08s; }
 .hero .lede { animation-delay: 0.16s; }
-.hero .meta, .lesson-header .meta { animation-delay: 0.22s; }
+.hero .btn-row { animation-delay: 0.24s; }
+.hero .meta, .lesson-header .meta { animation-delay: 0.32s; }
 @keyframes rise-in {
-  from { opacity: 0; transform: translateY(12px); }
+  from { opacity: 0; transform: translateY(14px); }
   to   { opacity: 1; transform: none; }
 }
 
 /* ---------- main content ---------- */
 
-main { padding: 2.5rem 0 4rem; }
+main { padding: 0 0 var(--s8); }
 
 .lesson-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
+  gap: 1.15rem;
   padding: 0;
-  margin: 1.25rem 0 0;
+  margin: var(--s5) 0 0;
   list-style: none;
 }
 .lesson-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.1rem 1.2rem 1.2rem;
+  padding: 1.4rem 1.45rem 1.5rem;
   overflow: hidden;
+  box-shadow: var(--shadow-1);
   transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease),
               transform 0.35s var(--ease);
 }
@@ -283,34 +548,299 @@ main { padding: 2.5rem 0 4rem; }
   top: 0; left: 0; right: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent,
-    rgba(var(--accent-rgb), 0.75), transparent);
+    rgba(var(--accent-rgb), 0.85) 35%, var(--signal) 75%, transparent);
   opacity: 0;
   transition: opacity 0.3s var(--ease);
+  z-index: 2;
+}
+/* The brand motif tucked into the corner: a small node cluster that surfaces
+   as the card lifts. Same generated artwork as the hero and the footer. */
+.lesson-card::after {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  width: 8.5rem;
+  height: 8.5rem;
+  background: var(--card-graph) center / contain no-repeat;
+  opacity: 0.11;
+  transition: opacity 0.45s var(--ease), transform 0.6s var(--ease);
+  pointer-events: none;
 }
 .lesson-card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 6px 22px rgba(var(--accent-rgb), 0.10);
-  transform: translateY(-2px);
+  border-color: rgba(var(--accent-rgb), 0.5);
+  box-shadow: var(--shadow-accent);
+  transform: translateY(-4px);
 }
 .lesson-card:hover::before { opacity: 1; }
+.lesson-card:hover::after { opacity: 0.3; transform: scale(1.08) rotate(-4deg); }
 .lesson-card:focus-within {
   border-color: var(--accent);
-  box-shadow: 0 6px 22px rgba(var(--accent-rgb), 0.10);
+  box-shadow: var(--shadow-accent);
 }
+.lesson-card > * { position: relative; z-index: 1; }
 .lesson-card .num {
   display: inline-block;
   font-family: var(--mono);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   color: var(--accent);
   text-transform: uppercase;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.5rem;
 }
-.lesson-card h3 { margin: 0 0 0.3rem; font-size: 1.05rem; }
+.lesson-card h3 { margin: 0 0 0.4rem; font-size: 1.13rem; line-height: 1.28; }
 .lesson-card h3 a { color: var(--ink); text-decoration: none; }
-.lesson-card h3 a::after { content: ""; position: absolute; inset: 0; }
-.lesson-card p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+.lesson-card h3 a::after { content: ""; position: absolute; inset: 0; z-index: 3; }
+.lesson-card p { margin: 0; font-size: 0.93rem; line-height: 1.55; color: var(--ink-soft); }
+
+/* Optional metadata footer on a card — the "45 min · beginner" row that every
+   good course catalogue carries. */
+.lesson-card .card-meta,
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.9rem;
+  margin-top: auto;
+  margin-bottom: 0;
+  padding-top: var(--s4);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.card-meta span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.card-meta span::before {
+  content: "";
+  width: 0.3rem; height: 0.3rem;
+  border-radius: 50%;
+  background: var(--signal);
+  opacity: 0.8;
+}
+
+/* ---------- the module path ---------- */
+/* The eight modules drawn as a graph: one spine, eight nodes, a card hanging
+   off each node. This is the hero animation's motif turned into navigation —
+   the course's shape is the brand. */
+
+.module-path {
+  position: relative;
+  list-style: none;
+  margin: var(--s7) 0 0;
+  padding: 0;
+}
+/* the spine — an edge running the length of the course */
+.module-path::before {
+  content: "";
+  position: absolute;
+  top: 1.6rem;
+  bottom: 1.6rem;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  background: linear-gradient(180deg,
+    transparent,
+    rgba(var(--accent-rgb), 0.45) 6%,
+    rgba(var(--accent-rgb), 0.45) 55%,
+    rgba(var(--signal-rgb), 0.5) 92%,
+    transparent);
+  border-radius: 2px;
+}
+
+.module-step {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 5rem 1fr;
+  align-items: center;
+  margin-bottom: 1.15rem;
+}
+.module-step:last-child { margin-bottom: 0; }
+.module-step .module-card { grid-column: 1; }
+.module-step:nth-child(even) .module-card { grid-column: 3; }
+
+/* the node itself, sitting on the spine */
+.module-node {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  font-family: var(--mono);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  background: var(--card);
+  border: 2px solid rgba(var(--accent-rgb), 0.4);
+  box-shadow: 0 0 0 5px var(--paper), var(--shadow-1);
+  transition: transform 0.3s var(--ease), border-color 0.25s var(--ease),
+              color 0.25s var(--ease), box-shadow 0.3s var(--ease);
+}
+/* the short edge that ties the node to its card */
+.module-node::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 1.6rem;
+  height: 2px;
+  margin-top: -1px;
+  margin-right: 0.35rem;
+  background: linear-gradient(270deg, rgba(var(--accent-rgb), 0.45), transparent);
+}
+.module-step:nth-child(even) .module-node::after {
+  right: auto;
+  left: 100%;
+  margin-right: 0;
+  margin-left: 0.35rem;
+  background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.45), transparent);
+}
+
+.module-step:hover .module-node,
+.module-step:focus-within .module-node {
+  transform: scale(1.12);
+  border-color: var(--accent);
+  color: var(--accent-dark);
+  box-shadow: 0 0 0 5px var(--paper),
+              0 0 0 8px rgba(var(--accent-rgb), 0.14),
+              var(--shadow-1);
+}
+
+/* The one genuinely special node — Module 5, source of the mini-lesson —
+   burns in the signal colour and breathes, exactly like an active node in
+   the hero animation. */
+.module-node.is-active {
+  color: #fff;
+  border-color: var(--signal);
+  background: linear-gradient(150deg, var(--signal), #8f550c);
+  animation: node-breathe 3.6s ease-in-out infinite;
+}
+@keyframes node-breathe {
+  0%, 100% { box-shadow: 0 0 0 5px var(--paper), 0 0 0 0 rgba(var(--signal-rgb), 0.42); }
+  55%      { box-shadow: 0 0 0 5px var(--paper), 0 0 0 11px rgba(var(--signal-rgb), 0); }
+}
+.module-step:hover .module-node.is-active,
+.module-step:focus-within .module-node.is-active {
+  color: #fff;
+  border-color: var(--signal);
+  box-shadow: 0 0 0 5px var(--paper), 0 0 0 9px rgba(var(--signal-rgb), 0.22);
+}
+
+.module-card { margin: 0; }
+.module-card .badge { float: none; margin: 0 0 0.5rem; }
+
+/* the cards cascade down the path as the section reveals */
+.js .reveal.visible .module-step:nth-child(1) .lesson-card { transition-delay: 0s; }
+.js .reveal.visible .module-step:nth-child(2) .lesson-card { transition-delay: 0.06s; }
+.js .reveal.visible .module-step:nth-child(3) .lesson-card { transition-delay: 0.12s; }
+.js .reveal.visible .module-step:nth-child(4) .lesson-card { transition-delay: 0.18s; }
+.js .reveal.visible .module-step:nth-child(5) .lesson-card { transition-delay: 0.24s; }
+.js .reveal.visible .module-step:nth-child(6) .lesson-card { transition-delay: 0.30s; }
+.js .reveal.visible .module-step:nth-child(7) .lesson-card { transition-delay: 0.36s; }
+.js .reveal.visible .module-step:nth-child(8) .lesson-card { transition-delay: 0.42s; }
+
+/* Single column below the fold-out width: the spine moves to the left edge
+   and every card hangs off the same side. */
+@media (max-width: 54rem) {
+  .module-path::before { left: 1.5rem; }
+  .module-step {
+    grid-template-columns: 3rem 1fr;
+    align-items: start;
+    gap: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .module-step .module-card,
+  .module-step:nth-child(even) .module-card { grid-column: 2; }
+  .module-node,
+  .module-step:nth-child(even) .module-node {
+    grid-column: 1;
+    justify-self: start;
+    width: 2.6rem;
+    height: 2.6rem;
+    font-size: 0.82rem;
+    margin-top: 0.9rem;
+    box-shadow: 0 0 0 4px var(--paper), var(--shadow-1);
+  }
+  .module-node::after,
+  .module-step:nth-child(even) .module-node::after {
+    right: auto;
+    left: 100%;
+    width: 0.75rem;
+    margin-left: 0.1rem;
+    margin-right: 0;
+    background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.45), transparent);
+  }
+  @keyframes node-breathe {
+    0%, 100% { box-shadow: 0 0 0 4px var(--paper), 0 0 0 0 rgba(var(--signal-rgb), 0.42); }
+    55%      { box-shadow: 0 0 0 4px var(--paper), 0 0 0 10px rgba(var(--signal-rgb), 0); }
+  }
+}
+
+/* ---------- call-to-action band ---------- */
+/* One dark, graph-filled block per page where the next step is unmissable. */
+
+.cta-band {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  margin-top: var(--s8);
+  padding: clamp(2.5rem, 1.5rem + 3.5vw, 4rem) clamp(1.5rem, 0.75rem + 3vw, 3.5rem);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(ellipse 620px 380px at 88% 110%, rgba(var(--signal-rgb), 0.30) 0%, transparent 65%),
+    radial-gradient(ellipse 560px 340px at 6% -20%, rgba(212, 80, 107, 0.28) 0%, transparent 62%),
+    linear-gradient(155deg, #1d2029, #14161c 70%);
+  color: #ece9e3;
+  text-align: center;
+}
+.cta-band .constellation {
+  color: #cfd4dc;
+  opacity: 0.4;
+  mask-image: radial-gradient(ellipse 58% 62% at 50% 58%,
+    transparent 0%, transparent 30%, #000 78%);
+  -webkit-mask-image: radial-gradient(ellipse 58% 62% at 50% 58%,
+    transparent 0%, transparent 30%, #000 78%);
+}
+.cta-band .constellation .cn-a,
+.cta-band .constellation .cn-h { fill: #f2b13f; }
+.cta-band > *:not(.constellation) { position: relative; z-index: 1; }
+.cta-band h2 {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  color: #fff;
+  font-size: clamp(1.5rem, 1.25rem + 1.1vw, 2.1rem);
+}
+.cta-band h2::before { display: none; }
+.cta-band .kicker { color: #f2b13f; justify-content: center; }
+.cta-band p {
+  margin: 0 auto;
+  max-width: 46ch;
+  color: #b6bcc7;
+  font-size: 1.03rem;
+}
+.cta-band .btn-row { justify-content: center; }
+.cta-band .btn-ghost {
+  color: #ece9e3;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+}
+.cta-band .btn-ghost:hover {
+  color: #fff;
+  border-color: #f2b13f;
+  background: rgba(255, 255, 255, 0.1);
+}
+.cta-band .btn-primary {
+  background: linear-gradient(150deg, #cf4863, #a32e48 65%);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4), 0 12px 30px rgba(163, 46, 72, 0.38);
+}
 
 /* ---------- pillar row (the course's three commitments) ---------- */
 /* Deliberately squarer and quieter than the module cards: this is framing,
@@ -319,15 +849,15 @@ main { padding: 2.5rem 0 4rem; }
 .pillar-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  gap: 1.25rem;
-  margin: 1.6rem 0 1.5rem;
+  gap: 1.6rem;
+  margin: var(--s6) 0 var(--s5);
   padding: 0;
   list-style: none;
 }
 .pillar {
   position: relative;
   border-top: 2px solid var(--line);
-  padding-top: 1rem;
+  padding-top: 1.15rem;
   transition: border-color 0.4s var(--ease);
 }
 .pillar::after {
@@ -336,24 +866,33 @@ main { padding: 2.5rem 0 4rem; }
   top: -2px; left: 0;
   height: 2px;
   width: 0;
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--accent), var(--signal));
   transition: width 0.5s var(--ease);
 }
 .pillar:hover::after { width: 100%; }
 .pillar .num {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   font-family: var(--mono);
   font-size: 0.72rem;
+  font-weight: 600;
   letter-spacing: 0.16em;
   color: var(--accent);
-  opacity: 0.75;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+.pillar .num::before {
+  content: "";
+  width: 0.35rem; height: 0.35rem;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.55;
 }
 .pillar h3 {
-  margin: 0 0 0.4rem;
-  font-size: 1.15rem;
+  margin: 0 0 0.45rem;
+  font-size: 1.22rem;
 }
-.pillar p { margin: 0; font-size: 0.92rem; color: var(--ink-soft); }
+.pillar p { margin: 0; font-size: 0.94rem; color: var(--ink-soft); }
 .pillar em { font-style: italic; color: var(--ink); }
 
 /* the pillars arrive one after another once the section scrolls in */
@@ -364,28 +903,45 @@ main { padding: 2.5rem 0 4rem; }
 /* ---------- focus / dimmed states ---------- */
 
 .badge {
-  display: inline-block;
-  float: right;
-  font-size: 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-end;
+  font-family: var(--sans);
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: #fff;
   background: var(--accent);
-  border-radius: 99px;
-  padding: 0.15rem 0.6rem;
+  border-radius: var(--radius-pill);
+  padding: 0.22rem 0.7rem;
   margin: 0.1rem 0 0.4rem 0.75rem;
+}
+.badge::before {
+  content: "";
+  width: 0.34rem; height: 0.34rem;
+  border-radius: 50%;
+  background: var(--signal);
 }
 .badge.badge-quiet {
   color: var(--accent);
   background: var(--accent-wash);
+  border: 1px solid rgba(var(--accent-rgb), 0.22);
 }
+.badge.badge-signal {
+  color: #fff;
+  background: linear-gradient(150deg, var(--signal), #8f550c);
+}
+.badge.badge-signal::before { background: #fff; opacity: 0.9; }
 
 .card-focus {
-  border-color: var(--accent);
-  background: linear-gradient(180deg, var(--accent-wash), var(--card) 55%);
-  box-shadow: 0 2px 12px rgba(var(--accent-rgb), 0.1);
+  border-color: rgba(var(--accent-rgb), 0.45);
+  background: linear-gradient(170deg, var(--accent-wash), var(--card) 60%);
+  box-shadow: 0 2px 6px rgba(var(--accent-rgb), 0.09),
+              0 12px 30px rgba(var(--accent-rgb), 0.12);
 }
+.card-focus::after { opacity: 0.2; }
 
 .dimmed {
   opacity: 0.5;
@@ -410,24 +966,38 @@ main { padding: 2.5rem 0 4rem; }
 .schedule {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  margin-top: var(--s5);
   font-size: 0.95rem;
 }
 .schedule th, .schedule td {
   text-align: left;
-  padding: 0.55rem 0.9rem;
+  padding: 0.7rem 1rem;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
 }
 .schedule th {
   font-family: var(--mono);
-  font-weight: 500;
-  font-size: 0.7rem;
+  font-weight: 600;
+  font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--ink-soft);
-  border-bottom: 2px solid var(--line);
+  color: var(--ink-faint);
+  border-bottom: 2px solid var(--line-strong);
 }
+.table-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+  margin-top: var(--s5);
+}
+.table-card .schedule { margin-top: 0; }
+.table-card .schedule th:first-child,
+.table-card .schedule td:first-child { padding-left: 1.4rem; }
+.table-card .schedule th:last-child,
+.table-card .schedule td:last-child { padding-right: 1.4rem; }
+.table-card .schedule tbody tr:last-child td { border-bottom: none; }
 .schedule td:first-child {
   white-space: nowrap;
   font-family: var(--mono);
@@ -445,75 +1015,152 @@ main { padding: 2.5rem 0 4rem; }
 .lesson-header {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   border-bottom: 1px solid var(--line);
-  background: var(--card);
-  padding: 2.75rem 0 2.25rem;
+  background:
+    radial-gradient(ellipse 720px 340px at 10% -30%, rgba(var(--accent-rgb), 0.13) 0%, transparent 68%),
+    radial-gradient(ellipse 560px 300px at 92% 0%, rgba(var(--signal-rgb), 0.10) 0%, transparent 65%),
+    var(--card);
+  padding: clamp(2.75rem, 1.75rem + 3.5vw, 4.5rem) 0 clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
 }
-.lesson-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 620px 300px at 12% -30%,
-    rgba(var(--accent-rgb), 0.09) 0%, transparent 70%);
-  pointer-events: none;
+.lesson-header .constellation {
+  opacity: 0.58;
+  mask-image: radial-gradient(ellipse 58% 90% at 12% 50%,
+    transparent 0%, transparent 24%, #000 70%);
+  -webkit-mask-image: radial-gradient(ellipse 58% 90% at 12% 50%,
+    transparent 0%, transparent 24%, #000 70%);
 }
 .lesson-header .wrap { position: relative; z-index: 1; }
-.lesson-header .kicker {
-  font-family: var(--mono);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: var(--accent);
-  margin-bottom: 0.7rem;
+.lesson-header h1 { max-width: 22ch; }
+.lesson-header .meta {
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  max-width: 52ch;
+  margin-bottom: 0;
 }
-.lesson-header .meta { color: var(--ink-soft); font-size: 0.95rem; }
+
+/* A progress read-out for the module the reader is on: the course's eight
+   modules as eight nodes on one edge, with the current one lit. Purely
+   decorative — the heading already says "Module 6 of 8". */
+.module-ticks {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.95rem;
+  margin: var(--s5) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.module-ticks::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem; right: 0.2rem;
+  top: 50%;
+  height: 1.5px;
+  margin-top: -0.75px;
+  background: linear-gradient(90deg,
+    rgba(var(--accent-rgb), 0.5), rgba(var(--signal-rgb), 0.4));
+}
+.module-ticks li {
+  position: relative;
+  z-index: 1;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--card);
+  box-shadow: inset 0 0 0 1.5px rgba(var(--accent-rgb), 0.4);
+}
+.module-ticks li.done {
+  background: var(--accent);
+  box-shadow: none;
+  opacity: 0.8;
+}
+.module-ticks li.here {
+  width: 0.85rem;
+  height: 0.85rem;
+  background: var(--signal);
+  box-shadow: 0 0 0 4px rgba(var(--signal-rgb), 0.18);
+}
 
 .objectives, .materials {
+  position: relative;
   background: var(--card);
   border: 1px solid var(--line);
   border-left: 3px solid var(--accent);
   border-radius: 0 var(--radius) var(--radius) 0;
-  padding: 1rem 1.4rem;
-  margin: 1rem 0 1.5rem;
+  box-shadow: var(--shadow-1);
+  padding: 1.25rem 1.6rem;
+  margin: var(--s5) 0 var(--s5);
+  max-width: 52rem;
 }
 .objectives ul, .materials ul { margin: 0.3rem 0 0.2rem; padding-left: 1.2rem; }
-.objectives li, .materials li { margin: 0.3rem 0; }
+.objectives li, .materials li { margin: 0.45rem 0; }
+.objectives li::marker, .materials li::marker { color: var(--accent); }
 
-.agenda { list-style: none; margin: 1rem 0 1.5rem; padding: 0; }
+.agenda { list-style: none; margin: var(--s5) 0; padding: 0; max-width: 52rem; }
 .agenda li {
+  position: relative;
   display: grid;
-  grid-template-columns: 8.5rem 1fr;
-  gap: 1rem;
-  padding: 0.65rem 0.25rem;
+  grid-template-columns: 9rem 1fr;
+  gap: 1.1rem;
+  padding: 0.85rem 0.25rem 0.85rem 1.35rem;
   border-bottom: 1px solid var(--line);
 }
+/* every agenda entry is a node on the session's own little spine */
+.agenda li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.4rem;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: var(--card);
+  box-shadow: inset 0 0 0 1.5px rgba(var(--accent-rgb), 0.5);
+}
+.agenda li::after {
+  content: "";
+  position: absolute;
+  left: 0.22rem;
+  top: 1.95rem;
+  bottom: -0.45rem;
+  width: 1.5px;
+  background: rgba(var(--accent-rgb), 0.16);
+}
+.agenda li:last-child::after { display: none; }
 .agenda .time {
+  font-family: var(--mono);
   font-variant-numeric: tabular-nums;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-faint);
   white-space: nowrap;
+  padding-top: 0.15rem;
 }
 .agenda strong { display: block; }
-.agenda p { margin: 0.15rem 0 0; font-size: 0.92rem; color: var(--ink-soft); }
+.agenda p { margin: 0.2rem 0 0; font-size: 0.93rem; color: var(--ink-soft); }
 
 .lesson-nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 1rem;
-  margin-top: 3rem;
-  padding-top: 1.25rem;
+  margin-top: var(--s8);
+  padding-top: var(--s5);
   border-top: 1px solid var(--line);
   font-size: 0.95rem;
 }
+.lesson-nav .btn { flex: none; }
+.lesson-nav .spacer { flex: 1; }
 
 .placeholder {
-  border: 1px dashed var(--line);
+  border: 1px dashed var(--line-strong);
   border-radius: var(--radius);
-  background: var(--card);
+  background: var(--paper-2);
   color: var(--ink-soft);
-  padding: 1rem 1.4rem;
+  padding: 1.15rem 1.5rem;
   font-size: 0.95rem;
+  max-width: 52rem;
 }
 
 /* ---------- mini-lesson (teach-from-page) ---------- */
@@ -589,10 +1236,17 @@ main { padding: 2.5rem 0 4rem; }
     transform: none;
     transition: none;
   }
-  .hero .kicker, .hero h1, .hero .lede, .hero .meta,
+  .hero .kicker, .hero h1, .hero .lede, .hero .meta, .hero .btn-row,
   .lesson-header .kicker, .lesson-header h1, .lesson-header .meta,
-  .brand-mark { animation: none; }
+  .brand-mark, .module-node.is-active { animation: none; }
   .lesson-card:hover { transform: none; }
+  .lesson-card::after,
+  .lesson-card:hover::after { transform: none; transition: none; }
+  .module-step:hover .module-node,
+  .module-step:focus-within .module-node { transform: none; }
+  .btn, .btn:hover, .btn:active { transform: none; }
+  .btn .arrow, .btn:hover .arrow,
+  .btn .arrow-back, .btn:hover .arrow-back { transform: none; transition: none; }
   .pillar::after { transition: none; }
 }
 
@@ -608,19 +1262,40 @@ main { padding: 2.5rem 0 4rem; }
 body.deck {
   --ink: #e9e7e2;
   --ink-soft: #a6adb8;
+  --ink-soft-rgb: 166, 173, 184;
+  --ink-faint: #767e8c;
   --paper: #12141a;
+  --paper-2: #171a22;
   --card: #1a1d25;
   --line: #2b303b;
+  --line-strong: #3a4150;
   --accent: #d4506b;
   --accent-dark: #e79aa9;
+  --accent-bright: #e5677f;
   --accent-wash: rgba(212, 80, 107, 0.10);
   --accent-rgb: 212, 80, 107;
+  --signal: #f2b13f;
+  --signal-rgb: 242, 177, 63;
+  --card-graph: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 160 160%22><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M119,57 Q93,51 84,41%22 opacity=%220.42%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M119,57 Q102,82 88,95%22 opacity=%220.33%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M46,122 Q30,131 37,121%22 opacity=%220.67%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M46,122 Q49,126 26,117%22 opacity=%220.57%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M29,77 Q38,97 33,97%22 opacity=%220.57%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M29,77 Q23,66 38,57%22 opacity=%220.56%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M88,95 Q72,117 81,124%22 opacity=%220.49%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M88,95 Q85,99 80,126%22 opacity=%220.47%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M33,97 Q28,115 26,117%22 opacity=%220.57%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M80,126 Q82,114 81,124%22 opacity=%220.73%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M18,140 Q34,116 26,117%22 opacity=%220.54%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M18,140 Q37,144 37,121%22 opacity=%220.52%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M37,121 Q38,131 26,117%22 opacity=%220.65%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M38,57 Q40,33 40,25%22 opacity=%220.48%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M84,41 Q61,40 40,25%22 opacity=%220.34%22/><circle fill=%22%23a6adb8%22 cx=%22119%22 cy=%2257%22 r=%223.5%22 opacity=%220.77%22/><circle fill=%22%23a6adb8%22 cx=%2246%22 cy=%22122%22 r=%222.1%22 opacity=%220.32%22/><circle fill=%22%23a6adb8%22 cx=%2229%22 cy=%2277%22 r=%222.7%22 opacity=%220.36%22/><circle fill=%22%23a6adb8%22 cx=%2288%22 cy=%2295%22 r=%224.0%22 opacity=%220.64%22/><circle fill=%22%23a6adb8%22 cx=%2233%22 cy=%2297%22 r=%222.1%22 opacity=%220.65%22/><circle fill=%22%23a6adb8%22 cx=%2280%22 cy=%22126%22 r=%222.2%22 opacity=%220.35%22/><circle fill=%22%23a6adb8%22 cx=%2218%22 cy=%22140%22 r=%223.7%22 opacity=%220.76%22/><circle fill=%22%23a6adb8%22 cx=%2237%22 cy=%22121%22 r=%223.5%22 opacity=%220.33%22/><circle fill=%22%23a6adb8%22 cx=%2281%22 cy=%22124%22 r=%223.0%22 opacity=%220.68%22/><circle fill=%22%23f2b13f%22 cx=%2238%22 cy=%2257%22 r=%229%22 opacity=%22.12%22/><circle fill=%22%23f2b13f%22 cx=%2238%22 cy=%2257%22 r=%225%22 opacity=%22.26%22/><circle fill=%22%23f2b13f%22 cx=%2238%22 cy=%2257%22 r=%222.6%22/><circle fill=%22%23a6adb8%22 cx=%2226%22 cy=%22117%22 r=%222.2%22 opacity=%220.36%22/><circle fill=%22%23a6adb8%22 cx=%2284%22 cy=%2241%22 r=%222.8%22 opacity=%220.74%22/><circle fill=%22%23a6adb8%22 cx=%2240%22 cy=%2225%22 r=%222.3%22 opacity=%220.69%22/></svg>");
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-2: 0 2px 6px rgba(0, 0, 0, 0.45), 0 14px 34px rgba(0, 0, 0, 0.4);
+  --shadow-accent: 0 2px 6px rgba(0, 0, 0, 0.45),
+                   0 16px 38px rgba(var(--accent-rgb), 0.22);
   background: var(--paper);
 }
-body.deck .site-header,
+body.deck .site-header {
+  background: rgba(21, 23, 31, 0.82);
+  border-bottom-color: var(--line);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  body.deck .site-header { background: #15171f; }
+}
 body.deck .site-footer,
 body.deck .lesson-header { background: #15171f; }
 body.deck .site-note { background: #15171f; color: var(--ink-soft); }
+body.deck .hero .meta span { background: rgba(255, 255, 255, 0.04); }
+body.deck .btn-ghost { background: rgba(255, 255, 255, 0.05); }
+body.deck .cta-band { background: linear-gradient(155deg, #212530, #15171f 70%); }
 body.deck .chip.active { box-shadow: 0 0 16px rgba(212, 80, 107, 0.45); }
 body.deck .lesson-card:hover { box-shadow: 0 2px 16px rgba(212, 80, 107, 0.16); }
 body.deck .demo-timer { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.55); }
@@ -634,15 +1309,29 @@ body.deck .badge { color: #fff; }
 
 /* light "paper" interlude inside the dark deck — local token re-flip */
 .slide-light {
-  --ink: #22252b;
+  --ink: #1c1f26;
   --ink-soft: #565b66;
-  --paper: #fdfcfa;
+  --ink-soft-rgb: 86, 91, 102;
+  --ink-faint: #8b909b;
+  --paper: #fbfaf7;
+  --paper-2: #f4f1ec;
   --card: #ffffff;
-  --line: #e6e2dc;
+  --line: #e7e2da;
+  --line-strong: #d5cec3;
   --accent: #7d2335;
   --accent-dark: #5e1a28;
-  --accent-wash: #f7eef0;
+  --accent-bright: #9c2b41;
+  --accent-wash: #f9eff1;
   --accent-rgb: 125, 35, 53;
+  --signal: #b06a10;
+  --signal-rgb: 176, 106, 16;
+  --card-graph: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 160 160%22><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M119,57 Q93,51 84,41%22 opacity=%220.42%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M119,57 Q102,82 88,95%22 opacity=%220.33%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M46,122 Q30,131 37,121%22 opacity=%220.67%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M46,122 Q49,126 26,117%22 opacity=%220.57%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M29,77 Q38,97 33,97%22 opacity=%220.57%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M29,77 Q23,66 38,57%22 opacity=%220.56%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M88,95 Q72,117 81,124%22 opacity=%220.49%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M88,95 Q85,99 80,126%22 opacity=%220.47%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M33,97 Q28,115 26,117%22 opacity=%220.57%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M80,126 Q82,114 81,124%22 opacity=%220.73%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M18,140 Q34,116 26,117%22 opacity=%220.54%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M18,140 Q37,144 37,121%22 opacity=%220.52%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M37,121 Q38,131 26,117%22 opacity=%220.65%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M38,57 Q40,33 40,25%22 opacity=%220.48%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M84,41 Q61,40 40,25%22 opacity=%220.34%22/><circle fill=%22%23565b66%22 cx=%22119%22 cy=%2257%22 r=%223.5%22 opacity=%220.77%22/><circle fill=%22%23565b66%22 cx=%2246%22 cy=%22122%22 r=%222.1%22 opacity=%220.32%22/><circle fill=%22%23565b66%22 cx=%2229%22 cy=%2277%22 r=%222.7%22 opacity=%220.36%22/><circle fill=%22%23565b66%22 cx=%2288%22 cy=%2295%22 r=%224.0%22 opacity=%220.64%22/><circle fill=%22%23565b66%22 cx=%2233%22 cy=%2297%22 r=%222.1%22 opacity=%220.65%22/><circle fill=%22%23565b66%22 cx=%2280%22 cy=%22126%22 r=%222.2%22 opacity=%220.35%22/><circle fill=%22%23565b66%22 cx=%2218%22 cy=%22140%22 r=%223.7%22 opacity=%220.76%22/><circle fill=%22%23565b66%22 cx=%2237%22 cy=%22121%22 r=%223.5%22 opacity=%220.33%22/><circle fill=%22%23565b66%22 cx=%2281%22 cy=%22124%22 r=%223.0%22 opacity=%220.68%22/><circle fill=%22%23b06a10%22 cx=%2238%22 cy=%2257%22 r=%229%22 opacity=%22.12%22/><circle fill=%22%23b06a10%22 cx=%2238%22 cy=%2257%22 r=%225%22 opacity=%22.26%22/><circle fill=%22%23b06a10%22 cx=%2238%22 cy=%2257%22 r=%222.6%22/><circle fill=%22%23565b66%22 cx=%2226%22 cy=%22117%22 r=%222.2%22 opacity=%220.36%22/><circle fill=%22%23565b66%22 cx=%2284%22 cy=%2241%22 r=%222.8%22 opacity=%220.74%22/><circle fill=%22%23565b66%22 cx=%2240%22 cy=%2225%22 r=%222.3%22 opacity=%220.69%22/></svg>");
+  --shadow-1: 0 1px 2px rgba(28, 31, 38, 0.05),
+              0 4px 14px rgba(28, 31, 38, 0.045);
+  --shadow-2: 0 2px 4px rgba(28, 31, 38, 0.06),
+              0 12px 30px rgba(28, 31, 38, 0.09);
+  --shadow-accent: 0 2px 6px rgba(var(--accent-rgb), 0.10),
+                   0 16px 38px rgba(var(--accent-rgb), 0.16);
   background: var(--paper);
   color: var(--ink);
 }
@@ -1221,9 +1910,12 @@ body.deck .badge { color: #fff; }
 
 .site-footer {
   position: relative;
+  overflow: hidden;
+  isolation: isolate;
   border-top: 1px solid var(--line);
   background: var(--card);
-  padding: 2rem 0 2.5rem;
+  margin-top: var(--s8);
+  padding: var(--s7) 0 var(--s7);
   font-size: 0.88rem;
   color: var(--ink-soft);
 }
@@ -1234,15 +1926,60 @@ body.deck .badge { color: #fff; }
   top: -1px; left: 0; right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent,
-    rgba(var(--accent-rgb), 0.4), transparent);
+    rgba(var(--accent-rgb), 0.4) 35%, rgba(var(--signal-rgb), 0.4) 65%, transparent);
+  z-index: 2;
 }
-.site-footer p { margin: 0.3em 0; }
-.site-footer strong { color: var(--ink); font-weight: 600; }
+.site-footer .constellation { opacity: 0.3; }
+.site-footer .wrap { position: relative; z-index: 1; }
+.site-footer p { margin: 0.35em 0; max-width: 62ch; }
+.site-footer strong { color: var(--ink); font-weight: 700; }
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 52rem) {
+  .hero h1 { max-width: 100%; }
+  .lesson-nav { flex-wrap: wrap; }
+}
 
 @media (max-width: 40rem) {
   :root { font-size: 16px; }
-  h1 { font-size: 1.7rem; }
-  .agenda li { grid-template-columns: 1fr; gap: 0.15rem; }
-  .site-nav a { margin-left: 0; margin-right: 1.1rem; }
-  .site-header .wrap { padding-bottom: 1.25rem; }
+  .wrap { padding: 0 1.15rem; }
+  main > section, main > .section { margin-top: var(--s7); }
+  .agenda li {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+    padding-left: 1.2rem;
+  }
+  .site-nav { gap: 0 1.1rem; }
+  .site-nav a { margin-left: 0; }
+  .site-header .wrap { padding-bottom: 1rem; }
+  .lesson-grid { grid-template-columns: 1fr; }
+  .btn-row { gap: 0.65rem; }
+  .btn { padding: 0.72rem 1.25rem; font-size: 0.93rem; }
+  .btn-row .btn { flex: 1 1 auto; justify-content: center; }
+  .lesson-nav { flex-direction: column; align-items: stretch; }
+  .lesson-nav .btn { justify-content: center; }
+  .lesson-nav .spacer { display: none; }
+  .cta-band { border-radius: var(--radius); }
+
+  /* the divider before "All Courses" reads as a stray rule once the nav wraps */
+  .hub-link { border-left: none; padding-left: 0; }
+
+  /* at this width the headline runs the full column, so the artwork has to
+     retreat to the top corner instead of sitting behind the words */
+  .hero .constellation,
+  .lesson-header .constellation {
+    opacity: 0.4;
+    mask-image: radial-gradient(ellipse 120% 65% at 30% 88%,
+      transparent 0%, transparent 34%, #000 82%);
+    -webkit-mask-image: radial-gradient(ellipse 120% 65% at 30% 88%,
+      transparent 0%, transparent 34%, #000 82%);
+  }
+  .hero-canvas {
+    mask-image: radial-gradient(ellipse 120% 65% at 30% 88%,
+      rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 36%, #000 84%);
+    -webkit-mask-image: radial-gradient(ellipse 120% 65% at 30% 88%,
+      rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 36%, #000 84%);
+  }
+  .module-ticks { gap: 0.7rem; }
 }

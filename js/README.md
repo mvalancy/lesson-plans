@@ -6,16 +6,27 @@ disabled. Nothing here fetches a framework, and there is no build step.
 
 | File | Used by | Purpose |
 |---|---|---|
-| `hero-graph.js` | hub + course + mini-lesson heroes | Animated node-graph canvas behind hero sections |
+| `hero-graph.js` | hub + course + mini-lesson heroes | Animated node-graph canvas behind hero sections (all canvases on the page) |
 | `lesson-reveal.js` | **every page** | Scroll reveal everywhere; on the mini-lesson also progress bar, slide rail, timing chips, next-word demo, 15-minute timer |
 | `ask-widget.js` | mini-lesson | The live small-model terminal that calls `/api/ask` |
 
 ## `hero-graph.js`
 
-Draws drifting nodes, proximity edges, and travelling signal pulses on any
-`<canvas class="hero-canvas">`. Detects a dark container (`body.deck`) and
-raises its alpha gain so it reads on both themes. Renders a single static
-frame under `prefers-reduced-motion`.
+Draws drifting nodes, proximity edges, and travelling signal pulses on **every**
+`<canvas class="hero-canvas">` on the page (each gets its own independent
+simulation). Renders a single static frame under `prefers-reduced-motion`.
+
+Colours are **read from the stylesheet**, not hard-coded: the script pulls
+`--accent-rgb`, `--signal-rgb`, and `--ink-soft-rgb` off the canvas element via
+`getComputedStyle`, so a theme flip in CSS flips the animation with it and the
+palette lives in exactly one place. Each token has a fallback, so a stale
+cached stylesheet degrades to the right colours instead of a blank hero. It
+still detects a dark container (`body.deck`) to raise its alpha gain.
+
+Nodes come in three kinds — plain (`--ink-soft`), accent (`--accent`), and a
+rarer signal node (`--signal`) — matching the two-tone constellation of the
+static SVGs in the page markup. **If you add a theme, add `--ink-soft-rgb` and
+`--signal-rgb` to it**, or this script falls back to the light palette.
 
 ## `lesson-reveal.js`
 
