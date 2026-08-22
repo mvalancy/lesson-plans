@@ -21,7 +21,9 @@ Previously published at `/mpc-csci-40/`; those URLs 301 here via the repo-root
 | `lessons/` | One page per module — [see `lessons/README.md`](lessons/README.md) |
 | `mini-lesson/` | A 15-minute standalone segment — [see `mini-lesson/README.md`](mini-lesson/README.md) |
 | `resources.html` | Free tools, open models, and the per-module tool list |
-| `ACTIVITY_CONCEPTS.md` | Activity design notes (owned by a separate workstream) |
+| `ACTIVITY_CONCEPTS.md` | The activity map: pillars, scaffold, tool menu, per-module top picks |
+| `activities/` | The idea library, one file per module — [see `activities/README.md`](activities/README.md) |
+| `ACTIVITY_GAMES.md` | Verified shelf of browser games/explorables, grouped by module |
 
 ## The three commitments
 
