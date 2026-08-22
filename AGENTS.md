@@ -140,7 +140,15 @@ Graphlings case study (`docs/guides/web-app-ai-gateway-integration.md`).
   a `<section class="reveal">`. Keep that skeleton when editing.
 - Nav and footer are duplicated across pages (no templating). Course pages
   carry an "All Courses" link back to the hub. If you change nav/footer,
-  change them on every page.
+  change them on every page. The footer is **one pattern everywhere** (brand
+  block, primary nav, a per-page slot, then the fine-print line). See
+  [`css/README.md`](css/README.md#the-site-footer). Only the slot changes
+  per page: section anchors on the resource library, previous/next on a
+  lesson, "start here" on the hub.
+- **Decoration never fights text.** Constellation artwork sitting behind
+  body text stays at about 12% opacity or gets masked away from the text
+  column (the hero and lesson-header masks do exactly that). No grey text
+  over a grey graph.
 - Tone: clean, plain-language, welcoming to non-programmers. Professional, not
   preachy — state the position once and move on.
 

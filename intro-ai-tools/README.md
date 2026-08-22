@@ -29,7 +29,7 @@ example swaps and the skill stays.
 | `index.html` | Course overview, the three commitments, module grid, suggested pacing |
 | `lessons/` | One page per module — [see `lessons/README.md`](lessons/README.md) |
 | `mini-lesson/` | A 15-minute standalone segment with the live model widget — [see `mini-lesson/README.md`](mini-lesson/README.md) |
-| `resources.html` | Free tools, open models, and the per-module tool list |
+| `resources.html` | The resource library: side index, ~66 verified games, free tools by category, dataset shelf, build-your-own templates |
 | `ACTIVITY_CONCEPTS.md` | The activity map: pillars, scaffold, tool menu, per-module top picks |
 | `activities/` | The idea library + [lab playbook](activities/lab-playbook.md) — [see `activities/README.md`](activities/README.md) |
 | `ACTIVITY_GAMES.md` | Verified shelf of browser games/explorables, grouped by module |

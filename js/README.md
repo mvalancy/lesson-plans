@@ -44,6 +44,15 @@ mini-lesson, so nothing else runs there.
   never lands you on a blank section.
 - **Reading progress bar** and a **slide rail** of clickable dots.
 - **Scrollspy** that lights the current section's timing chip.
+- **Side-index scrollspy** for a `.toc` element (the resource library). It
+  lights the link whose section is in a band near the top of the viewport;
+  when several straddle the band the topmost wins, and when the index is a
+  horizontal chip row it scrolls the lit chip into view. The list itself is
+  written in the HTML, so with JS off it is still a working set of anchor
+  links.
+- **Games-shelf filter** on the resource library: the chips toggle
+  `[hidden]` on each `.game-group`. CSS keeps the chips out of the page
+  until `html.js` is set, so nobody is offered a button that does nothing.
 - **Next-word prediction demo** — types a true completion (Moon landing) then a
   confident fabricated citation, with probability chips. This is the lesson's
   central idea as an animation.

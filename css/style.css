@@ -1159,12 +1159,14 @@ main { padding: 0 0 var(--s8); }
     var(--card);
   padding: clamp(2.75rem, 1.75rem + 3.5vw, 4.5rem) 0 clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
 }
+/* The mask keeps the artwork off the headline and its line of body text:
+   the graph fades in only past the text column. */
 .lesson-header .constellation {
-  opacity: 0.58;
-  mask-image: radial-gradient(ellipse 58% 90% at 12% 50%,
-    transparent 0%, transparent 24%, #000 70%);
-  -webkit-mask-image: radial-gradient(ellipse 58% 90% at 12% 50%,
-    transparent 0%, transparent 24%, #000 70%);
+  opacity: 0.5;
+  mask-image: radial-gradient(ellipse 66% 95% at 12% 50%,
+    transparent 0%, transparent 38%, #000 78%);
+  -webkit-mask-image: radial-gradient(ellipse 66% 95% at 12% 50%,
+    transparent 0%, transparent 38%, #000 78%);
 }
 .lesson-header .wrap { position: relative; z-index: 1; }
 .lesson-header h1 { max-width: 22ch; }
@@ -1445,7 +1447,7 @@ body.library { --max: 78rem; }
   margin-top: 0.7rem;
   font-size: 0.82rem;
   font-style: italic;
-  color: var(--ink-faint);
+  color: var(--ink-soft);
 }
 
 /* --- data tables --- */
@@ -1460,8 +1462,11 @@ body.library { --max: 78rem; }
 .data-table td .lic {
   display: block;
   font-size: 0.8rem;
-  color: var(--ink-faint);
+  color: var(--ink-soft);
 }
+
+/* the numbered arc keeps the reading measure the prose around it has */
+.library-body .steps { max-width: 52rem; }
 
 /* --- the index as a chip row on narrow screens --- */
 
@@ -1471,18 +1476,17 @@ body.library { --max: 78rem; }
     gap: var(--s5);
     margin-top: var(--s5);
   }
+  /* The header's height moves with how the nav wraps, so a sticky chip row
+     would need an offset that is right at exactly one width. It scrolls
+     with the page instead, and the footer carries the same index for
+     jumping once you are deep in the shelf. */
   .toc {
-    top: 3.4rem;
-    z-index: 40;
+    position: static;
     max-height: none;
     margin: 0 -1.5rem;
-    padding: 0.5rem 1.5rem;
+    padding: 0.15rem 1.5rem 0.75rem;
     overflow-x: auto;
     overflow-y: hidden;
-    background: rgba(251, 250, 247, 0.94);
-    backdrop-filter: saturate(1.6) blur(10px);
-    -webkit-backdrop-filter: saturate(1.6) blur(10px);
-    border-bottom: 1px solid var(--line);
     scrollbar-width: none;
   }
   .toc::-webkit-scrollbar { display: none; }
@@ -1511,9 +1515,15 @@ body.library { --max: 78rem; }
   .library-body > section { scroll-margin-top: 7rem; }
 }
 
+@media (max-width: 46rem) {
+  /* narrow screens scroll these tables rather than crushing them into
+     one-word columns */
+  body.library .table-scroll .schedule { min-width: 33rem; }
+}
+
 @media (max-width: 40rem) {
-  .toc { top: 5.6rem; margin: 0 -1.15rem; padding: 0.5rem 1.15rem; }
-  .library-body > section { scroll-margin-top: 9rem; }
+  .toc { margin: 0 -1.15rem; padding: 0.15rem 1.15rem 0.75rem; }
+  .library-body > section { scroll-margin-top: 8rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2301,6 +2311,7 @@ body.deck .badge { color: #fff; }
 .footer-top {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: var(--s5) var(--s7);
   align-items: start;
 }

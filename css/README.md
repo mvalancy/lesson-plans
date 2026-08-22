@@ -103,8 +103,56 @@ The file is ordered, with comment banners between sections:
 11. Focus / dimmed states — `card-focus`, `.badge`, `.dimmed`, `.focus-row`
 12. Schedule table (+ `.table-card`)
 13. Lesson pages — `.module-ticks`, objectives, agenda, materials
-14. Mini-lesson deck — slides, big points, side notes, token demo, ask widget
-15. Footer, responsive overrides
+14. Resource library: `.library-layout`, the `.toc` side index, `.game-filter`
+    and `.game-group`, `.data-table`
+15. Mini-lesson deck — slides, big points, side notes, token demo, ask widget
+16. Footer (the shared pattern below), responsive overrides
+
+## The resource library
+
+`intro-ai-tools/resources.html` is the one page wide enough to need its own
+layout, so it carries `class="library"` on `<body>`, which only re-declares
+`--max` (66rem → 78rem). Widening the token widens the header, hero, and
+footer with it, so nothing drifts out of alignment.
+
+- **`.library-layout`** is a two-column grid: the `.toc` side index and
+  `.library-body` holding the sections. Below 62rem it collapses to one
+  column and the index becomes a horizontal chip row that scrolls with the
+  page. It is deliberately *not* sticky there: the header's height changes
+  with how the nav wraps, so a sticky offset would only be right at one
+  width. The footer's per-page slot carries the same index for deep reading.
+- **`.toc`** is an edge with a node per section, and `js/lesson-reveal.js`
+  adds `.active` to the section you are reading. Without JS it is a list of
+  anchor links, which is why the markup is written out in the HTML and never
+  generated.
+- **`.game-filter`** is hidden until `html.js` is set, because buttons that
+  do nothing are worse than no buttons. The groups it filters are plain
+  sections that read fine unfiltered.
+
+## The site footer
+
+One pattern, on every page, duplicated in each file (there is no templating
+here, so change one and you change all of them):
+
+```html
+<footer class="site-footer">
+  … constellation SVG …
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">…mark, one line of who and what…</div>
+      <nav class="footer-nav">…the primary nav for this site…</nav>
+      <!-- per-page slot -->
+      <nav class="footer-page">…this page's own links…</nav>
+    </div>
+    <p class="footer-fine">…free/unaffiliated line and the source link…</p>
+  </div>
+</footer>
+```
+
+The per-page slot is the only part that changes: section anchors on the
+resource library, previous/next on a lesson page, "start here" on the hub.
+Everything else is identical everywhere. The footer artwork sits at 12%
+opacity because text is read directly over it.
 
 ## The motion vocabulary
 
