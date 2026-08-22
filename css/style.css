@@ -363,9 +363,12 @@ a:hover { color: var(--accent-dark); }
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  /* Three washes and a floor: the last radial is a soft well under the graph
+     so the canvas reads as space with a far side, not a flat sheet. */
   background:
     radial-gradient(ellipse 900px 520px at 12% -25%, rgba(var(--accent-rgb), 0.16) 0%, transparent 68%),
     radial-gradient(ellipse 700px 400px at 88% 6%, rgba(var(--signal-rgb), 0.11) 0%, transparent 66%),
+    radial-gradient(ellipse 1200px 620px at 64% 132%, rgba(var(--ink-soft-rgb), 0.14) 0%, transparent 62%),
     linear-gradient(180deg, var(--accent-wash), var(--paper) 78%);
   border-bottom: 1px solid var(--line);
   padding: clamp(3.25rem, 2rem + 5vw, 5.5rem) 0 clamp(2.75rem, 1.75rem + 4vw, 4.5rem);
@@ -1108,6 +1111,7 @@ main { padding: 0 0 var(--s8); }
   background:
     radial-gradient(ellipse 720px 340px at 10% -30%, rgba(var(--accent-rgb), 0.13) 0%, transparent 68%),
     radial-gradient(ellipse 560px 300px at 92% 0%, rgba(var(--signal-rgb), 0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 1000px 420px at 66% 136%, rgba(var(--ink-soft-rgb), 0.10) 0%, transparent 62%),
     var(--card);
   padding: clamp(2.75rem, 1.75rem + 3.5vw, 4.5rem) 0 clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
 }
