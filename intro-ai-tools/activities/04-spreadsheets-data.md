@@ -117,6 +117,32 @@ exceeds 10 MB — too big for one chatbot upload, use the per-indicator CSV abov
 pre-filter in Sheets; NOAA's Tides & Currents per-station site is being retired after
 Sept 2026 — the satellite altimetry file above replaces it.
 
+**Civic data — life-relevant files** (jobs, income, health, population; swap the
+California examples for your own state's open-data portal):
+
+| Dataset | Direct file | Size / shape |
+|---|---|---|
+| US life expectancy & death rates 1900–2018 (NCHS) | [export.csv](https://data.cdc.gov/api/v3/views/w9j2-ggv5/export.csv?accessType=DOWNLOAD) | ~500 rows · by year, race, sex — "life expectancy always rises" is *false* (1918, 2020s): a built-in fact-check |
+| Life expectancy, all countries 1960– (World Bank) | [CSV zip](https://api.worldbank.org/v2/en/indicator/SP.DYN.LE00.IN?downloadformat=csv) | ~88 KB zip · compare US vs. peers *(CC-BY)* |
+| Inflation, all countries 1960– (World Bank) | [CSV zip](https://api.worldbank.org/v2/en/indicator/FP.CPI.TOTL.ZG?downloadformat=csv) | small zip · "is inflation at a record high?" fact-check *(CC-BY)* |
+| US county population estimates 2020–2025 (Census) | [co-est2025-alldata.csv](https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/counties/totals/co-est2025-alldata.csv) | <1 MB · every county: births, deaths, migration — find the fastest-growing |
+| County unemployment 1990–2024 (CA EDD) | [annual CSV](https://data.ca.gov/dataset/74b655ae-6158-41ab-81ef-a02984a17cc1/resource/0d49b0b6-a012-4041-82cb-acebd0d3e8b4/download/laborforceandunemployment_annual_202668.csv) | ~2,000 rows · trend your county vs. the state *(CC-BY)* |
+| Median income by CA county (Franchise Tax Board) | [2023 B-6 CSV](https://data.ca.gov/dataset/7effd154-feda-4567-a3fe-af73e0931c45/resource/02ec81f7-2d3c-446d-a1a0-1387647d2d15/download/2023-b-6-comparison-by-county.csv) | 58 rows · where does your county rank? *(CC-BY)* |
+| Income limits by county & household size (CA/HUD) | [2023 CSV](https://data.ca.gov/dataset/d56fc70f-5566-4030-8854-1ce72c93e100/resource/c8c8bee2-96a6-410f-b32a-2039de52ea12/download/2023-income-limits.csv) | tiny · what counts as "low income" for a family of 4 here vs. San Francisco — pairs with the budget builder |
+
+**The big-file exercise** *(adapted — a lesson in itself)*: two valuable datasets are
+deliberately too large for a chatbot upload — [CA employment & wages by industry/county
+(QCEW)](https://data.ca.gov/dataset/quarterly-census-of-employment-and-wages-qcew) and
+the [College Scorecard](https://collegescorecard.ed.gov/data/) (tuition, debt, and
+post-grad earnings per college — the "does a degree from X pay off?" question students
+actually have). The activity is the filtering: download, slim to your county or ~20
+schools in Sheets, *then* upload the subset. Real analysts do this daily.
+
+*Verification note:* bls.gov, fred.stlouisfed.org, and census.gov's interactive tools
+block automated checkers (403 site-wide), so BLS wage tables and FRED series couldn't be
+link-verified this session — they're likely fine in a browser; check manually before
+citing in handouts.
+
 ## Full menu
 
 | Activity | Stage | The gist | Source |
