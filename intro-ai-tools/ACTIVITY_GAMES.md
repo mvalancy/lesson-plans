@@ -53,12 +53,52 @@ ethics/verification curriculum a second time through their hands.
 - **[Survival of the Best Fit](https://www.survivalofthebestfit.com/game/)** — the
   course's anchor game works as a Module 1 hook too: 6 minutes, then "this is why the
   next eight weeks matter."
-- *Human or Not (humanornot.io) and Akinator are both popular fits here but sit behind
-  bot-walls our checker can't pass — click them in a browser before class.*
+- *Human or Not: the original at humanornot.ai is gone (redirects to ai21.com); the
+  humanornot.io revival passed our direct fetch check but bot-blocks some checkers —
+  click it in a browser before class. Akinator also sits behind a bot-wall (unverified,
+  likely fine).*
 
 ## Module 2 — Everyday Productivity (prompting, precision, concision)
 
-*(games agent still reporting — section pending)*
+- **[Twin Pics](https://twinpics.ai/)** — daily challenge: describe a target AI image;
+  your description regenerates it; scored 0–100 on match. Big idea: precision and
+  concision compound — bloated descriptions score worse (*humanization*: the concision
+  muscle, gamified). **Has a free Classroom mode — students join with a nickname, no
+  accounts** (fits our no-LMS rule). Demo or station, 10–15 min. *(A pricing page exists
+  for premium classroom features — verify the free tier before assigning.)*
+- **[Say What You See](https://artsandculture.google.com/experiment/say-what-you-see/jwG3m7wQShZngw)**
+  (Google Arts & Culture) — same describe-to-reconstruct loop, free, zero setup, three
+  attempts per level. The floor pick; use as the pre-Twin-Pics warm-up, 5–10 min.
+- **[Agent Breaker (was Gandalf)](https://gandalf.lakera.ai/)** — talk an LLM into
+  revealing a password across escalating defenses. Big idea: iteration under adversarial
+  constraint is the same muscle as iterating toward a good output — and prompts are an
+  attack surface (*agency*, *ownership*). Project one level live (10 min) or
+  station/homework for all levels.
+- **[HackAPrompt](https://www.hackaprompt.com/)** (Learn Prompting team) — the deeper
+  injection challenge set, with a "no background required" newcomer track. Stretch
+  homework, 30+ min, once Agent Breaker feels easy.
+- **[Semantle](https://semantle.com/)** — Wordle for meaning: guesses scored by
+  embedding closeness. Big idea: the model doesn't see letters, it sees a position in
+  meaning-space — *why* word choice matters (*humanization*). One shared daily puzzle —
+  coordinate timing. Demo or daily warm-up.
+- **[Contexto](https://contexto.me/)** — same embedding mechanic, rank-based; the
+  rotation game after Semantle's daily is spent. Station/homework, 10 min.
+- **[Semantris](https://research.google.com/semantris/)** — the fast-arcade version of
+  the same embeddings lesson. Station, 10 min. *(2018-era Google experiment — test
+  before class; legacy experiments break silently.)*
+- **[Infinite Craft](https://neal.fun/infinite-craft/)** (neal.fun) — combine elements;
+  an LLM invents the results. Big idea: LLM non-determinism, playfully — "there is no
+  fixed answer key" (*agency*). Icebreaker, 10–15 min. *(Popular — may throttle under
+  whole-class load; test with a few devices.)*
+- **[AI Dungeon](https://play.aidungeon.com/)** — co-write a text adventure; practice
+  under- vs. over-specifying instructions. Homework/stretch, 20–30 min. *(Free tier is
+  turn-limited — flag the cap.)*
+- Cross-refs: Quick, Draw! (M1 icebreaker), Which Face Is Real? (M1/M3).
+- *Notes from verification: the original Human or Not (humanornot.ai) is gone —
+  redirects to ai21.com; the humanornot.io revival passed our direct fetch check but
+  bot-blocks some checkers — click before class. Dead: botpoet.com, guesstheprompt.com,
+  pimantle.com (parked). promptbattle.com is an in-person event format whose organizers
+  stopped running events — still fine as a format to copy, not a standing game.*
 
 ## Module 3 — Images, Audio, Video (synthetic media, detection)
 
