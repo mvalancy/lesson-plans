@@ -5,26 +5,32 @@ Central hub for course, study, and lesson material by
 
 Live site: **<https://lessons.mattvalancy.com>**
 
-The first course is **CSCI 40: Introduction to AI Tools** (Monterey Peninsula
-College). The hub also links out to the
+The first course is **Introduction to AI Tools** — a free, self-paced guide
+to using, understanding, and owning AI tools, written for people with no
+coding background. The hub also links out to the
 [Mr-Cal robot sensor calibration guide](https://cal.valpatel.com/).
 
-> **The CSCI 40 course has not been taught.** This site was built as part of
-> the interview process for the position. Every page under `mpc-csci-40/`
-> says so at the top. It is an independent instructor site, not an official
-> MPC publication.
+> **Free to learn from, free to teach from.** The course is a standalone
+> public guide: eight modules, complete lesson plans, no enrolment and no
+> institution behind it. Every page under `intro-ai-tools/` says so at the
+> top. Independent, and not affiliated with any school.
+
+Three ideas run through it: **agency** (whether to use these tools, not just
+how), **ownership** (capable models already run on consumer hardware — be an
+owner, not a customer), and **humanization** (automate the drudgery so human
+attention goes to humans).
 
 ## Layout
 
 ```mermaid
 flowchart TD
     ROOT["index.html<br/>hub: courses and guides"]
-    ROOT --> C40["mpc-csci-40/<br/>the course"]
+    ROOT --> C40["intro-ai-tools/<br/>the course"]
     ROOT -.->|"external link"| CAL["cal.valpatel.com<br/>Mr-Cal guide"]
 
     C40 --> OV["index.html<br/>overview + schedule"]
     C40 --> LES["lessons/<br/>8 module pages"]
-    C40 --> MINI["mini-lesson/<br/>15-min teaching demo"]
+    C40 --> MINI["mini-lesson/<br/>15-min standalone segment"]
     C40 --> RES["resources.html"]
 
     subgraph shared["Shared assets"]
@@ -43,15 +49,16 @@ flowchart TD
 | Path | What it is | Docs |
 |---|---|---|
 | `index.html` | Hub landing page | — |
-| `mpc-csci-40/` | The CSCI 40 course | [README](mpc-csci-40/README.md) |
-| `mpc-csci-40/lessons/` | Eight module lesson plans | [README](mpc-csci-40/lessons/README.md) |
-| `mpc-csci-40/mini-lesson/` | The 15-minute teaching demo | [README](mpc-csci-40/mini-lesson/README.md) |
+| `intro-ai-tools/` | The Introduction to AI Tools course | [README](intro-ai-tools/README.md) |
+| `intro-ai-tools/lessons/` | Eight module lesson plans | [README](intro-ai-tools/lessons/README.md) |
+| `intro-ai-tools/mini-lesson/` | The 15-minute standalone segment | [README](intro-ai-tools/mini-lesson/README.md) |
+| `_redirects` | 301s from the old `/mpc-csci-40/*` URLs | — |
 | `css/` | The single stylesheet and its design tokens | [README](css/README.md) |
 | `js/` | Client-side behaviour | [README](js/README.md) |
 | `functions/` | Cloudflare Pages Functions (the live AI demo) | [README](functions/README.md) |
 | `AGENTS.md` | Rules and hard-won gotchas for anyone editing this repo | [AGENTS.md](AGENTS.md) |
 
-Future courses get their own top-level directory alongside `mpc-csci-40/`.
+Future courses get their own top-level directory alongside `intro-ai-tools/`.
 
 ## How it's built
 
@@ -122,6 +129,8 @@ id = "<workers kv namespace id>"
 The mini-lesson page ends with a terminal wired to a real 1.5-billion-parameter
 model running on private hardware, reached through the Graphlings AI gateway.
 Ask it something obscure and it will confabulate on cue — which is the lesson.
+It doubles as a small proof of the course's ownership argument: a capable
+model answering from a machine in a room, not from anybody's subscription.
 
 The full architecture, the two-layer rate limiting, the error taxonomy, and the
 outage that shaped them are written up in
@@ -129,7 +138,14 @@ outage that shaped them are written up in
 worked example behind the Graphlings case study on consuming that gateway from
 a web app.
 
+## URL history
+
+The course originally lived at `/mpc-csci-40/`, when it was framed as one
+college's class. It is now the general `/intro-ai-tools/`. `_redirects` keeps
+every old path alive with a 301 — don't remove it.
+
 ## License
 
-Course content © Matthew Valancy. Feel free to learn from the structure;
-please don't republish the lesson content wholesale.
+Course content © Matthew Valancy. The lesson plans are meant to be taught:
+use them with a group, a club, a library, or a classroom, and attribution is
+welcome. Please don't republish the content wholesale as your own.

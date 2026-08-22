@@ -7,7 +7,7 @@ disabled. Nothing here fetches a framework, and there is no build step.
 | File | Used by | Purpose |
 |---|---|---|
 | `hero-graph.js` | hub + course + mini-lesson heroes | Animated node-graph canvas behind hero sections |
-| `lesson-reveal.js` | mini-lesson | Scroll reveal, progress bar, slide rail, timing chips, next-word demo, 15-minute timer |
+| `lesson-reveal.js` | **every page** | Scroll reveal everywhere; on the mini-lesson also progress bar, slide rail, timing chips, next-word demo, 15-minute timer |
 | `ask-widget.js` | mini-lesson | The live small-model terminal that calls `/api/ask` |
 
 ## `hero-graph.js`
@@ -19,12 +19,18 @@ frame under `prefers-reduced-motion`.
 
 ## `lesson-reveal.js`
 
-Everything that makes the mini-lesson page work as a presentation deck:
+Loaded on every page, but almost all of it is opt-in: each feature guards on
+the element it needs, so on an ordinary content page the script does exactly
+one thing — reveal `.reveal` sections. The slide rail needs `.slide`
+elements, the progress bar needs `.progress-bar`, the timer needs slides, the
+next-word demo needs `#token-demo`. None of those exist outside the
+mini-lesson, so nothing else runs there.
 
-- **Section reveal** on scroll via `IntersectionObserver`. The hidden state is
-  gated behind `html.js`, so no-JS readers see all content. Deep links
-  (`#the-fix`) skip the animation, so a mid-talk refresh never lands you on a
-  blank section.
+- **Section reveal** on scroll via `IntersectionObserver`. Used site-wide:
+  content blocks inside `<main>` are wrapped in `<section class="reveal">`.
+  The hidden state is gated behind `html.js`, so no-JS readers see all
+  content. Deep links (`#the-fix`) skip the animation, so a mid-talk refresh
+  never lands you on a blank section.
 - **Reading progress bar** and a **slide rail** of clickable dots.
 - **Scrollspy** that lights the current section's timing chip.
 - **Next-word prediction demo** — types a true completion (Moon landing) then a

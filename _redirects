@@ -1,0 +1,13 @@
+# Cloudflare Pages redirect rules.
+#
+# The course used to live at /mpc-csci-40/ when it was framed as a single
+# college's course. It is now the general /intro-ai-tools/ guide. Anything
+# already linking to the old paths (bookmarks, résumés, search results) has
+# to keep working, so every old URL maps to its new twin.
+#
+# Format: <from> <to> <status>. First match wins, so the bare path comes
+# before the splat.
+
+/mpc-csci-40            /intro-ai-tools/           301
+/mpc-csci-40/           /intro-ai-tools/           301
+/mpc-csci-40/*          /intro-ai-tools/:splat     301
