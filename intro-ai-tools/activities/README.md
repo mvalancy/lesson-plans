@@ -26,6 +26,7 @@ tool menu, top picks); come here when planning one specific module.
 | [07-automation.md](07-automation.md) | Automation with AI Assistants |
 | [08-capstone.md](08-capstone.md) | Capstone Showcase |
 | [teaching-scaffold.md](teaching-scaffold.md) | Cross-cutting: mixed-ability classroom structures |
+| [lab-playbook.md](lab-playbook.md) | The distilled labs: one realistic, fun lab per module, minute by minute |
 
 **Conventions:** scaffold tags `show` / `assist` / `solo` ("I do / we do / you do");
 🌟 marks instructor-seeded ideas; *(adapted)* marks activities assembled from real

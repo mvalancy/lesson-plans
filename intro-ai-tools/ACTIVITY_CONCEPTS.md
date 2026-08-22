@@ -17,6 +17,7 @@ holding the full researched menu, each of which can be deepened independently.
 | 6 · Ethics & Bias | [activities/06-ethics-bias.md](activities/06-ethics-bias.md) |
 | 7 · Automation | [activities/07-automation.md](activities/07-automation.md) |
 | 8 · Capstone Showcase | [activities/08-capstone.md](activities/08-capstone.md) |
+| — · **The Lab Playbook** (one distilled lab per module) | [activities/lab-playbook.md](activities/lab-playbook.md) |
 | — · Teaching scaffold (cross-cutting) | [activities/teaching-scaffold.md](activities/teaching-scaffold.md) |
 | — · Games & interactives | [ACTIVITY_GAMES.md](ACTIVITY_GAMES.md) |
 
