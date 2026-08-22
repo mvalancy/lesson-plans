@@ -171,6 +171,19 @@ tool per module → capstone appendix); **verification habit** (every module has
 capstone); **games shelf** (one playable warm-up per session, drawn from
 ACTIVITY_GAMES.md).
 
+**The personal-agent thread** *(instructor-seeded)* — a career-portable idea that grows
+all course: your personal AI agent is the assistant you develop over time for *your*
+work, whatever that is. You teach it where your knowledge is strong (so it skips the
+basics you know), and it learns your words, cadence, and analogies — becoming an extra
+memory pack for your brain and a faster channel for expressing your ideas to a boss,
+coworker, or grandmother. Starts in M2 (set up memory/custom instructions; teach it your
+level and voice), deepens each module as it absorbs your work, becomes the M7
+custom-assistant build, and is a natural capstone. Two guardrails keep it honest
+(*agency*): a personalized AI that only agrees with you is broken — preserve useful
+disagreement — and don't mistake its adaptation to you for truth. The concept spans the
+whole tool spectrum, from ChatGPT/Claude memory features down to small open assistants
+you can run on your own hardware (*ownership*).
+
 ## Tool menu — current apps with free plans, by category
 
 **Why real commercial tools, not toy ones:** a program-level goal is mapping this course

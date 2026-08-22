@@ -100,6 +100,30 @@ prompts, public vote.
 everything.
 Source: [Penn Libraries Prompt Battle-Off](https://www.library.upenn.edu/rdds/work/kwh-prompt-battle-off)
 
+### 6. 🌟 Start your personal agent `[assist→solo]` · 20 min, then ongoing
+
+The opening move of a course-long thread: an AI assistant you *develop over time* for
+your own work — brainstorming, research, and drafting the task lists that hand chores to
+AI so your time goes to the creative part of your job.
+
+**Run it:**
+1. Set up memory / custom instructions in your chosen assistant (ChatGPT memory, a
+   Claude Project, or similar): who you are, what you already know well (so it skips
+   the basics), what you're working toward (10 min).
+2. Teach it your voice: paste two things you've written and ask it to describe your
+   tone; correct the description until it's right (5 min).
+3. Test the channel: have it draft something in your voice; grade the draft (5 min).
+
+**Floor:** fill in a provided instructions template.
+**Stretch:** maintain it all course — every module's work feeds it; by Module 7 it
+becomes your custom-assistant build, and it's a ready-made capstone.
+**Two guardrails (agency):** a personalized AI that only agrees with you is broken —
+tell it to preserve useful disagreement; and its adaptation to you is not truth.
+**They walk away with:** a career-portable collaborator that transfers more intended
+meaning with less effort — and improves through shared history.
+*(Instructor-seeded; works in any assistant with memory, from ChatGPT/Claude to small
+open models you run yourself.)*
+
 ## Full menu
 
 | Activity | Stage | The gist | Source |
@@ -120,6 +144,8 @@ Source: [Penn Libraries Prompt Battle-Off](https://www.library.upenn.edu/rdds/wo
 | **Jigsaw technique comparison** | `assist` | Expert groups each test one technique, reshuffle, teach each other. | [DePaul Teaching Commons](https://resources.depaul.edu/teaching-commons/teaching-guides/technology/artificial-intelligence/Pages/assignments-activities.aspx) |
 | **AI icebreaker bingo** | `show` | AI-generated bingo cards; mingle to match classmates. Low-stakes first touch. | [Hooked on Innovation](https://hookedoninnovation.com/2023/11/07/12-ai-enhanced-icebreakers-to-motivate-learners/) |
 | **Generative AI scavenger hunt** | `solo` | "Get the AI to admit uncertainty"; "get a citation and verify it's real." | [TpT](https://www.teacherspayteachers.com/Product/Generative-AI-SCAVENGER-HUNT-Learn-About-Using-ChatGPT-Bard-10475502) |
+| **Language practice partner** *(adapted)* | `solo` | Translate a real document (menu, form, email) both directions; then a slow conversation in a language you're learning, with corrections. Judgment call: where would a mistranslation actually hurt? | — |
+| **Study guide from your own notes** *(adapted)* | `solo` | Turn your messy notes from another class into a study guide + practice quiz; verify five facts against the textbook before trusting it. | — |
 
 More playables for this module: the [games shelf](../ACTIVITY_GAMES.md#module-2--everyday-productivity-prompting-precision-concision).
 

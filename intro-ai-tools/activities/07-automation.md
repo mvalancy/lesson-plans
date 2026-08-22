@@ -51,7 +51,11 @@ Source: [ProductTalk framework](https://www.producttalk.org/how-to-choose-which-
 
 ### 3. Build a custom assistant for one job task `[assist→solo]` · 40 min
 
-From using someone else's chatbot to owning a narrow one that works for *you*.
+From using someone else's chatbot to owning a narrow one that works for *you*. For
+students who kept up the Module 2 personal-agent thread, this is its payoff session:
+the agent that's been learning your voice and knowledge all course now gets a real job —
+and it's the go-to tool for designing the task lists that hand chores to AI so your
+time goes to the creative work.
 
 **Run it:**
 1. Instructor builds a bot live — instructions only, no code: a customer-reply drafter

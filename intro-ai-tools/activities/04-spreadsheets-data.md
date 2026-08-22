@@ -98,6 +98,10 @@ on one theme — and slots straight into a science interest track.
 4. **Hand-verify a statistic** → from raw Mauna Loa monthlies, confirm "CO₂ crossed
    400 ppm around 2013–2016"; from the sea-level file, compute a rough trend and compare
    to the stated 3.17 mm/yr.
+5. **Write your own assessment** → the deliverable: a half-page conclusion in the
+   student's own words, citing their own charts and verified numbers — *their*
+   analysis, not the AI's and not the instructor's. (Agency: the data is public; the
+   judgment is yours.)
 
 | Dataset | Direct file | Size / shape |
 |---|---|---|

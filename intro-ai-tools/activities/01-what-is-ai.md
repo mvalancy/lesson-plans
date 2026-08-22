@@ -121,6 +121,8 @@ Source: [Stanford Teaching Commons — Warming Up to AI](https://teachingcommons
 
 | Activity | Stage | The gist | Source |
 |---|---|---|---|
+| **Same prompt, three assistants** *(adapted)* | `assist` | Run one prompt through ChatGPT, Gemini, and Claude side by side; compare tone, accuracy, refusals. Big idea: "AI" isn't one thing — tools differ, so evaluate before you rely. | — |
+| **When do you need a neural net?** *(adapted)* | `show` | On the board: f(x)=2x+3 — a line, no AI needed. Then a spiral of points — now you need one. Prove it live in [TensorFlow Playground](https://playground.tensorflow.org/): linear data solves with zero hidden layers; the spiral doesn't. | — |
 | **The Intelligent Piece of Paper** | `show→assist` | Tic-tac-toe vs. a sheet of if/then rules — it "wins" without thinking. Stretch: write the rule sheet yourself. | [ISTE](https://iste.org/blog/3-unplugged-activities-for-teaching-about-ai), [CS Unplugged](https://classic.csunplugged.org/activities/the-turing-test/) |
 | **Live Turing Test role-play** | `assist` | Volunteers play scripted "computer," free "human," and messenger; the class guesses which is which. | [Harvey Mudd MyCS](https://www.cs.hmc.edu/MyCS/MyCS_all_handouts/Unit%201/PDF%20Turing%20Test%20Lesson%20Plan.pdf) |
 | **"Human or Not?" chat game** | `solo` | 2-minute anonymous chats — bot or human? Debrief the tells. *(Bot-blocks checkers; click before class.)* | [humanornot.io](https://humanornot.io/) |
