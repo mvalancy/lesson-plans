@@ -531,7 +531,6 @@ main { padding: 0 0 var(--s8); }
   border-color: var(--accent);
   box-shadow: var(--shadow-accent);
 }
-.lesson-card > * { position: relative; z-index: 1; }
 .lesson-card .num {
   display: inline-block;
   font-family: var(--mono);
