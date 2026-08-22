@@ -20,7 +20,7 @@ describe → code → render → judge → iterate.
 | Hook | Full flyer | Title banner |
 |---|---|---|
 | AI is not just for cheating — learn what it's actually for | `00-not-just-for-cheating` | `title-not-just-for-cheating` |
-| Curious about AI? Start here — all levels welcome | `01-curious-start-here` | `title-curious-start-here` |
+| AI Curious? Start here — all levels welcome | `01-curious-start-here` | `title-curious-start-here` |
 | Own the AI, don't rent it — local models, your hardware | `02-own-the-ai` | `title-own-the-ai` |
 | Spot the fake — build the verification habit | `03-spot-the-fake` | `title-spot-the-fake` |
 | Ship something real — leave with a live website you own | `04-ship-something-real` | `title-ship-something-real` |
