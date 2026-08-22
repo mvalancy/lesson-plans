@@ -87,6 +87,57 @@ one.
 year's models.
 **They walk away with:** calibrated suspicion and one provenance tool.
 
+## Business briefs — how media generation is actually used at work
+
+Grounding for this module's labs, from a sweep of small-business and enterprise
+sources. The consistent finding: **generation is the fast part; judgment is the job.**
+Only 7% of marketers publish AI content unedited and 56% apply significant edits
+([HubSpot](https://blog.hubspot.com/marketing/ai-marketing)); 84% of enterprise
+marketers report productivity gains from AI but only 53% see quality improve
+([CMI enterprise research](https://contentmarketinginstitute.com/enterprise-research/enterprise-content-marketing-research-findings)).
+Every brief below names the judgment call — that's the graded part.
+
+**Small-business briefs** (each runnable as a 20–40 min lab; tools are examples with
+free tiers, swap freely):
+
+| Brief | You're the… | Tool category | The judgment call |
+|---|---|---|---|
+| Styled "lifestyle" shots from one product photo | shop owner | image gen (Leonardo/Recraft free tiers) | Does the render honestly match the real product? Write 3 sentences defending the honest one. |
+| Sale graphic with dates and prices baked in | retail staff | text-capable image gen (Ideogram) | Proof every word — list the factual/spelling errors you had to fix. |
+| A week of social captions from 3 bullet points | solo owner | chat assistant (free tiers) | Does it sound like the actual owner? A plumber shouldn't sound like a lifestyle brand. |
+| 30-second reel from raw phone footage | restaurant owner | AI video editor (CapCut free) | Auto-captions must match what was actually said — menu items, prices, claims. |
+| One highlight clip from a 5-min demo video | service business | AI clipping (OpusClip free tier) | Verify nothing was quoted out of context. |
+| Weekend-sale email from bullets | office manager | email AI (Mailchimp) | Compliance checklist: unsubscribe link, correct dates, no overstated claims. |
+| Review an AI-drafted 3-email welcome sequence | e-commerce owner | campaign automation | Approve / edit / reject each — nothing sends without human sign-off. |
+| Three logo concepts from a one-line description | new business owner | design tool | Trademark lookalike gut-check; does it work as favicon *and* storefront sign? |
+
+Sources: [Buffer AI image tools](https://buffer.com/resources/ai-image-generator/), [Buffer AI video tools](https://buffer.com/resources/ai-video-tools/), [Buffer social AI](https://buffer.com/resources/ai-social-media-content-creation/), [Mailchimp AI tools](https://mailchimp.com/solutions/ai-tools/), [Microsoft small-business AI](https://www.microsoft.com/en-us/microsoft-365/business-insights-ideas/resources/generative-ai-benefits-for-small-businesses)
+
+**Inside a larger company** — realities worth simulating in class:
+
+- **The approval pipeline is the bottleneck** — 33% of B2B marketers name
+  workflow/approval management a top challenge; AI raises draft volume faster than
+  review capacity grows. *Classroom taste:* trade assets with a partner who must
+  approve/reject against a written brand checklist before anything "ships."
+  [CMI B2B research](https://contentmarketinginstitute.com/b2b-research/b2b-content-marketing-trends-research-2025)
+- **The 70/30 rule** — "use AI for the first draft, not the final one"; the team owns
+  the 30% needing judgment and voice. *Classroom taste:* generate a full draft, then
+  identify and rewrite the 30%, articulating why. [CMI](https://contentmarketinginstitute.com/content-operations/resource-strapped-marketing)
+- **Licensing is why enterprises pay** — commercially-safe generation (e.g., Firefly's
+  licensed output) exists because legal will reject tools without it. *Classroom
+  taste:* compare two tools' licensing terms and write a one-paragraph "would legal
+  approve this?" memo. [Adobe blog](https://blog.adobe.com/en/publish/2026/08/20/adobe-firefly-expands-its-creative-ai-studio-generate-music-speech-and-sound-effects-in-one-place)
+- **Templated video for generalists** — video production is moving from specialist
+  teams to general staff working inside locked brand templates. *Classroom taste:*
+  fill a locked template (fixed intro/outro, colors, fonts) with your content.
+  [Google Workspace customers](https://workspace.google.com/customers/)
+- **One asset, many formats** — batch-adapting a single asset to square/story/banner
+  inside one tool is the enterprise norm, not manual re-creation. [Adobe blog](https://blog.adobe.com/en/publish/2026/08/06/introducing-adobe-chatgpt-create-edit-get-work-done-all-in-chatgpt)
+- **The entry-level debate** — 1 in 3 companies is cutting entry-level hiring while
+  buying AI tools; judgment roles were traditionally grown from execution roles.
+  *Classroom taste:* debate — "if AI drafts the first version, what do you prove you
+  can do beyond drafting?" [CMI](https://contentmarketinginstitute.com/content-operations/companies-destroying-marketing-teams)
+
 ## Full menu
 
 | Activity | Stage | The gist | Source |
