@@ -736,6 +736,140 @@ main { padding: 0 0 var(--s8); }
 .module-card { margin: 0; }
 .module-card .badge { float: none; margin: 0 0 0.5rem; }
 
+/* ---- Per-module hover signatures -------------------------------------
+   Each module answers the hover with a small gesture from its own
+   subject: a predicted word, an underline writing itself, a light sweep,
+   rising bars, a highlighter, tipping scales, a pipeline, a
+   constellation lighting up. The shared lift does the work; these sign
+   it. Focus-within mirrors every hover for keyboard users. */
+
+/* M1 · What is AI: the next word is being predicted — a thinking caret.
+   Lives on the h3, not the link: the link's ::after is the stretched-link
+   overlay that makes the whole card clickable. */
+.module-step:nth-child(1) .module-card h3::after {
+  content: "▍";
+  display: inline-block;
+  margin-left: 0.3rem;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(0.05em);
+  transition: opacity 0.25s var(--ease);
+}
+.module-step:nth-child(1):hover .module-card h3::after,
+.module-step:nth-child(1):focus-within .module-card h3::after {
+  opacity: 0.85;
+  animation: mp-caret 1.05s steps(2, jump-none) infinite;
+}
+@keyframes mp-caret { 50% { opacity: 0.12; } }
+
+/* M2 · Productivity: an underline writes itself across the title */
+.module-step:nth-child(2) .module-card h3 a {
+  text-decoration: none;
+  background-image: linear-gradient(90deg, var(--accent), rgba(var(--accent-rgb), 0.5));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  transition: background-size 0.5s var(--ease);
+}
+.module-step:nth-child(2):hover .module-card h3 a,
+.module-step:nth-child(2):focus-within .module-card h3 a {
+  background-size: 100% 2px;
+}
+
+/* M3 · Images/audio/video: one soft gold light-sweep, a photo developing */
+.module-step:nth-child(3) .module-card {
+  background-image: linear-gradient(105deg,
+    transparent 42%, rgba(var(--signal-rgb), 0.15) 50%, transparent 58%);
+  background-repeat: no-repeat;
+  background-size: 240% 100%;
+  background-position: 130% 0;
+}
+.module-step:nth-child(3):hover .module-card,
+.module-step:nth-child(3):focus-within .module-card {
+  animation: mp-sheen 0.9s var(--ease) forwards;
+}
+@keyframes mp-sheen {
+  from { background-position: 130% 0; }
+  to   { background-position: -30% 0; }
+}
+
+/* M4 · Data: a tiny bar chart rises beside the module number */
+.module-step:nth-child(4) .module-card .num::after {
+  content: "▁▃▅▇";
+  font-family: var(--mono);
+  margin-left: 0.45rem;
+  color: rgba(var(--accent-rgb), 0.75);
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.5s var(--ease);
+}
+.module-step:nth-child(4):hover .module-card .num::after,
+.module-step:nth-child(4):focus-within .module-card .num::after {
+  clip-path: inset(0 0 0 0);
+}
+
+/* M5 · Research: the gold highlighter sweeps the title — checked, kept */
+.module-step:nth-child(5) .module-card h3 a {
+  text-decoration: none;
+  background-image: linear-gradient(rgba(var(--signal-rgb), 0.32), rgba(var(--signal-rgb), 0.32));
+  background-repeat: no-repeat;
+  background-position: 0 62%;
+  background-size: 0% 46%;
+  transition: background-size 0.55s var(--ease);
+}
+.module-step:nth-child(5):hover .module-card h3 a,
+.module-step:nth-child(5):focus-within .module-card h3 a {
+  background-size: 100% 46%;
+}
+
+/* M6 · Ethics: the card tips a fraction of a degree — scales weighing */
+.module-step:nth-child(6):hover .module-card,
+.module-step:nth-child(6):focus-within .module-card {
+  transform: translateY(-4px) rotate(-0.45deg);
+  transform-origin: 85% 100%;
+}
+
+/* M7 · Automation: a pipeline runs the bottom edge, trigger to action */
+.module-step:nth-child(7) .module-card {
+  background-image: linear-gradient(90deg, var(--accent), var(--signal));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 3px;
+  transition: background-size 0.6s var(--ease);
+}
+.module-step:nth-child(7):hover .module-card,
+.module-step:nth-child(7):focus-within .module-card {
+  background-size: 100% 3px;
+}
+
+/* M8 · Capstone: the corner constellation lights up gold for showcase */
+.module-step:nth-child(8):hover .module-card::after,
+.module-step:nth-child(8):focus-within .module-card::after {
+  opacity: 0.5;
+  transform: scale(1.1) rotate(-4deg);
+  filter: saturate(1.5) drop-shadow(0 0 5px rgba(var(--signal-rgb), 0.6));
+  animation: mp-twinkle 1.8s ease-in-out infinite alternate;
+}
+@keyframes mp-twinkle {
+  from { opacity: 0.32; }
+  to   { opacity: 0.55; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .module-step .module-card,
+  .module-step .module-card h3 a,
+  .module-step .module-card .num::after,
+  .module-step .module-card h3::after { transition: none; }
+  .module-step:nth-child(1):hover .module-card h3::after,
+  .module-step:nth-child(1):focus-within .module-card h3::after { animation: none; opacity: 0.85; }
+  .module-step:nth-child(3) .module-card,
+  .module-step:nth-child(3):hover .module-card,
+  .module-step:nth-child(3):focus-within .module-card { animation: none; background-image: none; }
+  .module-step:nth-child(6):hover .module-card,
+  .module-step:nth-child(6):focus-within .module-card { transform: translateY(-4px); }
+  .module-step:nth-child(8):hover .module-card::after,
+  .module-step:nth-child(8):focus-within .module-card::after { animation: none; transform: none; }
+}
+
 /* the cards cascade down the path as the section reveals */
 .js .reveal.visible .module-step:nth-child(1) .lesson-card { transition-delay: 0s; }
 .js .reveal.visible .module-step:nth-child(2) .lesson-card { transition-delay: 0.06s; }

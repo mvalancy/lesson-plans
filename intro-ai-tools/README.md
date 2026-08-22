@@ -59,7 +59,9 @@ Say each of these once, clearly, and then get back to the work. Preaching is off
 - The 3-hour rhythm is pedagogical and stays. Dates, terms, unit counts, and grading
   policies are institutional and do not belong here.
 - Audience: **anyone, no coding background**.
-- Recommended free text: *Elements of AI* (elementsofai.com).
+- Recommended free text: *Elements of AI* (elementsofai.com), the free course from
+  the University of Helsinki and MinnaLearn. No affiliation, we just think it teaches
+  well.
 
 **Learning outcomes:**
 
