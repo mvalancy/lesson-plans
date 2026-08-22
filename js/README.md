@@ -6,15 +6,58 @@ disabled. Nothing here fetches a framework, and there is no build step.
 
 | File | Used by | Purpose |
 |---|---|---|
-| `hero-graph.js` | hub + course + mini-lesson heroes | Animated node-graph canvas behind hero sections (all canvases on the page) |
+| `hero-graph.js` | **every page header** | Animated node-graph canvas behind hero sections (all canvases on the page) |
 | `lesson-reveal.js` | **every page** | Scroll reveal everywhere; on the mini-lesson also progress bar, slide rail, timing chips, next-word demo, 15-minute timer |
 | `ask-widget.js` | mini-lesson | The live small-model terminal that calls `/api/ask` |
 
 ## `hero-graph.js`
 
-Draws drifting nodes, proximity edges, and travelling signal pulses on **every**
-`<canvas class="hero-canvas">` on the page (each gets its own independent
-simulation). Renders a single static frame under `prefers-reduced-motion`.
+The site's visual identity, and since the static SVG constellations came out of
+the headers, the only graph on the page. It runs on **every**
+`<canvas class="hero-canvas">` on every page — the hub and course heroes, all
+eight lesson headers, the resource library, the mini-lesson deck — and each
+canvas gets its own simulation. **A page with a `.hero-canvas` must load this
+script**; nine of them once carried the element without it and rendered an
+empty box for months.
+
+**Two layers, and that is where the depth comes from.** A far population is
+smaller, dimmer, slower, and links over a shorter distance; a near population is
+larger, brighter, faster, and links further. The two never link to each other —
+separate meshes are most of what makes the depth read. A few pixels of parallax
+separate them, drawn from eased pointer drift and from scroll position, with the
+near layer moving about three times as far as the far one. Small enough that you
+notice it only as space.
+
+**Signals travel.** Every second or two a pulse sets off along an edge with a
+short comet tail, lands on a node, lights that node and the edges touching it,
+and with some chance fires onward to a neighbour — up to three hops. That chain
+is the point: it should read as a network thinking, not as a screensaver. Nodes
+also breathe, each at its own rate and phase.
+
+**Character per context.** A canvas inside `.hero` (hub, course index) runs
+dense and lively; anything else — the lesson headers, the library, the deck —
+runs calmer: fewer nodes, lower gain, longer gaps between pulses. Lesson headers
+sit directly behind a headline, and the CSS mask that clears the text column
+does the rest. Readability is the rule the graph bends to; if you turn a knob
+up, screenshot a lesson header before you keep it.
+
+**Cost is bounded on purpose**, because this now runs on every page:
+
+- one `requestAnimationFrame` loop drives every canvas on the page;
+- it stops completely when the tab is hidden or every canvas has scrolled out
+  of view (`IntersectionObserver`, 120px margin);
+- nodes and pulses live in typed arrays, the pulse pool is fixed-size, and
+  nothing is allocated per frame;
+- drawing is batched into buckets keyed by colour and a quantised alpha (16
+  steps — fine enough that a node's breath never reads as stepped), so a frame
+  is a couple of dozen canvas calls instead of one per edge and one per node;
+- `devicePixelRatio` is capped at 2 and at ~2.2M backing pixels.
+
+Measured in headless Chrome with the GPU off, which is a pessimistic stand-in
+for a mid-range phone: ~0.56 ms/frame for a 1440×620 hero (~165 nodes),
+~0.06 ms/frame at 390×560. Under `prefers-reduced-motion` it settles the drift,
+lands a few pulses and freezes two more mid-flight, then draws one still frame
+and never starts the loop.
 
 Colours are **read from the stylesheet**, not hard-coded: the script pulls
 `--accent-rgb`, `--signal-rgb`, and `--ink-soft-rgb` off the canvas element via
@@ -24,9 +67,9 @@ cached stylesheet degrades to the right colours instead of a blank hero. It
 still detects a dark container (`body.deck`) to raise its alpha gain.
 
 Nodes come in three kinds — plain (`--ink-soft`), accent (`--accent`), and a
-rarer signal node (`--signal`) — matching the two-tone constellation of the
-static SVGs in the page markup. **If you add a theme, add `--ink-soft-rgb` and
-`--signal-rgb` to it**, or this script falls back to the light palette.
+rarer signal node (`--signal`), which the far layer barely uses and the near
+layer carries. **If you add a theme, add `--ink-soft-rgb` and `--signal-rgb` to
+it**, or this script falls back to the light palette.
 
 ## `lesson-reveal.js`
 
