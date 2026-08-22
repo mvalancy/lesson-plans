@@ -12,6 +12,23 @@ These aren't just teaching tricks — they mirror how real workplaces run techni
 pair programming's driver/navigator roles, async peer review, and demo days all show up
 below in classroom form.
 
+**Scaling structures (if enrollment runs large)** *(instructor-seeded)*
+
+- **A/B parallel rooms, one streamed lecture** — split the class across two rooms;
+  one instructor delivers the lecture, streamed to the second room; each room has its
+  own instructor for the lab block. Works because this is a lab-heavy course: the
+  lecture is identical everywhere, and the entire value of a second instructor is
+  circulation time during hands-on work — the student-to-helper ratio halves without
+  doubling prep.
+- **A/B/C interest tracks — art · engineering · science · business** — same module,
+  same scaffold, track-flavored activities. The menus already support it: the flyer
+  sprint and style studies serve an art track; local models, agent specs, and the n8n
+  builds serve engineering; the climate-data labs serve science; email triage, the
+  business briefs, and workflow mapping serve business. Tracks are themed
+  choice boards (see Task design below) chosen by *interest, not skill level* — so
+  there's no remedial stigma — and a student's track naturally feeds their capstone brief. Track
+  tables or rooms can be led by TAs or industry-panel volunteers.
+
 **Session skeleton**
 
 - **Gradual release ("I do / we do / you do")** — model fully → do it together → practice
