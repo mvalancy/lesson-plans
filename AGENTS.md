@@ -7,17 +7,23 @@ Guidance for AI agents (and humans) working in this repo.
 **lessons.mattvalancy.com** — a public, static hub for course/study/lesson
 material by Matthew Valancy, served by Cloudflare Pages directly from this
 repo (`mvalancy/lesson-plans`). The hub landing page links each course
-or guide; the first course is **CSCI 40: Introduction to AI Tools** at
-Monterey Peninsula College (MPC), living under `mpc-csci-40/`. External guides
-(e.g. Mr-Cal at cal.valpatel.com) are linked, not mirrored.
+or guide; the first course is **Introduction to AI Tools**, a free,
+self-paced course for a general audience, living under `intro-ai-tools/`.
+External guides (e.g. Mr-Cal at cal.valpatel.com) are linked, not mirrored.
+
+The course is deliberately **not** framed as any institution's class. Its
+content happens to line up with a college survey course, but the site is a
+standalone public guide: free to learn from, free to teach from, affiliated
+with nobody. Think sibling-to-Mr-Cal in role, valpatel.com in visual
+register.
 
 ## Hard rules
 
 - **`ignored/` is private.** It holds source context (course outline PDF,
   personal notes) and is gitignored. Never commit it, copy its files into the
-  site, or quote private details (names, phone numbers, emails, interview
-  logistics) into public pages. Course-outline facts (module titles, learning
-  outcomes, schedule) are fine to use.
+  site, or quote private details (names, phone numbers, emails, institutional
+  logistics) into public pages. Generic pedagogy — module titles, learning
+  outcomes, session shape — is fine to use.
 - **This repo is public.** Everything outside `ignored/` should read as a
   polished, professional site. No TODO dumps, secrets, or personal data.
 - **No build step for the site.** Plain HTML + one CSS file + dependency-free
@@ -62,15 +68,22 @@ Monterey Peninsula College (MPC), living under `mpc-csci-40/`. External guides
   not the underlying model — swapping the model backing that tier needs no
   change here). Anything beyond that belongs in the graphlings repo as a
   proper PR, not a live edit here.
-- **Don't imply official MPC affiliation.** No MPC logos or branding. The
-  footer disclaimer ("independent instructor site") stays on course pages.
-- **Every `mpc-csci-40/` page opens with the `.notice-bar`** (first element
-  in `<body>`, before the header): plain text stating the course has not
-  been taught yet and this site was built for the hiring interview. This is
-  not optional polish — it prevents the site from being mistaken for an
-  active, currently-offered class. New pages under `mpc-csci-40/` must
-  include it; the hub (`index.html`) does not need it, since it isn't
-  specific to this course.
+- **No institutional framing anywhere.** No school names, course codes,
+  logos, term dates, unit counts, grading policies, or enrolment logistics.
+  Institutions that teach this material run their own systems; duplicating
+  them here would be both wrong and stale. Modules, not dated sessions
+  ("Module 5", never "Oct 22"). The footer disclaimer — *independent and not
+  affiliated with any school or institution* — stays on course pages.
+- **Every `intro-ai-tools/` page opens with the `.site-note`** (first element
+  in `<body>`, before the header): a quiet strip stating the course is free,
+  self-paced, learnable and teachable by anyone, and unaffiliated. It is the
+  honest framing that keeps the site from reading as somebody's enrolled
+  class. New pages under `intro-ai-tools/` must include it; the hub
+  (`index.html`) does not, since it isn't specific to this course.
+- **Old URLs must keep working.** The course used to live at `/mpc-csci-40/`.
+  `_redirects` maps every old path to its new twin with a 301. If the
+  directory is ever renamed again, add the next hop there rather than
+  breaking links that already exist in the wild.
 
 ## Layout
 
@@ -80,14 +93,15 @@ directory you're about to touch** — they hold the detail this file summarises.
 | Path | What it is | Docs |
 |---|---|---|
 | `index.html` | Hub landing page (courses & guides grid, about) | [README](README.md) |
-| `mpc-csci-40/` | The CSCI 40 course | [README](mpc-csci-40/README.md) |
-| `mpc-csci-40/lessons/` | Eight module lesson plans | [README](mpc-csci-40/lessons/README.md) |
-| `mpc-csci-40/mini-lesson/` | The 15-minute teaching demo | [README](mpc-csci-40/mini-lesson/README.md) |
+| `intro-ai-tools/` | The Introduction to AI Tools course | [README](intro-ai-tools/README.md) |
+| `intro-ai-tools/lessons/` | Eight module lesson plans | [README](intro-ai-tools/lessons/README.md) |
+| `intro-ai-tools/mini-lesson/` | The 15-minute standalone segment | [README](intro-ai-tools/mini-lesson/README.md) |
+| `_redirects` | Cloudflare Pages 301s from the old `/mpc-csci-40/*` paths | — |
 | `css/` | The one shared stylesheet; design tokens; two themes | [README](css/README.md) |
 | `js/` | Three progressive-enhancement scripts | [README](js/README.md) |
 | `functions/` | Pages Function behind the live model widget | [README](functions/README.md) |
 
-Future courses get their own top-level directory alongside `mpc-csci-40/`.
+Future courses get their own top-level directory alongside `intro-ai-tools/`.
 
 ## Incident log
 
@@ -104,30 +118,51 @@ Graphlings case study (`docs/guides/web-app-ai-gateway-integration.md`).
 
 ## Conventions
 
-- Root-relative URLs everywhere (`/css/style.css`, `/mpc-csci-40/lessons/…`)
+- Root-relative URLs everywhere (`/css/style.css`, `/intro-ai-tools/lessons/…`)
   — preview with `python3 -m http.server`, not `file://`.
-- Design tokens (colors, spacing) are CSS custom properties at the top of
-  `css/style.css`. Accent color is a deep maroon.
-- Focus states: `card-focus` + `.badge` highlight the item currently being
-  developed (today: the Module 5 mini-lesson — "How LLMs search,
-  hallucination risks, fact-checking"); `dimmed` grays out non-focus items;
-  `focus-row` highlights schedule rows. When focus shifts, move these classes.
-- Each lesson page follows the same section order: header (session/date) →
-  overview → learning objectives → agenda (6:00–9:10 PM, lecture then lab) →
-  materials → homework. Keep that skeleton when editing.
+- Design tokens (colours, fonts, spacing, easing) are CSS custom properties at
+  the top of `css/style.css`. Accent is a deep maroon; `--accent-rgb` carries
+  the same colour as a channel triple for `rgba()` glows, and `--ease` is the
+  single easing curve every animation uses.
+- **Motion is subtle and always optional.** Entrance animations run on load
+  (CSS only, no JS dependency); scroll reveals come from `.reveal` +
+  `js/lesson-reveal.js`, whose hidden state is gated behind `html.js`. Every
+  animation has a `prefers-reduced-motion` escape.
+- Focus states: `card-focus` + `.badge` mark a genuinely special item (today:
+  Module 5, the source of the mini-lesson); `focus-row` does the same in the
+  pacing table; `dimmed` is reserved for things that do not exist yet (the
+  "More courses" hub card). Do **not** dim real, finished modules — a public
+  course should not look half-built.
+- Each lesson page follows the same section order: header (module number) →
+  overview → learning objectives → agenda (relative times across a 3-hour
+  session, lecture then lab) → materials → homework. Each block is wrapped in
+  a `<section class="reveal">`. Keep that skeleton when editing.
 - Nav and footer are duplicated across pages (no templating). Course pages
   carry an "All Courses" link back to the hub. If you change nav/footer,
   change them on every page.
-- Tone: clean, plain-language, welcoming to non-programmers. The CSCI 40
-  audience is general students with no coding background.
+- Tone: clean, plain-language, welcoming to non-programmers. Professional, not
+  preachy — state the position once and move on.
 
-## Course facts (CSCI 40, from the approved course outline)
+## Course facts
 
-- 1 unit, 10 in-person Thursday evening sessions (6:00–9:10 PM), Fall 2026:
-  Sep 24 – Dec 3, no class Nov 26 (Thanksgiving).
 - 8 modules: What is AI · Generative AI for Everyday Productivity · AI Images,
   Audio & Video · Spreadsheets & Data · Research & Information Gathering ·
   Ethics, Bias & Responsible AI · Automation with AI Assistants · Capstone.
+- Written for **3-hour sessions** — a short lecture, then a much longer
+  hands-on lab. Ten sessions is a comfortable pace (the capstone spans three).
+  That rhythm is pedagogical, not institutional: it stays, dates do not.
 - Outcomes: (1) use AI tools for writing, research, data analysis, and creative
-  expression; (2) evaluate AI outputs for accuracy, bias, and ethics.
+  expression; (2) evaluate AI outputs for accuracy, bias, and ethics; (3) own
+  what you build with them; (4) decide when not to use them at all.
 - Recommended text: *Elements of AI* (free, elementsofai.com).
+
+## The three commitments
+
+The course's voice rests on three ideas. New copy should sound like it came
+from them; none of them should be preached at length.
+
+| Commitment | What it means on the page |
+|---|---|
+| **Agency** | The first question is *whether* to use an AI tool, not just how. Declining is a skill the course teaches. |
+| **Ownership** | Readers are owners, not customers. Capable models already run on consumer hardware; open ecosystems (Hugging Face, Ollama) and open publishing (GitHub, Pages) are how you keep what you make. Local AI is commoditising — this course gets people ahead of that. |
+| **Humanization** | AI should make people *more* human, not less: automate the drudgery so attention goes to people, send the one-pager somebody wanted rather than a generated thousand words, and never let a system turn a person into a number (Module 6 uses *Survival of the Best Fit* for exactly this). |

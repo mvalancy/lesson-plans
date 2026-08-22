@@ -1,10 +1,12 @@
 # `mini-lesson/` — "Did the AI Just Lie to Me?"
 
-A complete **15-minute teaching demo**, drawn from
-[Module 5](../lessons/05-research-information.html). Built for the MPC
-interview, where the teaching demo was the assessed component.
+A complete **15-minute standalone segment**, drawn from
+[Module 5](../lessons/05-research-information.html). It is the shortest
+possible version of the course: enough to run as a single workshop, a
+conference lightning talk, or a taster before someone commits to all eight
+modules.
 
-Live: <https://lessons.mattvalancy.com/mpc-csci-40/mini-lesson/>
+Live: <https://lessons.mattvalancy.com/intro-ai-tools/mini-lesson/>
 
 **The page is the deck.** There are no slides — the instructor shares a
 browser tab and scrolls. That choice is deliberate: it removes a dependency
@@ -64,6 +66,11 @@ Pedagogically it *is* the lesson: small models confabulate readily, so asking
 it something obscure demonstrates hallucination live rather than describing it.
 The suggested "spark" questions are chosen to invite exactly that.
 
+It carries the course's **ownership** argument too, without a word of
+advocacy: the thing answering you is a real model on a real machine somebody
+owns, not a rented endpoint. Keep that framing factual — the page should show
+it, not argue it.
+
 Architecture, rate limiting, and the incident history are documented in
 [`functions/README.md`](../../functions/README.md). Note the visible
 disclaimer under the widget — the output is unfiltered and explicitly not the
@@ -72,5 +79,5 @@ author's words.
 ## Presenter notes
 
 The minute-by-minute script, contingencies, and Q&A preparation live in
-`ignored/mini-lesson-presenter-notes.md` — **private and gitignored**, since
-it contains interview specifics. Nothing from it belongs on a public page.
+`ignored/mini-lesson-presenter-notes.md` — **private and gitignored**.
+Nothing from it belongs on a public page.
