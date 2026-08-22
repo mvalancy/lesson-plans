@@ -42,11 +42,22 @@ entry point) and a **stretch** (engineer-depth extension) — same task, no visi
 
 ```mermaid
 flowchart LR
-    W["warm-up<br/>~10 min<br/>[show]"] --> L["lecture + demo<br/>~65 min<br/>[show → assist]"]
+    W["<b>warm-up</b><br/>~10 min<br/><i>[show]</i>"] --> L["<b>lecture + demo</b><br/>~65 min<br/><i>[show → assist]</i>"]
     L --> B["break"]
-    B --> G["guided lab<br/>first ~30 min<br/>[assist]"]
-    G --> S["open lab<br/>~60 min<br/>[solo]"]
-    S --> X["wrap-up<br/>~10 min<br/>exit ticket"]
+    B --> G["<b>guided lab</b><br/>first ~30 min<br/><i>[assist]</i>"]
+    G --> S["<b>open lab</b><br/>~60 min<br/><i>[solo]</i>"]
+    S --> X["<b>wrap-up</b><br/>~10 min<br/><i>exit ticket</i>"]
+
+    classDef show fill:#fde68a,stroke:#b45309,stroke-width:2px,color:#451a03
+    classDef assist fill:#bfdbfe,stroke:#1d4ed8,stroke-width:2px,color:#172554
+    classDef solo fill:#bbf7d0,stroke:#15803d,stroke-width:2px,color:#052e16
+    classDef rest fill:#e5e7eb,stroke:#6b7280,stroke-width:1px,color:#111827
+    classDef wrap fill:#e9d5ff,stroke:#7e22ce,stroke-width:2px,color:#3b0764
+    class W show
+    class L,G assist
+    class S solo
+    class B rest
+    class X wrap
 ```
 
 ## Top-level activity map
@@ -57,15 +68,34 @@ sub-files.
 
 ```mermaid
 flowchart TD
-    M1["M1 · demystify<br/>feel-first warm-up, next-word demo,<br/>Teachable Machine, 🌟HF + local model"]
-    M2["M2 · communicate<br/>prompt drills, email triage,<br/>🌟make-it-shorter, 🌟mermaid"]
-    M3["M3 · create + detect<br/>bias draw-then-generate, flyer sprint,<br/>alt-text, Two Truths & AI"]
-    M4["M4 · data with care<br/>CSV first-look, budget builder,<br/>fact-check-the-narrative"]
-    M5["M5 · verify<br/>hallucinated-references lab, SIFT,<br/>NotebookLM grounding"]
-    M6["M6 · ethics core<br/>Survival of the Best Fit + games shelf,<br/>bias audits, write-your-own AI policy"]
-    M7["M7 · automate wisely<br/>map-then-automate-one-step,<br/>automate-vs-human sort, 🌟ship a website"]
-    M8["M8 · own it publicly<br/>solve-a-real-problem brief,<br/>process-weighted rubric, showcase"]
-    M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8
+    M1["<b>M1 · demystify</b><br/>feel-first warm-up · next-word demo<br/>Teachable Machine · 🌟HF + local model"]
+    M2["<b>M2 · communicate</b><br/>prompt drills · email triage<br/>🌟make-it-shorter · 🌟mermaid"]
+    M3["<b>M3 · create + detect</b><br/>bias draw-then-generate · flyer sprint<br/>alt-text · Two Truths & AI"]
+    M4["<b>M4 · data with care</b><br/>CSV first-look · budget builder<br/>fact-check-the-narrative"]
+    M5["<b>M5 · verify</b><br/>hallucinated-references lab · SIFT<br/>NotebookLM grounding"]
+    M6["<b>M6 · ethics core</b><br/>Survival of the Best Fit + games shelf<br/>bias audits · write-your-own AI policy"]
+    M7["<b>M7 · automate wisely</b><br/>map-then-automate-one-step<br/>automate-vs-human sort · 🌟ship a website"]
+    M8["<b>M8 · own it publicly</b><br/>solve-a-real-problem brief<br/>process-weighted rubric · showcase"]
+    M1 --> M2 --> M3 --> M4
+    M5 --> M6 --> M7 --> M8
+    M4 --> M5
+
+    classDef demystify fill:#fde68a,stroke:#b45309,stroke-width:2px,color:#451a03
+    classDef communicate fill:#bfdbfe,stroke:#1d4ed8,stroke-width:2px,color:#172554
+    classDef create fill:#fecdd3,stroke:#be123c,stroke-width:2px,color:#4c0519
+    classDef data fill:#99f6e4,stroke:#0f766e,stroke-width:2px,color:#042f2e
+    classDef verify fill:#c7d2fe,stroke:#4338ca,stroke-width:2px,color:#1e1b4b
+    classDef ethics fill:#fca5a5,stroke:#b91c1c,stroke-width:3px,color:#450a0a
+    classDef automate fill:#bbf7d0,stroke:#15803d,stroke-width:2px,color:#052e16
+    classDef own fill:#e9d5ff,stroke:#7e22ce,stroke-width:3px,color:#3b0764
+    class M1 demystify
+    class M2 communicate
+    class M3 create
+    class M4 data
+    class M5 verify
+    class M6 ethics
+    class M7 automate
+    class M8 own
 ```
 
 - **M1 What is AI** — K-H-W-L / Hopes & Concerns warm-up (agency-first, before any tool
@@ -99,13 +129,26 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    HF["M1: browse<br/>Hugging Face"] --> LM["M1: run a model<br/>on your laptop"]
-    LM --> GW["M1/M7: trace the<br/>AI gateway"]
-    GH["M2: GitHub account<br/>+ AI profile README"] --> MM["M2/M4: Mermaid<br/>diagrams from prose"]
-    MM --> CF["M7: AI-written page<br/>on Cloudflare Pages"]
-    GH --> CF
+    subgraph understand ["🔍 understand the stack"]
+        HF["<b>M1</b> · browse<br/>Hugging Face"] --> LM["<b>M1</b> · run a model<br/>on your laptop"]
+        LM --> GW["<b>M1/M7</b> · trace the<br/>AI gateway"]
+    end
+    subgraph publish ["🚀 publish real things"]
+        GH["<b>M2</b> · GitHub account<br/>+ AI profile README"] --> MM["<b>M2/M4</b> · Mermaid<br/>diagrams from prose"]
+        MM --> CF["<b>M7</b> · AI-written page<br/>on Cloudflare Pages"]
+        GH --> CF
+    end
     GW --> CF
-    CF --> CAP["M8: published-site<br/>capstone + showcase"]
+    CF --> CAP["<b>M8 · published-site<br/>capstone + showcase</b>"]
+
+    classDef stack fill:#bfdbfe,stroke:#1d4ed8,stroke-width:2px,color:#172554
+    classDef ship fill:#bbf7d0,stroke:#15803d,stroke-width:2px,color:#052e16
+    classDef cap fill:#e9d5ff,stroke:#7e22ce,stroke-width:3px,color:#3b0764
+    classDef cluster fill:none,stroke:#9ca3af,stroke-dasharray:5 5,color:#6b7280
+    class HF,LM,GW stack
+    class GH,MM,CF ship
+    class CAP cap
+    class understand,publish cluster
 ```
 
 Recurring threads: **personal AI-tool repository ranked on ethics & effectiveness** (one

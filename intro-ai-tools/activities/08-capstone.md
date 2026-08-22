@@ -14,8 +14,15 @@ A shape that fits the three allotted sessions, assembled from the formats below:
 
 ```mermaid
 flowchart LR
-    A["Session 8<br/>project kickoff<br/>brief + work time"] --> B["Session 9<br/>mid-point check-in<br/>gallery-walk critique"]
-    B --> C["Session 10<br/>showcase<br/>lightning talks or stations"]
+    A["<b>Session 8</b><br/>project kickoff<br/><i>brief + work time</i>"] --> B["<b>Session 9</b><br/>mid-point check-in<br/><i>gallery-walk critique</i>"]
+    B --> C["<b>Session 10</b><br/>showcase<br/><i>lightning talks or stations</i>"]
+
+    classDef kickoff fill:#fde68a,stroke:#b45309,stroke-width:2px,color:#451a03
+    classDef midpoint fill:#bfdbfe,stroke:#1d4ed8,stroke-width:2px,color:#172554
+    classDef showcase fill:#e9d5ff,stroke:#7e22ce,stroke-width:3px,color:#3b0764
+    class A kickoff
+    class B midpoint
+    class C showcase
 ```
 
 **Project formats**
