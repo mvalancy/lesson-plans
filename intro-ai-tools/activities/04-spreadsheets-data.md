@@ -78,6 +78,45 @@ A repeatable audit ritual, not a one-off activity — introduce it here, use it 
 without its method."
 Source: [NC State "Colab and Chill"](https://www.lib.ncsu.edu/workshops/colab-and-chill-vibe-coding-approach-exploratory-data-analysis-using-ai/2026-03-12)
 
+## Real data shelf — verified government & open datasets
+
+Direct-download files sized for chatbot upload and Sheets work, each verified live
+(format and first data row checked, 2026-08-22). US-government files are public domain.
+This shelf powers a **climate-centerpiece lab** that runs the module's whole skill arc
+on one theme — and slots straight into a science interest track.
+
+**The climate arc — one theme, four skills:**
+
+1. **First look** → NOAA annual global temperature anomaly (146 clean rows — the
+   friendliest first upload in the course), or Mauna Loa *annual* CO₂ (65 rows).
+2. **Chart iteration** → NASA zonal anomalies: build the multi-line chart showing the
+   Arctic warming faster than the globe; is the headline exaggerated?
+3. **Fact-check the narrative** → NOAA says one number for 2016, NASA another — both
+   right, *different baselines*. Same phenomenon, different number: why you always read
+   the label. Add Berkeley Earth as the third independent source converging on the
+   same trend.
+4. **Hand-verify a statistic** → from raw Mauna Loa monthlies, confirm "CO₂ crossed
+   400 ppm around 2013–2016"; from the sea-level file, compute a rough trend and compare
+   to the stated 3.17 mm/yr.
+
+| Dataset | Direct file | Size / shape |
+|---|---|---|
+| NOAA global temp anomaly, annual 1880– | [data.csv](https://www.ncei.noaa.gov/cag/global/time-series/globe/land_ocean/12/12/1880-2025/data.csv) | <5 KB · Year, °C departure |
+| NASA GISTEMP monthly + annual | [GLB.Ts+dSST.csv](https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv) | <15 KB · Year, Jan–Dec, seasonal |
+| NASA GISTEMP by latitude band | [ZonAnn.Ts+dSST.csv](https://data.giss.nasa.gov/gistemp/tabledata_v4/ZonAnn.Ts+dSST.csv) | <20 KB · Glob, NHem, SHem, bands |
+| Mauna Loa CO₂ monthly 1958– | [co2_mm_mlo.txt](https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt) | <60 KB · ppm, deseasonalized |
+| Mauna Loa CO₂ annual | [co2_annmean_mlo.txt](https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_annmean_mlo.txt) | <5 KB · 65 rows — day-one friendly |
+| Global methane monthly 1983– | [ch4_mm_gl.txt](https://gml.noaa.gov/webdata/ccgg/trends/ch4/ch4_mm_gl.txt) | <40 KB · ppb; plateau-then-rise story |
+| Berkeley Earth global annual 1850– | [Land_and_Ocean_summary.txt](https://berkeley-earth-temperature.s3.us-west-1.amazonaws.com/Global/Land_and_Ocean_summary.txt) | <15 KB · anomaly + uncertainty *(educational use; cite Rohde & Hausfather 2020)* |
+| CO₂ emissions per country (OWID) | [annual-co2-emissions-per-country.csv](https://ourworldindata.org/grapher/annual-co2-emissions-per-country.csv) | few hundred KB · Entity, Year, tonnes *(CC-BY — attribute)* |
+| Global mean sea level, satellite 1992– | [slr_sla_gbl_free_all_66.csv](https://www.star.nesdis.noaa.gov/socd/lsa/SeaLevelRise/slr/slr_sla_gbl_free_all_66.csv) | <100 KB · mm anomaly per satellite era; teaches sparse columns |
+
+*Instructor notes from verification:* EPA's climate-indicators pages currently 404
+(section restructured or removed — re-check before class); the full OWID `co2-data.csv`
+exceeds 10 MB — too big for one chatbot upload, use the per-indicator CSV above or
+pre-filter in Sheets; NOAA's Tides & Currents per-station site is being retired after
+Sept 2026 — the satellite altimetry file above replaces it.
+
 ## Full menu
 
 | Activity | Stage | The gist | Source |
