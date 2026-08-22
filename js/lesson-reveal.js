@@ -79,6 +79,68 @@
     slides.forEach(function (s) { spy.observe(s); });
   }
 
+  /* ---------- side index scrollspy (.toc) ---------- */
+  /* Lights the section you are reading. Without JS the same markup is a
+     plain list of anchor links, which is why nothing here builds the list. */
+  var toc = document.querySelector('.toc');
+  if (toc) {
+    var tocLinks = Array.prototype.slice.call(toc.querySelectorAll('a[href^="#"]'));
+    var tocSections = tocLinks.map(function (a) {
+      return document.getElementById(a.getAttribute('href').slice(1));
+    });
+
+    var setActive = function (idx) {
+      tocLinks.forEach(function (a, i) {
+        var on = i === idx;
+        a.classList.toggle('active', on);
+        if (on) a.setAttribute('aria-current', 'true');
+        else a.removeAttribute('aria-current');
+      });
+      /* when the index is a horizontal chip row, keep the lit chip in view */
+      var link = tocLinks[idx];
+      if (link && toc.scrollWidth > toc.clientWidth + 4) {
+        toc.scrollLeft = link.offsetLeft - (toc.clientWidth - link.offsetWidth) / 2;
+      }
+    };
+
+    if ('IntersectionObserver' in window) {
+      var inBand = [];
+      var tocSpy = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          var idx = tocSections.indexOf(e.target);
+          if (idx > -1) inBand[idx] = e.isIntersecting;
+        });
+        /* several sections can straddle the band; the topmost one wins */
+        var first = inBand.indexOf(true);
+        if (first > -1) setActive(first);
+      }, { rootMargin: '-15% 0px -55% 0px' });
+      tocSections.forEach(function (s) { if (s) tocSpy.observe(s); });
+      /* at the top of the page nothing is in the band yet */
+      setTimeout(function () {
+        if (!toc.querySelector('a.active')) setActive(0);
+      }, 0);
+    }
+  }
+
+  /* ---------- games shelf filter ---------- */
+  /* Enhancement only: the chips are hidden by CSS until html.js is set. */
+  var gameFilter = document.querySelector('.game-filter');
+  if (gameFilter) {
+    var chips = Array.prototype.slice.call(gameFilter.querySelectorAll('[data-filter]'));
+    var groups = Array.prototype.slice.call(document.querySelectorAll('.game-group'));
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var want = chip.getAttribute('data-filter');
+        chips.forEach(function (c) {
+          c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
+        });
+        groups.forEach(function (g) {
+          g.hidden = !(want === 'all' || g.getAttribute('data-module') === want);
+        });
+      });
+    });
+  }
+
   /* ---------- next-word prediction demo ---------- */
   var demo = document.getElementById('token-demo');
   if (demo) {
