@@ -18,7 +18,9 @@ the headers, the only graph on the page. It runs on **every**
 eight lesson headers, the resource library, the mini-lesson deck — and each
 canvas gets its own simulation. **A page with a `.hero-canvas` must load this
 script**; nine of them once carried the element without it and rendered an
-empty box for months.
+empty box for months. Canvases stacked in the same element (the mini-lesson
+header has two) **share one node and pulse budget**, so stacking never doubles
+the density or the cost.
 
 **Two layers, and that is where the depth comes from.** A far population is
 smaller, dimmer, slower, and links over a shorter distance; a near population is
