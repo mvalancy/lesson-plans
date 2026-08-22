@@ -1,83 +1,123 @@
 # Activity ideas: Module 2 — Generative AI for Everyday Productivity
 
-Part of the [activity idea library](../ACTIVITY_CONCEPTS.md) — brainstorming
-material, not finished lesson plans. Scaffold tags, floor/stretch notes, and the
-three pillars (agency · ownership · humanization) are defined in the top-level map.
+Part of the [activity idea library](../ACTIVITY_CONCEPTS.md). The lab should feel like
+*getting good at asking*: every student leaves with drafts they'd actually use, and the
+reflex of iterating instead of accepting the first output.
 
-> **Deepening this file:** each module file is independent so a research agent can
-> go deep on one lesson at a time. When adding ideas: keep the entry format, verify
-> every link is live, mark inventions as *(adapted)*, and prefer activities with a
-> low floor, a high ceiling, and a workplace or community tie-in.
+## Start here — the picks
 
+### 1. Bad prompt → good prompt `[assist]` · 20 min
 
-- **Bad prompt → good prompt revision drill** `[assist]` — Run a vague prompt, iteratively
-  add role/context/format/audience, compare outputs side by side. Floor: fix a provided
-  prompt. Stretch: write your own vague prompt first. [UVic Libraries beginner course](https://libguides.uvic.ca/Prompt_Engineering_Beginners_Course/Hands-on_activities)
-- **Framework fill-in-the-blank (CO-STAR / CRAFT / RACE)** `[show→solo]` *(adapted)* —
-  Worksheet with framework slots; build one prompt for a workplace scenario (customer
-  complaint reply). Floor: fill-in template. Stretch: mix frameworks freely. [CO-STAR](https://promptary.dev/frameworks/costar/), [CRAFT](https://revolia.pro/blog/craft-prompt-framework)
-- **Prompt Battle-Off** `[solo teams]` — Teams craft persona prompts for the same
-  challenge; outputs projected, class votes, debrief why detail mattered. Real two-round
-  elimination event at Penn Libraries. [Penn Libraries recap](https://www.library.upenn.edu/rdds/work/kwh-prompt-battle-off), [promptbattle.com](https://promptbattle.com/)
-- **Prompt gallery walk** `[solo→assist]` *(adapted)* — Post best prompt+output pairs
-  around the room; circulate, sticky-note feedback, vote. Stretch: annotate which
-  technique made yours work. [Gallery walk pedagogy](https://ctlonline.org/gallery-walk/)
-- **Reverse prompting** `[assist]` *(adapted)* — Given a polished AI output with the
-  prompt hidden, reconstruct the prompt, then compare. Floor: multiple-choice options.
-  Stretch: write and test from scratch. [Conestoga GenAI Guidebook](https://ecampusontario.pressbooks.pub/conestogagenaiguidebook/chapter/1-3-prompting/)
-- **AI-as-tutor prompting coach** `[solo]` — Ask the AI to coach you on improving a
-  prompt: it asks closed questions and won't advance until you answer. Stretch: design the
-  tutoring prompt for a peer. [Conestoga GenAI Guidebook](https://ecampusontario.pressbooks.pub/conestogagenaiguidebook/chapter/1-3-prompting/)
-- **Email rewrite triage** `[assist→solo]` — Three emails of rising difficulty: routine
-  update → pushback to a boss → missed-deadline apology; draft with AI, then personalize.
-  Floor: template prompt. Stretch: take the sensitive one unaided and critique tone.
-  [Google Prompting Essentials](https://grow.google/prompting-essentials/)
-- **Resume bullet punch-up** `[assist]` — Strengthen a weak bullet, tailor to a job
-  description, and check for AI-fabricated claims. Floor: sample resume. Stretch: your
-  real resume against a real posting. [Career Contessa](https://www.careercontessa.com/advice/how-to-use-chatgpt-to-write-resume/), [NUS workshop](https://nus.edu.sg/cfg/events/details/4057)
-- **Meeting notes → structured summary** `[assist]` — Messy transcript in; decisions,
-  action items (owner/deadline), open questions out, in a specified format; compare two
-  prompt structures. Near 1:1 with Teams/Zoom AI recaps. [Microsoft Learn module](https://learn.microsoft.com/en-us/training/modules/make-your-meetings-more-productive-ai/), [idratherbewriting](https://idratherbewriting.com/ai/prompt-engineering-summarizing-meeting-notes.html)
-- **Brainstorm divergence drill** `[show→solo]` — Prompt for 15–20 unfiltered ideas, then
-  a second prompt clusters/ranks against constraints — the divergent→convergent pattern
-  of real ideation workshops. [OpenAI Academy brainstorming](https://openai.com/academy/brainstorming/)
-- **Persona swap for tone control** `[assist]` *(adapted)* — Same message generated as
-  formal exec / friendly peer / concise technical; discuss audience fit. Stretch: define a
-  persona for your actual industry.
-- **Prompt chaining lab** `[assist→solo]` — Outline → draft → tone-edit as chained
-  prompts instead of one mega-prompt. Stretch: design your own chain. [Google Prompting Essentials](https://www.coursera.org/specializations/prompting-essentials-google)
-- **Few-shot example priming** `[assist]` — Zero-shot vs. 2–3 example pairs; watch format
-  consistency improve. Workplace: standardized reports/ticket replies. [Google Prompting Essentials](https://www.coursera.org/specializations/prompting-essentials-google)
-- **Constraint stress-test** `[assist]` *(adapted)* — One prompt, one new constraint per
-  round (word count, reading level, no jargon, CTA); build intuition for how much a
-  single instruction matters.
-- **"How Might We" AI ideation** `[solo groups]` — Groups use AI to reframe and rapid-fire
-  solutions for a nominated campus/work pain point. [ITONICS ideation prompts](https://www.itonics-innovation.com/blog/chatgpt-prompts-for-ideation)
-- **AI detection/rephrasing empirical test** `[assist]` — Run your own AI text through a
-  detector, "humanize" it, re-check; discuss detector unreliability and disclosure
-  policies. [DePaul Teaching Commons](https://resources.depaul.edu/teaching-commons/teaching-guides/technology/artificial-intelligence/Pages/assignments-activities.aspx)
-- **Jigsaw prompt-technique comparison** `[assist]` — Expert groups each test one
-  technique (role, few-shot, step-by-step, constraints) on the same task, reshuffle, and
-  teach each other. Novices get simpler techniques. [DePaul Teaching Commons](https://resources.depaul.edu/teaching-commons/teaching-guides/technology/artificial-intelligence/Pages/assignments-activities.aspx)
-- **AI icebreaker bingo** `[show]` — AI-generated bingo cards; mingle to match classmates.
-  Low-stakes first AI touch for novices. [Hooked on Innovation](https://hookedoninnovation.com/2023/11/07/12-ai-enhanced-icebreakers-to-motivate-learners/)
-- **Generative AI scavenger hunt** `[solo]` — Clue sheet: "get the AI to admit
-  uncertainty," "get a citation and verify it's real." Floor: fewer clues. Stretch: clues
-  requiring combined techniques. [TpT resource](https://www.teacherspayteachers.com/Product/Generative-AI-SCAVENGER-HUNT-Learn-About-Using-ChatGPT-Bard-10475502)
-- 🌟 **Make it shorter: AI as compression, not inflation** `[show→assist]`
-  *(instructor-seeded)* — Give students a bloated multi-page report; the deliverable is
-  the one-pager (or one paragraph) the recipient actually wants, produced with AI and
-  hand-verified. Open with the absurdity it prevents: one person uses AI to inflate three
-  bullets into ten pages, the recipient uses AI to compress it back to three bullets.
-  Floor: template summarization prompt. Stretch: define the audience and what they need
-  to decide, then cut everything that doesn't serve it. Workplace/humanization: respect
-  for the reader's time is the skill; concision is how AI makes communication *more*
-  human.
-- 🌟 **Mermaid diagrams from plain English** `[show→solo]` *(instructor-seeded)* — AI
-  writes Mermaid diagram text from a description ("flowchart my morning routine" / a work
-  process); paste into mermaid.live and it either renders or errors — instant, objective
-  feedback, and even small models do this well (validatable output makes it an ideal
-  small-model demo, e.g. via the course site's own widget model). Floor: edit labels in a
-  provided diagram. Stretch: diagram a real system, try sequence/Gantt types. Workplace:
-  process docs, runbooks, org charts. [mermaid.live](https://mermaid.live/)
+The foundational drill: watch a lazy prompt produce mush, then improve it one ingredient
+at a time and watch the output transform.
 
+**Run it:**
+1. Run a deliberately vague prompt ("write about dogs") on the projector; enjoy how bad
+   it is together (5 min).
+2. Add one element per round — role, context, format, audience — re-running each time
+   and comparing side by side (10 min).
+3. Students pin their favorite before/after pair to a shared doc or the wall (5 min).
+
+**Floor:** fix a provided prompt.
+**Stretch:** write your own vague prompt first, then rescue it.
+**They walk away with:** an iteration reflex and a personal before/after example.
+Source: [UVic Libraries beginner prompt course](https://libguides.uvic.ca/Prompt_Engineering_Beginners_Course/Hands-on_activities)
+
+### 2. Email rewrite triage `[assist→solo]` · 35 min
+
+Three workplace emails of rising interpersonal difficulty. This is the module's
+highest-stakes transferable skill: knowing where AI drafting helps and where its tone
+fails.
+
+**Run it:**
+1. Email #1, routine status update — drafted together with a template prompt (10 min).
+2. Email #2, pushing back on a boss's request — solo, then edit the AI's tone by hand
+   (10 min).
+3. Email #3, apologizing for a missed deadline — solo and unaided for the stretch tier;
+   pair-swap and ask the only question that matters: "would you actually send this?"
+   (15 min)
+
+**Floor:** template prompts for all three.
+**Stretch:** take the sensitive one with no template and critique where AI tone goes
+wrong.
+**They walk away with:** three reusable drafts and judgment about the line between
+drafting help and voice.
+Source: [Google Prompting Essentials](https://grow.google/prompting-essentials/)
+
+### 3. 🌟 Make it shorter `[show→assist]` · 25–30 min
+
+The humanization pillar as a lab: AI's best productivity trick is *compression* —
+respect for the reader's time — not inflation.
+
+**Run it:**
+1. Show a bloated ten-page report. Ask who wants to read it. Name the absurdity it
+   creates: one person inflates three bullets into ten pages, the recipient's AI
+   compresses it back to three bullets (5 min).
+2. Students define the audience and the decision the reader needs to make, then compress
+   the report with AI to one page — and hand-verify every claim that survives (15 min).
+3. Read the best one-pagers aloud; compare what each chose to keep (10 min).
+
+**Floor:** a template summarization prompt.
+**Stretch:** define audience and decision from scratch; cut everything that doesn't
+serve them.
+**They walk away with:** the habit of shipping the one-pager the reader actually wants.
+*(Instructor-seeded.)*
+
+### 4. 🌟 Mermaid: diagrams from plain English `[show→solo]` · 25 min
+
+AI writes diagram *text*; the renderer instantly proves it right or wrong. Objective
+feedback with zero code — and small models do this well, so it doubles as a
+local-model demo.
+
+**Run it:**
+1. Ask AI to flowchart the instructor's morning routine in Mermaid; paste into
+   [mermaid.live](https://mermaid.live/) and watch it render (5 min).
+2. Students diagram their own routine or a process from their job (15 min).
+3. Break-fix round: corrupt one line of syntax, watch the error, fix it — a gentle first
+   taste of the edit-run-fix loop programmers live in (5 min).
+
+**Floor:** edit labels in a provided diagram.
+**Stretch:** sequence or Gantt diagrams; diagram a real system.
+**They walk away with:** a real diagram for their documents, and the discovery that
+"documents are text, and AI is great at text."
+*(Instructor-seeded.)*
+
+### 5. Prompt battle `[solo teams]` · 20 min
+
+The fun closer, straight from Penn Libraries' real event: same challenge, competing
+prompts, public vote.
+
+**Run it:**
+1. Teams get one creative challenge and craft a persona/system prompt (10 min).
+2. Outputs go up on the projector side by side; the class votes; winning teams explain
+   what made their prompt work (10 min).
+
+**They walk away with:** visible proof that specificity and persona change everything.
+Source: [Penn Libraries Prompt Battle-Off](https://www.library.upenn.edu/rdds/work/kwh-prompt-battle-off)
+
+## Full menu
+
+| Activity | Stage | The gist | Source |
+|---|---|---|---|
+| **Framework fill-in-the-blank** *(adapted)* | `show→solo` | CO-STAR / CRAFT worksheet slots; build one prompt for a workplace scenario. | [CO-STAR](https://promptary.dev/frameworks/costar/), [CRAFT](https://revolia.pro/blog/craft-prompt-framework) |
+| **Prompt gallery walk** *(adapted)* | `solo→assist` | Post best prompt+output pairs; circulate, sticky-note feedback, vote. | [Gallery walk](https://ctlonline.org/gallery-walk/) |
+| **Reverse prompting** *(adapted)* | `assist` | Polished output, hidden prompt — reconstruct it, then compare to the real one. | [Conestoga Guidebook](https://ecampusontario.pressbooks.pub/conestogagenaiguidebook/chapter/1-3-prompting/) |
+| **AI-as-tutor prompting coach** | `solo` | Ask the AI to coach you: closed questions, won't advance until you answer. | [Conestoga Guidebook](https://ecampusontario.pressbooks.pub/conestogagenaiguidebook/chapter/1-3-prompting/) |
+| **Resume bullet punch-up** | `assist` | Strengthen a weak bullet, tailor to a posting, catch AI-fabricated claims. | [Career Contessa](https://www.careercontessa.com/advice/how-to-use-chatgpt-to-write-resume/), [NUS](https://nus.edu.sg/cfg/events/details/4057) |
+| **Meeting notes → summary** | `assist` | Messy transcript in; decisions, action items, open questions out; compare two prompt structures. | [Microsoft Learn](https://learn.microsoft.com/en-us/training/modules/make-your-meetings-more-productive-ai/), [idratherbewriting](https://idratherbewriting.com/ai/prompt-engineering-summarizing-meeting-notes.html) |
+| **Brainstorm divergence drill** | `show→solo` | 15–20 unfiltered ideas, then a second prompt clusters and ranks them against constraints. | [OpenAI Academy](https://openai.com/academy/brainstorming/) |
+| **Persona swap for tone** *(adapted)* | `assist` | Same message as formal exec / friendly peer / concise technical; which fits which audience? | — |
+| **Prompt chaining lab** | `assist→solo` | Outline → draft → tone-edit as separate chained prompts, not one mega-prompt. | [Google Prompting Essentials](https://www.coursera.org/specializations/prompting-essentials-google) |
+| **Few-shot example priming** | `assist` | Zero-shot vs. 2–3 example pairs; watch format consistency improve. | [Google Prompting Essentials](https://www.coursera.org/specializations/prompting-essentials-google) |
+| **Constraint stress-test** *(adapted)* | `assist` | One new constraint per round (word count, reading level, no jargon) — how much one instruction matters. | — |
+| **"How Might We" ideation** | `solo groups` | AI reframes and rapid-fires solutions for a nominated pain point. | [ITONICS](https://www.itonics-innovation.com/blog/chatgpt-prompts-for-ideation) |
+| **Detection/rephrasing test** | `assist` | Your AI text → detector → "humanize" → re-check; detector unreliability and disclosure norms. | [DePaul Teaching Commons](https://resources.depaul.edu/teaching-commons/teaching-guides/technology/artificial-intelligence/Pages/assignments-activities.aspx) |
+| **Jigsaw technique comparison** | `assist` | Expert groups each test one technique, reshuffle, teach each other. | [DePaul Teaching Commons](https://resources.depaul.edu/teaching-commons/teaching-guides/technology/artificial-intelligence/Pages/assignments-activities.aspx) |
+| **AI icebreaker bingo** | `show` | AI-generated bingo cards; mingle to match classmates. Low-stakes first touch. | [Hooked on Innovation](https://hookedoninnovation.com/2023/11/07/12-ai-enhanced-icebreakers-to-motivate-learners/) |
+| **Generative AI scavenger hunt** | `solo` | "Get the AI to admit uncertainty"; "get a citation and verify it's real." | [TpT](https://www.teacherspayteachers.com/Product/Generative-AI-SCAVENGER-HUNT-Learn-About-Using-ChatGPT-Bard-10475502) |
+
+More playables for this module: the [games shelf](../ACTIVITY_GAMES.md#module-2--everyday-productivity-prompting-precision-concision).
+
+> **Deepening this file:** independent per-module so a research agent can go deep on one
+> lesson at a time. Keep the entry format, verify every link is live, mark inventions as
+> *(adapted)*, prefer low floor + high ceiling + a workplace or community tie-in.

@@ -159,6 +159,12 @@ ACTIVITY_GAMES.md).
 
 ## Tool menu — current apps with free plans, by category
 
+**Why real commercial tools, not toy ones:** a program-level goal is mapping this course
+to real job skills. Canva/Figma, Excel/Sheets, Zapier, GitHub, and Cloudflare appear
+because they are what job postings actually name — a student who ships a flyer in Figma,
+audits a spreadsheet with AI, and publishes a page from a GitHub repo has resume lines,
+not just course credit.
+
 **The category is the curriculum; the vendor is an example.** Each activity names a tool
 *category* and offers 2–3 current examples with free tiers students can actually try.
 When a better tool comes along, swap the example, keep the activity. (Free-tier terms
