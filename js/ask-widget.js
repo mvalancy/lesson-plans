@@ -172,6 +172,12 @@
       })
       .then(function (data) {
         thinking.remove();
+        // Show the real upstream model name in the tag when the API provides
+        // it (provider prefixes like "ollama/" stripped for display).
+        var nameEl = document.getElementById('ask-model-name');
+        if (nameEl && data.model_name) {
+          nameEl.textContent = String(data.model_name).split('/').pop();
+        }
         var a = addBubble('a', '');
         turn.appendChild(a);
         typewrite(a, data.reply, function () {

@@ -187,8 +187,12 @@ export async function onRequestPost({ request, env }) {
     return fail("empty_reply", "The model returned an empty answer. Try rephrasing.", 502);
   }
 
+  // Pass the upstream's real model id through so the page can show the
+  // actual model rather than the stable "graphling-small" gateway alias —
+  // the label then tracks model swaps with zero site edits.
+  const modelName = typeof data?.model === "string" && data.model ? data.model : null;
   return json(
-    { reply, model: "small" },
+    { reply, model: "small", model_name: modelName },
     200,
     {
       "X-RateLimit-Limit": String(PER_IP_LIMIT),
