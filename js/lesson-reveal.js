@@ -135,7 +135,25 @@
           c.setAttribute('aria-pressed', c === chip ? 'true' : 'false');
         });
         groups.forEach(function (g) {
-          g.hidden = !(want === 'all' || g.getAttribute('data-module') === want);
+          var mod = g.getAttribute('data-module');
+          var tagged = Array.prototype.slice.call(g.querySelectorAll('[data-m]'));
+          if (want === 'all') {
+            g.hidden = false;
+            tagged.forEach(function (c) { c.hidden = false; });
+          } else if (mod === 'top') {
+            /* the Top picks group keeps only the cards whose home module
+               matches the filter, and hides itself when none do */
+            var any = false;
+            tagged.forEach(function (c) {
+              var hit = c.getAttribute('data-m') === want;
+              c.hidden = !hit;
+              if (hit) any = true;
+            });
+            g.hidden = want === 'top' ? false : !any;
+            if (want === 'top') tagged.forEach(function (c) { c.hidden = false; });
+          } else {
+            g.hidden = !(mod === want);
+          }
         });
       });
     });

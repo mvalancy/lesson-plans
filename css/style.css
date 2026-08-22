@@ -62,7 +62,6 @@
 
   /* Node-network motif tucked into card corners. One declaration per theme;
      inline data URI, so it costs no request. */
-  --card-graph: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 160 160%22><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M119,57 Q93,51 84,41%22 opacity=%220.42%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M119,57 Q102,82 88,95%22 opacity=%220.33%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M46,122 Q30,131 37,121%22 opacity=%220.67%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M46,122 Q49,126 26,117%22 opacity=%220.57%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M29,77 Q38,97 33,97%22 opacity=%220.57%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M29,77 Q23,66 38,57%22 opacity=%220.56%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M88,95 Q72,117 81,124%22 opacity=%220.49%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M88,95 Q85,99 80,126%22 opacity=%220.47%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M33,97 Q28,115 26,117%22 opacity=%220.57%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M80,126 Q82,114 81,124%22 opacity=%220.73%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M18,140 Q34,116 26,117%22 opacity=%220.54%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M18,140 Q37,144 37,121%22 opacity=%220.52%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M37,121 Q38,131 26,117%22 opacity=%220.65%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M38,57 Q40,33 40,25%22 opacity=%220.48%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M84,41 Q61,40 40,25%22 opacity=%220.34%22/><circle fill=%22%23565b66%22 cx=%22119%22 cy=%2257%22 r=%223.5%22 opacity=%220.77%22/><circle fill=%22%23565b66%22 cx=%2246%22 cy=%22122%22 r=%222.1%22 opacity=%220.32%22/><circle fill=%22%23565b66%22 cx=%2229%22 cy=%2277%22 r=%222.7%22 opacity=%220.36%22/><circle fill=%22%23565b66%22 cx=%2288%22 cy=%2295%22 r=%224.0%22 opacity=%220.64%22/><circle fill=%22%23565b66%22 cx=%2233%22 cy=%2297%22 r=%222.1%22 opacity=%220.65%22/><circle fill=%22%23565b66%22 cx=%2280%22 cy=%22126%22 r=%222.2%22 opacity=%220.35%22/><circle fill=%22%23565b66%22 cx=%2218%22 cy=%22140%22 r=%223.7%22 opacity=%220.76%22/><circle fill=%22%23565b66%22 cx=%2237%22 cy=%22121%22 r=%223.5%22 opacity=%220.33%22/><circle fill=%22%23565b66%22 cx=%2281%22 cy=%22124%22 r=%223.0%22 opacity=%220.68%22/><circle fill=%22%23b06a10%22 cx=%2238%22 cy=%2257%22 r=%229%22 opacity=%22.12%22/><circle fill=%22%23b06a10%22 cx=%2238%22 cy=%2257%22 r=%225%22 opacity=%22.26%22/><circle fill=%22%23b06a10%22 cx=%2238%22 cy=%2257%22 r=%222.6%22/><circle fill=%22%23565b66%22 cx=%2226%22 cy=%22117%22 r=%222.2%22 opacity=%220.36%22/><circle fill=%22%23565b66%22 cx=%2284%22 cy=%2241%22 r=%222.8%22 opacity=%220.74%22/><circle fill=%22%23565b66%22 cx=%2240%22 cy=%2225%22 r=%222.3%22 opacity=%220.69%22/></svg>");
 
   font-size: 17px;
   scroll-behavior: smooth;
@@ -241,31 +240,6 @@ a:hover { color: var(--accent-dark); }
   margin-top: var(--s6);
 }
 
-/* ---------- the constellation motif ---------- */
-/* Static, seeded node-graph SVGs inlined into headers, bands, and the footer.
-   Colour comes entirely from the theme: edges and plain nodes inherit
-   `currentColor`, active nodes take --signal. */
-
-.constellation {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  color: var(--ink-soft);
-  pointer-events: none;
-  z-index: 0;
-}
-.constellation .cn-e { stroke: currentColor; stroke-width: 1.4; fill: none; }
-.constellation .cn-n { fill: currentColor; }
-.constellation .cn-a,
-.constellation .cn-h { fill: var(--signal); }
-
-/* Three intensities, so the same artwork can sit behind a headline or shout
-   from a CTA band. */
-.constellation { opacity: 0.5; }
-.constellation-quiet { opacity: 0.3; }
-.constellation-loud { opacity: 0.75; }
-
 .footnote {
   font-size: 0.88rem;
   color: var(--ink-soft);
@@ -396,8 +370,6 @@ a:hover { color: var(--accent-dark); }
   border-bottom: 1px solid var(--line);
   padding: clamp(3.25rem, 2rem + 5vw, 5.5rem) 0 clamp(2.75rem, 1.75rem + 4vw, 4.5rem);
 }
-/* A near-invisible technical grid, fading out downwards. It sits under both
-   the static constellation and the live canvas — three graph layers deep. */
 .hero::before {
   content: "";
   position: absolute;
@@ -412,13 +384,7 @@ a:hover { color: var(--accent-dark); }
   z-index: 0;
 }
 .hero .wrap { position: relative; z-index: 2; }
-.hero .constellation {
-  opacity: 0.62;
-  mask-image: radial-gradient(ellipse 62% 85% at 14% 46%,
-    transparent 0%, transparent 26%, #000 72%);
-  -webkit-mask-image: radial-gradient(ellipse 62% 85% at 14% 46%,
-    transparent 0%, transparent 26%, #000 72%);
-}
+
 .hero-canvas {
   position: absolute;
   inset: 0;
@@ -555,27 +521,12 @@ main { padding: 0 0 var(--s8); }
   transition: opacity 0.3s var(--ease);
   z-index: 2;
 }
-/* The brand motif tucked into the corner: a small node cluster that surfaces
-   as the card lifts. Same generated artwork as the hero and the footer. */
-.lesson-card::after {
-  content: "";
-  position: absolute;
-  top: -0.5rem;
-  right: -0.5rem;
-  width: 8.5rem;
-  height: 8.5rem;
-  background: var(--card-graph) center / contain no-repeat;
-  opacity: 0.11;
-  transition: opacity 0.45s var(--ease), transform 0.6s var(--ease);
-  pointer-events: none;
-}
 .lesson-card:hover {
   border-color: rgba(var(--accent-rgb), 0.5);
   box-shadow: var(--shadow-accent);
   transform: translateY(-4px);
 }
 .lesson-card:hover::before { opacity: 1; }
-.lesson-card:hover::after { opacity: 0.3; transform: scale(1.08) rotate(-4deg); }
 .lesson-card:focus-within {
   border-color: var(--accent);
   box-shadow: var(--shadow-accent);
@@ -594,6 +545,27 @@ main { padding: 0 0 var(--s8); }
 .lesson-card h3 { margin: 0 0 0.4rem; font-size: 1.13rem; line-height: 1.28; }
 .lesson-card h3 a { color: var(--ink); text-decoration: none; }
 .lesson-card h3 a::after { content: ""; position: absolute; inset: 0; z-index: 3; }
+/* The whole card is the click zone; say so. */
+.lesson-card:has(h3 a) { cursor: pointer; }
+.lesson-card:focus-within { outline: 2px solid var(--accent); outline-offset: 2px; }
+.card-cta {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  font-weight: 650;
+  font-size: 0.95rem;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.card-cta .arrow { transition: transform 0.3s var(--ease); }
+.lesson-card:hover .card-cta .arrow,
+.lesson-card:focus-within .card-cta .arrow { transform: translateX(5px); }
+.lesson-card.dimmed { cursor: default; }
+.lesson-card.dimmed:hover { transform: none; box-shadow: var(--shadow-1); border-color: var(--line); }
+@media (prefers-reduced-motion: reduce) {
+  .card-cta .arrow, .lesson-card:hover .card-cta .arrow { transition: none; transform: none; }
+}
 .lesson-card p { margin: 0; font-size: 0.93rem; line-height: 1.55; color: var(--ink-soft); }
 
 /* Optional metadata footer on a card — the "45 min · beginner" row that every
@@ -738,12 +710,6 @@ main { padding: 0 0 var(--s8); }
 .module-card { margin: 0; }
 .module-card .badge { float: none; margin: 0 0 0.5rem; }
 
-/* ---- Per-module hover signatures -------------------------------------
-   Each module answers the hover with a small gesture from its own
-   subject: a predicted word, an underline writing itself, a light sweep,
-   rising bars, a highlighter, tipping scales, a pipeline, a
-   constellation lighting up. The shared lift does the work; these sign
-   it. Focus-within mirrors every hover for keyboard users. */
 
 /* M1 · What is AI: the next word is being predicted — a thinking caret.
    Lives on the h3, not the link: the link's ::after is the stretched-link
@@ -843,17 +809,15 @@ main { padding: 0 0 var(--s8); }
   background-size: 100% 3px;
 }
 
-/* M8 · Capstone: the corner constellation lights up gold for showcase */
-.module-step:nth-child(8):hover .module-card::after,
-.module-step:nth-child(8):focus-within .module-card::after {
-  opacity: 0.5;
-  transform: scale(1.1) rotate(-4deg);
-  filter: saturate(1.5) drop-shadow(0 0 5px rgba(var(--signal-rgb), 0.6));
-  animation: mp-twinkle 1.8s ease-in-out infinite alternate;
+/* M8 · Capstone: showcase night, the top hairline burns gold */
+.module-step:nth-child(8) .module-card::before {
+  background: linear-gradient(90deg, transparent,
+    var(--signal) 30%, var(--signal) 70%, transparent);
 }
-@keyframes mp-twinkle {
-  from { opacity: 0.32; }
-  to   { opacity: 0.55; }
+.module-step:nth-child(8):hover .module-card,
+.module-step:nth-child(8):focus-within .module-card {
+  transform: translateY(-5px);
+  box-shadow: 0 0 0 1px rgba(var(--signal-rgb), 0.25), var(--shadow-accent);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -868,8 +832,6 @@ main { padding: 0 0 var(--s8); }
   .module-step:nth-child(3):focus-within .module-card { animation: none; background-image: none; }
   .module-step:nth-child(6):hover .module-card,
   .module-step:nth-child(6):focus-within .module-card { transform: translateY(-4px); }
-  .module-step:nth-child(8):hover .module-card::after,
-  .module-step:nth-child(8):focus-within .module-card::after { animation: none; transform: none; }
 }
 
 /* the cards cascade down the path as the section reveals */
@@ -936,17 +898,7 @@ main { padding: 0 0 var(--s8); }
   color: #ece9e3;
   text-align: center;
 }
-.cta-band .constellation {
-  color: #cfd4dc;
-  opacity: 0.4;
-  mask-image: radial-gradient(ellipse 58% 62% at 50% 58%,
-    transparent 0%, transparent 30%, #000 78%);
-  -webkit-mask-image: radial-gradient(ellipse 58% 62% at 50% 58%,
-    transparent 0%, transparent 30%, #000 78%);
-}
-.cta-band .constellation .cn-a,
-.cta-band .constellation .cn-h { fill: #f2b13f; }
-.cta-band > *:not(.constellation) { position: relative; z-index: 1; }
+
 .cta-band h2 {
   margin: 0 0 0.5rem;
   padding: 0;
@@ -1161,13 +1113,7 @@ main { padding: 0 0 var(--s8); }
 }
 /* The mask keeps the artwork off the headline and its line of body text:
    the graph fades in only past the text column. */
-.lesson-header .constellation {
-  opacity: 0.5;
-  mask-image: radial-gradient(ellipse 66% 95% at 12% 50%,
-    transparent 0%, transparent 38%, #000 78%);
-  -webkit-mask-image: radial-gradient(ellipse 66% 95% at 12% 50%,
-    transparent 0%, transparent 38%, #000 78%);
-}
+
 .lesson-header .wrap { position: relative; z-index: 1; }
 .lesson-header h1 { max-width: 22ch; }
 .lesson-header .meta {
@@ -1476,42 +1422,20 @@ body.library { --max: 78rem; }
     gap: var(--s5);
     margin-top: var(--s5);
   }
-  /* The header's height moves with how the nav wraps, so a sticky chip row
-     would need an offset that is right at exactly one width. It scrolls
-     with the page instead, and the footer carries the same index for
-     jumping once you are deep in the shelf. */
+  /* Narrow widths get a real table of contents: a vertical list in a
+     card, no horizontal overflow. (A horizontal chip row only works when
+     the width can fit it; here it ran off the screen edge.) The footer
+     carries the same index for jumping once you are deep in the shelf. */
   .toc {
     position: static;
     max-height: none;
-    margin: 0 -1.5rem;
-    padding: 0.15rem 1.5rem 0.75rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-  }
-  .toc::-webkit-scrollbar { display: none; }
-  .toc-title { display: none; }
-  .toc ul {
-    display: flex;
-    gap: 0.4rem;
-    width: max-content;
-    border-left: none;
-  }
-  .toc a {
-    padding: 0.3rem 0.85rem;
+    padding: 1rem 1.2rem 1.1rem;
     border: 1px solid var(--line);
-    border-radius: var(--radius-pill);
+    border-radius: var(--radius);
     background: var(--card);
-    white-space: nowrap;
-    font-size: 0.82rem;
+    box-shadow: var(--shadow-1);
   }
-  .toc a::before { display: none; }
-  .toc a.active {
-    color: #fff;
-    background: var(--accent);
-    border-color: var(--accent);
-  }
-  .toc .n { display: none; }
+  .toc a { padding-top: 0.42rem; padding-bottom: 0.42rem; font-size: 0.95rem; }
   .library-body > section { scroll-margin-top: 7rem; }
 }
 
@@ -1607,8 +1531,6 @@ body.library { --max: 78rem; }
   .lesson-header .kicker, .lesson-header h1, .lesson-header .meta,
   .brand-mark, .module-node.is-active { animation: none; }
   .lesson-card:hover { transform: none; }
-  .lesson-card::after,
-  .lesson-card:hover::after { transform: none; transition: none; }
   .module-step:hover .module-node,
   .module-step:focus-within .module-node { transform: none; }
   .btn, .btn:hover, .btn:active { transform: none; }
@@ -1643,7 +1565,6 @@ body.deck {
   --accent-rgb: 212, 80, 107;
   --signal: #f2b13f;
   --signal-rgb: 242, 177, 63;
-  --card-graph: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 160 160%22><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M119,57 Q93,51 84,41%22 opacity=%220.42%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M119,57 Q102,82 88,95%22 opacity=%220.33%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M46,122 Q30,131 37,121%22 opacity=%220.67%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M46,122 Q49,126 26,117%22 opacity=%220.57%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M29,77 Q38,97 33,97%22 opacity=%220.57%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M29,77 Q23,66 38,57%22 opacity=%220.56%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M88,95 Q72,117 81,124%22 opacity=%220.49%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M88,95 Q85,99 80,126%22 opacity=%220.47%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M33,97 Q28,115 26,117%22 opacity=%220.57%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M80,126 Q82,114 81,124%22 opacity=%220.73%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M18,140 Q34,116 26,117%22 opacity=%220.54%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M18,140 Q37,144 37,121%22 opacity=%220.52%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M37,121 Q38,131 26,117%22 opacity=%220.65%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M38,57 Q40,33 40,25%22 opacity=%220.48%22/><path stroke=%22%23a6adb8%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M84,41 Q61,40 40,25%22 opacity=%220.34%22/><circle fill=%22%23a6adb8%22 cx=%22119%22 cy=%2257%22 r=%223.5%22 opacity=%220.77%22/><circle fill=%22%23a6adb8%22 cx=%2246%22 cy=%22122%22 r=%222.1%22 opacity=%220.32%22/><circle fill=%22%23a6adb8%22 cx=%2229%22 cy=%2277%22 r=%222.7%22 opacity=%220.36%22/><circle fill=%22%23a6adb8%22 cx=%2288%22 cy=%2295%22 r=%224.0%22 opacity=%220.64%22/><circle fill=%22%23a6adb8%22 cx=%2233%22 cy=%2297%22 r=%222.1%22 opacity=%220.65%22/><circle fill=%22%23a6adb8%22 cx=%2280%22 cy=%22126%22 r=%222.2%22 opacity=%220.35%22/><circle fill=%22%23a6adb8%22 cx=%2218%22 cy=%22140%22 r=%223.7%22 opacity=%220.76%22/><circle fill=%22%23a6adb8%22 cx=%2237%22 cy=%22121%22 r=%223.5%22 opacity=%220.33%22/><circle fill=%22%23a6adb8%22 cx=%2281%22 cy=%22124%22 r=%223.0%22 opacity=%220.68%22/><circle fill=%22%23f2b13f%22 cx=%2238%22 cy=%2257%22 r=%229%22 opacity=%22.12%22/><circle fill=%22%23f2b13f%22 cx=%2238%22 cy=%2257%22 r=%225%22 opacity=%22.26%22/><circle fill=%22%23f2b13f%22 cx=%2238%22 cy=%2257%22 r=%222.6%22/><circle fill=%22%23a6adb8%22 cx=%2226%22 cy=%22117%22 r=%222.2%22 opacity=%220.36%22/><circle fill=%22%23a6adb8%22 cx=%2284%22 cy=%2241%22 r=%222.8%22 opacity=%220.74%22/><circle fill=%22%23a6adb8%22 cx=%2240%22 cy=%2225%22 r=%222.3%22 opacity=%220.69%22/></svg>");
   --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3);
   --shadow-2: 0 2px 6px rgba(0, 0, 0, 0.45), 0 14px 34px rgba(0, 0, 0, 0.4);
   --shadow-accent: 0 2px 6px rgba(0, 0, 0, 0.45),
@@ -1692,7 +1613,6 @@ body.deck .badge { color: #fff; }
   --accent-rgb: 125, 35, 53;
   --signal: #b06a10;
   --signal-rgb: 176, 106, 16;
-  --card-graph: url("data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 160 160%22><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M119,57 Q93,51 84,41%22 opacity=%220.42%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M119,57 Q102,82 88,95%22 opacity=%220.33%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M46,122 Q30,131 37,121%22 opacity=%220.67%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M46,122 Q49,126 26,117%22 opacity=%220.57%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M29,77 Q38,97 33,97%22 opacity=%220.57%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M29,77 Q23,66 38,57%22 opacity=%220.56%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M88,95 Q72,117 81,124%22 opacity=%220.49%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M88,95 Q85,99 80,126%22 opacity=%220.47%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M33,97 Q28,115 26,117%22 opacity=%220.57%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M80,126 Q82,114 81,124%22 opacity=%220.73%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M18,140 Q34,116 26,117%22 opacity=%220.54%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M18,140 Q37,144 37,121%22 opacity=%220.52%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M37,121 Q38,131 26,117%22 opacity=%220.65%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M38,57 Q40,33 40,25%22 opacity=%220.48%22/><path stroke=%22%23565b66%22 fill=%22none%22 stroke-width=%221.4%22 d=%22M84,41 Q61,40 40,25%22 opacity=%220.34%22/><circle fill=%22%23565b66%22 cx=%22119%22 cy=%2257%22 r=%223.5%22 opacity=%220.77%22/><circle fill=%22%23565b66%22 cx=%2246%22 cy=%22122%22 r=%222.1%22 opacity=%220.32%22/><circle fill=%22%23565b66%22 cx=%2229%22 cy=%2277%22 r=%222.7%22 opacity=%220.36%22/><circle fill=%22%23565b66%22 cx=%2288%22 cy=%2295%22 r=%224.0%22 opacity=%220.64%22/><circle fill=%22%23565b66%22 cx=%2233%22 cy=%2297%22 r=%222.1%22 opacity=%220.65%22/><circle fill=%22%23565b66%22 cx=%2280%22 cy=%22126%22 r=%222.2%22 opacity=%220.35%22/><circle fill=%22%23565b66%22 cx=%2218%22 cy=%22140%22 r=%223.7%22 opacity=%220.76%22/><circle fill=%22%23565b66%22 cx=%2237%22 cy=%22121%22 r=%223.5%22 opacity=%220.33%22/><circle fill=%22%23565b66%22 cx=%2281%22 cy=%22124%22 r=%223.0%22 opacity=%220.68%22/><circle fill=%22%23b06a10%22 cx=%2238%22 cy=%2257%22 r=%229%22 opacity=%22.12%22/><circle fill=%22%23b06a10%22 cx=%2238%22 cy=%2257%22 r=%225%22 opacity=%22.26%22/><circle fill=%22%23b06a10%22 cx=%2238%22 cy=%2257%22 r=%222.6%22/><circle fill=%22%23565b66%22 cx=%2226%22 cy=%22117%22 r=%222.2%22 opacity=%220.36%22/><circle fill=%22%23565b66%22 cx=%2284%22 cy=%2241%22 r=%222.8%22 opacity=%220.74%22/><circle fill=%22%23565b66%22 cx=%2240%22 cy=%2225%22 r=%222.3%22 opacity=%220.69%22/></svg>");
   --shadow-1: 0 1px 2px rgba(28, 31, 38, 0.05),
               0 4px 14px rgba(28, 31, 38, 0.045);
   --shadow-2: 0 2px 4px rgba(28, 31, 38, 0.06),
@@ -1806,6 +1726,7 @@ body.deck .badge { color: #fff; }
 .lesson-hero { position: relative; overflow: hidden; padding: 4.5rem 0 3.75rem; }
 .lesson-hero .wrap { position: relative; z-index: 1; }
 .lesson-hero h1 { font-size: 2.7rem; }
+.lesson-header .hero-canvas,
 .lesson-hero .hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 
 /* dark interlude slide */
@@ -2299,7 +2220,7 @@ body.deck .badge { color: #fff; }
 /* The artwork sits directly behind footer text, so it stays faint enough
    that nothing is ever read across a graph edge. Decoration under body
    text never goes above about 12% here. */
-.site-footer .constellation { opacity: 0.12; }
+
 .site-footer .wrap { position: relative; z-index: 1; }
 .site-footer p { margin: 0.35em 0; max-width: 62ch; }
 .site-footer strong { color: var(--ink); font-weight: 700; }
@@ -2389,14 +2310,6 @@ body.deck .badge { color: #fff; }
 
   /* at this width the headline runs the full column, so the artwork has to
      retreat to the top corner instead of sitting behind the words */
-  .hero .constellation,
-  .lesson-header .constellation {
-    opacity: 0.4;
-    mask-image: radial-gradient(ellipse 120% 65% at 30% 88%,
-      transparent 0%, transparent 34%, #000 82%);
-    -webkit-mask-image: radial-gradient(ellipse 120% 65% at 30% 88%,
-      transparent 0%, transparent 34%, #000 82%);
-  }
   .hero-canvas {
     mask-image: radial-gradient(ellipse 120% 65% at 30% 88%,
       rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 36%, #000 84%);
@@ -2404,4 +2317,38 @@ body.deck .badge { color: #fff; }
       rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 36%, #000 84%);
   }
   .module-ticks { gap: 0.7rem; }
+}
+
+/* Top-pick badge: the signal colour, reserved for the shelf's best */
+.badge-gold {
+  background: var(--signal);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* The library index is a tree: sections, then subsections, all expandable */
+.toc-tree summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.toc-tree summary::-webkit-details-marker { display: none; }
+.toc-tree summary::after {
+  content: "\25BE";
+  margin-left: auto;
+  color: var(--ink-soft);
+  font-size: 0.8em;
+  transition: transform 0.3s var(--ease);
+}
+.toc-tree:not([open]) summary::after { transform: rotate(-90deg); }
+.toc-sub {
+  margin: 0.1rem 0 0.35rem;
+  padding-left: 1rem;
+  border-left: 1px dashed var(--line);
+  list-style: none;
+}
+.toc-sub a { font-size: 0.85rem; padding-top: 0.22rem; padding-bottom: 0.22rem; }
+@media (prefers-reduced-motion: reduce) {
+  .toc-tree summary::after { transition: none; }
 }

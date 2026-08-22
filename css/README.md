@@ -25,7 +25,6 @@ of the file. Change them there, never inline:
   --accent-rgb: 125, 35, 53;   /* same accent, as rgba() channels */
   --signal: #b06a10;           /* the "active node" hue */
   --signal-rgb: 176, 106, 16;
-  --card-graph: url("data:image/svg+xml,…");  /* card-corner node cluster */
 
   --radius-sm/--radius/--radius-lg/--radius-pill
   --shadow-1/--shadow-2/--shadow-accent
@@ -50,10 +49,6 @@ Four of these carry rules of their own:
   it is not contrast-safe at small sizes on white.
 - **`--ease`** is the one easing curve on the site. Use it for anything that
   moves. Consistent motion is most of what "professional" means here.
-- **`--card-graph`** is an inlined data-URI node cluster, declared once per
-  theme, used for the motif in card corners. Because a data URI cannot read
-  `currentColor`, each theme block carries its own copy — the only place in
-  the file where artwork is duplicated per theme.
 
 Everything else that draws a graph is **inline SVG with CSS classes**
 (`.constellation`), so one blob of markup renders correctly in both themes:
@@ -110,7 +105,7 @@ The file is ordered, with comment banners between sections:
 
 ## The resource library
 
-`intro-ai-tools/resources.html` is the one page wide enough to need its own
+`resources.html` (site root) is the one page wide enough to need its own
 layout, so it carries `class="library"` on `<body>`, which only re-declares
 `--max` (66rem → 78rem). Widening the token widens the header, hero, and
 footer with it, so nothing drifts out of alignment.

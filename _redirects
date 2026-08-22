@@ -8,6 +8,12 @@
 # Format: <from> <to> <status>. First match wins, so the bare path comes
 # before the splat.
 
+# resources.html moved from the course folder to the site root, since the
+# library serves every course.
+/intro-ai-tools/resources.html   /resources.html   301
+/intro-ai-tools/resources        /resources.html   301
+/mpc-csci-40/resources.html      /resources.html   301
+
 /mpc-csci-40            /intro-ai-tools/           301
 /mpc-csci-40/           /intro-ai-tools/           301
 /mpc-csci-40/*          /intro-ai-tools/:splat     301
