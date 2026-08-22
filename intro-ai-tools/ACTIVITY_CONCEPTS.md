@@ -2,9 +2,11 @@
 
 Brainstorming-level map of classroom activities for the course's eight modules (aligned
 with the MPC CSCI 40 outline, but general-purpose — usable by any school, no course
-management system required). This page is the spitball overview; each module links to a
-sub-file holding the full researched menu, structured so one research agent can deepen
-one lesson at a time.
+management system required). This is a **skills development program**: a community
+college course whose activities map to named job skills, built on the real tools job
+postings name. This page is the spitball overview; each module links to a sub-file
+holding the full researched menu, structured so one research agent can deepen one lesson
+at a time.
 
 | Module | Idea file |
 |---|---|
@@ -33,6 +35,10 @@ Every activity gets filtered through these:
 3. **Humanization** — AI earns its place by removing the tasks that keep us from
    appreciating people, never by turning people into numbers. Use AI to be more concise
    (the one-pager the reader wants), not to inflate.
+
+At the program level, every module also maps to named job skills (see the per-module
+lines below and each `activities/` file) — the pillars are the pedagogical filter, the
+job-skills tags are the accountability layer a dean or advisory board reads.
 
 ## The scaffold
 
@@ -101,29 +107,38 @@ flowchart TD
 - **M1 What is AI** — K-H-W-L / Hopes & Concerns warm-up (agency-first, before any tool
   use); predict-the-next-word demo; Teachable Machine bias-your-own-classifier;
   🌟 Hugging Face tour + 🌟 run a local model (ownership made tangible); Warming Up to AI
-  low-stakes first prompts for psychological safety.
+  low-stakes first prompts for psychological safety. → job skills: AI literacy · tool
+  evaluation
 - **M2 Everyday Productivity** — bad→good prompt drill; email rewrite triage (real
   workplace stakes); 🌟 make-it-shorter (humanization: respect the reader's time);
   🌟 Mermaid diagrams (validatable output, small-model-friendly); prompt battle for fun.
+  → job skills: business writing · prompt engineering · documentation
 - **M3 Images/Audio/Video** — draw-then-generate scientist bias check; workplace
   flyer/logo sprint (community empowerment); AI alt-text draft-and-revise
   (accessibility = humanization); Two Truths & AI + Detect Fakes for detection instinct.
+  → job skills: visual content production · media verification · accessibility
+  compliance
 - **M4 Spreadsheets & Data** — CSV first-look profile; household budget builder
   (personal buy-in); AI fact-check-the-data-narrative closer (verification habit);
-  code-verified number check ("don't trust freehand arithmetic").
+  code-verified number check ("don't trust freehand arithmetic"). → job skills: data
+  analysis · spreadsheet proficiency · fact-checking
 - **M5 Research & Information** — hallucinated-references lab (quantify the fix!);
   lateral reading / SIFT modeled live; NotebookLM source-grounding contrast; privacy
-  policy comparison (what happens to pasted data).
+  policy comparison (what happens to pasted data). → job skills: source verification ·
+  research methods
 - **M6 Ethics & Bias** — Survival of the Best Fit + the whole games shelf; image-generator
   bias audit students run themselves; draft-your-own AI use policy (agency as artifact);
-  disclosure ladder; energy/water footprint.
+  disclosure ladder; energy/water footprint. → job skills: bias auditing · policy
+  writing · risk assessment
 - **M7 Automation** — map your workflow then automate ONE step; automate-vs-keep-human
   card sort (humanization line-drawing); custom GPT/Project for one job task; 🌟 ship a
-  real website (GitHub → AI-written page → Cloudflare Pages).
+  real website (GitHub → AI-written page → Cloudflare Pages). → job skills: workflow
+  automation · process mapping · web publishing
 - **M8 Capstone** — "solve a problem in your life or job" brief; process-weighted rubric
   (iteration evidence beats polish; verification and authorial mastery graded); 3-session
   arc: kickoff → gallery-walk check-in → showcase (stations or lightning talks);
-  🌟 published-site capstone — every project is a real URL.
+  🌟 published-site capstone — every project is a real URL. → job skills: project
+  delivery · portfolio presentation · client communication
 
 ## Course-long threads
 

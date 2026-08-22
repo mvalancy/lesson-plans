@@ -4,6 +4,9 @@ Part of the [activity idea library](../ACTIVITY_CONCEPTS.md). The lab should fee
 *getting good at asking*: every student leaves with drafts they'd actually use, and the
 reflex of iterating instead of accepting the first output.
 
+**Maps to job skills:** AI-assisted business writing · meeting documentation · process
+diagramming · professional email judgment
+
 ## Start here — the picks
 
 ### 1. Bad prompt → good prompt `[assist]` · 20 min
@@ -92,7 +95,8 @@ prompts, public vote.
 2. Outputs go up on the projector side by side; the class votes; winning teams explain
    what made their prompt work (10 min).
 
-**They walk away with:** visible proof that specificity and persona change everything.
+**They walk away with:** visible proof that prompt specificity and persona change
+everything.
 Source: [Penn Libraries Prompt Battle-Off](https://www.library.upenn.edu/rdds/work/kwh-prompt-battle-off)
 
 ## Full menu
@@ -104,7 +108,7 @@ Source: [Penn Libraries Prompt Battle-Off](https://www.library.upenn.edu/rdds/wo
 | **Reverse prompting** *(adapted)* | `assist` | Polished output, hidden prompt — reconstruct it, then compare to the real one. | [Conestoga Guidebook](https://ecampusontario.pressbooks.pub/conestogagenaiguidebook/chapter/1-3-prompting/) |
 | **AI-as-tutor prompting coach** | `solo` | Ask the AI to coach you: closed questions, won't advance until you answer. | [Conestoga Guidebook](https://ecampusontario.pressbooks.pub/conestogagenaiguidebook/chapter/1-3-prompting/) |
 | **Resume bullet punch-up** | `assist` | Strengthen a weak bullet, tailor to a posting, catch AI-fabricated claims. | [Career Contessa](https://www.careercontessa.com/advice/how-to-use-chatgpt-to-write-resume/), [NUS](https://nus.edu.sg/cfg/events/details/4057) |
-| **Meeting notes → summary** | `assist` | Messy transcript in; decisions, action items, open questions out; compare two prompt structures. | [Microsoft Learn](https://learn.microsoft.com/en-us/training/modules/make-your-meetings-more-productive-ai/), [idratherbewriting](https://idratherbewriting.com/ai/prompt-engineering-summarizing-meeting-notes.html) |
+| **Meeting notes → summary** | `assist` | Messy transcript in (e.g., from Otter or Zoom); decisions, action items, open questions out; compare two prompt structures. | [Microsoft Learn](https://learn.microsoft.com/en-us/training/modules/make-your-meetings-more-productive-ai/), [idratherbewriting](https://idratherbewriting.com/ai/prompt-engineering-summarizing-meeting-notes.html) |
 | **Brainstorm divergence drill** | `show→solo` | 15–20 unfiltered ideas, then a second prompt clusters and ranks them against constraints. | [OpenAI Academy](https://openai.com/academy/brainstorming/) |
 | **Persona swap for tone** *(adapted)* | `assist` | Same message as formal exec / friendly peer / concise technical; which fits which audience? | — |
 | **Prompt chaining lab** | `assist→solo` | Outline → draft → tone-edit as separate chained prompts, not one mega-prompt. | [Google Prompting Essentials](https://www.coursera.org/specializations/prompting-essentials-google) |

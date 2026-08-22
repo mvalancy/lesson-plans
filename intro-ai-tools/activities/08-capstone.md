@@ -5,6 +5,9 @@ mid-point critique, public showcase. The capstone should feel like *ownership in
 public*: a real problem from the student's own life or job, solved with the course's
 tools, published at a URL they keep.
 
+**Maps to job skills:** project scoping · portfolio building (GitHub/live URL) ·
+presenting work · iterating from user feedback
+
 ```mermaid
 flowchart LR
     A["<b>Session 8</b><br/>project kickoff<br/><i>brief + work time</i>"] --> B["<b>Session 9</b><br/>mid-point check-in<br/><i>gallery-walk critique</i>"]

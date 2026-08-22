@@ -8,6 +8,10 @@ computer novices to engineers.
 Reusable classroom structures for the wide skill spread (little computer experience →
 engineering students), from adult-ed and tech-instruction teaching guides.
 
+These aren't just teaching tricks — they mirror how real workplaces run technical work:
+pair programming's driver/navigator roles, async peer review, and demo days all show up
+below in classroom form.
+
 **Session skeleton**
 
 - **Gradual release ("I do / we do / you do")** — model fully → do it together → practice

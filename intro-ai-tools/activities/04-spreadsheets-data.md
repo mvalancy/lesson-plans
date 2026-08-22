@@ -4,6 +4,9 @@ Part of the [activity idea library](../ACTIVITY_CONCEPTS.md). The lab should fee
 *competence with a conscience*: AI makes spreadsheet work dramatically easier, and every
 number still gets verified — because data about people *is* people.
 
+**Maps to job skills:** spreadsheet analysis (Excel/Google Sheets) · data cleaning ·
+data visualization · report auditing / fact-checking
+
 ## Start here — the picks
 
 ### 1. First look at a new dataset `[show→assist]` · 25 min
@@ -21,7 +24,8 @@ unfamiliar CSV, done with AI as the assistant and the human as the auditor.
 **Floor:** the provided prompt, verbatim.
 **Stretch:** ask the AI to flag likely data-entry errors, then verify each claimed error
 by hand.
-**They walk away with:** a reusable first-ten-minutes ritual for any spreadsheet job.
+**They walk away with:** a reusable first-ten-minutes data-audit ritual for any
+spreadsheet job.
 Source: [Wharton AI & Analytics guide](https://ai-analytics.wharton.upenn.edu/uncategorized/exploring-data-with-chatgpt-a-step-by-step-guide/)
 
 ### 2. Household budget builder `[solo]` · 35 min
@@ -70,7 +74,8 @@ A repeatable audit ritual, not a one-off activity — introduce it here, use it 
 3. Compare, and discuss the difference between AI *computing* (verifiable path) and AI
    *recalling* (freehand arithmetic that lies fluently).
 
-**They walk away with:** "never trust a number without its method" as a checklist item.
+**They walk away with:** a data-verification checklist item — "never trust a number
+without its method."
 Source: [NC State "Colab and Chill"](https://www.lib.ncsu.edu/workshops/colab-and-chill-vibe-coding-approach-exploratory-data-analysis-using-ai/2026-03-12)
 
 ## Full menu

@@ -6,6 +6,9 @@ professional fact-checker's moves, and meet the grounded tools that fabricate le
 *(This module is the source of the mini-lesson — keep the hallucination framing
 consistent with it.)*
 
+**Maps to job skills:** fact-checking and source verification · research synthesis
+(NotebookLM/Perplexity) · information governance — what not to paste into public tools
+
 ## Start here — the picks
 
 ### 1. The hallucinated references lab `[assist]` · 35 min
@@ -51,7 +54,7 @@ The constructive answer to hallucination: tools that only answer from sources yo
 them.
 
 **Run it:**
-1. Ask the same question to an open chatbot and to NotebookLM loaded with the course
+1. Ask the same question to ChatGPT and to NotebookLM loaded with the course
    readings; compare answers side by side (10 min).
 2. Click NotebookLM's inline citations back to the exact passage; then try to force it
    to answer beyond its sources and watch it decline (10 min).
@@ -60,7 +63,8 @@ them.
 **Floor:** query an instructor-preloaded notebook.
 **Stretch:** curate your own source set — including rejecting one unreliable source and
 saying why.
-**They walk away with:** source-grounded AI as their default for anything that matters.
+**They walk away with:** the research-synthesis habit of reaching for source-grounded AI,
+not an open chatbot, for anything that has to be right.
 Source: [Northeastern AI gallery](https://learning.northeastern.edu/ai-gallery-post-beyond-lectures-and-the-textbook)
 
 ### 4. Privacy policy showdown `[solo groups]` · 25 min
@@ -76,8 +80,8 @@ structured way — and never paste blindly again.
 
 **Floor:** highlighted excerpts.
 **Stretch:** find the answers in the full document unaided.
-**They walk away with:** the workplace instinct about confidential data and public
-tools.
+**They walk away with:** information governance in practice — the workplace instinct
+about what confidential data can and can't go into public tools.
 Source: [Georgia Southern LibGuide](https://georgiasouthern.libguides.com/c.php?g=1380906&p=10211384)
 
 ## Full menu

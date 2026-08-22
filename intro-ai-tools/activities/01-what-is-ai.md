@@ -4,6 +4,9 @@ Part of the [activity idea library](../ACTIVITY_CONCEPTS.md). The lab should fee
 *demystification*: by 9pm, "AI" has gone from a vague cloud thing to a machine they've
 poked, trained, broken, and run on a laptop.
 
+**Maps to job skills:** AI literacy and vocabulary · evaluating and choosing AI tools ·
+recognizing bias in trained systems · verifying AI output before trusting it
+
 ## Start here — the picks
 
 ### 1. Hopes, worries, and what you've only heard `[show]` · 10–15 min
@@ -39,7 +42,8 @@ fluent is not the same as true. Everything in Module 5 stands on this.
 **Floor:** shouting words at a screen.
 **Stretch:** articulate *why* one word is more probable (frequency, context); extend the
 chain word by word and watch small errors compound.
-**They walk away with:** the mental model the whole verification thread builds on.
+**They walk away with:** the mental model the whole verification thread builds on — the
+habit of checking AI output before trusting it.
 Sources: [Digital Technologies Hub](https://www.digitaltechnologieshub.edu.au/teach-and-assess/classroom-resources/lesson-ideas/exploring-predictive-text/), [Merced College OER](https://socialsci.libretexts.org/Courses/Merced_College/Demystifying_AI:_A_Practical_Introduction_for_Instructors/01:_An_Introduction_to_AI/1.01:_What_is_a_language_model/1.1.01:_How_language_models_generate_text_by_predicting_the_next_word)
 
 ### 3. Teachable Machine: train it, then break it `[assist→solo]` · 25–30 min
@@ -56,7 +60,8 @@ with bad training data. Garbage-in-garbage-out, earned rather than told.
 **Floor:** scripted two-category build, partner drives.
 **Stretch:** three or more classes; stress-test edge cases (lighting, angle, background).
 **They walk away with:** "models learn what you feed them" as personal experience — the
-foundation for every bias conversation in Module 6.
+skill of spotting biased training data, and the foundation for every bias conversation in
+Module 6.
 Source: [teachablemachine.withgoogle.com](https://teachablemachine.withgoogle.com/), [Day of AI](https://dayofai.org/units/how-do-machines-learn)
 
 ### 4. 🌟 What AI is made of: Hugging Face, then a model on your laptop `[show→solo]` · 30–35 min

@@ -5,6 +5,9 @@ humanization pillar: the lab should feel like *seeing the machinery and choosing
 line* — students experience algorithmic harm in games and their own experiments, then
 write down where they personally draw boundaries.
 
+**Maps to job skills:** responsible AI use policy drafting · vendor/tool due diligence
+· bias auditing · AI disclosure norms
+
 ## Start here — the picks
 
 ### 1. Survival of the Best Fit, with the three-round debrief `[show or solo]` · 40 min
@@ -26,8 +29,9 @@ it. People become numbers, on screen, in six minutes.
 **Stretch:** open the [source repo](https://github.com/survivalofthebestfit/survivalofthebestfit)
 and find the proxy variable (home address) that let bias sneak back in after names were
 hidden.
-**They walk away with:** the course's core cautionary tale as lived experience — and a
-fun fact for the capstone: this game was built by four students as a class project.
+**They walk away with:** the course's core cautionary tale as lived experience — the
+bias-auditing habit of tracing exactly where bias entered the pipeline — plus a fun fact
+for the capstone: this game was built by four students as a class project.
 Source: [survivalofthebestfit.com](https://www.survivalofthebestfit.com/game/)
 
 ### 2. Image-generator bias audit `[solo→assist]` · 30 min
@@ -65,8 +69,8 @@ literal workplace deliverable.
 
 **Floor:** fill in a template's blanks.
 **Stretch:** blank page, and justify every rule.
-**They walk away with:** their own answer to "whether and how" — the agency pillar,
-signed.
+**They walk away with:** a written AI use policy in their own hand — the job skill of
+drafting acceptable-use rules for a team, signed.
 Sources: [AIHR template](https://www.aihr.com/blog/ai-policy-template/), [course-policy models](https://celt.uky.edu/ai-course-policy-examples) *(adapted)*
 
 ### 4. The disclosure ladder `[assist card-sort]` · 25 min

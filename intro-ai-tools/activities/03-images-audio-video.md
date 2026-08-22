@@ -4,6 +4,10 @@ Part of the [activity idea library](../ACTIVITY_CONCEPTS.md). The lab should fee
 *making and doubting*: everyone creates something real for their community, and everyone
 gets fooled at least once by synthetic media — on purpose, in a safe room.
 
+**Maps to job skills:** marketing asset production (Canva/Figma) · digital accessibility
+compliance (alt text, captions) · transcription workflows · media/synthetic-content
+verification
+
 ## Start here — the picks
 
 ### 1. Draw a scientist, then generate one `[assist]` · 25 min
@@ -21,7 +25,7 @@ The module's bias moment, run on the students' own data. Nothing said in a lectu
 **Floor:** compare one drawing and one generation.
 **Stretch:** cite the documented occupation-bias studies; design counter-bias prompts
 and re-test.
-**They walk away with:** bias as something measured, not asserted.
+**They walk away with:** a bias-auditing habit — measuring bias, not asserting it.
 Sources: [twinpics.ai classroom methods](https://twinpics.ai/blog/teach-ai-literacy-classroom-methods), [Art Education study](https://www.tandfonline.com/doi/full/10.1080/00043125.2024.2330340)
 
 ### 2. Community flyer / logo sprint `[solo]` · 35 min
@@ -40,8 +44,8 @@ business or community group could use.
 **Floor:** template-guided flow.
 **Stretch:** a full brand brief (colors, audience, tone) plus a two-sentence rationale
 for every AI choice kept.
-**They walk away with:** a portfolio-able artifact and the realization they can do this
-for people they know.
+**They walk away with:** a portfolio-able design asset and the realization they can do
+this for people they know.
 *(Adapted; tools are examples — swap freely per the tool menu.)*
 
 ### 3. Alt-text draft-and-revise `[assist→solo]` · 25 min
@@ -59,8 +63,8 @@ descriptions fast, and human judgment makes them true and useful.
 
 **Floor:** simple photos.
 **Stretch:** charts and infographics; write alt text serving a specific document purpose.
-**They walk away with:** a genuinely employable compliance skill and the pattern
-*AI drafts, human owns*.
+**They walk away with:** a genuinely employable digital-accessibility compliance skill
+and the pattern *AI drafts, human owns*.
 Sources: [Maricopa accessibility handbook](https://open.maricopa.edu/accessibilityhandbook/chapter/ai-generated-alt-text/), [JMU guide](https://www.jmu.edu/accessibility/digital-accessibility/fundamentals/guides/image-description/ai-generated-alt-text.shtml)
 
 ### 4. Fooled on purpose: Two Truths & AI → Detect Fakes `[show→solo]` · 25 min

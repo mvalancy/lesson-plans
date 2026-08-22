@@ -4,6 +4,10 @@ Part of the [activity idea library](../ACTIVITY_CONCEPTS.md). The lab should fee
 *deliberate delegation*: map the work first, automate one boring step, keep the human
 judgment — and ship something real to the open web.
 
+**Maps to job skills:** workflow automation (Zapier/Make/n8n) · process mapping ·
+custom AI assistant building (Claude Projects/GPTs) · site deployment (GitHub/Cloudflare
+Pages) · automation judgment — what to keep human
+
 ## Start here — the picks
 
 ### 1. Map your workflow, then automate one step `[show→solo]` · 45 min
@@ -60,7 +64,8 @@ From using someone else's chatbot to owning a narrow one that works for *you*.
 
 **Floor:** template instructions, fill in your specifics.
 **Stretch:** add knowledge files; handle the edge cases your neighbor found.
-**They walk away with:** a working assistant they own and understand.
+**They walk away with:** a custom AI assistant they built and understand — the
+tool-scoping skill ops and product teams use to spin up narrow internal assistants.
 Sources: [WashU Build Your Own GPTs](https://careers.washu.edu/classes/build-your-own-gpts/), [LSE Claude Projects guide](https://info.lse.ac.uk/staff/divisions/Eden-Centre/Assets-EC/Documents/Claude-Guides-Dec-2025/Guide-Claude-Projects-for-LSE-Educators.pdf)
 
 ### 4. 🌟 Ship a real website `[show→solo]` · 50 min

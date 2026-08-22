@@ -14,6 +14,10 @@ A good session uses **one game as the warm-up** (5–10 min play + debrief) — 
 of the course students have played ~10 of these, which quietly delivers the entire
 ethics/verification curriculum a second time through their hands.
 
+These games also carry job-relevant judgment skills — media verification, moderation/
+triage judgment, bias auditing — the soft skills employers are increasingly naming in
+AI-era job postings.
+
 ---
 
 ## Module 1 — What is AI? (demystifying: prediction, pattern-matching, training data)
