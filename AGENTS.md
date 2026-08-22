@@ -47,6 +47,12 @@ register.
   `ignoreip`, so the ban can't recur — but the shared-egress property still
   means gateway-side per-IP controls treat all visitors as one client.
   Per-visitor fairness has to come from this Function's KV limiter.
+- **Never position the children of `.lesson-card`.** The whole-card click zone
+  is a stretched link (`h3/h4 a::after { inset: 0 }`) that binds to the card
+  because the card is the nearest positioned ancestor. Any rule like
+  `.lesson-card > * { position: relative }` rebinds that overlay to the
+  heading and silently shrinks every card's click zone to its title. This
+  happened once (fixed in e0cfccf); hit-test after touching card CSS.
 - **Bump the `?v=` on `/js/*` and `/css/*` references when you change them.**
   Pages serves these with a 4-hour `max-age`, so the custom domain will hand
   visitors stale assets long after a deploy — the deployment URL and
