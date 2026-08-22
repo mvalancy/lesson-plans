@@ -8,6 +8,11 @@ tools, published at a URL they keep.
 **Maps to job skills:** project scoping · portfolio building (GitHub/live URL) ·
 presenting work · iterating from user feedback
 
+> **Scheduling note:** up to two of the three capstone sessions may be reassigned to
+> other topics (guest lectures, special sessions — TBD). The arc below compresses
+> gracefully: minimum viable is kickoff + showcase, with the mid-point gallery walk
+> going async. Scope briefs assuming two sessions.
+
 ```mermaid
 flowchart LR
     A["<b>Session 8</b><br/>project kickoff<br/><i>brief + work time</i>"] --> B["<b>Session 9</b><br/>mid-point check-in<br/><i>gallery-walk critique</i>"]

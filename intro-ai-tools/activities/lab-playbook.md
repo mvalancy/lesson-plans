@@ -141,10 +141,20 @@ game itself.
 *Realism:* GitHub email verification stalls sometimes — start accounts at 0:12 sharp;
 keep 2–3 pre-made pair-up repos for stranded students. *Wifi fallback:* none honest —
 this lab needs the internet; swap with Lab 6 on a bad-wifi night.
+*If it feels like too much for one night (it might be):* pre-stage the GitHub account +
+AI-drafted profile README in an earlier wander block (Lab 5's fits naturally), so Lab 7
+is purely build-and-deploy; or let the deploy spill into the capstone kickoff's open
+work time. The module is non-negotiable — the pacing is flexible.
 
-## Labs 8–10 — The capstone arc *(three sessions)*
+## Labs 8–10 — The capstone arc *(flexible: 1–3 sessions)*
 
 See [08-capstone.md](08-capstone.md) for formats and the process-weighted rubric.
+**Planning note:** up to two of these three sessions may be reassigned to other topics
+still being decided (guest lectures, special sessions). The arc compresses gracefully:
+the minimum viable capstone is **kickoff + showcase in as little as one combined
+evening** (brief approval and work time early, lightning talks late), with the
+mid-point gallery walk going async (shared board, comments between sessions). Design
+capstone briefs assuming two sessions; treat the third as a bonus if it survives.
 
 - **Session 8 — kickoff:** the brief approved per student in a five-minute conversation
   (novices scoped up in confidence, engineers scoped down to finishable); the rest is
