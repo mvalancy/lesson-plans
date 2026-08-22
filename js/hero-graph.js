@@ -97,12 +97,24 @@
       tokenRGB(canvas, '--signal-rgb', dark ? [242, 177, 63] : [176, 106, 16])
     ];
 
+    /* The mini-lesson header stacks two .hero-canvas elements in one section.
+       Each runs its own simulation, so the budget is split between siblings —
+       otherwise that one header comes out at twice everyone else's density,
+       and twice the cost, behind the largest headline on the site. */
+    var share = 1;
+    if (canvas.parentElement) {
+      var sibs = canvas.parentElement.querySelectorAll('.hero-canvas');
+      if (sibs.length > 1) share = sibs.length;
+    }
+
     var GAIN = (dark ? 1.7 : 1) * (calm ? 0.86 : 1);
-    var DENSITY = calm ? 7000 : 5400;        // px² per node
-    var MAX_NODES = calm ? 130 : 170;
-    var MIN_NODES = calm ? 26 : 40;
-    var PULSE_GAP_MIN = calm ? 1.5 : 0.75;   // seconds between spawns
-    var PULSE_GAP_MAX = calm ? 3.2 : 1.9;
+    // px² per node — the dark deck carries a denser field before it reads as
+    // clutter, the way a starfield does
+    var DENSITY = (calm ? 7000 : 5400) * share * (dark ? 0.78 : 1);
+    var MAX_NODES = Math.round((calm ? 130 : 170) / share);
+    var MIN_NODES = Math.round((calm ? 26 : 40) / share);
+    var PULSE_GAP_MIN = (calm ? 1.5 : 0.75) * share;   // seconds between spawns
+    var PULSE_GAP_MAX = (calm ? 3.2 : 1.9) * share;
     var CHAIN_CHANCE = calm ? 0.3 : 0.5;     // a landed pulse firing onward
     var MAX_PULSES = calm ? 8 : 14;
 
