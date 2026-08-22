@@ -28,7 +28,7 @@ by hand.
 spreadsheet job.
 Source: [Wharton AI & Analytics guide](https://ai-analytics.wharton.upenn.edu/uncategorized/exploring-data-with-chatgpt-a-step-by-step-guide/)
 
-### 2. Household budget builder `[solo]` · 35 min
+### 2. Household budget builder `[solo]` · 30 min
 
 The highest-buy-in lab in the course: students build something they'll use Friday.
 
@@ -102,6 +102,6 @@ Source: [NC State "Colab and Chill"](https://www.lib.ncsu.edu/workshops/colab-an
 More playables for this module: the [games shelf](../ACTIVITY_GAMES.md#module-4--spreadsheets--data-statistics-intuition-people--numbers)
 (Guess the Correlation, Spurious Correlations, Seeing Theory).
 
-> **Deepening this file:** independent per-module so a research agent can go deep on one
-> lesson at a time. Keep the entry format, verify every link is live, mark inventions as
+> **Living document:** each module file stands alone and grows over time as new ideas
+> are researched. Keep the entry format, verify every link is live, mark inventions as
 > *(adapted)*, prefer low floor + high ceiling + a workplace or community tie-in.

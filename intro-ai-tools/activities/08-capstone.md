@@ -102,6 +102,6 @@ no existing game covers — would be a genuine contribution.
 | **Badge/credential option** | Completion issues a shareable LinkedIn-visible badge; the credential is the workplace tie-in. | [IBM SkillsBuild/Credly](https://www.credly.com/org/ibm-skillsbuild/badge/artificial-intelligence-fundamentals-with-capstone-) |
 | **Rubric-plus-revision grading** | Capstone graded against a rubric *with revision opportunities* — same CC system (Foothill). | [Foothill LINC 51F](https://catalog.foothill.edu/course-outlines/LINC-51F/) |
 
-> **Deepening this file:** independent per-module so a research agent can go deep on one
-> lesson at a time. Keep the entry format, verify every link is live, mark inventions as
+> **Living document:** each module file stands alone and grows over time as new ideas
+> are researched. Keep the entry format, verify every link is live, mark inventions as
 > *(adapted)*, prefer low floor + high ceiling + a workplace or community tie-in.

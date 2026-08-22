@@ -28,7 +28,7 @@ and re-test.
 **They walk away with:** a bias-auditing habit — measuring bias, not asserting it.
 Sources: [twinpics.ai classroom methods](https://twinpics.ai/blog/teach-ai-literacy-classroom-methods), [Art Education study](https://www.tandfonline.com/doi/full/10.1080/00043125.2024.2330340)
 
-### 2. Community flyer / logo sprint `[solo]` · 35 min
+### 2. Community flyer / logo sprint `[solo]` · 40 min
 
 Empowerment made concrete: in one sitting, produce a design artifact a real small
 business or community group could use.
@@ -109,6 +109,6 @@ year's models.
 
 More playables for this module: the [games shelf](../ACTIVITY_GAMES.md#module-3--images-audio-video-synthetic-media-detection).
 
-> **Deepening this file:** independent per-module so a research agent can go deep on one
-> lesson at a time. Keep the entry format, verify every link is live, mark inventions as
+> **Living document:** each module file stands alone and grows over time as new ideas
+> are researched. Keep the entry format, verify every link is live, mark inventions as
 > *(adapted)*, prefer low floor + high ceiling + a workplace or community tie-in.

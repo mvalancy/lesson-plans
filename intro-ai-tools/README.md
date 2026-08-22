@@ -1,11 +1,17 @@
 # Introduction to AI Tools
 
-A community-college **skills development program**: eight modules taking a general
-audience — computer novices through engineering students — from "what is AI?" to a
-published capstone, with every activity mapped to named job skills and built on the
+A community-college **skills development / certificate program**: eight modules taking a
+general audience — computer novices through engineering students — from "what is AI?" to
+a published capstone, with every activity mapped to named job skills and built on the
 tools employers actually use (Canva/Figma, Excel/Sheets, Zapier, GitHub, Cloudflare).
 Aligned with the MPC CSCI 40 outline, but general-purpose: any school can teach from
 it, no course-management system required.
+
+**Industry alignment:** the program is designed for review by a panel of industry
+experts. Each module's "Maps to job skills" line is the review artifact — panelists can
+confirm, strike, or add skills in plain language, and the activity menus adapt without
+restructuring the course. The tool menu is category-first for the same reason: when the
+panel says "our shop uses X now," the example swaps and the skill stays.
 
 **Three pillars** color every session: **agency** (whether and how to use AI, not just
 how) · **ownership** (owners, not customers — run a model on your own hardware, publish

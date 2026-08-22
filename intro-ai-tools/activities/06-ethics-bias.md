@@ -115,6 +115,6 @@ Moderator Mayhem, the PAIR fairness explorables…) is the deepest in the course
 | **Energy & water footprint** | `assist` | Estimate the footprint of your own week of AI queries; scale up; stretch: challenge the estimates' methodology. | [UNU](https://unu.edu/inweh/news/environmental-cost-of-AIs-Enrgy-use-carbon-water-and-land-footprints), [lesson base](https://ailiteracyshop.com/blog/ai-environmental-impact-lesson-middle-school/) |
 | **Four Corners protocol** | `show` | "Companies must label AI content" → walk to a corner and defend it. Tier the statements by difficulty. | [Four corners](https://ggie.berkeley.edu/practice/four-corners/) |
 
-> **Deepening this file:** independent per-module so a research agent can go deep on one
-> lesson at a time. Keep the entry format, verify every link is live, mark inventions as
+> **Living document:** each module file stands alone and grows over time as new ideas
+> are researched. Keep the entry format, verify every link is live, mark inventions as
 > *(adapted)*, prefer low floor + high ceiling + a workplace or community tie-in.

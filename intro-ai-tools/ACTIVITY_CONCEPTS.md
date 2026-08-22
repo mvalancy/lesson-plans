@@ -4,9 +4,8 @@ Brainstorming-level map of classroom activities for the course's eight modules (
 with the MPC CSCI 40 outline, but general-purpose — usable by any school, no course
 management system required). This is a **skills development program**: a community
 college course whose activities map to named job skills, built on the real tools job
-postings name. This page is the spitball overview; each module links to a sub-file
-holding the full researched menu, structured so one research agent can deepen one lesson
-at a time.
+postings name. This page is the idea-level overview; each module links to a sub-file
+holding the full researched menu, each of which can be deepened independently.
 
 | Module | Idea file |
 |---|---|
@@ -107,8 +106,8 @@ flowchart TD
 - **M1 What is AI** — K-H-W-L / Hopes & Concerns warm-up (agency-first, before any tool
   use); predict-the-next-word demo; Teachable Machine bias-your-own-classifier;
   🌟 Hugging Face tour + 🌟 run a local model (ownership made tangible); Warming Up to AI
-  low-stakes first prompts for psychological safety. → job skills: AI literacy · tool
-  evaluation
+  low-stakes first prompts for psychological safety. → job skills: AI literacy ·
+  tool evaluation · verifying AI output
 - **M2 Everyday Productivity** — bad→good prompt drill; email rewrite triage (real
   workplace stakes); 🌟 make-it-shorter (humanization: respect the reader's time);
   🌟 Mermaid diagrams (validatable output, small-model-friendly); prompt battle for fun.
@@ -120,16 +119,16 @@ flowchart TD
   compliance
 - **M4 Spreadsheets & Data** — CSV first-look profile; household budget builder
   (personal buy-in); AI fact-check-the-data-narrative closer (verification habit);
-  code-verified number check ("don't trust freehand arithmetic"). → job skills: data
-  analysis · spreadsheet proficiency · fact-checking
+  code-verified number check ("don't trust freehand arithmetic"). → job skills:
+  spreadsheet analysis · data cleaning · report auditing
 - **M5 Research & Information** — hallucinated-references lab (quantify the fix!);
   lateral reading / SIFT modeled live; NotebookLM source-grounding contrast; privacy
   policy comparison (what happens to pasted data). → job skills: source verification ·
   research methods
 - **M6 Ethics & Bias** — Survival of the Best Fit + the whole games shelf; image-generator
   bias audit students run themselves; draft-your-own AI use policy (agency as artifact);
-  disclosure ladder; energy/water footprint. → job skills: bias auditing · policy
-  writing · risk assessment
+  disclosure ladder; energy/water footprint. → job skills: bias auditing ·
+  policy drafting · vendor due diligence
 - **M7 Automation** — map your workflow then automate ONE step; automate-vs-keep-human
   card sort (humanization line-drawing); custom GPT/Project for one job task; 🌟 ship a
   real website (GitHub → AI-written page → Cloudflare Pages). → job skills: workflow
@@ -138,7 +137,7 @@ flowchart TD
   (iteration evidence beats polish; verification and authorial mastery graded); 3-session
   arc: kickoff → gallery-walk check-in → showcase (stations or lightning talks);
   🌟 published-site capstone — every project is a real URL. → job skills: project
-  delivery · portfolio presentation · client communication
+  scoping · portfolio building · presenting work
 
 ## Course-long threads
 

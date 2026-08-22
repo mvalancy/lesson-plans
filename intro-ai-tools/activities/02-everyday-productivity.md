@@ -4,7 +4,8 @@ Part of the [activity idea library](../ACTIVITY_CONCEPTS.md). The lab should fee
 *getting good at asking*: every student leaves with drafts they'd actually use, and the
 reflex of iterating instead of accepting the first output.
 
-**Maps to job skills:** AI-assisted business writing · meeting documentation · process
+**Maps to job skills:** prompt engineering · AI-assisted business writing · meeting
+documentation · process
 diagramming · professional email judgment
 
 ## Start here — the picks
@@ -122,6 +123,6 @@ Source: [Penn Libraries Prompt Battle-Off](https://www.library.upenn.edu/rdds/wo
 
 More playables for this module: the [games shelf](../ACTIVITY_GAMES.md#module-2--everyday-productivity-prompting-precision-concision).
 
-> **Deepening this file:** independent per-module so a research agent can go deep on one
-> lesson at a time. Keep the entry format, verify every link is live, mark inventions as
+> **Living document:** each module file stands alone and grows over time as new ideas
+> are researched. Keep the entry format, verify every link is live, mark inventions as
 > *(adapted)*, prefer low floor + high ceiling + a workplace or community tie-in.

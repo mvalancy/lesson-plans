@@ -13,7 +13,7 @@ tool menu, top picks); come here when planning one specific module.
 2. **Full menu.** The rest of the researched options as a table — one row per activity,
    with scaffold stage, gist, and source.
 3. A pointer to that module's section of the [games shelf](../ACTIVITY_GAMES.md), and a
-   note for research agents deepening the file.
+   note on how the file grows over time.
 
 | File | Module |
 |---|---|
@@ -35,5 +35,5 @@ before it lands here (flagged in place when a site blocks automated checks).
 **Why these activities:** the program maps to real job skills a dean or advisory board
 can check — activities use the actual tools job postings name (Canva/Figma, Excel/Sheets,
 Zapier/Make/n8n, GitHub, Cloudflare Pages), and every module file opens with a "Maps to
-job skills" line naming them. Each file is independent so one research agent can deepen
-one module at a time.
+job skills" line naming them. Each file is independent so any
+module can be deepened without touching the rest.

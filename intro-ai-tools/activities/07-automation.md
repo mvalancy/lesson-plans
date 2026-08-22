@@ -110,6 +110,6 @@ builds on.
 More playables for this module: the [games shelf](../ACTIVITY_GAMES.md#module-7--automation-delegation-runaway-optimization-human-in-the-loop)
 (Blockly Maze, Agent Breaker, Universal Paperclips).
 
-> **Deepening this file:** independent per-module so a research agent can go deep on one
-> lesson at a time. Keep the entry format, verify every link is live, mark inventions as
+> **Living document:** each module file stands alone and grows over time as new ideas
+> are researched. Keep the entry format, verify every link is live, mark inventions as
 > *(adapted)*, prefer low floor + high ceiling + a workplace or community tie-in.
