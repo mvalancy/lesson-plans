@@ -1426,6 +1426,21 @@ body.library { --max: 78rem; }
 .game-group[hidden] { display: none; }
 .game-group > h3 { margin: 0 0 0.2rem; font-size: 1.06rem; }
 .group-note { margin: 0; font-size: 0.89rem; color: var(--ink-soft); }
+
+/* Card titles sit a level below the group heading, so they are h4 here.
+   Same look as .lesson-card h3, since the card is the same card. */
+.lesson-card h4 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.28;
+  color: var(--ink);
+  margin: 0 0 0.4rem;
+  text-wrap: balance;
+}
+.lesson-card h4 a { color: var(--ink); text-decoration: none; }
+.lesson-card h4 a::after { content: ""; position: absolute; inset: 0; z-index: 3; }
+.lesson-card h4 a:hover { color: var(--accent); }
 .lesson-card .card-flag {
   margin-top: 0.7rem;
   font-size: 0.82rem;
@@ -2271,10 +2286,64 @@ body.deck .badge { color: #fff; }
     rgba(var(--accent-rgb), 0.4) 35%, rgba(var(--signal-rgb), 0.4) 65%, transparent);
   z-index: 2;
 }
-.site-footer .constellation { opacity: 0.3; }
+/* The artwork sits directly behind footer text, so it stays faint enough
+   that nothing is ever read across a graph edge. Decoration under body
+   text never goes above about 12% here. */
+.site-footer .constellation { opacity: 0.12; }
 .site-footer .wrap { position: relative; z-index: 1; }
 .site-footer p { margin: 0.35em 0; max-width: 62ch; }
 .site-footer strong { color: var(--ink); font-weight: 700; }
+
+/* One footer pattern, on every page: a brand block, the primary nav, and a
+   per-page slot (section anchors on the library, prev/next on a lesson),
+   over a fine-print line. The markup is duplicated per page — there is no
+   templating here — so a change to one is a change to all of them. */
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s5) var(--s7);
+  align-items: start;
+}
+.footer-brand { flex: 1 1 20rem; max-width: 42ch; }
+.footer-mark {
+  display: flex;
+  align-items: center;
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--ink);
+  margin: 0 0 0.25em;
+}
+.footer-nav, .footer-page { flex: 0 1 auto; min-width: 8.5rem; }
+.footer-label {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 0.55rem;
+}
+.footer-nav ul, .footer-page ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-nav li, .footer-page li { margin: 0.3rem 0; }
+.footer-nav a, .footer-page a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.footer-nav a:hover, .footer-page a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+.footer-fine {
+  margin: var(--s5) 0 0;
+  padding-top: var(--s4);
+  border-top: 1px solid var(--line);
+  max-width: none;
+  font-size: 0.84rem;
+}
 
 /* ---------- responsive ---------- */
 
