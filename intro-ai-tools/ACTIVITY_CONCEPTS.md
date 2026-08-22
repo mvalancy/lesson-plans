@@ -19,7 +19,7 @@ at a time.
 | 7 · Automation | [activities/07-automation.md](activities/07-automation.md) |
 | 8 · Capstone Showcase | [activities/08-capstone.md](activities/08-capstone.md) |
 | — · Teaching scaffold (cross-cutting) | [activities/teaching-scaffold.md](activities/teaching-scaffold.md) |
-| — · Games & interactives | ACTIVITY_GAMES.md *(in progress)* |
+| — · Games & interactives | [ACTIVITY_GAMES.md](ACTIVITY_GAMES.md) |
 
 ## The three pillars
 
