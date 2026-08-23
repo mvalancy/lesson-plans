@@ -2745,7 +2745,9 @@ body.deck .badge { color: #fff; }
   font-variant-numeric: tabular-nums;
   font-size: 0.8rem;
   color: var(--ink-faint);
-  white-space: nowrap;
+  /* deliberately not nowrap: these run long, and a narrow screen would push
+     the whole page sideways rather than wrap them */
+  min-width: 0;
 }
 
 @media (max-width: 40rem) {

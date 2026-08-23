@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teacher view · Working with AI Images, Audio, and Video · Intro to AI Tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css?v=202608222400">
+</head>
+<body>
+<div class="site-note"><strong>Free and open</strong> for anyone to learn or teach · <a href="https://github.com/mvalancy/lesson-plans">code on GitHub</a></div>
+<p class="teacher-banner"><strong>Teacher view</strong> of a free course. Nothing here is hidden from students, it is just the version with the notes in it. <a href="/intro-ai-tools/lessons/03-images-audio-video.html">Student view</a></p>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/intro-ai-tools/"><span class="brand-mark" aria-hidden="true"></span>Intro to AI&nbsp;Tools</a>
+    <nav class="site-nav">
+      <a href="/intro-ai-tools/">Overview</a>
+      <a href="/intro-ai-tools/#lessons" aria-current="page">Modules</a>
+      <a href="/intro-ai-tools/mini-lesson/">Mini-Lesson</a>
+      <a href="/resources.html">Resources</a>
+      <a class="hub-link" href="/">All Courses</a>
+    </nav>
+  </div>
+</header>
+
+<section class="lesson-header">
+  <canvas class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="kicker">Teacher view · Module 3 of 8</p>
+    <h1>Working with AI Images, Audio, and Video</h1>
+    <p class="meta">One 3-hour session · the lab is <strong>Make it, then doubt it</strong>: everyone gets fooled once, then ships a flyer.</p>
+    <p class="teacher-link"><a href="/intro-ai-tools/lessons/03-images-audio-video.html">Student view of this module</a> · <a href="https://github.com/mvalancy/lesson-plans/blob/main/intro-ai-tools/activities/teaching-scaffold.md">named routines (teaching scaffold)</a></p>
+    <ul class="module-ticks" aria-hidden="true"><li class="done"></li><li class="done"></li><li class="here"></li><li></li><li></li><li></li><li></li><li></li></ul>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="reveal" id="prep">
+  <h2>Prep</h2>
+  <p>The risk tonight is queueing. Free image tiers slow to a crawl when thirty
+  people hit them at once, so the flyer sprint offers three different tools and
+  you spread the room across them deliberately.</p>
+
+  <div class="block-materials">
+    <p class="block-label">Materials</p>
+    <ul>
+      <li>Projector, plus screens or laptops arranged so a gallery walk actually works.</li>
+      <li>Paper and pens for the sixty-second scientist sketches.</li>
+      <li>Sticky notes for the gallery critique.</li>
+      <li>Whiteboard space for two tallies side by side, drawings and generations.</li>
+      <li>A printed real-or-AI quiz as the offline backup.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <h4>Accounts to pre-stage</h4>
+    <ul>
+      <li>Design tools mostly want an account. Name the two or three you will support before class and check their free tiers this week, since they change often.</li>
+      <li>Split the room across at least three tools so no single service takes thirty simultaneous jobs. Assign the split, do not offer it, or everyone picks the same one.</li>
+      <li>The detection games run account-free in a browser, which is why they open the session.</li>
+    </ul>
+    <h4>Fifteen minutes before</h4>
+    <ul>
+      <li>Generate one image in each tool you are supporting and time it. That number is your sprint budget.</li>
+      <li>Open <a href="https://www.commonsense.org/games/two-truths-and-ai">Two Truths &amp; AI</a> and click through once so no first-load screen eats the opening.</li>
+      <li>Write the brief on the board, one sentence, and cover it.</li>
+      <li>Draw the two tally columns on the whiteboard.</li>
+      <li>Check that a screen reader is available if you are running the alt-text pass, or have a recording of one ready.</li>
+    </ul>
+    <h4>Wifi fallback</h4>
+    <p>The sketch-and-tally works entirely on paper, and a printed real-or-AI
+    quiz carries the detection half. The flyer sprint becomes a paper layout
+    exercise with a written brief, which is closer to how design briefs actually
+    start.</p>
+    <h4>Depends on earlier modules</h4>
+    <ul>
+      <li><strong>Module 1</strong>'s sabotaged classifier is the direct ancestor of tonight's bias tally. Models learn what they are shown, and now they will measure it.</li>
+      <li><strong>Module 2</strong>'s iterate-do-not-accept reflex transfers straight to image prompts.</li>
+      <li>The alt-text pass sets up an accessibility habit that shows up again in <strong>Module 7</strong> when they publish a page.</li>
+    </ul>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/03-images-audio-video.html" data-embed-select="#materials">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/03-images-audio-video.html#materials">Open the student view</a> to see the materials list students are given.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="goals">
+  <h2>What they should walk out with</h2>
+
+  <div class="block-big-idea">
+    <p class="block-label">Big idea</p>
+    <p>Generation is the fast part. Judgment is the job. Everyone makes something
+    real tonight, and everyone gets fooled once in a safe room.</p>
+  </div>
+
+  <p><strong>Maps to job skills:</strong> marketing asset production (Canva or
+  Figma) · digital accessibility compliance (alt text, captions) ·
+  transcription workflows · media and synthetic-content verification.</p>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/03-images-audio-video.html" data-embed-select="#objectives">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/03-images-audio-video.html#objectives">Open the student view</a> for the learning objectives.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <p>Two things have to happen tonight. Every student leaves with a design
+    artifact a real person could use, and every student watches a tally they
+    helped produce show a bias they did not put there on purpose. The second one
+    is why the flyer is not just a craft project.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="timing">
+  <h2>Session timing</h2>
+
+  <div class="block-timing">
+    <p class="block-label">The three hours<span class="block-time">0:00 – 3:10</span></p>
+    <div class="timing-scroll">
+    <table>
+      <thead><tr><th>Time</th><th class="t-span">Share</th><th>Block</th></tr></thead>
+      <tbody>
+        <tr><td class="t-time">0:00 – 0:10</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Warm-up: study-guide homework debrief, where it shone and where it failed.</td></tr>
+        <tr><td class="t-time">0:10 – 1:15</td><td class="t-span"><span class="t-bar" style="--w:36%"></span></td><td>Lecture: diffusion intuition, speech in and out, and the deepfake problem.</td></tr>
+        <tr><td class="t-time">1:15 – 1:25</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Break.</td></tr>
+        <tr><td class="t-time">1:25 – 3:00</td><td class="t-span"><span class="t-bar" style="--w:52%"></span></td><td><strong>Lab: Make it, then doubt it.</strong> Broken out below.</td></tr>
+        <tr><td class="t-time">3:00 – 3:10</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Wrap-up and the homework handoff.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/03-images-audio-video.html" data-embed-select="#agenda">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/03-images-audio-video.html#agenda">Open the student view</a> for the session agenda.</p>
+  </div>
+
+  <div class="block-timing">
+    <p class="block-label">The lab block, minute by minute<span class="block-time">95 min, from 1:25</span></p>
+    <div class="timing-scroll">
+    <table>
+      <thead><tr><th>Lab clock</th><th class="t-span">Share</th><th>Activity</th></tr></thead>
+      <tbody>
+        <tr><td class="t-time">0:00 – 0:10</td><td class="t-span"><span class="t-bar" style="--w:11%"></span></td><td>Fooled on purpose: Two Truths &amp; AI, three posters, one fake, class votes.</td></tr>
+        <tr><td class="t-time">0:10 – 0:30</td><td class="t-span"><span class="t-bar" style="--w:21%"></span></td><td>Draw a scientist, then generate one. Two tallies against reality.</td></tr>
+        <tr><td class="t-time">0:30 – 0:55</td><td class="t-span"><span class="t-bar" style="--w:26%"></span></td><td><strong>Flyer sprint (big rock):</strong> one brief, twenty-five minutes, any free tool.</td></tr>
+        <tr><td class="t-time">0:55 – 1:10</td><td class="t-span"><span class="t-bar" style="--w:16%"></span></td><td>Gallery walk and vote, with the honest question attached.</td></tr>
+        <tr class="t-slack"><td class="t-time">1:10 – 1:30</td><td class="t-span"><span class="t-bar" style="--w:21%"></span></td><td>Wander block. Polish, play the detection games, or take the alt-text pass.</td></tr>
+        <tr><td class="t-time">1:30 – 1:35</td><td class="t-span"><span class="t-bar" style="--w:5%"></span></td><td>Micro-sweep: two flyers that changed most since the vote, before and after.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </section>
+
+  <section class="reveal" id="activities">
+  <h2>The lab, activity by activity</h2>
+
+  <div class="block-warmup">
+    <p class="block-label">Warm-up<span class="block-time">lab 0:00 – 0:10</span></p>
+    <h3>Fooled on purpose</h3>
+    <p>Play <a href="https://www.commonsense.org/games/two-truths-and-ai">Two
+    Truths &amp; AI</a> as a class: three posters, one of them generated, the room
+    votes, then the tells get revealed. Take a show of hands before the reveal so
+    everybody is on record.</p>
+    <p class="say">"Most of this room just voted for the fake one. That is not
+    embarrassing, that is the point. Better to happen here than in a group chat
+    at midnight."</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>1. Draw a scientist, then generate one</h3>
+    <span class="step-time">lab 0:10 – 0:30 · solo sketch, then a class tally</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity<span class="block-time">20 min</span></p>
+    <h3>Two tallies, both ours</h3>
+    <p>Sixty seconds, everybody sketches "a scientist" on paper. Stick figures
+    welcome. Then generate "a scientist" several times in a free image tool.
+    Tally the apparent demographics of both the drawings and the generations on
+    the whiteboard, side by side, then compare both to real labour statistics.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"Sixty seconds. Do not think about it, that is the whole
+    experiment. Draw a scientist."</p>
+    <p class="say">"Two columns. Ours and the model's. Nobody in this room did
+    anything wrong, and look at the columns anyway. Where did its defaults come
+    from? Where did ours?"</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a1" id="tier-a1-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a1" id="tier-a1-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a1-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a1-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Compare your own drawing with one generation and add both to the
+        tally. One data point each is what makes the class total work.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Design counter-bias prompts and re-run, then say honestly whether the
+        result is a fix or a costume. Argue the sample size while you are at it,
+        thirty images is not a study.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/03-images-audio-video.html" data-embed-select="#overview">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/03-images-audio-video.html#overview">Open the student view</a> for the module overview students read before the session.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>Tallying people by eye gets uncomfortable.</strong> Name it before you start: we are counting what the picture presents, we are not assigning anybody an identity. Keep the categories coarse and the tone matter of fact.</li>
+      <li><strong>The tool has already been tuned</strong> and returns a suspiciously balanced set. That is a finding, not a failure. Ask who made that decision and whether it changed the training data or just the output.</li>
+      <li><strong>Someone concludes the model is racist or sexist on purpose.</strong> Redirect to mechanism: it reproduces its training distribution. That is a duller sentence and a much more useful one.</li>
+      <li><strong>The room over-reads thirty images.</strong> Good instinct to correct now, since Module 4 and Module 6 both lean on sample-size arguments.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"Which column surprised you more?"</h4>
+    <p>Often their own. The room's drawings usually skew the same way the model
+    does, which is the honest and more interesting version of this lesson.</p>
+    <h4>"Would you ship these images for a client?"</h4>
+    <p>Depends what the client is advertising and to whom. That is a real
+    professional judgment, and it is the graded part in the briefs.</p>
+    <h4>"Whose job is it to fix this?"</h4>
+    <p>No clean answer. Get two or three positions stated and leave the parking
+    lot open, Module 6 picks it up.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>2. The flyer sprint</h3>
+    <span class="step-time">lab 0:30 – 0:55 · solo, tools assigned across the room</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity · big rock<span class="block-time">25 min</span></p>
+    <h3>One brief, twenty-five minutes, something a real person could use</h3>
+    <p>Give a one-sentence brief for a real or invented local business: a
+    taquería's grand opening, a little league fundraiser, a neighbour's
+    dog-walking service. Twenty-five minutes in whichever free tool they were
+    assigned. Template flows are the floor, a raw image model or a full brand
+    brief is the stretch.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"Twenty-five minutes and a real brief. Somebody could actually
+    tape this to a window. That is the bar, not a class assignment."</p>
+    <p class="say">"You are on the tool I gave you. Not because it is better,
+    because thirty people on one service tonight means all of us wait."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a2" id="tier-a2-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a2" id="tier-a2-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a2-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a2-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Start from a template and change the words, the colours, and one
+        image. A finished flyer from a template is a finished flyer.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Write a full brand brief first (colours, audience, tone), build from a
+        raw image model or a blank Figma frame, and defend every AI choice you
+        kept in two sentences.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>The queue.</strong> The predictable one. Assigned tools, and a hard "your first generation is your draft" rule if a service is crawling.</li>
+      <li><strong>Text inside generated images comes out mangled.</strong> Expect it. It is a good ten seconds of teaching: proof every word, and prefer real text layered over a generated background.</li>
+      <li><strong>Twenty-five minutes of tweaking one image.</strong> Circulate with a timer voice at the halfway mark. A flyer with the phone number on it beats a beautiful image with nothing else.</li>
+      <li><strong>A logo that looks a lot like a real brand.</strong> Worth naming out loud: a trademark lookalike is a business problem, not an aesthetic one.</li>
+      <li><strong>Somebody freezes because they are "not creative".</strong> Hand them the template flow and a specific brief. The floor exists exactly for this.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"Would you pay for this?"</h4>
+    <p>The honest question, and the whole reason the gallery walk exists. Push
+    past politeness to a real yes or no.</p>
+    <h4>"What did you have to fix by hand?"</h4>
+    <p>Text, spacing, and the one factual detail the tool could not know. Same
+    pattern as the emails last module: the AI drafts, the human owns.</p>
+    <h4>"Where does the seventy-thirty rule land here?"</h4>
+    <p>First draft from the tool, the last thirty percent from the person. Name
+    it once, it comes back in every business brief.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>3. Gallery walk and vote</h3>
+    <span class="step-time">lab 0:55 – 1:10 · the whole room on its feet</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity · fun peak<span class="block-time">15 min</span></p>
+    <h3>Every flyer on a screen, sticky notes on the desk</h3>
+    <p>Flyers up on screens around the room. Everyone circulates and leaves
+    sticky-note critique on legibility and brand fit. Then the vote, and the
+    honest question out loud. Novices copy techniques by looking, confident
+    students have to defend their choices, and nobody presents alone at the
+    front.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"Two stickies each, minimum. One thing that works, one thing
+    you would change. Nobody writes just 'nice'."</p>
+    <p class="say">"Now the real question. If this were for your cousin's
+    business, would you pay someone for this flyer?"</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a3" id="tier-a3-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a3" id="tier-a3-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a3-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a3-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Leave two stickies and vote. Reading other people's work closely is
+        the skill here.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Act as the approver: check a partner's flyer against a written brand
+        checklist and approve, request changes, or reject, in writing. That
+        approval pipeline is what actually slows work down in a real company.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>Everyone is polite and nothing useful gets said.</strong> Require the "one thing you would change" sticky and read a few of the sharper ones out loud yourself first.</li>
+      <li><strong>The vote turns into a popularity contest.</strong> Vote on the brief being met, not on prettiness. Say the criterion before the vote, not after.</li>
+      <li><strong>A student is visibly stung.</strong> Get to them during the walk, not after. Point at one specific thing that works, and hand them the before-and-after slot in the sweep.</li>
+      <li><strong>The room runs out of things to say in four minutes.</strong> Seed two questions on the board: is it legible from three metres, and can you tell what it is selling in two seconds?</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"What separated the top few?"</h4>
+    <p>Almost always clarity, not sophistication. One message, legible, with the
+    practical details present.</p>
+    <h4>"How fast was that, compared to how it used to be?"</h4>
+    <p>Very. Then the follow-up that matters: if the drafting is nearly free, what
+    is the thing you are being paid for?</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="sweep">
+  <h2>Spotlight sweep and the wander block</h2>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Micro-sweep<span class="block-time">lab 1:30 – 1:35</span></p>
+    <p>Two flyers that changed the most since the vote, shown before and after.
+    Revision is the thing worth applauding tonight, and picking the two most
+    changed instead of the two best sends exactly that message.</p>
+    <h4>Prompts to hand the student showing</h4>
+    <ul>
+      <li>"What sticky note made you change it?"</li>
+      <li>"What did you decide to ignore, and why?"</li>
+      <li>"Which part is yours and which part is the tool's?"</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Wander block menu<span class="block-time">lab 1:10 – 1:30</span></p>
+    <p>Twenty minutes. This one splits cleanly between people who want to keep
+    making and people who want to keep testing their eyes. Both are fine.</p>
+    <ul>
+      <li><strong>Keep polishing the flyer,</strong> now with real critique in hand.</li>
+      <li><strong>The pro pass:</strong> write correct alt text for your own flyer, starting from an AI draft and fixing what it missed or invented. Ten genuinely employable minutes, and it is the humanization pillar wearing work clothes.</li>
+      <li><strong><a href="https://human-ai-collaboration-lab.kellogg.northwestern.edu/same-speaker-or-not">Same Speaker or Not?</a></strong>, the audio counterpart to tonight's image quiz.</li>
+      <li><strong>Twin Pics or GAN Lab</strong> for anyone who wants to see the mechanism rather than the product.</li>
+      <li><strong>Provenance:</strong> check an image's Content Credentials and talk about why provenance outlives sharp eyes.</li>
+    </ul>
+  </div>
+  </section>
+
+  <section class="reveal" id="close">
+  <h2>Synthesis, exit ticket, homework</h2>
+
+  <div class="block-big-idea">
+    <p class="block-label">Land it here</p>
+    <p>The visual tells are dying. Next year's models will not have them, which
+    is why provenance and habits matter more than a sharp eye.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Synthesis, five minutes</p>
+    <p>Put the two tallies back on the projector next to one flyer. Same
+    technology, two very different jobs: it made something useful in twenty-five
+    minutes, and it also quietly told the room what a scientist looks like.
+    Holding both at once is the point of this module.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Exit ticket</p>
+    <p>Muddiest point, anonymous: <em>what is still unclear about how these
+    images get made?</em> Diffusion is the topic students most often nod along to
+    without following, and the answers tell you whether to re-explain it in
+    ninety seconds next session.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Homework handoff</p>
+    <p>One image they are proud of, with the full prompt history that got them
+    there, plus a real deepfake news story summarised in a sentence. The prompt
+    history is the graded part: it is the record of iteration, which is the habit
+    this module is actually teaching.</p>
+    <p>Preview Module 4 in one sentence: next time the thing that looks
+    convincing is a number, and we check it.</p>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/03-images-audio-video.html" data-embed-select="#homework">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/03-images-audio-video.html#homework">Open the student view</a> for the homework as students see it.</p>
+  </div>
+  </section>
+
+
+  <nav class="lesson-nav">
+    <a class="btn btn-ghost" href="/intro-ai-tools/lessons/02-everyday-productivity.teacher.html"><span class="arrow-back" aria-hidden="true">←</span> Teacher view: Module 2</a>
+    <span class="spacer"></span>
+    <a class="btn btn-primary" href="/intro-ai-tools/lessons/04-spreadsheets-data.teacher.html">Teacher view: Module 4 <span class="arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-mark"><span class="brand-mark" aria-hidden="true"></span><strong>Introduction to AI&nbsp;Tools</strong></p>
+        <p>A free, self-paced course guide by <a href="https://valpatel.com">Matthew Valancy</a>. Free to learn from, free to teach from.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Course">
+        <p class="footer-label">Course</p>
+        <ul>
+          <li><a href="/intro-ai-tools/">Overview</a></li>
+          <li><a href="/intro-ai-tools/#lessons">Modules</a></li>
+          <li><a href="/intro-ai-tools/mini-lesson/">Mini-Lesson</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/">All Courses</a></li>
+        </ul>
+      </nav>
+      <!-- per-page slot -->
+      <nav class="footer-page" aria-label="This page">
+        <p class="footer-label">Teacher view · Module 3</p>
+        <ul>
+          <li><a href="/intro-ai-tools/lessons/03-images-audio-video.html">Student view of Module 3</a></li>
+          <li><a href="/intro-ai-tools/lessons/02-everyday-productivity.teacher.html">&larr; Teacher view: Everyday Productivity</a></li>
+          <li><a href="/intro-ai-tools/lessons/04-spreadsheets-data.teacher.html">Teacher view: Spreadsheets &amp; Data &rarr;</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-fine">Independent and not affiliated with any school or institution. Free to learn from, free to teach from, free to fork. Source on <a href="https://github.com/mvalancy/lesson-plans">GitHub</a>.</p>
+  </div>
+</footer>
+
+<script src="/js/hero-graph.js?v=202608222400" defer></script>
+<script src="/js/lesson-reveal.js?v=202608222400" defer></script>
+<script src="/js/teacher-embed.js?v=202608222400" defer></script>
+</body>
+</html>
