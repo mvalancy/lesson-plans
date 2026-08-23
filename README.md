@@ -29,6 +29,7 @@ humans).
 | One distilled, fun lab per module | [`intro-ai-tools/activities/lab-playbook.md`](intro-ai-tools/activities/lab-playbook.md) |
 | Verified browser games & explorables, by module | [`intro-ai-tools/ACTIVITY_GAMES.md`](intro-ai-tools/ACTIVITY_GAMES.md) |
 | Mixed-ability teaching structures | [`intro-ai-tools/activities/teaching-scaffold.md`](intro-ai-tools/activities/teaching-scaffold.md) |
+| **The learning-system design** (teacher layer, components, live class) | [`LEARNING_SYSTEM.md`](LEARNING_SYSTEM.md) |
 | Repo conventions & hard rules | [`AGENTS.md`](AGENTS.md) |
 
 ## Layout
