@@ -28,6 +28,7 @@ example swaps and the skill stays.
 |---|---|
 | `index.html` | Course overview, the three commitments, module grid, suggested pacing |
 | `lessons/` | One page per module — [see `lessons/README.md`](lessons/README.md) |
+| `lessons/*.teacher.html` | The teacher view of each module: prep, launch scripts, wrong turns, and the student content embedded — [see `lessons/README.md`](lessons/README.md#teacher-pages) |
 | `mini-lesson/` | A 15-minute standalone segment with the live model widget — [see `mini-lesson/README.md`](mini-lesson/README.md) |
 | `resources.html` | The resource library: side index, ~66 verified games, free tools by category, dataset shelf, build-your-own templates |
 | `ACTIVITY_CONCEPTS.md` | The activity map: pillars, scaffold, tool menu, per-module top picks |

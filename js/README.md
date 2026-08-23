@@ -1,6 +1,6 @@
 # `js/` — client-side behaviour
 
-Three small, dependency-free scripts. **All of them are progressive
+Four small, dependency-free scripts. **All of them are progressive
 enhancement**: every page must remain readable and usable with JavaScript
 disabled. Nothing here fetches a framework, and there is no build step.
 
@@ -9,6 +9,7 @@ disabled. Nothing here fetches a framework, and there is no build step.
 | `hero-graph.js` | **every page header** | Animated node-graph canvas behind hero sections (all canvases on the page) |
 | `lesson-reveal.js` | **every page** | Scroll reveal everywhere; on the mini-lesson also progress bar, slide rail, timing chips, next-word demo, 15-minute timer |
 | `ask-widget.js` | mini-lesson | The live small-model terminal that calls `/api/ask` |
+| `teacher-embed.js` | the eight `*.teacher.html` pages | Pulls the marked sections out of the student page and injects them inline |
 
 ## `hero-graph.js`
 
@@ -104,6 +105,47 @@ mini-lesson, so nothing else runs there.
 - **15-minute countdown timer** — click to start/pause, double-click to reset.
   Amber under 5 minutes, red under 2, counts up in overtime so rehearsals show
   the real damage.
+
+## `teacher-embed.js`
+
+One content spine, two views, without a build step. A teacher page never
+duplicates the student text: it marks the spot and this script fills it from the
+student page at runtime.
+
+```html
+<div class="student-embed"
+     data-embed-src="/intro-ai-tools/lessons/04-spreadsheets-data.html"
+     data-embed-select="#agenda">
+  <p class="embed-fallback"><a href="…#agenda">Open the student view</a> …</p>
+</div>
+```
+
+- `data-embed-src` is the student page. `data-embed-select` is one selector or
+  several separated by commas. `data-embed-label` overrides the frame's
+  "Student facing" caption.
+- **Each page is fetched once**, however many placeholders point at it, via a
+  cache of promises keyed by src.
+- The match is cloned into a labelled `.embed-frame` with an "Open the student
+  view" link in its header.
+
+Two things the clone must have done to it, both easy to forget:
+
+- **Ids get prefixed** with `embed-`. Otherwise every embedded section
+  duplicates an id that already exists on the teacher page.
+- **`.reveal` is stripped.** `lesson-reveal.js` builds its `IntersectionObserver`
+  on load, so content injected afterwards is never observed and would stay at
+  `opacity: 0` forever. Any `<canvas>` in the clone is dropped too: the student
+  page's hero canvas belongs to the student page's hero.
+
+**With JavaScript off, or if the fetch fails, nothing is touched** and the
+placeholder's own link is what the reader gets. That fallback link is written
+into the HTML by hand for exactly this reason, so never replace it with an empty
+`<div>`.
+
+The selection depends on stable ids on the student pages (`#overview`,
+`#objectives`, `#agenda`, `#materials`, `#homework`, and `#featured-lab` on
+Module 6). See
+[`../intro-ai-tools/lessons/README.md`](../intro-ai-tools/lessons/README.md#teacher-pages).
 
 ## `ask-widget.js`
 
