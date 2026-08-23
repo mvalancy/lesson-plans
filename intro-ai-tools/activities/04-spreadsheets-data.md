@@ -136,7 +136,7 @@ California examples for your own state's open-data portal):
 
 **The big-file exercise** *(adapted — a lesson in itself)*: two valuable datasets are
 deliberately too large for a chatbot upload — [CA employment & wages by industry/county
-(QCEW)](https://data.ca.gov/dataset/quarterly-census-of-employment-and-wages-qcew) and
+(QCEW)](https://data.ca.gov/dataset/quarterly-census-of-employment-and-wages) and
 the [College Scorecard](https://collegescorecard.ed.gov/data/) (tuition, debt, and
 post-grad earnings per college — the "does a degree from X pay off?" question students
 actually have). The activity is the filtering: download, slim to your county or ~20

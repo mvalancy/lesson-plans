@@ -1,0 +1,24 @@
+# Domains that 403/429 automated checkers but work in real browsers.
+# Verify in a browser before adding a domain here.
+www.canva.com
+openai.com
+medium.com
+www.tandfonline.com
+www.facinghistory.org
+www.ccny.cuny.edu
+peer.asee.org
+onlineethics.org
+midas.umich.edu
+events.educause.edu
+newslit.org
+restofworld.org
+hookedoninnovation.com
+flipeducation.ai
+neal.fun
+humanornot.io
+www.linkedin.com
+chatgpt.com
+claude.ai
+codepen.io
+datanutrition.org
+library.fiu.edu

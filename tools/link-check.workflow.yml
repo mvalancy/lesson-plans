@@ -1,0 +1,16 @@
+name: link-check
+on:
+  schedule:
+    - cron: "0 14 * * 1"   # Mondays
+  workflow_dispatch:
+  push:
+    paths:
+      - "resources.html"
+      - "intro-ai-tools/ACTIVITY_GAMES.md"
+      - "intro-ai-tools/activities/**"
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash tools/check_links.sh
