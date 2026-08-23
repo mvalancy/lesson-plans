@@ -1399,6 +1399,20 @@ body.library { --max: 78rem; }
   color: var(--ink-soft);
 }
 
+/* Lazy-loaded game thumbnail, first child of the card. Explicit width/height
+   plus aspect-ratio keep the reserved space stable before the image loads,
+   so `loading="lazy"` never causes layout shift as cards enter the viewport. */
+.card-thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: calc(var(--radius) - 4px);
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--line);
+}
+
 /* --- data tables --- */
 /* Dataset names are long, so the first column drops the schedule table's
    mono-and-nowrap treatment and wraps like ordinary text. */
