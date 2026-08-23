@@ -167,7 +167,10 @@ covers this) with Yjs (MIT) only if we need CRDT collaboration, plain
 websocket/poll aggregation if we do not. Two routes: submit and aggregate. Anonymous
 session tokens by default; durable identity only if a course ever needs mastery
 tracking. This is the second Pages Function this site will ever have, and the
-ask-widget already proved the pattern.
+ask-widget already proved the pattern. **Update: the poll slice shipped early**
+(functions/api/poll.js + the <ai-poll> element in js/poll-widget.js): anonymous
+classroom polls with join codes, choice or open-text, live tallies. The full
+sync-pacing loop still waits for phase 3.
 
 **What a real class looks like on this site:** projector shows the student page in
 sync mode; students join on lab machines with a code; the warm-up game chip fires a
