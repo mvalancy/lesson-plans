@@ -98,3 +98,26 @@ npx wrangler pages dev . --port 8788 --kv RATE_LIMIT_KV
   IP therefore sees every visitor as one client. This once caused an autoban
   that took the demo offline. See the root [`AGENTS.md`](../AGENTS.md).
 - **Don't load-test this endpoint against production.** Same reason.
+
+
+## /api/poll — built-in classroom polls
+
+The second Function, and the first live-class block of the learning system
+(LEARNING_SYSTEM.md phase 3, shipped early because a poll is the smallest
+useful slice). Same posture as /api/ask: anonymous, tightly validated,
+rate-limited per browser with a per-IP backstop, everything in KV with a
+4 hour TTL, no CORS so browsers stay same-origin.
+
+- POST {action:"create", question, options?} makes a poll and returns a
+  6-character join code (options omitted = open text answers).
+- POST {action:"vote", code, voter, choice|text} records one vote per
+  (poll, voter token); revoting overwrites, so no double counting.
+- GET ?code=X returns the tally (counts for choice polls, the answer list
+  for open polls, capped at 500 responses).
+
+The client is js/poll-widget.js, a self-contained <ai-poll> custom element
+(shadow DOM, no stylesheet edits, renders answers with textContent only).
+Teacher pages embed <ai-poll host>; students get <ai-poll>. Tested end to
+end in Node with a mock KV: functions are pure enough that create, vote,
+revote, aggregation, sanitization, and rate-limit paths all run without
+deploying (13 assertions, all passing as of 2026-08-22).
