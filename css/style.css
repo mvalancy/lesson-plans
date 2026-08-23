@@ -2369,3 +2369,414 @@ body.deck .badge { color: #fff; }
 @media (prefers-reduced-motion: reduce) {
   .toc-tree summary::after { transition: none; }
 }
+
+/* ---------- learning blocks ---------- */
+/* A closed set of content blocks that read identically in every lesson:
+   warm-up, big idea, activity (with floor/stretch depth tabs), materials,
+   teacher note, and the session timing bar. Written against the tokens only,
+   so the dark deck theme flips them without a second set of rules.
+   The teacher pages are the heaviest user; nothing here is teacher-only. */
+
+.block-warmup,
+.block-big-idea,
+.block-activity,
+.block-materials,
+.block-teacher-note,
+.block-timing {
+  position: relative;
+  margin: var(--s5) 0;
+  max-width: 52rem;
+}
+
+/* Every block opens with the same small label: a node, then the block's name.
+   Same motif as the h2 marker, one node smaller. */
+.block-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  margin: 0 0 0.6rem;
+}
+.block-label::before {
+  content: "";
+  flex: none;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--signal);
+  box-shadow: 0 0 0 3px rgba(var(--signal-rgb), 0.16);
+}
+.block-label .block-time {
+  margin-left: auto;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  text-transform: none;
+  color: var(--ink-soft);
+}
+
+.block-warmup > h3,
+.block-activity > h3,
+.block-materials > h3,
+.block-teacher-note > h3 { margin-top: 0; }
+
+.block-warmup > :last-child,
+.block-activity > :last-child,
+.block-materials > :last-child,
+.block-teacher-note > :last-child,
+.block-big-idea > :last-child { margin-bottom: 0; }
+
+/* --- warm-up: the opening game or prompt, one per session --- */
+.block-warmup {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--signal);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow-1);
+  padding: 1.15rem 1.5rem 1.25rem;
+}
+
+/* --- big idea: the one-sentence claim of a segment --- */
+.block-big-idea {
+  background: var(--accent-wash);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.1rem 1.5rem;
+  font-family: var(--serif);
+  font-size: var(--fs-lede);
+  line-height: 1.45;
+  color: var(--ink);
+}
+.block-big-idea p { margin: 0.2rem 0 0; }
+.block-big-idea .block-label { font-family: var(--mono); color: var(--accent); }
+
+/* --- activity: the task card, with floor/stretch depth tabs --- */
+.block-activity {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  padding: 1.25rem 1.6rem 1.4rem;
+  overflow: hidden;
+}
+/* the accent hairline that runs across the top of every activity card */
+.block-activity::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--signal));
+  opacity: 0.75;
+}
+.block-activity h3 { font-size: 1.2rem; }
+
+/* --- materials: what this lesson needs --- */
+.block-materials {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow-1);
+  padding: 1.15rem 1.5rem 1.25rem;
+}
+.block-materials ul,
+.block-warmup ul { margin: 0.3rem 0 0.2rem; padding-left: 1.2rem; }
+.block-materials li,
+.block-warmup li { margin: 0.4rem 0; }
+.block-materials li::marker { color: var(--accent); }
+.block-materials .check-list { list-style: none; padding-left: 0; }
+.block-materials .check-list li {
+  position: relative;
+  padding-left: 1.6rem;
+}
+.block-materials .check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.72rem;
+  height: 0.72rem;
+  border-radius: 3px;
+  border: 1.5px solid var(--line-strong);
+  background: var(--paper);
+}
+
+/* --- teacher note: the calm sidebar voice, never the student's --- */
+.block-teacher-note {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--signal);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1rem 1.4rem 1.1rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.block-teacher-note h3 { color: var(--ink); }
+.block-teacher-note > h4:first-of-type { margin-top: 0.2rem; }
+.block-teacher-note ul, .block-teacher-note ol { padding-left: 1.2rem; margin: 0.35rem 0 0.7rem; }
+.block-teacher-note li { margin: 0.35rem 0; }
+.block-teacher-note li::marker { color: var(--signal); }
+
+/* A line the teacher says out loud. Set in the serif so it reads as speech
+   rather than as more instructions. */
+.say {
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  color: var(--ink);
+  border-left: 2px solid rgba(var(--accent-rgb), 0.35);
+  padding-left: 0.9rem;
+  margin: 0.5rem 0 0.9rem;
+}
+
+/* Sub-headings inside a block are labels, not structure: sans, small, tight. */
+.block-activity h4,
+.block-warmup h4,
+.block-teacher-note h4 {
+  font-family: var(--sans);
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 1.2rem 0 0.2rem;
+}
+.block-activity > h4:first-of-type,
+.block-warmup > h4:first-of-type { margin-top: 1.1rem; }
+
+/* --- timing: the session's minute-by-minute bar --- */
+.block-timing {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+}
+.block-timing .block-label { padding: 1rem 1.4rem 0; margin-bottom: 0.4rem; }
+.block-timing .timing-scroll { overflow-x: auto; }
+.block-timing table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+.block-timing th, .block-timing td {
+  text-align: left;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.block-timing th:first-child, .block-timing td:first-child { padding-left: 1.4rem; }
+.block-timing th:last-child, .block-timing td:last-child { padding-right: 1.4rem; }
+.block-timing th {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+  border-bottom: 2px solid var(--line-strong);
+}
+.block-timing tbody tr:last-child td { border-bottom: none; }
+.block-timing td.t-time {
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.block-timing .t-span { width: 8.5rem; }
+.block-timing td.t-span { padding-top: 0.95rem; }
+/* the proportion of the block each row takes, drawn as one edge of a bar.
+   --w is per-row data, so it is written inline in the markup. */
+.block-timing .t-bar {
+  display: block;
+  height: 5px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, var(--accent), var(--signal));
+  width: var(--w, 20%);
+  min-width: 6%;
+  opacity: 0.8;
+}
+.block-timing tr.t-slack .t-bar {
+  background: rgba(var(--ink-soft-rgb), 0.35);
+}
+.block-timing tr.t-slack td { color: var(--ink-soft); font-style: italic; }
+
+/* --- floor / stretch: same task, the student picks the depth --- */
+/* CSS only: two radios, two labels, two panels. No script involved, so this
+   works on the first paint and with JavaScript off. */
+.tier-tabs {
+  margin: 1.1rem 0 0;
+  border-top: 1px solid var(--line);
+  padding-top: 0.9rem;
+}
+.tier-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+.tier-tablist {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+.tier-tab {
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.95rem;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease),
+              border-color 0.25s var(--ease);
+}
+.tier-tab:hover { color: var(--accent); border-color: var(--line-strong); }
+.tier-panel { display: none; }
+.tier-panel > :first-child { margin-top: 0; }
+.tier-panel > :last-child { margin-bottom: 0; }
+
+.tier-r-floor:checked ~ .tier-tablist .tier-tab-floor,
+.tier-r-stretch:checked ~ .tier-tablist .tier-tab-stretch {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.tier-r-floor:checked ~ .tier-panel-floor,
+.tier-r-stretch:checked ~ .tier-panel-stretch { display: block; }
+
+/* the radio is visually hidden but still the focus target, so the ring has to
+   be drawn on its label instead */
+.tier-r-floor:focus-visible ~ .tier-tablist .tier-tab-floor,
+.tier-r-stretch:focus-visible ~ .tier-tablist .tier-tab-stretch {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* --- embedded student content --- */
+/* js/teacher-embed.js pulls the marked section out of the student page and
+   drops it in here. The placeholder ships with a plain link, so a no-JS
+   reader gets the student view instead of an empty box. */
+.student-embed { margin: 1.1rem 0; max-width: 52rem; }
+.embed-frame {
+  position: relative;
+  background: var(--paper-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.5rem 1.2rem;
+  margin: 0.9rem 0;
+}
+.embed-frame::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 1.5rem;
+  bottom: 1.5rem;
+  width: 3px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(180deg, var(--accent), var(--signal));
+  opacity: 0.5;
+}
+.embed-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0 0 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-faint);
+}
+.embed-head a {
+  margin-left: auto;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+.embed-body > :first-child { margin-top: 0; }
+.embed-body > :last-child { margin-bottom: 0; }
+.embed-body h2 {
+  font-size: 1.18rem;
+  padding-top: 0;
+  margin-bottom: 0.4rem;
+}
+.embed-body h2::before { display: none; }
+.embed-body .objectives,
+.embed-body .materials,
+.embed-body .agenda { margin-top: 0.8rem; }
+.embed-fallback { margin: 0; font-size: 0.95rem; }
+
+/* --- teacher / student cross-links --- */
+/* One quiet line in the student page header. It should read as a signpost for
+   whoever is teaching, never as a second call to action for the learner. */
+.teacher-link {
+  margin: 1rem 0 0;
+  font-size: 0.86rem;
+  color: var(--ink-faint);
+}
+.teacher-link a {
+  color: var(--ink-soft);
+  text-decoration-color: rgba(var(--ink-soft-rgb), 0.4);
+}
+.teacher-link a:hover { color: var(--accent); }
+
+.teacher-banner {
+  background: var(--paper-2);
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 0.83rem;
+  text-align: center;
+  padding: 0.55rem 1.25rem;
+}
+.teacher-banner strong { color: var(--ink); font-weight: 700; }
+
+/* Teacher pages run long, so the per-activity heading gets its own spine
+   marker and a little more air than an ordinary h3. */
+.teacher-step {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin: var(--s6) 0 0.6rem;
+}
+.teacher-step h3 { margin: 0; font-size: 1.28rem; }
+.teacher-step .step-time {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  /* deliberately not nowrap: these run long, and a narrow screen would push
+     the whole page sideways rather than wrap them */
+  min-width: 0;
+}
+
+@media (max-width: 40rem) {
+  .block-warmup,
+  .block-big-idea,
+  .block-activity,
+  .block-materials,
+  .block-teacher-note { padding-left: 1.1rem; padding-right: 1.1rem; }
+  .embed-frame { padding: 1.15rem 1.1rem 1rem; }
+  .block-timing th:first-child,
+  .block-timing td:first-child { padding-left: 1.1rem; }
+  .block-timing .t-span { display: none; }
+  .embed-head a { margin-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tier-tab { transition: none; }
+}

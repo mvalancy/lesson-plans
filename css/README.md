@@ -102,6 +102,8 @@ The file is ordered, with comment banners between sections:
     and `.game-group`, `.data-table`
 15. Mini-lesson deck — slides, big points, side notes, token demo, ask widget
 16. Footer (the shared pattern below), responsive overrides
+17. [Learning blocks](#learning-blocks): the reusable lesson components, the
+    floor/stretch tabs, and the teacher pages' student-content frame
 
 ## The resource library
 
@@ -123,6 +125,83 @@ footer with it, so nothing drifts out of alignment.
 - **`.game-filter`** is hidden until `html.js` is set, because buttons that
   do nothing are worse than no buttons. The groups it filters are plain
   sections that read fine unfiltered.
+
+## Learning blocks
+
+A closed set of content blocks that read identically in every lesson. Closure is
+the point: the same six components, authored the same way, on all sixteen lesson
+pages. They are used most heavily by the `.teacher.html` pages, but nothing in
+here is teacher-only.
+
+| Class | What it is |
+|---|---|
+| `.block-warmup` | the opening game or prompt, one per session. White card, signal-coloured left rule. |
+| `.block-big-idea` | the one-sentence claim of a segment. Accent wash, serif, no card. |
+| `.block-activity` | the task card, with the floor/stretch tabs inside it. Accent-to-signal hairline across the top. |
+| `.block-materials` | what the lesson needs. Same left-rule language as the older `.materials`. |
+| `.block-teacher-note` | the calm sidebar voice. `--paper-2` fill, signal left rule, smaller text. Visually distinct from every student-facing block on purpose. |
+| `.block-timing` | the session's minute-by-minute table, with a proportion bar per row. |
+
+Every block opens with a `.block-label`: a node, the block's name in mono caps,
+and an optional right-aligned `.block-time`. That node is the same motif as the
+`h2` marker, one size down. A line the teacher says out loud is a `.say`
+paragraph (serif, accent left rule), which reads as speech rather than as more
+instructions.
+
+`.block-timing` rows carry their share of the block as inline `--w`:
+
+```html
+<td class="t-span"><span class="t-bar" style="--w:52%"></span></td>
+```
+
+That is per-row *data*, not a design token, which is why it is inline. The
+`.t-span` column is hidden below 40rem. A `tr.t-slack` row (the wander block)
+draws its bar in grey and its text in italics, because unstructured time should
+not look like scheduled time.
+
+### Floor / stretch tabs
+
+Same task, the student picks the depth, nobody is labelled. **CSS only**: two
+radios, two labels, two panels, no script involved, so it works on the first
+paint and with JavaScript off.
+
+```html
+<div class="tier-tabs" role="group" aria-label="Depth for this activity">
+  <input class="tier-radio tier-r-floor"   type="radio" name="tier-a1" id="tier-a1-floor" checked>
+  <input class="tier-radio tier-r-stretch" type="radio" name="tier-a1" id="tier-a1-stretch">
+  <div class="tier-tablist">
+    <label class="tier-tab tier-tab-floor"   for="tier-a1-floor">Floor</label>
+    <label class="tier-tab tier-tab-stretch" for="tier-a1-stretch">Stretch</label>
+  </div>
+  <div class="tier-panel tier-panel-floor">…</div>
+  <div class="tier-panel tier-panel-stretch">…</div>
+</div>
+```
+
+Rules to keep:
+
+- **Order is load-bearing.** Both inputs come first, then the tablist, then the
+  panels. The selectors are `~` sibling combinators from the checked input.
+- **`name` must be unique per card** within a page (`tier-a1`, `tier-a2`, …), or
+  two activities share one radio group and toggle each other.
+- The radio is visually hidden by clipping, not by `display:none`, so it stays
+  focusable. The focus ring is drawn on its label instead.
+- Floor is `checked` by default. It is the tier that has to be reachable
+  without a click.
+
+### The student-content frame
+
+`.student-embed` is the placeholder `js/teacher-embed.js` fills; `.embed-frame`
+is the labelled "Student facing" surface it builds. The frame is `--paper-2` with
+an accent-to-signal edge, so quoted student content reads as quoted rather than
+as more teacher text. `.embed-fallback` is the plain link that ships in the HTML
+and stays put when the script does not run. See
+[`../js/README.md`](../js/README.md#teacher-embedjs).
+
+`.teacher-link` is the quiet cross-link in a student page's header, and
+`.teacher-banner` is the one-line strip at the top of a teacher page. Both are
+deliberately low contrast: a signpost for whoever is teaching, never a second
+call to action for the learner.
 
 ## The site footer
 

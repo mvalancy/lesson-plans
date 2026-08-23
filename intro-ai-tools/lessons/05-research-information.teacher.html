@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teacher view · AI for Research and Information Gathering · Intro to AI Tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css?v=202608222600">
+</head>
+<body>
+<div class="site-note"><strong>Free and open</strong> for anyone to learn or teach · <a href="https://github.com/mvalancy/lesson-plans">code on GitHub</a></div>
+<p class="teacher-banner"><strong>Teacher view</strong> of a free course. Nothing here is hidden from students, it is just the version with the notes in it. <a href="/intro-ai-tools/lessons/05-research-information.html">Student view</a></p>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/intro-ai-tools/"><span class="brand-mark" aria-hidden="true"></span>Intro to AI&nbsp;Tools</a>
+    <nav class="site-nav">
+      <a href="/intro-ai-tools/">Overview</a>
+      <a href="/intro-ai-tools/#lessons" aria-current="page">Modules</a>
+      <a href="/intro-ai-tools/mini-lesson/">Mini-Lesson</a>
+      <a href="/resources.html">Resources</a>
+      <a class="hub-link" href="/">All Courses</a>
+    </nav>
+  </div>
+</header>
+
+<section class="lesson-header">
+  <canvas class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="kicker">Teacher view · Module 5 of 8</p>
+    <h1>AI for Research and Information Gathering</h1>
+    <p class="meta">One 3-hour session · the lab is <strong>Trust, but verify</strong>: the class measures its own fabrication rate, then cuts it.</p>
+    <p class="teacher-link"><a href="/intro-ai-tools/lessons/05-research-information.html">Student view of this module</a> · <a href="https://github.com/mvalancy/lesson-plans/blob/main/intro-ai-tools/activities/teaching-scaffold.md">named routines (teaching scaffold)</a></p>
+    <ul class="module-ticks" aria-hidden="true"><li class="done"></li><li class="done"></li><li class="done"></li><li class="done"></li><li class="here"></li><li></li><li></li><li></li></ul>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="reveal" id="prep">
+  <h2>Prep</h2>
+  <p>This is the module the mini-lesson came out of, so keep the hallucination
+  framing consistent with it. The prep that matters is the notebook: NotebookLM
+  needs sources loaded before class, and loading them live in front of thirty
+  people is a slow way to lose fifteen minutes.</p>
+
+  <div class="block-materials">
+    <p class="block-label">Materials</p>
+    <ul>
+      <li>Projector, and whiteboard space for a running class tally.</li>
+      <li>A NotebookLM notebook pre-loaded with the course readings, shared read-only.</li>
+      <li>A printed citation packet for the offline fallback: some real, some fabricated.</li>
+      <li>A step-by-step verification checklist, one per seat, for the floor tier.</li>
+      <li>Somewhere durable to record the before-and-after fabrication numbers, because they are worth keeping across terms.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <h4>Accounts to pre-stage</h4>
+    <ul>
+      <li>NotebookLM runs on the free Google account staged back in Module 4. Confirm that account still works for anyone who has not touched it since.</li>
+      <li>Google Scholar and DOI lookup need no account, which is why the verification half is logistics-proof.</li>
+      <li>Have your own notebook ready to project, and a second one you can break on purpose.</li>
+    </ul>
+    <h4>Fifteen minutes before</h4>
+    <ul>
+      <li>Ask your own chatbot for a cited mini-essay and verify two of its citations, so you know tonight's failure mode before the room does.</li>
+      <li>Open the notebook and click one inline citation through to its passage. That click is the demo.</li>
+      <li>Open <a href="https://spotthetroll.org/">Spot the Troll</a> and click past the intro screen.</li>
+      <li>Draw the tally on the board: valid, suspicious, fabricated, with room for a second row after the re-run.</li>
+      <li>Put the printed packets somewhere you can reach without announcing that the wifi died.</li>
+    </ul>
+    <h4>Wifi fallback</h4>
+    <p>Printed citation packets, some real and some fabricated, verified against
+    library terminals or phones. The verification race works fine on paper and
+    the tally still happens, which is the part that teaches. The NotebookLM
+    contrast is the block you lose, so move it to the next session's wander
+    rather than cutting it.</p>
+    <h4>Depends on earlier modules</h4>
+    <ul>
+      <li><strong>Module 1</strong>'s predict-the-next-word demo is the mechanism behind everything tonight. Call back to it explicitly, the room will remember shouting words at a screen.</li>
+      <li><strong>Module 4</strong> built the habit of checking a number against its source. Tonight is the same move pointed at a citation.</li>
+      <li>The privacy conversation started here feeds the policy students write in <strong>Module 6</strong>.</li>
+      <li>If Module 7 is looking heavy, this module's wander block is the natural place to pre-stage GitHub accounts.</li>
+    </ul>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/05-research-information.html" data-embed-select="#materials">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/05-research-information.html#materials">Open the student view</a> to see the materials list students are given.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="goals">
+  <h2>What they should walk out with</h2>
+
+  <div class="block-big-idea">
+    <p class="block-label">Big idea</p>
+    <p>It does not know it is making things up, because making things up and
+    telling the truth are the same operation to it. So you check, every time, and
+    tonight you find out how often you have to.</p>
+  </div>
+
+  <p><strong>Maps to job skills:</strong> fact-checking and source verification ·
+  research synthesis (NotebookLM, Perplexity) · information governance, meaning
+  what not to paste into public tools.</p>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/05-research-information.html" data-embed-select="#objectives">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/05-research-information.html#objectives">Open the student view</a> for the learning objectives.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <p>Rates, not anecdotes. "AI sometimes makes things up" is a warning nobody
+    acts on. A number the room produced with its own hands, then cut with a
+    better prompt, is a finding they will repeat to other people. Get the tally
+    on the board and leave it there.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="timing">
+  <h2>Session timing</h2>
+
+  <div class="block-timing">
+    <p class="block-label">The three hours<span class="block-time">0:00 – 3:10</span></p>
+    <div class="timing-scroll">
+    <table>
+      <thead><tr><th>Time</th><th class="t-span">Share</th><th>Block</th></tr></thead>
+      <tbody>
+        <tr><td class="t-time">0:00 – 0:10</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Warm-up: dataset chart share-out from the Module 4 homework.</td></tr>
+        <tr><td class="t-time">0:10 – 1:15</td><td class="t-span"><span class="t-bar" style="--w:36%"></span></td><td>Lecture: retrieval versus recall, why models fabricate, a five-minute fact-checking workflow.</td></tr>
+        <tr><td class="t-time">1:15 – 1:25</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Break.</td></tr>
+        <tr><td class="t-time">1:25 – 3:00</td><td class="t-span"><span class="t-bar" style="--w:52%"></span></td><td><strong>Lab: Trust, but verify.</strong> Broken out below.</td></tr>
+        <tr><td class="t-time">3:00 – 3:10</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Wrap-up, worst-hallucination contest, and the homework handoff.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <p>The 15-minute mini-lesson is carved out of this module and teaches on its
+    own. If you are ever asked to give a single taster session, that is the one to
+    give, and it is already built.</p>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/05-research-information.html" data-embed-select="#agenda">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/05-research-information.html#agenda">Open the student view</a> for the session agenda.</p>
+  </div>
+
+  <div class="block-timing">
+    <p class="block-label">The lab block, minute by minute<span class="block-time">95 min, from 1:25</span></p>
+    <div class="timing-scroll">
+    <table>
+      <thead><tr><th>Lab clock</th><th class="t-span">Share</th><th>Activity</th></tr></thead>
+      <tbody>
+        <tr><td class="t-time">0:00 – 0:08</td><td class="t-span"><span class="t-bar" style="--w:8%"></span></td><td>Warm-up game: Spot the Troll, two profiles as a class.</td></tr>
+        <tr><td class="t-time">0:08 – 0:40</td><td class="t-span"><span class="t-bar" style="--w:34%"></span></td><td><strong>Hallucinated references (big rock):</strong> verify, log, re-run constrained, count again.</td></tr>
+        <tr><td class="t-time">0:40 – 0:55</td><td class="t-span"><span class="t-bar" style="--w:16%"></span></td><td>Grounded versus open, then try to break the grounded one.</td></tr>
+        <tr class="t-slack"><td class="t-time">0:55 – 1:20</td><td class="t-span"><span class="t-bar" style="--w:26%"></span></td><td>Wander block. The longest in the course, and this module earns it.</td></tr>
+        <tr><td class="t-time">1:20 – 1:30</td><td class="t-span"><span class="t-bar" style="--w:11%"></span></td><td>Spotlight sweep: best catch of the night.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </section>
+
+  <section class="reveal" id="activities">
+  <h2>The lab, activity by activity</h2>
+
+  <div class="block-warmup">
+    <p class="block-label">Warm-up<span class="block-time">lab 0:00 – 0:08</span></p>
+    <h3>Spot the Troll</h3>
+    <p>Two profiles from <a href="https://spotthetroll.org/">Spot the Troll</a> as
+    a class, votes taken before each reveal. It is fast, it is account-free, and
+    it puts the room in a checking frame of mind before anybody opens a
+    chatbot.</p>
+    <p class="say">"Real or troll. Hands up. Now tell me what you looked at
+    before you decided."</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>1. The hallucinated references lab</h3>
+    <span class="step-time">lab 0:08 – 0:40 · solo, tallied as a class</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity · big rock<span class="block-time">32 min</span></p>
+    <h3>Measure your own fabrication rate, then cut it</h3>
+    <p>Everyone prompts for a short cited piece on a topic they choose, asking for
+    five academic references. Then they verify every citation through Google
+    Scholar and a DOI lookup, logging each as valid, suspicious, or fabricated.
+    Then they re-run with a source-constrained prompt and count again. The
+    class-wide before and after goes on the board, and that tally is the
+    reveal.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"Pick a topic you actually know something about. Ask for five
+    academic references. It will give you five, and they will look perfect."</p>
+    <p class="say">"Nobody is grading your number. The number is the finding. Put
+    it on the board honestly, including if it is zero."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a1" id="tier-a1-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a1" id="tier-a1-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a1-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a1-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Verify two references using the printed step-by-step checklist. Two
+        carefully checked citations teach the habit as well as five rushed
+        ones.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Test several prompt variants and quantify which one cuts fabrication
+        most. Report the comparison to the room, it is the most useful ten
+        seconds of the block.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/05-research-information.html" data-embed-select="#overview">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/05-research-information.html#overview">Open the student view</a> for the module overview students read before the session.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>Every citation checks out.</strong> Happens more often now, especially with search-connected tools. Do not treat it as a failed lab. Ask what the tool did differently, and have them check whether the source actually says what was claimed, which is where the real failures have moved.</li>
+      <li><strong>"Suspicious" becomes a dumping ground.</strong> Define it before they start: a real-looking record you could not find, versus one you positively confirmed does not exist.</li>
+      <li><strong>A real paper is filed as fabricated</strong> because Scholar's first page did not have it. Show one recovery live, searching the exact title in quotes, before you trust the tally.</li>
+      <li><strong>The constrained re-run produces four references instead of five,</strong> and someone calls that worse. It is better. Fewer and checkable beats five and confident.</li>
+      <li><strong>Somebody wants to argue that this proves the tools are worthless.</strong> The tally answers that on its own: the rate went down when the prompt changed, and it did not go to zero.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"What did a fabricated citation look like?"</h4>
+    <p>Plausible authors, a real journal, a believable year, a DOI with the right
+    shape. It looks exactly like a real one, which is the entire problem.</p>
+    <h4>"Why does the constrained prompt help?"</h4>
+    <p>It changes what a good answer looks like to the model. It does not give it
+    access to a library, which is why the rate drops instead of hitting zero.</p>
+    <h4>"Where would this have cost you something?"</h4>
+    <p>Take real answers: a paper, a client memo, a court filing in the news. Then
+    the practical rule, said once: never pass on a citation you have not
+    opened.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>2. Grounded versus open</h3>
+    <span class="step-time">lab 0:40 – 0:55 · pairs, on the shared notebook</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity<span class="block-time">15 min</span></p>
+    <h3>Ask both, then try to break the grounded one</h3>
+    <p>Same question to an open chatbot and to NotebookLM loaded with the course
+    readings. Compare the answers side by side, then click the inline citations
+    back to the exact passage. Then the fun part: try to make the grounded tool
+    answer beyond its sources and watch it decline.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"Same question, two tools. One of them will show you the
+    sentence it got that from. Click it. That click is the whole difference."</p>
+    <p class="say">"Now break it. Ask it something that is not in there. Ten
+    minutes, best attempt wins nothing at all."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a2" id="tier-a2-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a2" id="tier-a2-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a2-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a2-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Query the notebook the instructor loaded and follow two citations back
+        to their passages.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Curate your own source set, including rejecting one source as
+        unreliable and writing down why. The rejection is the exercise.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>Grounded gets read as "cannot be wrong".</strong> It can. It is faithful to its sources, and if a source is wrong the answer is wrong with a citation attached. Say this explicitly, it is the most common misread of the block.</li>
+      <li><strong>The break attempts succeed.</strong> Great. Show one to the room and look at what it actually did: usually it reached for general knowledge and said so, or it stretched a passage further than the passage goes.</li>
+      <li><strong>The shared notebook hits a limit</strong> with thirty simultaneous readers. Have a second copy, and be ready to run it as a projector demo with the room calling out questions.</li>
+      <li><strong>A pair spends the whole block curating sources</strong> and never asks a question. Time-box the curation to five minutes.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"When would you reach for the grounded one?"</h4>
+    <p>Anything that has to be right and has a defined source set: a policy, a
+    contract, a set of readings, your own company's documents.</p>
+    <h4>"When is the open one better?"</h4>
+    <p>Thinking out loud, drafting, brainstorming, anything where you are the
+    source of truth and it is the assistant.</p>
+    <h4>"What did it feel like when it refused?"</h4>
+    <p>Mildly annoying, and that is worth naming. A tool that declines is doing
+    its job, and the tools that never decline are the ones to distrust.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>3. Lateral reading, modeled live</h3>
+    <span class="step-time">lab 0:55 onward · in the wander, or lifted into the lecture</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity<span class="block-time">15 min, flexible placement</span></p>
+    <h3>Leave the page</h3>
+    <p>Think aloud at an unfamiliar website while the room watches: do not read
+    down the page, open new tabs, search the organisation, find who is behind it,
+    find better coverage. Then pairs race three sources, sixty seconds each, with
+    a verdict and one reason. This is the highest-value information skill in the
+    course and it fits either in the lecture block or in the wander, depending on
+    how the tally ran.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"Watch what I do not do. I am not reading this page. The page
+    will tell me whatever it wants me to think."</p>
+    <p class="say">"Sixty seconds per source. Verdict and one reason. Go."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a3" id="tier-a3-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a3" id="tier-a3-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a3-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a3-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Work through the ready-made Civic Online Reasoning exercises at your
+        own pace.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Apply the same moves to a chatbot's cited source rather than to a
+        webpage. Who published it, who funded it, does anyone independent agree?</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>Students read the About page and stop.</strong> That is the site describing itself. Push them off the domain entirely.</li>
+      <li><strong>The race rewards speed over judgment.</strong> Score the reason, not the verdict. A right answer with no reason gets no credit.</li>
+      <li><strong>A site is genuinely ambiguous.</strong> Say so. "I could not tell in sixty seconds" is a legitimate and professional verdict.</li>
+      <li><strong>It gets political fast.</strong> Pick your example sites in advance, and pick boring ones. The technique is the lesson, not the topic.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"What did you check first?"</h4>
+    <p>The best answers leave the page immediately. Fonts, layout and a
+    professional design tell you nothing at all.</p>
+    <h4>"How is this different from what you normally do?"</h4>
+    <p>Most people read down. Fact-checkers read across. That is the whole
+    finding, and it is one sentence long.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="sweep">
+  <h2>Spotlight sweep and the wander block</h2>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Spotlight sweep<span class="block-time">lab 1:20 – 1:30</span></p>
+    <p>Best catch of the night. Three or four students show their most convincing
+    fabricated citation and how they caught it. The competitive framing works
+    here: people want to show the good fake.</p>
+    <h4>Prompts to hand the student showing</h4>
+    <ul>
+      <li>"Read it out. Would you have believed that?"</li>
+      <li>"What was the step that caught it?"</li>
+      <li>"How long did it take you to be sure?"</li>
+    </ul>
+    <h4>Prompts for the room</h4>
+    <ul>
+      <li>"Hands up if you would have accepted that in a paper."</li>
+      <li>"What did the tally change for you?"</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Wander block menu<span class="block-time">lab 0:55 – 1:20</span></p>
+    <p>Twenty-five minutes, the longest in the course. This module produces
+    genuine arguments, so let the discussion pods run and circulate through
+    them.</p>
+    <ul>
+      <li><strong>Lateral reading practice</strong> at your own pace, from the Civic Online Reasoning exercises.</li>
+      <li><strong>Privacy-policy skim</strong> of the tool you actually use: what is collected, who owns the input and output, does it train future models. Three questions, one document, fifteen minutes.</li>
+      <li><strong>Bad News or Cranky Uncle</strong> stations, both account-free browser play.</li>
+      <li><strong>Discussion pods</strong> on the tally. This is the pod that forms on its own, every time.</li>
+      <li><strong>Pre-stage a GitHub account</strong> if Module 7 looks tight from here. It fits naturally in this wander and it takes Module 7 from crowded to comfortable.</li>
+    </ul>
+  </div>
+  </section>
+
+  <section class="reveal" id="close">
+  <h2>Synthesis, exit ticket, homework</h2>
+
+  <div class="block-big-idea">
+    <p class="block-label">Land it here</p>
+    <p>Prompting changed the rate. It did not remove the job. You still open the
+    citation.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Synthesis, five minutes</p>
+    <p>Point at the two rows on the board and read them out. Then the worst
+    hallucination contest, thirty seconds, whoever has the most confident wrong
+    answer. Ending on a laugh is fine, the number stays on the board either
+    way.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Exit ticket</p>
+    <p>One-minute paper: <em>what will you check from now on that you did not
+    check before?</em> Specific answers only. "Be more careful" does not
+    count.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Homework handoff</p>
+    <p>Ten factual questions to an assistant about a topic they know well, scored,
+    with the most convincing wrong answer kept for next session. That kept answer
+    is the warm-up for Module 6, so make it clear it gets used.</p>
+    <p>Preview Module 6 in one sentence: next time we stop asking whether the
+    output is true and start asking who it lands on.</p>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/05-research-information.html" data-embed-select="#homework">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/05-research-information.html#homework">Open the student view</a> for the homework as students see it.</p>
+  </div>
+  </section>
+
+
+  <nav class="lesson-nav">
+    <a class="btn btn-ghost" href="/intro-ai-tools/lessons/04-spreadsheets-data.teacher.html"><span class="arrow-back" aria-hidden="true">←</span> Teacher view: Module 4</a>
+    <span class="spacer"></span>
+    <a class="btn btn-primary" href="/intro-ai-tools/lessons/06-ethics-bias.teacher.html">Teacher view: Module 6 <span class="arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-mark"><span class="brand-mark" aria-hidden="true"></span><strong>Introduction to AI&nbsp;Tools</strong></p>
+        <p>A free, self-paced course guide by <a href="https://valpatel.com">Matthew Valancy</a>. Free to learn from, free to teach from.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Course">
+        <p class="footer-label">Course</p>
+        <ul>
+          <li><a href="/intro-ai-tools/">Overview</a></li>
+          <li><a href="/intro-ai-tools/#lessons">Modules</a></li>
+          <li><a href="/intro-ai-tools/mini-lesson/">Mini-Lesson</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/">All Courses</a></li>
+        </ul>
+      </nav>
+      <!-- per-page slot -->
+      <nav class="footer-page" aria-label="This page">
+        <p class="footer-label">Teacher view · Module 5</p>
+        <ul>
+          <li><a href="/intro-ai-tools/lessons/05-research-information.html">Student view of Module 5</a></li>
+          <li><a href="/intro-ai-tools/lessons/04-spreadsheets-data.teacher.html">&larr; Teacher view: Spreadsheets &amp; Data</a></li>
+          <li><a href="/intro-ai-tools/lessons/06-ethics-bias.teacher.html">Teacher view: Ethics &amp; Bias &rarr;</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-fine">Independent and not affiliated with any school or institution. Free to learn from, free to teach from, free to fork. Source on <a href="https://github.com/mvalancy/lesson-plans">GitHub</a>.</p>
+  </div>
+</footer>
+
+<script src="/js/hero-graph.js?v=202608222600" defer></script>
+<script src="/js/lesson-reveal.js?v=202608222600" defer></script>
+<script src="/js/teacher-embed.js?v=202608222600" defer></script>
+</body>
+</html>

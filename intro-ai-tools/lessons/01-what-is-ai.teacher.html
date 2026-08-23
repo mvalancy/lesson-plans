@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teacher view · What is AI? Past, Present, and Future · Intro to AI Tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css?v=202608222600">
+</head>
+<body>
+<div class="site-note"><strong>Free and open</strong> for anyone to learn or teach · <a href="https://github.com/mvalancy/lesson-plans">code on GitHub</a></div>
+<p class="teacher-banner"><strong>Teacher view</strong> of a free course. Nothing here is hidden from students, it is just the version with the notes in it. <a href="/intro-ai-tools/lessons/01-what-is-ai.html">Student view</a></p>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/intro-ai-tools/"><span class="brand-mark" aria-hidden="true"></span>Intro to AI&nbsp;Tools</a>
+    <nav class="site-nav">
+      <a href="/intro-ai-tools/">Overview</a>
+      <a href="/intro-ai-tools/#lessons" aria-current="page">Modules</a>
+      <a href="/intro-ai-tools/mini-lesson/">Mini-Lesson</a>
+      <a href="/resources.html">Resources</a>
+      <a class="hub-link" href="/">All Courses</a>
+    </nav>
+  </div>
+</header>
+
+<section class="lesson-header">
+  <canvas class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="kicker">Teacher view · Module 1 of 8</p>
+    <h1>What is AI? Past, Present, and Future</h1>
+    <p class="meta">One 3-hour session · the lab is <strong>Meet the machine</strong>: the AI tool wall, then a classifier the room sabotages on purpose.</p>
+    <p class="teacher-link"><a href="/intro-ai-tools/lessons/01-what-is-ai.html">Student view of this module</a> · <a href="https://github.com/mvalancy/lesson-plans/blob/main/intro-ai-tools/activities/teaching-scaffold.md">named routines (teaching scaffold)</a></p>
+    <ul class="module-ticks" aria-hidden="true"><li class="here"></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="reveal" id="prep">
+  <h2>Prep</h2>
+  <p>This is the first night, so half the prep is social and half is logistics.
+  Everyone creates a chatbot account today, which means the room will be full of
+  people who have never made an account on anything. Plan for that instead of
+  being surprised by it.</p>
+
+  <div class="block-materials">
+    <p class="block-label">Materials</p>
+    <ul>
+      <li>Projector, and a browser window you are willing to show.</li>
+      <li>Sticky notes, three per person, plus whiteboard space to cluster them.</li>
+      <li>Your own laptop with a small model already installed and working offline.</li>
+      <li>A printed card of six Hugging Face Spaces you checked this morning.</li>
+      <li>A webcam for Teachable Machine, on your machine, not theirs.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <h4>Accounts to pre-stage</h4>
+    <ul>
+      <li>Nothing is pre-staged tonight, because account creation <em>is</em> the activity. Fifteen minutes are budgeted for it and they will get used.</li>
+      <li>Name a tech buddy or two early: a confident student who handles individual troubleshooting while you keep the room moving. It is a real job and it is a good one to hand out on night one.</li>
+      <li>Some students will have a phone and no email password. Have a plan that does not involve them sitting out: pair them with a neighbour for the block and get the account sorted during the wander.</li>
+    </ul>
+    <h4>Fifteen minutes before</h4>
+    <ul>
+      <li>Open <a href="https://quickdraw.withgoogle.com/">Quick, Draw!</a> and play one round to clear the first-load prompts.</li>
+      <li>Warm every Space on your card. Cold starts take minutes and they will happen at the worst moment. Re-curate the card if any of them are down.</li>
+      <li>Turn the wifi off on your laptop and ask the local model a question. If that does not work, the reveal does not happen.</li>
+      <li>Test the webcam in Teachable Machine, with the projector lighting you will actually have.</li>
+      <li>Write the three sticky-note headings on the board: hope, worry, heard.</li>
+    </ul>
+    <h4>Wifi fallback</h4>
+    <p>The local model needs no internet and becomes the whole show. Run the
+    Intelligent Piece of Paper on the board (tic-tac-toe against a sheet of
+    if-then rules that wins without thinking), then do the tool wall as a
+    narrated tour of your own machine. The session survives intact, it just
+    loses the scavenger hunt.</p>
+    <h4>Depends on earlier modules</h4>
+    <ul>
+      <li>Nothing. This is the front door.</li>
+      <li>It sets up <strong>Module 2</strong> (the first prompts sent tonight are the ones you iterate on next time), <strong>Module 5</strong> (predict-the-next-word is the whole basis of the hallucination lab), and <strong>Module 6</strong> (the sabotaged classifier is the seed of every bias conversation).</li>
+    </ul>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/01-what-is-ai.html" data-embed-select="#materials">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/01-what-is-ai.html#materials">Open the student view</a> to see the materials list students are given.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="goals">
+  <h2>What they should walk out with</h2>
+
+  <div class="block-big-idea">
+    <p class="block-label">Big idea</p>
+    <p>A model predicts the next word. Fluent and true are different things, and
+    telling them apart is a skill you can learn tonight.</p>
+  </div>
+
+  <p><strong>Maps to job skills:</strong> AI literacy and vocabulary ·
+  evaluating and choosing AI tools · recognizing bias in trained systems ·
+  verifying AI output before trusting it.</p>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/01-what-is-ai.html" data-embed-select="#objectives">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/01-what-is-ai.html#objectives">Open the student view</a> for the learning objectives.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <p>The real target for tonight is smaller than the objectives above: by the
+    end, "AI" has stopped being a cloud and become a thing they poked. Everyone
+    has an account, everyone has sent a prompt, and everyone has watched a model
+    fail. That is enough for one evening.</p>
+    <p>Say the agency line once and move on: the first question about any AI
+    tool is whether to use it, not just how.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="timing">
+  <h2>Session timing</h2>
+
+  <div class="block-timing">
+    <p class="block-label">The three hours<span class="block-time">0:00 – 3:10</span></p>
+    <div class="timing-scroll">
+    <table>
+      <thead><tr><th>Time</th><th class="t-span">Share</th><th>Block</th></tr></thead>
+      <tbody>
+        <tr><td class="t-time">0:00 – 0:15</td><td class="t-span"><span class="t-bar" style="--w:8%"></span></td><td>Welcome and course tour, plus the hopes, worries and heard sticky notes.</td></tr>
+        <tr><td class="t-time">0:15 – 1:20</td><td class="t-span"><span class="t-bar" style="--w:36%"></span></td><td>Lecture: what AI is, five stops of history, and predict-the-next-word live.</td></tr>
+        <tr><td class="t-time">1:20 – 1:30</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Break.</td></tr>
+        <tr><td class="t-time">1:30 – 3:00</td><td class="t-span"><span class="t-bar" style="--w:50%"></span></td><td><strong>Lab: Meet the machine.</strong> Broken out below.</td></tr>
+        <tr><td class="t-time">3:00 – 3:10</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Wrap-up, back to the sticky-note board, and the homework handoff.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <p>The predict-the-next-word demo belongs in the lecture block and it is the
+    most load-bearing five minutes in the course. Type a message on the
+    projector, stop mid-sentence, let the room shout the next word, then finish
+    with "the mitochondria is the ______" and let them say it in unison. Module 5
+    stands on this.</p>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/01-what-is-ai.html" data-embed-select="#agenda">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/01-what-is-ai.html#agenda">Open the student view</a> for the session agenda.</p>
+  </div>
+
+  <div class="block-timing">
+    <p class="block-label">The lab block, minute by minute<span class="block-time">90 min, from 1:30</span></p>
+    <div class="timing-scroll">
+    <table>
+      <thead><tr><th>Lab clock</th><th class="t-span">Share</th><th>Activity</th></tr></thead>
+      <tbody>
+        <tr><td class="t-time">0:00 – 0:10</td><td class="t-span"><span class="t-bar" style="--w:11%"></span></td><td>First win: Quick, Draw!, two rounds, no account and no typing.</td></tr>
+        <tr><td class="t-time">0:10 – 0:25</td><td class="t-span"><span class="t-bar" style="--w:16%"></span></td><td>Get a key to the building: one free chatbot account each, then playful first prompts.</td></tr>
+        <tr><td class="t-time">0:25 – 0:50</td><td class="t-span"><span class="t-bar" style="--w:27%"></span></td><td><strong>The tool wall (big rock):</strong> three Spaces together, a scavenger hunt, then the offline reveal.</td></tr>
+        <tr><td class="t-time">0:50 – 1:00</td><td class="t-span"><span class="t-bar" style="--w:11%"></span></td><td>Sabotage the classifier on the projector.</td></tr>
+        <tr class="t-slack"><td class="t-time">1:00 – 1:20</td><td class="t-span"><span class="t-bar" style="--w:21%"></span></td><td>Wander block. It absorbs the account chaos, which is why it is this long.</td></tr>
+        <tr><td class="t-time">1:20 – 1:30</td><td class="t-span"><span class="t-bar" style="--w:11%"></span></td><td>Spotlight sweep: three or four students show the coolest thing they found.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+  </section>
+
+  <section class="reveal" id="activities">
+  <h2>The lab, activity by activity</h2>
+
+  <div class="block-warmup">
+    <p class="block-label">Warm-up<span class="block-time">lab 0:00 – 0:10</span></p>
+    <h3>Quick, Draw!</h3>
+    <p>Two rounds of <a href="https://quickdraw.withgoogle.com/">Quick, Draw!</a>
+    on the projector, then everyone plays a round themselves. No account, no
+    typing, no way to be bad at it. The room laughs inside ninety seconds, which
+    is exactly what night one needs.</p>
+    <p class="say">"That thing just recognised your terrible drawing of a
+    kangaroo. Nobody programmed it with kangaroo rules. It was shown a lot of
+    drawings. Hold on to that, it is most of tonight."</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>1. Get a key to the building</h3>
+    <span class="step-time">lab 0:10 – 0:25 · solo, with buddies circulating</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity<span class="block-time">15 min</span></p>
+    <h3>One account each, then a silly first prompt</h3>
+    <p>Everyone creates one free chatbot account, their choice of the big three,
+    and sends a low-stakes first prompt: a fusion recipe, a fantastical vacation
+    plan, a poem about the class. Nobody's first prompt should matter. The
+    account setup is the activity, not a delay before it.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"Fifteen minutes, one account, and I do not care which one you
+    pick. If you get stuck, put a hand up and one of us comes to you. Nobody
+    sits here quietly stuck, that is the one rule."</p>
+    <p class="say">"Now ask it for something ridiculous. A recipe that combines
+    two cuisines that should never meet. This is the lowest-stakes thing you
+    will ever type into one of these."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a1" id="tier-a1-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a1" id="tier-a1-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a1-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a1-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Use the prompt list on the board, word for word. An account made and a
+        prompt sent is a full pass on this block.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Run the same prompt through two assistants and iterate twice on each
+        with "make it better". Write down what actually changed between rounds,
+        and which tool refused what.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>Phone number verification.</strong> Some sign-ups want one and some students will not want to give it. Know in advance which of the three is least demanding tonight and say so out loud.</li>
+      <li><strong>An email account nobody can get into.</strong> Common, and embarrassing for the student. Handle it privately, pair them up, fix it in the wander.</li>
+      <li><strong>The confident student finishes in ninety seconds</strong> and starts poking at things loudly. Give them the tech-buddy job immediately.</li>
+      <li><strong>Somebody asks it something personal on the first try.</strong> Good moment to name the information-governance idea early: what you paste in does not stay in the room. Module 5 goes further.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"How did it feel to type into that box?"</h4>
+    <p>Some people say "silly", some say "watched". Both are worth hearing out
+    loud on night one, because both are why people avoid these tools.</p>
+    <h4>"Did anyone get a refusal? What did it refuse?"</h4>
+    <p>Different products draw different lines. That is a product decision made
+    by a company, not a law of nature, and it is the first crack in the idea
+    that "AI" is one thing.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>2. The tool wall</h3>
+    <span class="step-time">lab 0:25 – 0:50 · together, then a hunt in pairs</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity · big rock<span class="block-time">25 min</span></p>
+    <h3>Walk the tool aisle, then see one on a laptop with the wifi off</h3>
+    <p>Frame <a href="https://huggingface.co/">Hugging Face</a> as the tool aisle
+    at the hardware store. Walk three Spaces together, each doing one obvious
+    job: speech to text, background remover, image describer. Glance at the label
+    on the box each time (the model card, read in plain terms: what it does, what
+    it is good at, what to watch for). Then a short scavenger hunt from your
+    curated card. Finish with the reveal: the same kind of tool running on your
+    laptop with the wifi switched off.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"This is a hammer. This is a screwdriver. Thousands of free
+    tools, each made for one job, most with a try-it button. You do not need to
+    build any of them, you need to recognise one and read its label."</p>
+    <p class="say">"Watch this." (turn the wifi off) "Same job, no internet, no
+    company. This one lives in my toolbox. That is the difference between being a
+    customer and being an owner, and it is most of why this course exists."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a2" id="tier-a2-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a2" id="tier-a2-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a2-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a2-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Press the try-it button on one demo, watch it work, and tell your
+        neighbour what job it is for. That is the whole objective.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>The deep end, with a guide standing in it: install LM Studio or Ollama
+        with help, read a model card's fine print (sizes, quantization, what fits
+        on your hardware), and watch a network learn in
+        <a href="https://playground.tensorflow.org/">TensorFlow Playground</a>.
+        This stays open for the rest of the course, not just tonight.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/01-what-is-ai.html" data-embed-select="#overview">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/01-what-is-ai.html#overview">Open the student view</a> for the module overview students read before the session.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>A Space is cold and takes four minutes to wake.</strong> This is why you warmed them. Have a second tab already running the same job and switch to it rather than watching a spinner with thirty people.</li>
+      <li><strong>The hunt turns into browsing.</strong> Give a concrete job ("translate this menu photo", "clean up this voice memo") rather than "find something interesting".</li>
+      <li><strong>Model cards read as impenetrable.</strong> They are, at first. Read one out loud in plain words and move on. The point is that a label exists, not that they parse it tonight.</li>
+      <li><strong>The offline reveal lands flat</strong> if the room did not see the wifi go off. Make it physical: show the toggle, show the disconnected icon, then run it.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"What is the difference between the thing you signed up for and these?"</h4>
+    <p>The chatbot is a product wrapped around tools like these. Useful framing,
+    and it makes the whole field look smaller and more approachable.</p>
+    <h4>"Why would anyone run one of these on their own machine?"</h4>
+    <p>Cost, privacy, no account, it still works when the company changes its
+    mind. Say it once, do not sell it.</p>
+    <h4>"What job would you want a tool for?"</h4>
+    <p>Take real answers and write them on the board. Several of them will come
+    back as capstone projects in Module 8.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>3. Sabotage the classifier</h3>
+    <span class="step-time">lab 0:50 – 1:00 · projector demo, the room supplies the data</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity · fun peak<span class="block-time">10 min</span></p>
+    <h3>Train it, then ruin it, on purpose</h3>
+    <p>Train a two-class thumbs-up and thumbs-down model in
+    <a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a> on
+    the projector, with the class shouting examples. Then a volunteer poisons the
+    training data with skewed, sloppy examples and it fails confidently. Debrief
+    in one question: what did it actually learn?</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"Give me thumbs up. More. Now everybody thumbs down. Right,
+    it works. Somebody come up here and break it for me."</p>
+    <p class="say">"It is not confused. It is confident and wrong, which is much
+    worse. It learned exactly what we fed it."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a3" id="tier-a3-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a3" id="tier-a3-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a3-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a3-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Watch, shout suggestions, and answer the debrief question. No device
+        needed.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>In the wander block or at home, pairs build their own multi-class
+        model and stress-test its edges. What is the smallest change that flips
+        the answer?</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>Lab machines have no webcam.</strong> This is exactly why it is a projector demo. Do not promise students they will run it themselves tonight.</li>
+      <li><strong>The sabotage is too subtle to see.</strong> Ask the volunteer for something blatant. Train "thumbs down" on an empty chair. Blatant is legible from the back row.</li>
+      <li><strong>It stays accurate anyway.</strong> Happens. Add more bad examples, or narrate it honestly: it took real effort to break, which is its own useful finding.</li>
+      <li><strong>The room concludes AI is useless.</strong> Not the lesson. It learned what it was shown, which is a statement about the data, not about the machine.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"What did it actually learn?"</h4>
+    <p>Whatever was in the pictures, including the background, the lighting, and
+    the sleeve of whoever was volunteering. Not the concept you had in mind.</p>
+    <h4>"Where would this matter outside a classroom?"</h4>
+    <p>Anywhere a trained system sorts people. Do not chase it tonight, just plant
+    it. Module 6 spends three hours here.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="sweep">
+  <h2>Spotlight sweep and the wander block</h2>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Spotlight sweep<span class="block-time">lab 1:20 – 1:30</span></p>
+    <p>Three or four students, thirty to sixty seconds each. On night one this
+    sets the tone for the whole course, so make it easy and make it warm.
+    Volunteers first, then a quiet "that is great, will you show it?" tap. Never
+    a cold call.</p>
+    <h4>Prompts to hand the student showing</h4>
+    <ul>
+      <li>"What did you find, and what job is it for?"</li>
+      <li>"Show us the weirdest thing it did."</li>
+      <li>"What did you type to get that?"</li>
+    </ul>
+    <h4>Prompts for the room</h4>
+    <ul>
+      <li>"Who else tried something and got a completely different answer?"</li>
+      <li>"Hands up if you made an account tonight." (Everyone claps. It matters.)</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Wander block menu<span class="block-time">lab 1:00 – 1:20</span></p>
+    <p>Twenty unstructured minutes. On night one a chunk of it goes to finishing
+    account setup, and that is fine. Offer the menu, do not assign from it.</p>
+    <ul>
+      <li><strong>Chase whatever Space caught your eye.</strong> The most common choice and the best one.</li>
+      <li><strong>Install LM Studio or Ollama</strong> with help, for anyone who leaned into the offline reveal.</li>
+      <li><strong>Games stations:</strong> Semantle, ELIZA, Real or Fake Text. All account-free browser play.</li>
+      <li><strong>Ask the parking-lot question.</strong> Start a visible parking lot on the board tonight for "how does it actually work" questions, and commit to a time you will answer them.</li>
+      <li><strong>Finish the account,</strong> quietly, with a buddy.</li>
+    </ul>
+  </div>
+  </section>
+
+  <section class="reveal" id="close">
+  <h2>Synthesis, exit ticket, homework</h2>
+
+  <div class="block-big-idea">
+    <p class="block-label">Land it here</p>
+    <p>It predicts, it does not understand. Everything you build on top of it has
+    to account for that.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Synthesis, five minutes</p>
+    <p>Go back to the sticky-note board from the start of the session. Read two
+    or three of the "heard" notes out loud and fill in what the room now knows.
+    Leave the rest up: the whole course keeps answering that board, and returning
+    to it in Module 6 is one of the better moments in the term.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Exit ticket</p>
+    <p>One-minute paper, anonymous: <em>what surprised you tonight?</em> On the
+    first session this doubles as a read on who is nervous and who is bored, and
+    it tells you who to pair with whom next time.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Homework handoff</p>
+    <p>The comparison notes go home, plus Chapter 1 of <em>Elements of AI</em>
+    (free, from the University of Helsinki and MinnaLearn, and we are not
+    affiliated with them). Say what next module does in one sentence: we stop
+    admiring the tools and start getting good at asking.</p>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/01-what-is-ai.html" data-embed-select="#homework">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/01-what-is-ai.html#homework">Open the student view</a> for the homework as students see it.</p>
+  </div>
+  </section>
+
+
+  <nav class="lesson-nav">
+    <a class="btn btn-ghost" href="/intro-ai-tools/#lessons"><span class="arrow-back" aria-hidden="true">←</span> All eight modules</a>
+    <span class="spacer"></span>
+    <a class="btn btn-primary" href="/intro-ai-tools/lessons/02-everyday-productivity.teacher.html">Teacher view: Module 2 <span class="arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-mark"><span class="brand-mark" aria-hidden="true"></span><strong>Introduction to AI&nbsp;Tools</strong></p>
+        <p>A free, self-paced course guide by <a href="https://valpatel.com">Matthew Valancy</a>. Free to learn from, free to teach from.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Course">
+        <p class="footer-label">Course</p>
+        <ul>
+          <li><a href="/intro-ai-tools/">Overview</a></li>
+          <li><a href="/intro-ai-tools/#lessons">Modules</a></li>
+          <li><a href="/intro-ai-tools/mini-lesson/">Mini-Lesson</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/">All Courses</a></li>
+        </ul>
+      </nav>
+      <!-- per-page slot -->
+      <nav class="footer-page" aria-label="This page">
+        <p class="footer-label">Teacher view · Module 1</p>
+        <ul>
+          <li><a href="/intro-ai-tools/lessons/01-what-is-ai.html">Student view of Module 1</a></li>
+          <li><a href="/intro-ai-tools/#lessons">All eight modules</a></li>
+          <li><a href="/intro-ai-tools/lessons/02-everyday-productivity.teacher.html">Teacher view: Everyday Productivity &rarr;</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-fine">Independent and not affiliated with any school or institution. Free to learn from, free to teach from, free to fork. Source on <a href="https://github.com/mvalancy/lesson-plans">GitHub</a>.</p>
+  </div>
+</footer>
+
+<script src="/js/hero-graph.js?v=202608222600" defer></script>
+<script src="/js/lesson-reveal.js?v=202608222600" defer></script>
+<script src="/js/teacher-embed.js?v=202608222600" defer></script>
+</body>
+</html>

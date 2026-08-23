@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teacher view · Automation with AI Assistants · Intro to AI Tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css?v=202608222600">
+</head>
+<body>
+<div class="site-note"><strong>Free and open</strong> for anyone to learn or teach · <a href="https://github.com/mvalancy/lesson-plans">code on GitHub</a></div>
+<p class="teacher-banner"><strong>Teacher view</strong> of a free course. Nothing here is hidden from students, it is just the version with the notes in it. <a href="/intro-ai-tools/lessons/07-automation.html">Student view</a></p>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/intro-ai-tools/"><span class="brand-mark" aria-hidden="true"></span>Intro to AI&nbsp;Tools</a>
+    <nav class="site-nav">
+      <a href="/intro-ai-tools/">Overview</a>
+      <a href="/intro-ai-tools/#lessons" aria-current="page">Modules</a>
+      <a href="/intro-ai-tools/mini-lesson/">Mini-Lesson</a>
+      <a href="/resources.html">Resources</a>
+      <a class="hub-link" href="/">All Courses</a>
+    </nav>
+  </div>
+</header>
+
+<section class="lesson-header">
+  <canvas class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="kicker">Teacher view · Module 7 of 8</p>
+    <h1>Automation with AI Assistants</h1>
+    <p class="meta">One 3-hour session · the lab is <strong>Ship it</strong>: a real GitHub account, a real page, a real URL, read out to the room.</p>
+    <p class="teacher-link"><a href="/intro-ai-tools/lessons/07-automation.html">Student view of this module</a> · <a href="https://github.com/mvalancy/lesson-plans/blob/main/intro-ai-tools/activities/teaching-scaffold.md">named routines (teaching scaffold)</a></p>
+    <ul class="module-ticks" aria-hidden="true"><li class="done"></li><li class="done"></li><li class="done"></li><li class="done"></li><li class="done"></li><li class="done"></li><li class="here"></li><li></li></ul>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="reveal" id="prep">
+  <h2>Prep</h2>
+  <p>The hardest lab in the course to run, and the one nobody forgets. Thirty
+  people create GitHub accounts and deploy a website in one evening. Read the
+  pacing note below before you plan this one, because there is an honest chance
+  it is too much for a single night.</p>
+
+  <div class="block-materials">
+    <p class="block-label">Materials</p>
+    <ul>
+      <li>Projector, and this course's own repository open next to the live site.</li>
+      <li>Task cards for the automate-or-keep-human sort, cut and shuffled, one set per group.</li>
+      <li>A template prompt for the single-page site, printed at every seat.</li>
+      <li>Two or three pre-made repositories students can be paired into if their account stalls.</li>
+      <li>A place to collect URLs live, because the roll-call needs them in one list.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <h4>Accounts to pre-stage</h4>
+    <ul>
+      <li>GitHub accounts are created in the lab, and email verification stalls for somebody every single time. Start accounts at lab 0:12 sharp, not later.</li>
+      <li>Better: pre-stage the GitHub account and the AI-drafted profile README in an earlier wander block. Module 5's wander fits it naturally, and it turns tonight from crowded into comfortable.</li>
+      <li>Keep two or three pair-up repositories ready for anyone still stranded at the halfway mark. Nobody sits out the URL roll-call.</li>
+      <li>Both instructors circulate hard during the build. This is the block where a second pair of hands pays for itself.</li>
+    </ul>
+    <h4>Fifteen minutes before</h4>
+    <ul>
+      <li>Deploy a one-page site yourself, start to finish, timing it. That number sets your expectations for the room.</li>
+      <li>Open the repository and the live page side by side, ready for the reveal.</li>
+      <li>Check the deploy path you are teaching still looks the way it did last term. These interfaces change.</li>
+      <li>Write the four-word rubric on the board: repeated, rule-guided, reviewable, reversible.</li>
+      <li>Open the URL collection sheet and put the link on the board.</li>
+    </ul>
+    <h4>Wifi fallback</h4>
+    <p>There is no honest fallback for this one. The lab needs the internet.
+    If the wifi is unreliable, swap this session with Module 6, which runs on
+    account-free browser games and can absorb a bad night. Say that plainly to
+    yourself when you plan the term.</p>
+    <h4>Depends on earlier modules</h4>
+    <ul>
+      <li><strong>Module 2</strong>'s personal agent grows up tonight into a custom assistant with a defined job.</li>
+      <li><strong>Module 5</strong>'s wander block is the recommended place to have pre-staged the GitHub account.</li>
+      <li><strong>Module 6</strong> gave them the language for what to keep human, which is exactly the card sort that opens the lab.</li>
+      <li>This module is the setup for the <strong>capstone</strong>. The URL created tonight is where the capstone project lives.</li>
+    </ul>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/07-automation.html" data-embed-select="#materials">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/07-automation.html#materials">Open the student view</a> to see the materials list students are given.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="goals">
+  <h2>What they should walk out with</h2>
+
+  <div class="block-big-idea">
+    <p class="block-label">Big idea</p>
+    <p>Automation does not fix a broken process, it produces bad output faster.
+    Map the work first, automate one boring step, and keep the judgment.</p>
+  </div>
+
+  <p><strong>Maps to job skills:</strong> workflow automation (Zapier, Make, n8n)
+  · process mapping · custom AI assistant building · site deployment (GitHub or
+  Cloudflare Pages) · automation judgment, meaning what to keep human.</p>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/07-automation.html" data-embed-select="#objectives">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/07-automation.html#objectives">Open the student view</a> for the learning objectives.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <p>One outcome matters more than the rest: every student leaves with a live
+    URL they own. That is the ownership commitment made literal, and it is the
+    artifact the capstone showcase is built on. Everything else tonight is
+    negotiable.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="timing">
+  <h2>Session timing</h2>
+
+  <div class="block-timing">
+    <p class="block-label">The three hours<span class="block-time">0:00 – 3:10</span></p>
+    <div class="timing-scroll">
+    <table>
+      <thead><tr><th>Time</th><th class="t-span">Share</th><th>Block</th></tr></thead>
+      <tbody>
+        <tr><td class="t-time">0:00 – 0:10</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Warm-up: ethics case-study takeaways from the Module 6 homework.</td></tr>
+        <tr><td class="t-time">0:10 – 1:15</td><td class="t-span"><span class="t-bar" style="--w:36%"></span></td><td>Lecture: trigger and action thinking, a live Zapier build, copilots at work.</td></tr>
+        <tr><td class="t-time">1:15 – 1:25</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Break.</td></tr>
+        <tr><td class="t-time">1:25 – 3:00</td><td class="t-span"><span class="t-bar" style="--w:52%"></span></td><td><strong>Lab: Ship it.</strong> Broken out below.</td></tr>
+        <tr><td class="t-time">3:00 – 3:10</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Wrap-up, and the capstone gets introduced.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/07-automation.html" data-embed-select="#agenda">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/07-automation.html#agenda">Open the student view</a> for the session agenda.</p>
+  </div>
+
+  <div class="block-timing">
+    <p class="block-label">The lab block, minute by minute<span class="block-time">95 min, from 1:25</span></p>
+    <div class="timing-scroll">
+    <table>
+      <thead><tr><th>Lab clock</th><th class="t-span">Share</th><th>Activity</th></tr></thead>
+      <tbody>
+        <tr><td class="t-time">0:00 – 0:12</td><td class="t-span"><span class="t-bar" style="--w:13%"></span></td><td>Automate versus keep human, fast: card sort, then the four-word rubric.</td></tr>
+        <tr><td class="t-time">0:12 – 1:00</td><td class="t-span"><span class="t-bar" style="--w:50%"></span></td><td><strong>Ship a real website (big rock):</strong> the reveal, accounts, build, deploy.</td></tr>
+        <tr><td class="t-time">1:00 – 1:10</td><td class="t-span"><span class="t-bar" style="--w:11%"></span></td><td>URL roll-call. Five seconds each, applause mandatory.</td></tr>
+        <tr class="t-slack"><td class="t-time">1:10 – 1:30</td><td class="t-span"><span class="t-bar" style="--w:21%"></span></td><td>Wander block. Also the safety net for anyone whose deploy is still fighting them.</td></tr>
+        <tr><td class="t-time">1:30 – 1:35</td><td class="t-span"><span class="t-bar" style="--w:5%"></span></td><td>Micro-sweep: two best bot-breaks, and what instruction was missing.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note · the pacing escape hatch</p>
+    <p>If this feels like too much for one night, it might be. Two ways out, both
+    honest. Pre-stage the GitHub account and profile README in Module 5's wander,
+    so tonight is purely build and deploy. Or let the deploy spill into the
+    capstone kickoff's open work time, which is a wander block anyway. The module
+    itself is not negotiable, the pacing is.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="activities">
+  <h2>The lab, activity by activity</h2>
+
+  <div class="block-warmup">
+    <p class="block-label">Warm-up<span class="block-time">lab 0:00 – 0:12</span></p>
+    <h3>Automate or keep human, fast</h3>
+    <p>Groups sort about fifteen task cards into automate, AI assists with a human
+    approving, and fully human. Meeting summary, hiring decision, customer refund,
+    medical advice, condolence email. Argue the condolence card, it splits every
+    room. Land the rubric: automate what is repeated, rule-guided, reviewable and
+    reversible, and keep humans on anything touching money, health, law or
+    feelings.</p>
+    <p class="say">"Somebody defend automating the condolence email. Seriously,
+    make the case."</p>
+    <p><strong>First five minutes is a win:</strong> no device, no account, and
+    everybody already has opinions about which parts of their job are boring.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>1. Ship a real website</h3>
+    <span class="step-time">lab 0:12 – 1:00 · solo, both instructors circulating</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity · big rock<span class="block-time">48 min</span></p>
+    <h3>The reveal, an account, a page, a URL</h3>
+    <p>Open with the reveal: this course's site is a public repository served by
+    Cloudflare Pages. Show the repository and the page side by side, "the page you
+    are reading is this folder". Then everybody creates a GitHub account, framed
+    as a social media profile for code, with an AI-drafted profile README. Then AI
+    writes a single-page site from the template prompt, and it gets deployed:
+    GitHub Pages as the floor, Cloudflare Pages as the stretch.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"This site you have been reading for six weeks. Here it is.
+    That folder is that page. There is no secret layer."</p>
+    <p class="say">"Accounts now, all together, because verification emails take
+    a few minutes and I would rather we all wait at the same time."</p>
+    <p class="say">"If you are stuck for more than three minutes, hand up. There
+    are two of us and there is no prize for struggling quietly."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a1" id="tier-a1-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a1" id="tier-a1-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a1-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a1-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>A template-prompted landing page, deployed to GitHub Pages with
+        step-by-step help. A live URL is a full pass, however plain the page.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Deploy through Cloudflare Pages, hang a real project off the page, and
+        have the custom domain conversation. Then help a neighbour, which is the
+        real stretch task in this block.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/07-automation.html" data-embed-select="#overview">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/07-automation.html#overview">Open the student view</a> for the module overview students read before the session.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>Email verification stalls.</strong> The single most predictable failure of the night. It is why accounts start at 0:12 and why the pair-up repositories exist.</li>
+      <li><strong>The page deploys but shows a 404</strong> for a few minutes. Normal, and worth saying before it happens, or half the room will conclude they broke it.</li>
+      <li><strong>The AI writes a page with a broken tag</strong> and the layout collapses. Good moment: this is the edit, run, fix loop from the Mermaid activity, at a slightly larger size.</li>
+      <li><strong>Somebody puts their home address on a public page.</strong> Say it once at the start: this is public, and public means public.</li>
+      <li><strong>A confident student is finished in eight minutes</strong> and gets bored. Their stretch task is helping, and say so directly rather than hoping.</li>
+      <li><strong>The repository interface has changed since you last taught this.</strong> Which is why you deployed one yourself fifteen minutes ago.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"Who owns that page now?"</h4>
+    <p>They do. It is their account, their files, and they can move it. That is
+    the ownership commitment in a sentence, and it lands better here than anywhere
+    else in the course.</p>
+    <h4>"What is a repository, in plain words?"</h4>
+    <p>A folder with a history and a public address. Do not go further tonight.</p>
+    <h4>"Where does this go next?"</h4>
+    <p>The capstone. Every project ships as a URL, and the showcase ends with a
+    link wall.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>2. URL roll-call</h3>
+    <span class="step-time">lab 1:00 – 1:10 · the whole room, five seconds each</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity · fun peak<span class="block-time">10 min</span></p>
+    <h3>Every site on the projector, applause mandatory</h3>
+    <p>One after another, five seconds each. Name and URL, that is it. Nobody
+    explains, nobody apologises for their page. Applause after every single one.
+    It takes ten minutes and it is the moment students describe when they talk
+    about this course a year later.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"Five seconds each. Your name, your URL. No apologies, nobody
+    says 'it's not finished'."</p>
+    <p class="say">"Clap for every one of them. Every person in this room has a
+    website tonight that did not exist this morning."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a2" id="tier-a2-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a2" id="tier-a2-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a2-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a2-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Say your URL out loud while it is on screen. That is the whole
+        ask.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Add one sentence about what you would put there next. It plants the
+        capstone without a single slide about the capstone.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>Somebody's page is not up yet.</strong> Put them on a pair-up repository during the wander and give them the roll-call slot at the very end. Nobody is skipped.</li>
+      <li><strong>It turns into presentations.</strong> Hold the five seconds. Momentum is the whole effect.</li>
+      <li><strong>Self-deprecation spreads.</strong> The first person sets the tone, so pick a confident volunteer to go first and cut the apologies before they start.</li>
+      <li><strong>Typing thirty URLs eats the block.</strong> Collect them in a shared sheet during the build, then click down the list.</li>
+    </ul>
+  </div>
+
+  <div class="teacher-step">
+    <h3>3. Give your agent a real job</h3>
+    <span class="step-time">lab 1:10 onward · in the wander, pairs try to break each other's</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity<span class="block-time">20 min, in the wander</span></p>
+    <h3>Build it, then let a neighbour break it</h3>
+    <p>The personal agent from Module 2 gets a defined job: a customer-reply
+    drafter with tone rules, a meal planner with real constraints, a study-guide
+    maker, a quote-request responder. Then swap seats and try to break a
+    neighbour's bot, noting exactly which instruction was missing. That break
+    report is the deliverable, not the bot.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"Instructions only, no code. Tell it who it is, what it does,
+    and what it must never do."</p>
+    <p class="say">"Now swap. Break your neighbour's. Do not be gentle, you are
+    doing them a favour."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a3" id="tier-a3-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a3" id="tier-a3-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a3-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a3-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Fill in the template instructions with your own specifics and run it
+        once on a real task.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Add knowledge files, then fix every edge case your neighbour found and
+        write down the rule you added for each. That is an agent spec, and it is
+        what ops teams actually write.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>The instructions are one line long.</strong> A bot with no constraints does whatever the last message said. The break test exposes this in about ten seconds, which is why the break test exists.</li>
+      <li><strong>Breaking becomes a competition to be rude.</strong> Redirect to useful breaks: ambiguous requests, out-of-scope questions, contradictory instructions.</li>
+      <li><strong>Nobody can break it</strong> because the task is too narrow to fail. Ask them to widen it until it does.</li>
+      <li><strong>The free tier does not support custom bots.</strong> The saved instructions block from Module 2 still works. Same skill, less packaging.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"What instruction was missing?"</h4>
+    <p>Almost always a scope boundary or a refusal rule. Writing down what a tool
+    must not do is most of the job.</p>
+    <h4>"What did you deliberately not automate, and why?"</h4>
+    <p>The question this whole module is built around. Push for a real reason, not
+    "it seemed hard". Money, health, law, feelings.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="sweep">
+  <h2>Spotlight sweep and the wander block</h2>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Micro-sweep<span class="block-time">lab 1:30 – 1:35</span></p>
+    <p>Two best bot-breaks. Short, because the roll-call already did the big
+    share. The question is always the same one: what instruction was missing?</p>
+    <h4>Prompts to hand the student showing</h4>
+    <ul>
+      <li>"Read the message that broke it."</li>
+      <li>"What rule did you add afterwards?"</li>
+      <li>"Would that rule have been obvious before you saw the break?"</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Wander block menu<span class="block-time">lab 1:10 – 1:30</span></p>
+    <p>Twenty minutes, and tonight a good chunk of it is a safety net. Anyone
+    whose deploy is still fighting them gets it fixed here, with a pair-up
+    repository if needed.</p>
+    <ul>
+      <li><strong>Give your agent a real job</strong> and let a neighbour break it. The main wander activity tonight.</li>
+      <li><strong>Extend your site:</strong> a second page, a project link, your profile README pointing at it.</li>
+      <li><strong>Agent Breaker</strong> and the games shelf, for anyone who enjoyed breaking things more than building them.</li>
+      <li><strong>A three-minute Zapier starter:</strong> one trigger, one action, done. Starred mail to a task list is the reliable one.</li>
+      <li><strong>Map your workflow,</strong> which also goes home: tag every step as draft-able, watch-able, flag-able, or not automatable.</li>
+      <li><strong>Rescue duty,</strong> for anyone whose URL is not live yet.</li>
+    </ul>
+  </div>
+  </section>
+
+  <section class="reveal" id="close">
+  <h2>Synthesis, exit ticket, homework</h2>
+
+  <div class="block-big-idea">
+    <p class="block-label">Land it here</p>
+    <p>Automate the drudgery so the attention goes to people. The line you can
+    defend in an interview is worth more than the automation you built.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Synthesis, five minutes</p>
+    <p>Two builds demonstrated, then the capstone is introduced properly. The URL
+    wall from tonight is the natural bridge: whatever they make next lives at an
+    address they already own. Show the brief's five slots and stop there, the
+    kickoff session does the rest.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Exit ticket</p>
+    <p>Plus and delta, plus one line: <em>what is one task you will never
+    automate?</em> Collect these, they make a good opening slide for the capstone
+    kickoff.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Homework handoff</p>
+    <p>The capstone idea in a paragraph: what they will build, who it is for, and
+    which tools from the course they will use. Plus the workflow map if it did not
+    get finished in the wander. Tell them plainly that the paragraph is what gets
+    approved in the five-minute conversation at kickoff, so a vague one costs them
+    time later.</p>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/07-automation.html" data-embed-select="#homework">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/07-automation.html#homework">Open the student view</a> for the homework as students see it.</p>
+  </div>
+  </section>
+
+
+  <nav class="lesson-nav">
+    <a class="btn btn-ghost" href="/intro-ai-tools/lessons/06-ethics-bias.teacher.html"><span class="arrow-back" aria-hidden="true">←</span> Teacher view: Module 6</a>
+    <span class="spacer"></span>
+    <a class="btn btn-primary" href="/intro-ai-tools/lessons/08-capstone.teacher.html">Teacher view: Module 8 <span class="arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-mark"><span class="brand-mark" aria-hidden="true"></span><strong>Introduction to AI&nbsp;Tools</strong></p>
+        <p>A free, self-paced course guide by <a href="https://valpatel.com">Matthew Valancy</a>. Free to learn from, free to teach from.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Course">
+        <p class="footer-label">Course</p>
+        <ul>
+          <li><a href="/intro-ai-tools/">Overview</a></li>
+          <li><a href="/intro-ai-tools/#lessons">Modules</a></li>
+          <li><a href="/intro-ai-tools/mini-lesson/">Mini-Lesson</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/">All Courses</a></li>
+        </ul>
+      </nav>
+      <!-- per-page slot -->
+      <nav class="footer-page" aria-label="This page">
+        <p class="footer-label">Teacher view · Module 7</p>
+        <ul>
+          <li><a href="/intro-ai-tools/lessons/07-automation.html">Student view of Module 7</a></li>
+          <li><a href="/intro-ai-tools/lessons/06-ethics-bias.teacher.html">&larr; Teacher view: Ethics &amp; Bias</a></li>
+          <li><a href="/intro-ai-tools/lessons/08-capstone.teacher.html">Teacher view: Capstone &rarr;</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-fine">Independent and not affiliated with any school or institution. Free to learn from, free to teach from, free to fork. Source on <a href="https://github.com/mvalancy/lesson-plans">GitHub</a>.</p>
+  </div>
+</footer>
+
+<script src="/js/hero-graph.js?v=202608222600" defer></script>
+<script src="/js/lesson-reveal.js?v=202608222600" defer></script>
+<script src="/js/teacher-embed.js?v=202608222600" defer></script>
+</body>
+</html>

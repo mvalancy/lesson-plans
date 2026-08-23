@@ -4,6 +4,9 @@ One page per module. Each is a **lesson plan**, not a handout: written for
 whoever is teaching to teach from, and for a self-paced learner to work
 through alone.
 
+Each module now has **two** pages at the same coordinate: the student page and
+its `.teacher.html` twin. See [Teacher pages](#teacher-pages) below.
+
 | File | Module | Sessions |
 |---|---|---|
 | `01-what-is-ai.html` | What is AI? Past, Present, and Future | 1 |
@@ -14,6 +17,52 @@ through alone.
 | `06-ethics-bias.html` | Ethics, Bias, and Responsible AI | 1 |
 | `07-automation.html` | Automation with AI Assistants | 1 |
 | `08-capstone.html` | Capstone Showcase | 3 |
+
+## Teacher pages
+
+`0N-<slug>.teacher.html` sits beside every student page and is the version with
+the notes in it. Parallel pages at a shared lesson coordinate, cross-linked,
+never an inline toggle: the student page carries one quiet "Teaching this?
+Teacher view" link in its header, and the teacher page carries a one-line banner
+back. Nothing is gated. A teacher page is a public page of a free course, and
+the URL convention plus the banner is enough to keep spoilers out of a student's
+way.
+
+**Fixed schema, same shape on all eight pages:**
+
+1. **Prep** (its own surface, always first): materials, accounts to pre-stage,
+   the fifteen-minutes-before checklist, the wifi fallback, and what earlier
+   modules have to have happened.
+2. **Goals**: the big idea plus the module's "maps to job skills" line.
+3. **Session timing**: the three-hour bar, then the lab block minute by minute.
+4. **Per activity, repeating**: timing · launch script · embedded student
+   content · floor and stretch · anticipated wrong turns · discussion questions
+   with the answers you are steering toward.
+5. **Spotlight sweep prompts and the wander-block menu.**
+6. **Synthesis, exit ticket, homework handoff.**
+
+Content comes from [`../activities/lab-playbook.md`](../activities/lab-playbook.md)
+and the per-module `activities/0N-*.md` files. The named routines
+(driver/navigator, spotlight sweep, wander block) are linked once from the
+header, to [`../activities/teaching-scaffold.md`](../activities/teaching-scaffold.md).
+
+**Embedded student content.** Teacher pages do not duplicate the student text.
+They carry placeholders that `js/teacher-embed.js` fills from the student page at
+runtime:
+
+```html
+<div class="student-embed"
+     data-embed-src="/intro-ai-tools/lessons/04-spreadsheets-data.html"
+     data-embed-select="#agenda">
+  <p class="embed-fallback"><a href="…#agenda">Open the student view</a> …</p>
+</div>
+```
+
+That is why every student page's sections carry stable ids: `#overview`,
+`#objectives`, `#agenda`, `#materials`, `#homework`, plus `#featured-lab` on
+Module 6. **Do not rename them**, and give any new section an id. With
+JavaScript off the placeholder's own link is what renders, so the page still
+works.
 
 ## The page skeleton
 
@@ -79,3 +128,9 @@ sprinkled everywhere:
 - Root-relative links only: `/intro-ai-tools/lessons/…`.
 - Placeholder blocks (`.placeholder`) mark material still to be written —
   slides, worksheets. That's honest, not a TODO dump; keep them tidy.
+- Section ids on the student pages are an API: the teacher pages select against
+  them. Renaming one silently empties an embed (it falls back to the link).
+- Teacher pages use the learning blocks from
+  [`../../css/README.md`](../../css/README.md#learning-blocks), not one-off
+  markup. If a teacher page needs a new kind of block, add it to that section so
+  all eight get it.

@@ -29,7 +29,7 @@ register.
 - **No build step for the site.** Plain HTML + one CSS file + dependency-free
   vanilla JS (`js/hero-graph.js` hero animation; `js/lesson-reveal.js`
   scroll-reveal/scrollspy/timer; `js/ask-widget.js` small-model widget
-  front-end). All JS is progressive enhancement — pages must remain fully
+  front-end; `js/teacher-embed.js` pulls student sections into a teacher page). All JS is progressive enhancement — pages must remain fully
   readable without it. Don't introduce frameworks or bundlers for the site
   without being asked. The one exception is `functions/api/ask.js`, a
   Cloudflare Pages Function (see README's "Small-model widget" section) —
@@ -101,11 +101,11 @@ directory you're about to touch** — they hold the detail this file summarises.
 |---|---|---|
 | `index.html` | Hub landing page (courses & guides grid, about) | [README](README.md) |
 | `intro-ai-tools/` | The Introduction to AI Tools course | [README](intro-ai-tools/README.md) |
-| `intro-ai-tools/lessons/` | Eight module lesson plans | [README](intro-ai-tools/lessons/README.md) |
+| `intro-ai-tools/lessons/` | Eight module lesson plans, each with a `.teacher.html` twin | [README](intro-ai-tools/lessons/README.md) |
 | `intro-ai-tools/mini-lesson/` | The 15-minute standalone segment | [README](intro-ai-tools/mini-lesson/README.md) |
 | `_redirects` | Cloudflare Pages 301s from the old `/mpc-csci-40/*` paths | — |
 | `css/` | The one shared stylesheet; design tokens; two themes | [README](css/README.md) |
-| `js/` | Three progressive-enhancement scripts | [README](js/README.md) |
+| `js/` | Four progressive-enhancement scripts | [README](js/README.md) |
 | `functions/` | Pages Function behind the live model widget | [README](functions/README.md) |
 
 Future courses get their own top-level directory alongside `intro-ai-tools/`.

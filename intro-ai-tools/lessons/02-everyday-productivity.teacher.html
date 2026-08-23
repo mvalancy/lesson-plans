@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teacher view · Generative AI for Everyday Productivity · Intro to AI Tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css?v=202608222600">
+</head>
+<body>
+<div class="site-note"><strong>Free and open</strong> for anyone to learn or teach · <a href="https://github.com/mvalancy/lesson-plans">code on GitHub</a></div>
+<p class="teacher-banner"><strong>Teacher view</strong> of a free course. Nothing here is hidden from students, it is just the version with the notes in it. <a href="/intro-ai-tools/lessons/02-everyday-productivity.html">Student view</a></p>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/intro-ai-tools/"><span class="brand-mark" aria-hidden="true"></span>Intro to AI&nbsp;Tools</a>
+    <nav class="site-nav">
+      <a href="/intro-ai-tools/">Overview</a>
+      <a href="/intro-ai-tools/#lessons" aria-current="page">Modules</a>
+      <a href="/intro-ai-tools/mini-lesson/">Mini-Lesson</a>
+      <a href="/resources.html">Resources</a>
+      <a class="hub-link" href="/">All Courses</a>
+    </nav>
+  </div>
+</header>
+
+<section class="lesson-header">
+  <canvas class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="kicker">Teacher view · Module 2 of 8</p>
+    <h1>Generative AI for Everyday Productivity</h1>
+    <p class="meta">One 3-hour session · the lab is <strong>Say what you mean</strong>: email triage, a personal agent started, and the prompt battle to close.</p>
+    <p class="teacher-link"><a href="/intro-ai-tools/lessons/02-everyday-productivity.html">Student view of this module</a> · <a href="https://github.com/mvalancy/lesson-plans/blob/main/intro-ai-tools/activities/teaching-scaffold.md">named routines (teaching scaffold)</a></p>
+    <ul class="module-ticks" aria-hidden="true"><li class="done"></li><li class="here"></li><li></li><li></li><li></li><li></li><li></li><li></li></ul>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="reveal" id="prep">
+  <h2>Prep</h2>
+  <p>Light on logistics, heavy on material. The three emails and the bloated
+  report have to be written before class, and they have to feel real. Generic
+  filler produces generic drafts and the whole triage falls flat.</p>
+
+  <div class="block-materials">
+    <p class="block-label">Materials</p>
+    <ul>
+      <li>Projector, and a chatbot window big enough to read from the back.</li>
+      <li>Three prepared workplace emails of rising difficulty, printed and shared digitally.</li>
+      <li>One deliberately bloated ten-page document for the compression round.</li>
+      <li>A shared doc or a wall for pinning before-and-after prompt pairs.</li>
+      <li>Team numbers or table cards for the prompt battle.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <h4>Accounts to pre-stage</h4>
+    <ul>
+      <li>The chatbot account from Module 1 is all that is needed. Check in the first ten minutes that everybody actually has one working, because a few people will have signed up and never logged back in.</li>
+      <li>The personal-agent block needs an assistant with memory or custom instructions. Know which of the free tiers in your room supports that today, and have a fallback (a saved instructions block they paste at the top of a chat) for the ones that do not.</li>
+      <li><a href="https://mermaid.live/">mermaid.live</a> needs no account at all.</li>
+    </ul>
+    <h4>Fifteen minutes before</h4>
+    <ul>
+      <li>Run "write about dogs" once so you know exactly how bad tonight's version of bad is.</li>
+      <li>Open the three emails in tabs, in order, so you are not scrolling a folder mid-block.</li>
+      <li>Decide the prompt-battle challenge and write it on the board face down or covered.</li>
+      <li>Check the free tier's rate limit by sending a few messages fast. It sets how many battle entries a team gets.</li>
+      <li>Have your own two writing samples ready for the personal-agent demo, so you can model it with real text.</li>
+    </ul>
+    <h4>Wifi fallback</h4>
+    <p>Triage works on paper. Print AI drafts of all three emails beforehand and
+    have students hand-edit them, which is arguably the better version of the
+    exercise anyway. The prompt battle becomes a write-off judged on the prompt
+    alone, no output needed.</p>
+    <h4>Depends on earlier modules</h4>
+    <ul>
+      <li><strong>Module 1</strong> gave everyone an account and the predict-the-next-word demo. Tonight is where that turns into technique.</li>
+      <li>The personal agent started tonight runs the whole course. It picks up work in every later module and becomes the custom assistant build in <strong>Module 7</strong>, and it is a ready-made capstone.</li>
+      <li><strong>Module 3</strong> reuses the iterate-do-not-accept reflex on image prompts.</li>
+    </ul>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/02-everyday-productivity.html" data-embed-select="#materials">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/02-everyday-productivity.html#materials">Open the student view</a> to see the materials list students are given.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="goals">
+  <h2>What they should walk out with</h2>
+
+  <div class="block-big-idea">
+    <p class="block-label">Big idea</p>
+    <p>The first output is a draft, never an answer. Getting good at asking is
+    the whole skill, and the best trick it buys you is compression.</p>
+  </div>
+
+  <p><strong>Maps to job skills:</strong> prompt engineering · AI-assisted
+  business writing · meeting documentation · process diagramming · professional
+  email judgment.</p>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/02-everyday-productivity.html" data-embed-select="#objectives">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/02-everyday-productivity.html#objectives">Open the student view</a> for the learning objectives.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <p>Everyone should leave with drafts they would actually use and one
+    before-and-after pair they can point at. The humanization line lands here and
+    it lands once: send the one-pager somebody wanted, not the generated thousand
+    words.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="timing">
+  <h2>Session timing</h2>
+
+  <div class="block-timing">
+    <p class="block-label">The three hours<span class="block-time">0:00 – 3:10</span></p>
+    <div class="timing-scroll">
+    <table>
+      <thead><tr><th>Time</th><th class="t-span">Share</th><th>Block</th></tr></thead>
+      <tbody>
+        <tr><td class="t-time">0:00 – 0:10</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Warm-up: which chatbot did you pick, and why?</td></tr>
+        <tr><td class="t-time">0:10 – 1:15</td><td class="t-span"><span class="t-bar" style="--w:36%"></span></td><td>Lecture: text generation, summarization, translation, prompt structure.</td></tr>
+        <tr><td class="t-time">1:15 – 1:25</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Break.</td></tr>
+        <tr><td class="t-time">1:25 – 3:00</td><td class="t-span"><span class="t-bar" style="--w:52%"></span></td><td><strong>Lab: Say what you mean.</strong> Broken out below.</td></tr>
+        <tr><td class="t-time">3:00 – 3:10</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Wrap-up and the homework handoff.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/02-everyday-productivity.html" data-embed-select="#agenda">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/02-everyday-productivity.html#agenda">Open the student view</a> for the session agenda.</p>
+  </div>
+
+  <div class="block-timing">
+    <p class="block-label">The lab block, minute by minute<span class="block-time">95 min, from 1:25</span></p>
+    <div class="timing-scroll">
+    <table>
+      <thead><tr><th>Lab clock</th><th class="t-span">Share</th><th>Activity</th></tr></thead>
+      <tbody>
+        <tr><td class="t-time">0:00 – 0:10</td><td class="t-span"><span class="t-bar" style="--w:11%"></span></td><td>Bad prompt, live: run it, mock it together, fix it one ingredient at a time.</td></tr>
+        <tr><td class="t-time">0:10 – 0:40</td><td class="t-span"><span class="t-bar" style="--w:32%"></span></td><td><strong>Email triage (big rock):</strong> three envelopes of rising difficulty.</td></tr>
+        <tr><td class="t-time">0:40 – 0:55</td><td class="t-span"><span class="t-bar" style="--w:16%"></span></td><td>Start your personal agent: memory, custom instructions, two writing samples.</td></tr>
+        <tr class="t-slack"><td class="t-time">0:55 – 1:15</td><td class="t-span"><span class="t-bar" style="--w:21%"></span></td><td>Wander block. Discussion pods form on their own here, let them.</td></tr>
+        <tr><td class="t-time">1:15 – 1:30</td><td class="t-span"><span class="t-bar" style="--w:16%"></span></td><td>Prompt battle: teams, one challenge, outputs projected, the room votes.</td></tr>
+        <tr><td class="t-time">1:30 – 1:35</td><td class="t-span"><span class="t-bar" style="--w:5%"></span></td><td>Micro-sweep: three students read one line their agent now knows about their voice.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <p>The battle is last on purpose. It is loud, it is fun, and nothing
+    thoughtful survives after it. If you are running behind, cut the wander to
+    ten minutes rather than shortening the triage.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="activities">
+  <h2>The lab, activity by activity</h2>
+
+  <div class="block-warmup">
+    <p class="block-label">Warm-up<span class="block-time">lab 0:00 – 0:10</span></p>
+    <h3>Bad prompt, live</h3>
+    <p>Run "write about dogs" on the projector. Read the result out in the most
+    enthusiastic voice you can manage. Let the room mock it. Then add one
+    ingredient per round, role, context, format, audience, re-running each time,
+    and watch it turn into something usable.</p>
+    <p class="say">"That is what most people's first prompt looks like, and that
+    is why most people think these things are useless. Watch what four small
+    changes do."</p>
+    <p><strong>First five minutes is a win:</strong> nobody has to produce
+    anything, they just have to have an opinion about writing, which everybody
+    does.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>1. Email triage</h3>
+    <span class="step-time">lab 0:10 – 0:40 · together, then solo, then a pair swap</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity · big rock<span class="block-time">30 min</span></p>
+    <h3>Three envelopes, rising interpersonal difficulty</h3>
+    <p>Email one, a routine status update, drafted together with a template
+    prompt. Email two, pushing back on a boss's request, solo, then hand-edit the
+    tone. Email three, apologising for a missed deadline, solo, then swap with a
+    partner and ask the only question that matters: would you actually send
+    this?</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"Everybody has sent an email they regretted. Tonight we find
+    the exact line where this thing stops helping and starts sounding like a
+    stranger wearing your name."</p>
+    <p class="say">"Swap screens. Read your partner's apology. One question:
+    would you send that, as you, to a person who is annoyed with you?"</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a1" id="tier-a1-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a1" id="tier-a1-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a1-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a1-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Template prompts for all three emails, filled in with their own
+        specifics. Three usable drafts is a full pass.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Take the sensitive one with no template at all, then write two
+        sentences on exactly where the AI's tone went wrong and what you changed.
+        That critique is the transferable part.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/02-everyday-productivity.html" data-embed-select="#overview">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/02-everyday-productivity.html#overview">Open the student view</a> for the module overview students read before the session.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>Every draft opens with "I hope this email finds you well."</strong> Ban it out loud after the second one. It is the fastest way to show what a default sounds like.</li>
+      <li><strong>The apology over-apologises.</strong> Models grovel. Ask whether the tone matches what actually happened, and let them cut it in half.</li>
+      <li><strong>Somebody pastes a real email with real names.</strong> Catch it early and make it a teaching moment about what goes into a public tool, not a telling-off.</li>
+      <li><strong>The pushback email gets softened into agreement.</strong> Very common, and worth stopping the room for. If the draft no longer disagrees, it failed at its only job.</li>
+      <li><strong>The confident writer refuses the whole exercise</strong> ("I write my own emails"). Fine, and correct. Point them at the stretch tier: their job is to find and name where it goes wrong.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"Which of the three would you actually send unedited?"</h4>
+    <p>Almost always only the status update. Drafting help scales with how little
+    the relationship matters.</p>
+    <h4>"What did you change by hand, and why?"</h4>
+    <p>Usually tone, length, and one specific fact only they knew. That third one
+    is the reason a human stays in the loop.</p>
+    <h4>"Would you tell the recipient AI helped write it?"</h4>
+    <p>No consensus, and do not force one. Just get people to state a rule they
+    could defend. Module 6 turns this into a written policy.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>2. Start your personal agent</h3>
+    <span class="step-time">lab 0:40 – 0:55 · solo, then ongoing all course</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity<span class="block-time">15 min</span></p>
+    <h3>Teach it who you are and what you already know</h3>
+    <p>Set up memory or custom instructions: who you are, what you already know
+    well so it stops explaining the basics, what you are working toward. Then
+    teach it your voice by pasting two things you have written and asking it to
+    describe your tone, correcting the description until it is right. Test it by
+    having it draft something and grading the draft.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"This is the one thing tonight that gets better every week you
+    keep it. By Module 7 it has a job. For some of you it becomes the
+    capstone."</p>
+    <p class="say">"Two guardrails. An assistant that only ever agrees with you is
+    broken, so tell it to keep useful disagreement. And the fact that it has
+    adapted to you does not make it right."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a2" id="tier-a2-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a2" id="tier-a2-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a2-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a2-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Fill in the provided instructions template and save it. Four lines
+        about yourself is a real start.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Maintain it for the rest of the course. Every module feeds it, and by
+        Module 7 it is a custom assistant with a defined job and written
+        guardrails.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>The free tier has no memory.</strong> Give them the paste-at-the-top fallback and move on. The skill is writing the instructions, not the storage.</li>
+      <li><strong>The tone description is flattering nonsense.</strong> "Warm yet professional" describes nobody. Push for something falsifiable: sentence length, contractions, whether they use exclamation points.</li>
+      <li><strong>Somebody writes their whole life story into it.</strong> Remind them where that text lives. Two useful lines beat two pages.</li>
+      <li><strong>It agrees with everything immediately.</strong> That is the guardrail arriving on schedule. Have them add the disagreement instruction and re-test.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"Did its description of your writing sound like you?"</h4>
+    <p>Usually about seventy percent right and thirty percent generic. The
+    correcting is the exercise.</p>
+    <h4>"What did you decide not to tell it?"</h4>
+    <p>Excellent question and worth a full minute. Whatever they held back is
+    their own information-governance line, drawn before anyone taught them the
+    term.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>3. Prompt battle</h3>
+    <span class="step-time">lab 1:15 – 1:30 · teams, then the room votes</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity · fun peak<span class="block-time">15 min</span></p>
+    <h3>Same challenge, competing prompts, public vote</h3>
+    <p>Teams get one creative challenge and craft a persona or system prompt for
+    it. Outputs go up side by side on the projector, the class votes, and the
+    winning teams explain what made their prompt work. That explanation is the
+    part that teaches, so do not let the vote be the last word.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"One submission per team, because the free tier will cut us off
+    otherwise. Spend the time on the prompt, not on rerolling."</p>
+    <p class="say">"Winners, do not tell me it was better. Tell me which words did
+    the work."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a3" id="tier-a3-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a3" id="tier-a3-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a3-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a3-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Contribute to the team prompt and vote. Being on a team that ships one
+        prompt is participation enough.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Write the persona and the constraints separately, predict out loud what
+        each will do before you run it, then check your prediction against the
+        output.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>Rate limits stop a team mid-battle.</strong> The single most likely failure. One submission per team, said before they start, and keep your own account free as an emergency runner.</li>
+      <li><strong>One team dominates the vote every round.</strong> Vote on the prompt with the outputs covered, at least once. It changes the result more often than you would expect.</li>
+      <li><strong>The winning explanation is "we just asked better".</strong> Not good enough. Make them point at words.</li>
+      <li><strong>It runs long.</strong> It always runs long. Two rounds maximum, and the micro-sweep still happens.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"What made the winner win?"</h4>
+    <p>Specificity, a named audience, and a constraint. Almost never length.</p>
+    <h4>"Would the winning prompt work tomorrow, on a different model?"</h4>
+    <p>Partly. Structure travels, exact phrasing does not. Worth saying out loud,
+    because prompt folklore spreads fast.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="sweep">
+  <h2>Spotlight sweep and the wander block</h2>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Micro-sweep<span class="block-time">lab 1:30 – 1:35</span></p>
+    <p>Short tonight, because the battle already did the sharing. Three students
+    each read one line their agent now knows about their voice. It takes two
+    minutes and it makes the personal-agent thread feel real instead of like
+    homework.</p>
+    <h4>Prompts to hand the student showing</h4>
+    <ul>
+      <li>"Read me the one line you are proudest of."</li>
+      <li>"What did it get wrong about you at first?"</li>
+      <li>"Show the before and after of one email."</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Wander block menu<span class="block-time">lab 0:55 – 1:15</span></p>
+    <p>Twenty minutes, both instructors circulating. Discussion pods form on
+    their own in this module, which is a good sign. Do not break them up to
+    enforce the menu.</p>
+    <ul>
+      <li><strong>Make it shorter.</strong> Take the bloated report, define the audience and the decision the reader has to make, and compress it to one page. Hand-verify every claim that survives. This is the humanization pillar as a task.</li>
+      <li><strong>Mermaid diagrams</strong> at <a href="https://mermaid.live/">mermaid.live</a>: ask AI to flowchart your morning routine, paste, watch it render, then break one line of syntax on purpose and fix it. A gentle first taste of the edit, run, fix loop.</li>
+      <li><strong>Your resume,</strong> one weak bullet at a time, watching for claims it invents on your behalf.</li>
+      <li><strong>Meeting notes to summary:</strong> a messy transcript in, decisions and action items out.</li>
+      <li><strong>Anything you actually have to write this week.</strong> Real work beats exercises, every time.</li>
+    </ul>
+  </div>
+  </section>
+
+  <section class="reveal" id="close">
+  <h2>Synthesis, exit ticket, homework</h2>
+
+  <div class="block-big-idea">
+    <p class="block-label">Land it here</p>
+    <p>The absurd version of this technology is one person inflating three
+    bullets into ten pages so the recipient's AI can compress it back to three
+    bullets. Send the three bullets.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Synthesis, five minutes</p>
+    <p>Two things trade hands: one prompt that worked, and one draft somebody cut
+    in half. Put both on the wall or in the shared doc. The compression example is
+    the one to read out loud.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Exit ticket</p>
+    <p>Plus and delta, anonymous: one thing that worked tonight, one thing to
+    change. Rotate the format across modules so it stays honest rather than
+    becoming a ritual.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Homework handoff</p>
+    <p>The study guide from their own notes goes home, annotated: three places
+    the AI genuinely helped and one place it was wrong or generic. That
+    annotation is the assessment, not the study guide.</p>
+    <p>Preview Module 3 in one sentence: next time we make things that look real,
+    and then we get fooled by things that are not.</p>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/02-everyday-productivity.html" data-embed-select="#homework">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/02-everyday-productivity.html#homework">Open the student view</a> for the homework as students see it.</p>
+  </div>
+  </section>
+
+
+  <nav class="lesson-nav">
+    <a class="btn btn-ghost" href="/intro-ai-tools/lessons/01-what-is-ai.teacher.html"><span class="arrow-back" aria-hidden="true">←</span> Teacher view: Module 1</a>
+    <span class="spacer"></span>
+    <a class="btn btn-primary" href="/intro-ai-tools/lessons/03-images-audio-video.teacher.html">Teacher view: Module 3 <span class="arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-mark"><span class="brand-mark" aria-hidden="true"></span><strong>Introduction to AI&nbsp;Tools</strong></p>
+        <p>A free, self-paced course guide by <a href="https://valpatel.com">Matthew Valancy</a>. Free to learn from, free to teach from.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Course">
+        <p class="footer-label">Course</p>
+        <ul>
+          <li><a href="/intro-ai-tools/">Overview</a></li>
+          <li><a href="/intro-ai-tools/#lessons">Modules</a></li>
+          <li><a href="/intro-ai-tools/mini-lesson/">Mini-Lesson</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/">All Courses</a></li>
+        </ul>
+      </nav>
+      <!-- per-page slot -->
+      <nav class="footer-page" aria-label="This page">
+        <p class="footer-label">Teacher view · Module 2</p>
+        <ul>
+          <li><a href="/intro-ai-tools/lessons/02-everyday-productivity.html">Student view of Module 2</a></li>
+          <li><a href="/intro-ai-tools/lessons/01-what-is-ai.teacher.html">&larr; Teacher view: What is AI?</a></li>
+          <li><a href="/intro-ai-tools/lessons/03-images-audio-video.teacher.html">Teacher view: Images, Audio &amp; Video &rarr;</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-fine">Independent and not affiliated with any school or institution. Free to learn from, free to teach from, free to fork. Source on <a href="https://github.com/mvalancy/lesson-plans">GitHub</a>.</p>
+  </div>
+</footer>
+
+<script src="/js/hero-graph.js?v=202608222600" defer></script>
+<script src="/js/lesson-reveal.js?v=202608222600" defer></script>
+<script src="/js/teacher-embed.js?v=202608222600" defer></script>
+</body>
+</html>
