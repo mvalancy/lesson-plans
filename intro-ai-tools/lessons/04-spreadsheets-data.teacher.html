@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teacher view · AI and Data: Spreadsheets &amp; Visualization · Intro to AI Tools</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css?v=202608222400">
+</head>
+<body>
+<div class="site-note"><strong>Free and open</strong> for anyone to learn or teach · <a href="https://github.com/mvalancy/lesson-plans">code on GitHub</a></div>
+<p class="teacher-banner"><strong>Teacher view</strong> of a free course. Nothing here is hidden from students, it is just the version with the notes in it. <a href="/intro-ai-tools/lessons/04-spreadsheets-data.html">Student view</a></p>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/intro-ai-tools/"><span class="brand-mark" aria-hidden="true"></span>Intro to AI&nbsp;Tools</a>
+    <nav class="site-nav">
+      <a href="/intro-ai-tools/">Overview</a>
+      <a href="/intro-ai-tools/#lessons" aria-current="page">Modules</a>
+      <a href="/intro-ai-tools/mini-lesson/">Mini-Lesson</a>
+      <a href="/resources.html">Resources</a>
+      <a class="hub-link" href="/">All Courses</a>
+    </nav>
+  </div>
+</header>
+
+<section class="lesson-header">
+  <canvas class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="kicker">Teacher view · Module 4 of 8</p>
+    <h1>AI and Data: Spreadsheets &amp; Visualization</h1>
+    <p class="meta">One 3-hour session · the lab is <strong>Numbers with receipts</strong>: the climate arc on real data, then everyone pulls their own county.</p>
+    <p class="teacher-link"><a href="/intro-ai-tools/lessons/04-spreadsheets-data.html">Student view of this module</a> · <a href="https://github.com/mvalancy/lesson-plans/blob/main/intro-ai-tools/activities/teaching-scaffold.md">named routines (teaching scaffold)</a></p>
+    <ul class="module-ticks" aria-hidden="true"><li class="done"></li><li class="done"></li><li class="done"></li><li class="here"></li><li></li><li></li><li></li><li></li></ul>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="reveal" id="prep">
+  <h2>Prep</h2>
+  <p>Everything that has to be true before the room fills up. The files are the
+  part that bites: government sites are slow when thirty machines hit them at
+  once, so they get downloaded the day before, not during the lab.</p>
+
+  <div class="block-materials">
+    <p class="block-label">Materials</p>
+    <ul>
+      <li>Projector, and a browser window you are willing to show (log out of anything personal).</li>
+      <li>A shared folder or USB stick holding the data shelf files, pre-downloaded.</li>
+      <li>Lab machines with Google Sheets or Excel, one per pair.</li>
+      <li>Calculators or phones, because half of this session is checking arithmetic by hand.</li>
+      <li>Whiteboard space for two lists: what the AI caught, what it missed.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <h4>Accounts to pre-stage</h4>
+    <ul>
+      <li>The free Google account from earlier in the course covers Sheets today and NotebookLM next module. If somebody skipped it, get them set up in the first ten minutes, not at 0:20.</li>
+      <li>One chatbot account each (made back in Module 1). Free tiers differ on file upload, so check that the tool a student is using actually accepts a CSV before the lab block.</li>
+      <li>No new accounts are created today. That is deliberate, this lab is heavy enough.</li>
+    </ul>
+    <h4>Fifteen minutes before</h4>
+    <ul>
+      <li>Copy the shelf files into the shared folder and open one to confirm it is not an HTML error page.</li>
+      <li>Upload Mauna Loa annual CO₂ to your own chatbot once, so the first demo is not the first attempt.</li>
+      <li>Open <a href="https://www.guessthecorrelation.com/">Guess the Correlation</a> in a tab and play one round to clear any first-load prompts.</li>
+      <li>Write the two column headings on the whiteboard: <em>caught</em> and <em>missed</em>.</li>
+      <li>Put the wifi fallback USB stick on the desk where you can reach it.</li>
+    </ul>
+    <h4>Wifi fallback</h4>
+    <p>Same files by USB, opened in local Sheets or Excel. The verification work
+    is the point and it does not need the internet: the AI summary can come from
+    a printed handout you generated earlier, and students check it against the
+    rows in front of them. The lab survives, only the chart iteration gets
+    slower.</p>
+    <h4>Depends on earlier modules</h4>
+    <ul>
+      <li><strong>Module 1</strong> gave everyone a chatbot account and the predict-the-next-word demo. Today is where that demo cashes out: an AI that recalls a number is guessing, an AI that computes one can show its work.</li>
+      <li><strong>Module 2</strong> built the habit of iterating on a prompt instead of accepting the first answer.</li>
+      <li><strong>Module 3</strong> ran the draw-a-scientist tally, so the room already knows how to argue about what a sample does and does not show.</li>
+      <li>This session sets up <strong>Module 5</strong>. The verification habit gets pointed at citations next time.</li>
+    </ul>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/04-spreadsheets-data.html" data-embed-select="#materials">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/04-spreadsheets-data.html#materials">Open the student view</a> to see the materials list students are given.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="goals">
+  <h2>What they should walk out with</h2>
+
+  <div class="block-big-idea">
+    <p class="block-label">Big idea</p>
+    <p>A number you cannot check is a rumour. AI makes spreadsheet work much
+    faster, and every claim it produces still has to meet the rows it came
+    from.</p>
+  </div>
+
+  <p><strong>Maps to job skills:</strong> spreadsheet analysis (Excel and Google
+  Sheets) · data cleaning · data visualization · report auditing and
+  fact-checking.</p>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/04-spreadsheets-data.html" data-embed-select="#objectives">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/04-spreadsheets-data.html#objectives">Open the student view</a> for the learning objectives.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <p>The objectives above are the student-facing wording. The one you are
+    actually teaching to is narrower: by the end of the night every student has
+    stated one statistic out loud that they verified with their own hands. If
+    that happened, the session worked, even if the charts are ugly.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="timing">
+  <h2>Session timing</h2>
+
+  <div class="block-timing">
+    <p class="block-label">The three hours<span class="block-time">0:00 – 3:10</span></p>
+    <div class="timing-scroll">
+    <table>
+      <thead><tr><th>Time</th><th class="t-span">Share</th><th>Block</th></tr></thead>
+      <tbody>
+        <tr><td class="t-time">0:00 – 0:10</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Warm-up: deepfake stories from the Module 3 homework.</td></tr>
+        <tr><td class="t-time">0:10 – 1:15</td><td class="t-span"><span class="t-bar" style="--w:36%"></span></td><td>Lecture: data literacy, AI in Excel and Sheets, what makes a chart honest.</td></tr>
+        <tr><td class="t-time">1:15 – 1:25</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Break.</td></tr>
+        <tr><td class="t-time">1:25 – 3:00</td><td class="t-span"><span class="t-bar" style="--w:52%"></span></td><td><strong>Lab: Numbers with receipts.</strong> Broken out below.</td></tr>
+        <tr><td class="t-time">3:00 – 3:10</td><td class="t-span"><span class="t-bar" style="--w:6%"></span></td><td>Wrap-up and the homework handoff.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <p>Students see the same shape on their own page, so you can put either
+    version on the projector. The lecture block is the one to guard: it wants to
+    grow, and everything it takes comes out of the climate arc.</p>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/04-spreadsheets-data.html" data-embed-select="#agenda">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/04-spreadsheets-data.html#agenda">Open the student view</a> for the session agenda.</p>
+  </div>
+
+  <div class="block-timing">
+    <p class="block-label">The lab block, minute by minute<span class="block-time">95 min, from 1:25</span></p>
+    <div class="timing-scroll">
+    <table>
+      <thead><tr><th>Lab clock</th><th class="t-span">Share</th><th>Activity</th></tr></thead>
+      <tbody>
+        <tr><td class="t-time">0:00 – 0:05</td><td class="t-span"><span class="t-bar" style="--w:5%"></span></td><td>Warm-up game: Guess the Correlation, two rounds on the projector.</td></tr>
+        <tr><td class="t-time">0:05 – 0:20</td><td class="t-span"><span class="t-bar" style="--w:16%"></span></td><td>First look, together: Mauna Loa annual CO₂, and check what the AI said.</td></tr>
+        <tr><td class="t-time">0:20 – 0:50</td><td class="t-span"><span class="t-bar" style="--w:32%"></span></td><td><strong>The climate arc (big rock):</strong> one chart plus one hand-verified statistic per pair.</td></tr>
+        <tr><td class="t-time">0:50 – 1:05</td><td class="t-span"><span class="t-bar" style="--w:16%"></span></td><td>Your county, your data. The fun peak.</td></tr>
+        <tr class="t-slack"><td class="t-time">1:05 – 1:25</td><td class="t-span"><span class="t-bar" style="--w:21%"></span></td><td>Wander block. Unstructured on purpose, and it absorbs any block that ran long.</td></tr>
+        <tr><td class="t-time">1:25 – 1:35</td><td class="t-span"><span class="t-bar" style="--w:11%"></span></td><td>Spotlight sweep: three or four charts, one verified statistic each.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Teacher note</p>
+    <p>Only about seventy-five of the ninety-five minutes are structured. The
+    slack is not a mistake, it is the wander block, and it is where a survey
+    course gets personal. If the climate arc runs long, let it, and take the
+    time out of the wander.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="activities">
+  <h2>The lab, activity by activity</h2>
+
+  <div class="block-warmup">
+    <p class="block-label">Warm-up<span class="block-time">lab 0:00 – 0:05</span></p>
+    <h3>Guess the Correlation</h3>
+    <p>Two rounds of <a href="https://www.guessthecorrelation.com/">Guess the
+    Correlation</a> on the projector. You show a scatter plot, the room shouts a
+    number, the game scores it. Play badly on purpose in round one.</p>
+    <p class="say">"Your eyes are a statistics tool. They are a bad one. That is
+    the whole reason we are going to check things tonight."</p>
+    <p><strong>First five minutes is a win:</strong> nobody has to type anything,
+    nobody has to log in, and the novices are already scoring points.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>1. First look at a new dataset</h3>
+    <span class="step-time">lab 0:05 – 0:20 · together, then pairs</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity<span class="block-time">15 min</span></p>
+    <h3>What is actually in this file?</h3>
+    <p>The professional habit this module exists to teach: the first ten minutes
+    with an unfamiliar CSV, with AI as the assistant and the human as the
+    auditor. Upload Mauna Loa annual CO₂ (65 rows, the friendliest file in the
+    course) and ask for a summary of columns, types, missing values, anything
+    odd. Walk the answer together. Then pairs repeat on a second file and check
+    the first and last rows by eye.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"I have never seen this file before. Neither have you. Watch
+    what I ask for first, because it is the same three questions every time:
+    what are the columns, what range do they cover, and what looks wrong."</p>
+    <p class="say">"It just told us the file starts in 1959. Somebody open the
+    file and tell me whether that is true."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a1" id="tier-a1-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a1" id="tier-a1-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a1-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a1-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Run the provided prompt word for word, then read the first row and the
+        last row out loud and say whether the summary matches. That is the whole
+        task, and it is a real one.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Ask the AI to flag likely data-entry errors, then verify every claimed
+        error by hand. Most of them will not be errors. Have the pair write down
+        the false-positive rate they found.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/04-spreadsheets-data.html" data-embed-select="#overview">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/04-spreadsheets-data.html#overview">Open the student view</a> for the module overview students read before the session.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>The summary describes a file that is not there.</strong> A model that cannot read the attachment will still answer, confidently, from the filename. This is the single best thing that can happen in the first fifteen minutes, so do not rescue it. Ask the room how we would have caught it.</li>
+      <li><strong>Nobody opens the rows.</strong> The summary sounds right, so the checking step gets skipped. Make it a called-on task, not an invitation.</li>
+      <li><strong>The free tier will not take an upload.</strong> Have a pasted-text version of the small file ready, 65 rows fits in a message.</li>
+      <li><strong>The file loads as one column.</strong> Tab versus comma separated. Fix it once on the projector, it will come up again in the next block.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"What did the AI catch that you would have missed?"</h4>
+    <p>Usually the shape: row count, date range, a column with gaps. It is fast
+    and genuinely useful at describing structure.</p>
+    <h4>"What did it miss?"</h4>
+    <p>Meaning. It does not know that a -99.99 is a missing-value code, or that
+    two columns are the same measurement from different instruments. Context is
+    the part you bring.</p>
+    <h4>"It said the average is 355 ppm. How would you check that?"</h4>
+    <p>Take the answer you want out loud: a formula in the sheet, or the AI's own
+    method shown as a formula. Never a number with no method attached.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>2. The climate arc</h3>
+    <span class="step-time">lab 0:20 – 0:50 · pairs, driver and navigator</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity · big rock<span class="block-time">30 min</span></p>
+    <h3>One chart, one statistic, both verified</h3>
+    <p>Pairs pick a file from the data shelf and produce two things: one chart
+    they can defend, and one statistic they checked by hand. The shelf is on the
+    student side of the course under
+    <a href="https://github.com/mvalancy/lesson-plans/blob/main/intro-ai-tools/activities/04-spreadsheets-data.md">the module's data shelf</a>,
+    and the copies they use are the ones you pre-downloaded.</p>
+    <p>Driver and navigator, and swap at the halfway mark. The navigator's job is
+    the checking, which means the less confident partner has real work that does
+    not depend on typing speed.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"Thirty minutes. Two deliverables. A chart, and one number you
+    can prove. If you finish the chart in ten minutes you are not done, you are
+    halfway."</p>
+    <p class="say">"When it gives you a number, ask it for the formula. If it
+    cannot show you the formula it did not compute, it remembered, and it is
+    happy to remember wrong."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a2" id="tier-a2-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a2" id="tier-a2-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a2-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a2-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Take the annual CO₂ file, ask for a line chart, and verify one value
+        against the row it came from. Sixty-five rows means the check is a scroll
+        and a squint, which is exactly the point.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>The baseline puzzle: NOAA reports one anomaly for 2016 and NASA
+        reports another, and both are right because they use different reference
+        periods. Find the two numbers, find the two baselines, and write one
+        sentence explaining why a headline citing either is not lying.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>The file is too big to upload.</strong> The full per-country emissions file will not fit. Send them to the per-indicator file, or have them slim it in Sheets first. That filtering step is a real skill, so name it rather than treating it as a detour.</li>
+      <li><strong>A dramatic chart with a chopped axis.</strong> Ask what the chart looks like starting at zero, then ask which version is more honest. There is a defensible answer either way for anomaly data, and arguing it is the lesson.</li>
+      <li><strong>The AI does the arithmetic freehand.</strong> Trends and averages computed in prose are frequently wrong. Demand the method every time.</li>
+      <li><strong>Two sources disagree, so one must be lying.</strong> This is the stretch puzzle arriving early. Take it, it is the best moment in the block.</li>
+      <li><strong>Charting everything, verifying nothing.</strong> The most common failure. Circulate with one question: "which number here have you actually checked?"</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"Your chart shows a rise. How much of that is the data and how much is the axis?"</h4>
+    <p>Both, and that is fine as long as you can say which. An honest chart is one
+    whose choices you can defend out loud.</p>
+    <h4>"Two agencies, two numbers, same year. Who is wrong?"</h4>
+    <p>Neither. Different baselines. Read the label before you read the number,
+    every time.</p>
+    <h4>"What would change your mind about this data?"</h4>
+    <p>Push for something specific and checkable: a third independent source
+    disagreeing, a break in the instrument record, a station that moved. Answers
+    like "more research" do not count.</p>
+  </div>
+
+  <div class="teacher-step">
+    <h3>3. Your county, your data</h3>
+    <span class="step-time">lab 0:50 – 1:05 · solo, then compare across the room</span>
+  </div>
+
+  <div class="block-activity">
+    <p class="block-label">Activity · fun peak<span class="block-time">15 min</span></p>
+    <h3>Pull your own hometown out of the file</h3>
+    <p>Everyone finds their county in the unemployment file and the median-income
+    file, then the room compares. Nothing in the course lands like a student's
+    own zip code showing up in a government spreadsheet.</p>
+
+    <h4>Launch script</h4>
+    <p class="say">"Find your county. Not a sample county, yours. Tell me one
+    number about the place you live that you did not know when you walked
+    in."</p>
+
+    <div class="tier-tabs" role="group" aria-label="Depth for this activity">
+      <input class="tier-radio tier-r-floor" type="radio" name="tier-a3" id="tier-a3-floor" checked>
+      <input class="tier-radio tier-r-stretch" type="radio" name="tier-a3" id="tier-a3-stretch">
+      <div class="tier-tablist">
+        <label class="tier-tab tier-tab-floor" for="tier-a3-floor">Floor</label>
+        <label class="tier-tab tier-tab-stretch" for="tier-a3-stretch">Stretch</label>
+      </div>
+      <div class="tier-panel tier-panel-floor">
+        <p>Filter to your county, read the most recent year, say the number out
+        loud. One row, one fact.</p>
+      </div>
+      <div class="tier-panel tier-panel-stretch">
+        <p>Chart your county against the state across the whole series and say
+        where the lines separate. Then check whether the income figures are
+        comparable across years before you claim anyone got richer.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Anticipated wrong turns</p>
+    <ul>
+      <li><strong>The county is not in the file.</strong> The civic shelf leans on California open data. If your room is elsewhere, swap in your own state's portal before class, and expect at least one student from out of state either way. Pair them with someone local for the block.</li>
+      <li><strong>Name mismatches.</strong> "St. Louis" versus "Saint Louis", counties with the same name in two states. A good five-minute lesson in why joining data is harder than it looks.</li>
+      <li><strong>Comparing dollars across decades.</strong> Nobody adjusts for inflation unless you ask. Ask.</li>
+      <li><strong>Over-reading a small county.</strong> A swing in a place with twelve thousand people is not the same finding as a swing in a place with two million.</li>
+      <li><strong>It gets personal.</strong> Unemployment and income data can be somebody's actual life. Keep the framing on the county, never on the person, and let anyone opt into a different county without explaining why.</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Discussion, with the answers you are steering toward</p>
+    <h4>"Did the number match what it feels like to live there?"</h4>
+    <p>Often not, and that gap is the interesting part. Data about people is a
+    summary of people, and summaries drop things.</p>
+    <h4>"Whose decisions does this file feed?"</h4>
+    <p>Funding formulas, business siting, benefit thresholds. The income-limits
+    file is a good one to name here: it decides what counts as low income for a
+    family of four in your county.</p>
+  </div>
+  </section>
+
+  <section class="reveal" id="sweep">
+  <h2>Spotlight sweep and the wander block</h2>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Spotlight sweep<span class="block-time">lab 1:25 – 1:35</span></p>
+    <p>Three or four students, thirty to sixty seconds each, chart on the
+    projector. Scout them while you circulate, take volunteers first, then a
+    gentle "that is great, will you show it?" tap. Never a cold call.</p>
+    <h4>Prompts to hand the student showing</h4>
+    <ul>
+      <li>"Say your one verified statistic, and say how you checked it."</li>
+      <li>"What did the AI get wrong on the way here?"</li>
+      <li>"Why this chart type and not a different one?"</li>
+      <li>"What is the one thing this chart does not show?"</li>
+    </ul>
+    <h4>Prompts for the room</h4>
+    <ul>
+      <li>"Who else picked this dataset and got a different answer?"</li>
+      <li>"What would you want to see before you sent this to a boss?"</li>
+    </ul>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Wander block menu<span class="block-time">lab 1:05 – 1:25</span></p>
+    <p>Twenty unstructured minutes with both instructors circulating. Offer the
+    menu, do not assign from it. It also doubles as the shock absorber when an
+    earlier block runs long.</p>
+    <ul>
+      <li><strong>Start the budget builder.</strong> Mock transactions in, AI categorizes them, one total verified by hand. The highest buy-in thing in the module, because they will use it on Friday.</li>
+      <li><strong>Fact-check the narrative.</strong> For teams who want a race: a confident AI-written report meets the dataset it claims to describe, and every numeric claim gets logged as supported, unsupported, or distorted.</li>
+      <li><strong>A second dataset,</strong> chosen purely because it is interesting. Methane, sea level, life expectancy.</li>
+      <li><strong>The big-file exercise.</strong> Download something too large to upload, slim it to twenty rows in Sheets, then upload the subset. Real analysts do this daily.</li>
+      <li><strong>Spurious Correlations</strong> and the games shelf, for anyone who wants the warm-up game to keep going.</li>
+      <li><strong>The standing discussion:</strong> what would change your mind about this data?</li>
+    </ul>
+  </div>
+  </section>
+
+  <section class="reveal" id="close">
+  <h2>Synthesis, exit ticket, homework</h2>
+
+  <div class="block-big-idea">
+    <p class="block-label">Land it here</p>
+    <p>AI computing is a path you can follow. AI recalling is a guess that reads
+    like a fact. Ask which one you just got.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Synthesis, five minutes</p>
+    <p>Go back to the two whiteboard lists from the first block, <em>caught</em>
+    and <em>missed</em>, now that the room has three more hours of evidence. Add
+    to both. The list of misses is the reason the checking habit exists, and it
+    is much more persuasive in the students' own handwriting than in yours.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Exit ticket</p>
+    <p>Muddiest point, anonymous, one line on a slip or a form: <em>what is still
+    unclear about checking a number?</em> Rotate the format across sessions so it
+    does not turn into homework theatre. Read them before you plan Module 5,
+    since the fabricated-citation lab lands better when it answers something the
+    room already asked.</p>
+  </div>
+
+  <div class="block-teacher-note">
+    <p class="block-label">Homework handoff</p>
+    <p>The half-page assessment goes home: their own conclusion, in their own
+    words, citing their own chart and their own verified number. Say the agency
+    line once and move on: the data is public, the judgment is theirs.</p>
+    <p>Preview Module 5 in one sentence: next time the thing being checked is a
+    citation, and the fabrication rate is one the class measures itself.</p>
+  </div>
+
+  <div class="student-embed" data-embed-src="/intro-ai-tools/lessons/04-spreadsheets-data.html" data-embed-select="#homework">
+    <p class="embed-fallback"><a href="/intro-ai-tools/lessons/04-spreadsheets-data.html#homework">Open the student view</a> for the homework as students see it.</p>
+  </div>
+  </section>
+
+  <nav class="lesson-nav">
+    <a class="btn btn-ghost" href="/intro-ai-tools/lessons/03-images-audio-video.teacher.html"><span class="arrow-back" aria-hidden="true">←</span> Teacher view: Module 3</a>
+    <span class="spacer"></span>
+    <a class="btn btn-primary" href="/intro-ai-tools/lessons/05-research-information.teacher.html">Teacher view: Module 5 <span class="arrow" aria-hidden="true">→</span></a>
+  </nav>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <p class="footer-mark"><span class="brand-mark" aria-hidden="true"></span><strong>Introduction to AI&nbsp;Tools</strong></p>
+        <p>A free, self-paced course guide by <a href="https://valpatel.com">Matthew Valancy</a>. Free to learn from, free to teach from.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Course">
+        <p class="footer-label">Course</p>
+        <ul>
+          <li><a href="/intro-ai-tools/">Overview</a></li>
+          <li><a href="/intro-ai-tools/#lessons">Modules</a></li>
+          <li><a href="/intro-ai-tools/mini-lesson/">Mini-Lesson</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li><a href="/">All Courses</a></li>
+        </ul>
+      </nav>
+      <!-- per-page slot -->
+      <nav class="footer-page" aria-label="This page">
+        <p class="footer-label">Teacher view · Module 4</p>
+        <ul>
+          <li><a href="/intro-ai-tools/lessons/04-spreadsheets-data.html">Student view of Module 4</a></li>
+          <li><a href="/intro-ai-tools/lessons/03-images-audio-video.teacher.html">&larr; Teacher view: Module 3</a></li>
+          <li><a href="/intro-ai-tools/lessons/05-research-information.teacher.html">Teacher view: Module 5 &rarr;</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-fine">Independent and not affiliated with any school or institution. Free to learn from, free to teach from, free to fork. Source on <a href="https://github.com/mvalancy/lesson-plans">GitHub</a>.</p>
+  </div>
+</footer>
+
+<script src="/js/hero-graph.js?v=202608222400" defer></script>
+<script src="/js/lesson-reveal.js?v=202608222400" defer></script>
+<script src="/js/teacher-embed.js?v=202608222400" defer></script>
+</body>
+</html>
